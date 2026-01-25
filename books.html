@@ -4,11 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Danh mục sách - TV4C">
     <title>Danh mục sách - TV4C</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
         rel="stylesheet">
@@ -18,33 +14,21 @@
 </head>
 
 <body>
-    <!-- 1. Top Header -->
+    <!-- Top Header & Navbar -->
     <header class="top-header">
         <div class="container flex justify-between items-center">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="TV4C Logo">
-            </a>
+            <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="TV4C Logo"></a>
             <div class="header-right flex items-center gap-6">
                 <div class="hotline flex items-center gap-2 text-primary font-bold">
-                    <i class="fa-solid fa-phone-volume"></i>
-                    <div>
-                        <span class="block text-xs text-gray">Hỗ trợ độc giả:</span>
-                        <span class="text-lg">024.37627819</span>
-                    </div>
+                    <i class="fa-solid fa-phone-volume"></i> <span>024.37627819</span>
                 </div>
                 <div class="user-actions flex gap-3">
-                    <a href="profile.html?tab=saved" class="icon-btn" title="Tủ sách đã lưu"><i
-                            class="fa-regular fa-bookmark"></i></a>
-                    <a href="profile.html?tab=favorites" class="icon-btn" title="Yêu thích"><i
-                            class="fa-regular fa-heart"></i></a>
+                    <a href="profile.html?tab=saved" class="icon-btn"><i class="fa-regular fa-bookmark"></i></a>
+                    <a href="profile.html?tab=favorites" class="icon-btn"><i class="fa-regular fa-heart"></i></a>
                     <div class="user-dropdown-container">
-                        <a href="login.html" class="icon-btn user-btn"><i class="fa-regular fa-user"></i></a>
+                        <a href="profile.html" class="icon-btn user-btn"><i class="fa-regular fa-user"></i></a>
                         <div class="user-menu-dropdown">
                             <a href="profile.html"><i class="fa-solid fa-circle-info"></i> Thông tin tài khoản</a>
-                            <a href="profile.html?tab=password"><i class="fa-solid fa-key"></i> Thay đổi mật khẩu</a>
-                            <a href="profile.html?tab=reading"><i class="fa-solid fa-book-open"></i> Sách đang đọc</a>
-                            <a href="profile.html?tab=favorites"><i class="fa-solid fa-heart"></i> Tủ sách yêu thích</a>
-                            <div class="divider"></div>
                             <a href="login.html" class="text-red"><i class="fa-solid fa-right-from-bracket"></i> Đăng
                                 xuất</a>
                         </div>
@@ -53,38 +37,31 @@
             </div>
         </div>
     </header>
-
-    <!-- 2. Navbar -->
     <nav class="main-navbar">
         <div class="container flex items-center justify-between h-full">
-            <div class="nav-left">
-                <button class="cat-trigger-btn">
-                    <i class="fa-solid fa-bars"></i>
-                    <span>DANH MỤC THƯ VIỆN</span>
-                </button>
-            </div>
+            <div class="nav-left"><button class="cat-trigger-btn"><i class="fa-solid fa-bars"></i> <span>DANH MỤC THƯ
+                        VIỆN</span></button></div>
             <div class="nav-center flex-1 mx-8">
                 <div class="search-box">
                     <select class="search-select">
                         <option>Sách bản quyền</option>
-                        <option>Tài liệu thư viện</option>
                     </select>
-                    <input type="text" placeholder="Nhập từ khoá để tìm kiếm..." class="search-input">
+                    <input type="text" placeholder="Tìm kiếm..." class="search-input">
                     <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </div>
             <div class="nav-right">
                 <ul class="nav-links flex gap-6">
-                    <li><a href="#">Thông tin chung <i class="fa-solid fa-caret-down"></i></a></li>
+                    <li><a href="#">Thông tin chung</a></li>
                     <li><a href="news.html">Tin tức</a></li>
-                    <li><a href="#">Hướng dẫn <i class="fa-solid fa-caret-down"></i></a></li>
+                    <li><a href="#">Hướng dẫn</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- MAIN CONTENT -->
-    <main class="section bg-gray-50">
+    <main class="section bg-white">
         <div class="container">
             <!-- Breadcrumb -->
             <div class="breadcrumb">
@@ -92,104 +69,177 @@
                     class="text-primary">Tất cả sách</span>
             </div>
 
-            <div class="page-title">Kho sách thư viện</div>
-
             <div class="grid gap-8" style="grid-template-columns: 250px 1fr;">
                 <!-- SIDEBAR FILTERS -->
-                <aside class="sidebar bg-white p-6 rounded shadow-sm h-fit">
+                <aside class="sidebar-filter">
+                    <div class="filter-header">Bộ lọc tìm kiếm</div>
+
                     <div class="filter-group">
-                        <span class="filter-title">Danh mục</span>
-                        <label class="filter-item"><input type="checkbox" checked> Tất cả</label>
-                        <label class="filter-item"><input type="checkbox"> Văn học Việt Nam</label>
-                        <label class="filter-item"><input type="checkbox"> Văn học Nước ngoài</label>
-                        <label class="filter-item"><input type="checkbox"> Kinh tế & Quản trị</label>
-                        <label class="filter-item"><input type="checkbox"> Tâm lý & Kỹ năng</label>
-                        <label class="filter-item"><input type="checkbox"> Thiếu nhi</label>
+                        <div class="filter-group-title">Danh mục sách <i class="fa-solid fa-chevron-up"></i></div>
+                        <ul class="filter-list">
+                            <li class="filter-item"><input type="checkbox"> <span>Văn học Việt Nam (120)</span></li>
+                            <li class="filter-item"><input type="checkbox"> <span>Văn học Nước ngoài (85)</span></li>
+                            <li class="filter-item"><input type="checkbox"> <span>Kinh tế & Quản trị (45)</span></li>
+                            <li class="filter-item"><input type="checkbox"> <span>Tâm lý & Kỹ năng (30)</span></li>
+                            <li class="filter-item"><input type="checkbox"> <span>Thiếu nhi (60)</span></li>
+                        </ul>
+                        <span class="view-more-filter">Xem thêm +</span>
                     </div>
+
                     <div class="filter-group">
-                        <span class="filter-title">Định dạng</span>
-                        <label class="filter-item"><input type="checkbox"> Sách in</label>
-                        <label class="filter-item"><input type="checkbox"> Ebook (PDF)</label>
-                        <label class="filter-item"><input type="checkbox"> Sách nói (Audio)</label>
+                        <div class="filter-group-title">Tác giả <i class="fa-solid fa-chevron-up"></i></div>
+                        <ul class="filter-list">
+                            <li class="filter-item"><input type="checkbox"> <span>Nguyễn Nhật Ánh</span></li>
+                            <li class="filter-item"><input type="checkbox"> <span>Rosie Nguyễn</span></li>
+                            <li class="filter-item"><input type="checkbox"> <span>Tô Hoài</span></li>
+                        </ul>
+                        <div class="mt-2 text-sm text-gray underline cursor-pointer">Nhập tên Tác giả...</div>
                     </div>
-                    <button class="btn btn-primary w-full py-2 rounded text-sm font-bold">Lọc kết quả</button>
+
+                    <div class="filter-group">
+                        <div class="filter-group-title">Nhà xuất bản <i class="fa-solid fa-chevron-up"></i></div>
+                        <ul class="filter-list">
+                            <li class="filter-item"><input type="checkbox"> <span>NXB Trẻ</span></li>
+                            <li class="filter-item"><input type="checkbox"> <span>NXB Kim Đồng</span></li>
+                            <li class="filter-item"><input type="checkbox"> <span>Nhã Nam</span></li>
+                        </ul>
+                        <span class="view-more-filter">Xem thêm +</span>
+                    </div>
+
+                    <button class="btn-filter-apply">Lọc</button>
+
+                    <!-- Ad Banner -->
+                    <div class="sidebar-banner">
+                        <img src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?w=400" class="w-full">
+                    </div>
                 </aside>
 
-                <!-- BOOK GRID -->
+                <!-- BOOK LISTING -->
                 <div class="book-list-container">
-                    <div class="flex justify-between items-center mb-6">
-                        <p class="text-gray text-sm">Hiển thị 1-12 trên 548 kết quả</p>
-                        <select class="border p-2 rounded text-sm outline-none">
-                            <option>Mới nhất</option>
-                            <option>Đọc nhiều nhất</option>
-                            <option>Tên A-Z</option>
-                        </select>
+                    <h2 class="text-2xl font-bold font-outfit text-primary-dark mb-4">Tất cả sách</h2>
+
+                    <div class="flex justify-between items-center mb-6 border-b pb-2">
+                        <!-- Tabs -->
+                        <div class="content-tabs">
+                            <button class="tab-btn active">Tất cả</button>
+                            <button class="tab-btn">Sách Book</button>
+                            <button class="tab-btn">Tài liệu điện tử</button>
+                        </div>
+
+                        <!-- Sort & View -->
+                        <div class="flex items-center gap-4">
+                            <div class="sort-box">
+                                <span class="text-sm text-gray mr-2">Sắp xếp:</span>
+                                <select>
+                                    <option>Mới nhất</option>
+                                    <option>Đọc nhiều nhất</option>
+                                    <option>Tên A-Z</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="grid grid-4 gap-4">
+                    <!-- Grid 5 -->
+                    <div class="grid grid-5 gap-6 mb-8">
                         <!-- Book 1 -->
-                        <article class="book-card compact">
-                            <div class="book-cover"><img
-                                    src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300" alt="Book">
+                        <article
+                            class="book-card compact bg-white shadow-sm hover:shadow-md transition-all rounded p-3 text-center border-transparent hover:border-blue-500 border">
+                            <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3 relative">
+                                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300"
+                                    class="w-full h-full object-cover">
                             </div>
-                            <h3 class="book-title"><a href="book-detail.html">Hoa Xương Rồng</a></h3>
-                            <div class="text-xs text-eay mt-1">Nguyễn Trí</div>
+                            <h3 class="font-bold text-sm mb-1 leading-tight"><a href="book-detail.html">Bác Hồ với công
+                                    việc văn phòng</a></h3>
                         </article>
                         <!-- Book 2 -->
-                        <article class="book-card compact">
-                            <div class="book-cover"><img
-                                    src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=300" alt="Book">
+                        <article
+                            class="book-card compact bg-white shadow-sm hover:shadow-md transition-all rounded p-3 text-center border-transparent hover:border-blue-500 border">
+                            <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3 relative">
+                                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=300"
+                                    class="w-full h-full object-cover">
                             </div>
-                            <h3 class="book-title"><a href="book-detail.html">Ngủ giữa hoa sen</a></h3>
-                            <div class="text-xs text-eay mt-1">Nguyễn Anh Vũ</div>
+                            <h3 class="font-bold text-sm mb-1 leading-tight"><a href="book-detail.html">Nam Phương Hoàng
+                                    Hậu</a></h3>
                         </article>
                         <!-- Book 3 -->
-                        <article class="book-card compact">
-                            <div class="book-cover"><img
-                                    src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300" alt="Book">
+                        <article
+                            class="book-card compact bg-white shadow-sm hover:shadow-md transition-all rounded p-3 text-center border-transparent hover:border-blue-500 border">
+                            <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3 relative">
+                                <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300"
+                                    class="w-full h-full object-cover">
                             </div>
-                            <h3 class="book-title"><a href="book-detail.html">Miền Ký Ức</a></h3>
-                            <div class="text-xs text-eay mt-1">Cao Ngọc Thắng</div>
+                            <h3 class="font-bold text-sm mb-1 leading-tight"><a href="book-detail.html">Sống tối
+                                    giản</a></h3>
                         </article>
                         <!-- Book 4 -->
-                        <article class="book-card compact">
-                            <div class="book-cover"><img
-                                    src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300" alt="Book">
+                        <article
+                            class="book-card compact bg-white shadow-sm hover:shadow-md transition-all rounded p-3 text-center border-transparent hover:border-blue-500 border">
+                            <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3 relative">
+                                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300"
+                                    class="w-full h-full object-cover">
                             </div>
-                            <h3 class="book-title"><a href="book-detail.html">Chuyện làng Buông</a></h3>
-                            <div class="text-xs text-eay mt-1">Lưu Trọng Văn</div>
+                            <h3 class="font-bold text-sm mb-1 leading-tight"><a href="book-detail.html">Xứ sở những cô
+                                    gái đi xe máy</a></h3>
                         </article>
                         <!-- Book 5 -->
-                        <article class="book-card compact">
-                            <div class="book-cover"><img
-                                    src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300" alt="Book">
+                        <article
+                            class="book-card compact bg-white shadow-sm hover:shadow-md transition-all rounded p-3 text-center border-transparent hover:border-blue-500 border">
+                            <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3 relative">
+                                <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300"
+                                    class="w-full h-full object-cover">
                             </div>
-                            <h3 class="book-title"><a href="book-detail.html">Chuyên đề Viết & Đọc</a></h3>
-                            <div class="text-xs text-eay mt-1">Nhiều tác giả</div>
+                            <h3 class="font-bold text-sm mb-1 leading-tight"><a href="book-detail.html">Bí quyết trưởng
+                                    thành</a></h3>
                         </article>
                         <!-- Book 6 -->
-                        <article class="book-card compact">
-                            <div class="book-cover"><img
-                                    src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=300" alt="Book">
+                        <article
+                            class="book-card compact bg-white shadow-sm hover:shadow-md transition-all rounded p-3 text-center border-transparent hover:border-blue-500 border">
+                            <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3 relative">
+                                <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=300"
+                                    class="w-full h-full object-cover">
                             </div>
-                            <h3 class="book-title"><a href="book-detail.html">Tuyển tập Kawabata</a></h3>
-                            <div class="text-xs text-eay mt-1">Yasunari Kawabata</div>
+                            <h3 class="font-bold text-sm mb-1 leading-tight"><a href="book-detail.html">Từ bi - Trên cả
+                                    trắc ẩn</a></h3>
                         </article>
                         <!-- Book 7 -->
-                        <article class="book-card compact">
-                            <div class="book-cover"><img
-                                    src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=300" alt="Book">
+                        <article
+                            class="book-card compact bg-white shadow-sm hover:shadow-md transition-all rounded p-3 text-center border-transparent hover:border-blue-500 border">
+                            <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3 relative">
+                                <img src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=300"
+                                    class="w-full h-full object-cover">
                             </div>
-                            <h3 class="book-title"><a href="book-detail.html">Ngàn mặt trời rực rỡ</a></h3>
-                            <div class="text-xs text-eay mt-1">Khaled Hosseini</div>
+                            <h3 class="font-bold text-sm mb-1 leading-tight"><a href="book-detail.html">Bí quyết trở
+                                    thành nhà quản lý</a></h3>
                         </article>
                         <!-- Book 8 -->
-                        <article class="book-card compact">
-                            <div class="book-cover"><img
-                                    src="https://images.unsplash.com/photo-1519681393798-38e43269d877?w=300" alt="Book">
+                        <article
+                            class="book-card compact bg-white shadow-sm hover:shadow-md transition-all rounded p-3 text-center border-transparent hover:border-blue-500 border">
+                            <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3 relative">
+                                <img src="https://images.unsplash.com/photo-1519681393798-38e43269d877?w=300"
+                                    class="w-full h-full object-cover">
                             </div>
-                            <h3 class="book-title"><a href="book-detail.html">Người đua diều</a></h3>
-                            <div class="text-xs text-eay mt-1">Khaled Hosseini</div>
+                            <h3 class="font-bold text-sm mb-1 leading-tight"><a href="book-detail.html">Không gia
+                                    đình</a></h3>
+                        </article>
+                        <!-- Book 9 -->
+                        <article
+                            class="book-card compact bg-white shadow-sm hover:shadow-md transition-all rounded p-3 text-center border-transparent hover:border-blue-500 border">
+                            <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3 relative">
+                                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="font-bold text-sm mb-1 leading-tight"><a href="book-detail.html">Trưởng thành -
+                                    Chạm tới bầu trời</a></h3>
+                        </article>
+                        <!-- Book 10 -->
+                        <article
+                            class="book-card compact bg-white shadow-sm hover:shadow-md transition-all rounded p-3 text-center border-transparent hover:border-blue-500 border">
+                            <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3 relative">
+                                <img src="https://images.unsplash.com/photo-1526304640152-d46464506c27?w=300"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="font-bold text-sm mb-1 leading-tight"><a href="book-detail.html">Hạnh phúc đến từ
+                                    sự biến mất</a></h3>
                         </article>
                     </div>
 
@@ -203,19 +253,101 @@
                         <span class="page-link">12</span>
                         <span class="page-link"><i class="fa-solid fa-chevron-right"></i></span>
                     </div>
+
+                    <!-- You might like (Carousel area) -->
+                    <div class="mt-12">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-bold font-outfit text-primary-dark">Có thể bạn thích</h3>
+                            <div class="flex gap-2 text-gray">
+                                <button class="hover:text-primary"><i class="fa-solid fa-chevron-left"></i></button>
+                                <button class="hover:text-primary"><i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="grid grid-5 gap-6">
+                            <!-- Reuse 5 cards -->
+                            <article class="book-card compact text-center">
+                                <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3"><img
+                                        src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300"
+                                        class="w-full h-full object-cover"></div>
+                                <h3 class="font-bold text-sm">Hoa xương rồng</h3>
+                            </article>
+                            <article class="book-card compact text-center">
+                                <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3"><img
+                                        src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=300"
+                                        class="w-full h-full object-cover"></div>
+                                <h3 class="font-bold text-sm">Ngủ giữa hoa sen</h3>
+                            </article>
+                            <article class="book-card compact text-center">
+                                <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3"><img
+                                        src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300"
+                                        class="w-full h-full object-cover"></div>
+                                <h3 class="font-bold text-sm">Miền ký ức</h3>
+                            </article>
+                            <article class="book-card compact text-center">
+                                <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3"><img
+                                        src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300"
+                                        class="w-full h-full object-cover"></div>
+                                <h3 class="font-bold text-sm">Chuyện làng Buông</h3>
+                            </article>
+                            <article class="book-card compact text-center">
+                                <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3"><img
+                                        src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300"
+                                        class="w-full h-full object-cover"></div>
+                                <h3 class="font-bold text-sm">Chuyên đề Viết</h3>
+                            </article>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer-simple" style="background: #1e3a8a; padding: 20px 0; border-top: 4px solid #2563eb;">
-        <div class="container text-center">
-            <p class="footer-copyright text-white text-sm opacity-80">© 2026 TV4C - Thư Viện Điện Tử Cộng Đồng. All
-                rights reserved.</p>
+    <!-- Detailed Footer -->
+    <footer class="footer-detailed">
+        <div class="container">
+            <div class="grid grid-4 gap-8 mb-8" style="grid-template-columns: 1.5fr 1fr 1fr 1fr;">
+                <div class="footer-info">
+                    <h4 class="mb-6">THƯ VIỆN ĐIỆN TỬ CỘNG ĐỒNG</h4>
+                    <p>Cung cấp bản quyền Công ty Cổ phần Công nghệ TV4C Việt Nam</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Địa chỉ: 289A, Khuất Duy Tiến, Cầu Giấy, Hà Nội</p>
+                    <p><i class="fa-solid fa-phone"></i> Hotline: 024.37627819 - Email: info@tv4c.vn</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>VỀ CHÚNG TÔI</h4>
+                    <ul class="footer-links-list leading-loose opacity-80">
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Cơ cấu tổ chức</a></li>
+                        <li><a href="#">Tuyển dụng</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>DỊCH VỤ</h4>
+                    <ul class="footer-links-list leading-loose opacity-80">
+                        <li><a href="#">Đọc sách Online</a></li>
+                        <li><a href="#">Mượn sách giấy</a></li>
+                        <li><a href="#">Tài liệu số</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>HỖ TRỢ</h4>
+                    <ul class="footer-links-list leading-loose opacity-80">
+                        <li><a href="#">Hướng dẫn sử dụng</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                Copyright © 2026 Thư viện Điện tử Cộng đồng. All rights reserved.
+            </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
 </body>
 
 </html>

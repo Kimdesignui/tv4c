@@ -4,11 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chi tiết sách - TV4C">
-    <title>Đắc Nhân Tâm - TV4C</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Nhà Giả Kim - TV4C</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
         rel="stylesheet">
@@ -18,35 +14,21 @@
 </head>
 
 <body>
-    <!-- 1. Top Header -->
+    <!-- Top Header & Navbar -->
     <header class="top-header">
         <div class="container flex justify-between items-center">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="TV4C Logo">
-            </a>
+            <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="TV4C Logo"></a>
             <div class="header-right flex items-center gap-6">
-                <!-- Hotline -->
                 <div class="hotline flex items-center gap-2 text-primary font-bold">
-                    <i class="fa-solid fa-phone-volume"></i>
-                    <div>
-                        <span class="block text-xs text-gray">Hỗ trợ độc giả:</span>
-                        <span class="text-lg">024.37627819</span>
-                    </div>
+                    <i class="fa-solid fa-phone-volume"></i> <span>024.37627819</span>
                 </div>
-                <!-- Icons -->
                 <div class="user-actions flex gap-3">
-                    <a href="profile.html?tab=saved" class="icon-btn" title="Tủ sách đã lưu"><i
-                            class="fa-regular fa-bookmark"></i></a>
-                    <a href="profile.html?tab=favorites" class="icon-btn" title="Yêu thích"><i
-                            class="fa-regular fa-heart"></i></a>
+                    <a href="profile.html?tab=saved" class="icon-btn"><i class="fa-regular fa-bookmark"></i></a>
+                    <a href="profile.html?tab=favorites" class="icon-btn"><i class="fa-regular fa-heart"></i></a>
                     <div class="user-dropdown-container">
-                        <a href="login.html" class="icon-btn user-btn"><i class="fa-regular fa-user"></i></a>
+                        <a href="profile.html" class="icon-btn user-btn"><i class="fa-regular fa-user"></i></a>
                         <div class="user-menu-dropdown">
                             <a href="profile.html"><i class="fa-solid fa-circle-info"></i> Thông tin tài khoản</a>
-                            <a href="profile.html?tab=password"><i class="fa-solid fa-key"></i> Thay đổi mật khẩu</a>
-                            <a href="profile.html?tab=reading"><i class="fa-solid fa-book-open"></i> Sách đang đọc</a>
-                            <a href="profile.html?tab=favorites"><i class="fa-solid fa-heart"></i> Tủ sách yêu thích</a>
-                            <div class="divider"></div>
                             <a href="login.html" class="text-red"><i class="fa-solid fa-right-from-bracket"></i> Đăng
                                 xuất</a>
                         </div>
@@ -55,31 +37,24 @@
             </div>
         </div>
     </header>
-
-    <!-- 2. Navbar -->
     <nav class="main-navbar">
         <div class="container flex items-center justify-between h-full">
-            <div class="nav-left">
-                <button class="cat-trigger-btn">
-                    <i class="fa-solid fa-bars"></i>
-                    <span>DANH MỤC THƯ VIỆN</span>
-                </button>
-            </div>
+            <div class="nav-left"><button class="cat-trigger-btn"><i class="fa-solid fa-bars"></i> <span>DANH MỤC THƯ
+                        VIỆN</span></button></div>
             <div class="nav-center flex-1 mx-8">
                 <div class="search-box">
                     <select class="search-select">
                         <option>Sách bản quyền</option>
-                        <option>Tài liệu thư viện</option>
                     </select>
-                    <input type="text" placeholder="Nhập từ khoá để tìm kiếm..." class="search-input">
+                    <input type="text" placeholder="Tìm kiếm..." class="search-input">
                     <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </div>
             <div class="nav-right">
                 <ul class="nav-links flex gap-6">
-                    <li><a href="#">Thông tin chung <i class="fa-solid fa-caret-down"></i></a></li>
+                    <li><a href="#">Thông tin chung</a></li>
                     <li><a href="news.html">Tin tức</a></li>
-                    <li><a href="#">Hướng dẫn <i class="fa-solid fa-caret-down"></i></a></li>
+                    <li><a href="#">Hướng dẫn</a></li>
                 </ul>
             </div>
         </div>
@@ -90,129 +65,278 @@
         <div class="container">
             <!-- Breadcrumb -->
             <div class="breadcrumb">
-                <a href="index.html">Trang chủ</a> <i class="fa-solid fa-chevron-right"></i>
-                <a href="books.html">Kỹ năng sống</a> <i class="fa-solid fa-chevron-right"></i>
-                <span class="text-primary">Đắc Nhân Tâm</span>
+                <a href="index.html">Home</a> / <a href="books.html">Item 1</a> / <span class="text-gray">Page
+                    now</span>
             </div>
 
-            <div class="book-info-grid">
-                <!-- Left: Cover Image -->
-                <div class="book-detail-cover">
-                    <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=500" alt="Đắc Nhân Tâm"
-                        class="w-full h-auto object-cover">
+            <!-- TOP DETAIL AREA -->
+            <div class="detail-top-grid">
+                <!-- Left: Gallery -->
+                <div class="detail-gallery">
+                    <div class="detail-thumbs">
+                        <div class="thumb-item active"><img
+                                src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=200"></div>
+                        <div class="thumb-item"><img
+                                src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=200"></div>
+                        <div class="thumb-item"><img
+                                src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=200"></div>
+                    </div>
+                    <div class="detail-main-img">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600" alt="Nhà Giả Kim">
+                    </div>
                 </div>
 
-                <!-- Right: Information -->
-                <div class="book-detail-info">
-                    <h1 class="page-title" style="margin-bottom: 10px; border:none;">Đắc Nhân Tâm</h1>
-                    <div class="meta text-gray mb-4">
-                        <span><i class="fa-solid fa-pen-nib"></i> Tác giả: <strong class="text-dark">Dale
-                                Carnegie</strong></span>
-                        <span class="mx-3">|</span>
-                        <span><i class="fa-solid fa-building"></i> NXB: <strong class="text-dark">NXB Tổng hợp
-                                TP.HCM</strong></span>
-                        <span class="mx-3">|</span>
-                        <span><i class="fa-solid fa-calendar"></i> Năm XB: 2024</span>
+                <!-- Right: Info -->
+                <div class="detail-right-info">
+                    <h1 class="detail-title">Nhà Giả Kim (Tái Bản 2020)</h1>
+                    <p class="text-sm text-gray mb-2">Trong bộ sưu tập: <a href="#" class="text-red">Top sách được yêu
+                            thích nhất</a></p>
+
+                    <div class="flex items-center gap-4 mb-4 text-sm">
+                        <div class="rating text-accent-yellow"><i class="fa-solid fa-star"></i> 4.5</div>
+                        <div class="text-gray">| 52358 Lượt xem | 3639 Có bản</div>
                     </div>
 
-                    <div class="rating mb-6 text-accent-yellow">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star-half-stroke"></i>
-                        <span class="text-gray text-sm ml-2">(1,240 đánh giá)</span>
-                    </div>
+                    <table class="detail-meta-table">
+                        <tr>
+                            <td>Tác giả</td>
+                            <td>Paulo Coelho</td>
+                        </tr>
+                        <tr>
+                            <td>Dịch giả</td>
+                            <td>Lê Chu Cầu</td>
+                        </tr>
+                        <tr>
+                            <td>ISBN</td>
+                            <td>8935235226274</td>
+                        </tr>
+                        <tr>
+                            <td>Năm xuất bản</td>
+                            <td>2020</td>
+                        </tr>
+                        <tr>
+                            <td>Nhà xuất bản</td>
+                            <td>NXB Hội Nhà Văn</td>
+                        </tr>
+                        <tr>
+                            <td>Định dạng</td>
+                            <td class="text-primary-blue-dark">Ebook; Audio book; Sách giấy</td>
+                        </tr>
+                    </table>
 
-                    <p class="description text-gray leading-7 mb-6">
-                        <strong>Đắc Nhân Tâm</strong> được mệnh danh là cuốn sách bán chạy nhất mọi thời đại. Cuốn sách
-                        đưa ra các lời khuyên cực kỳ thực tế về cách đối nhân xử thế, cách thu phục lòng người để dẫn
-                        tới thành công. Đây là cẩm nang gối đầu giường của nhiều thế hệ độc giả trên toàn thế giới.
-                    </p>
+                    <a href="#"
+                        class="text-primary text-sm font-semibold flex items-center justify-center gap-1 mb-6"><i
+                            class="fa-solid fa-chevron-down"></i> Xem đầy đủ</a>
 
                     <div class="detail-actions">
-                        <a href="cart.html" class="btn-action btn-borrow">
-                            <i class="fa-solid fa-cart-plus"></i> Đăng ký mượn
-                        </a>
-                        <a href="reader.html?type=ebook" class="btn-action btn-read">
-                            <i class="fa-solid fa-book-open"></i> Đọc Ebook
-                        </a>
-                        <a href="reader.html?type=audio" class="btn-action btn-listen">
-                            <i class="fa-solid fa-headphones"></i> Nghe Audio
-                        </a>
-                    </div>
-
-                    <div class="mt-6 flex gap-4 text-sm text-gray">
-                        <span class="flex items-center gap-2"><i class="fa-solid fa-share-nodes"></i> Chia sẻ</span>
-                        <span class="flex items-center gap-2"><i class="fa-regular fa-heart"></i> Thêm vào yêu
-                            thích</span>
+                        <button class="btn-action btn-green" onclick="window.location.href='cart.html'"><i
+                                class="fa-solid fa-cart-shopping"></i> Mượn sách</button>
+                        <button class="btn-action btn-blue" onclick="window.location.href='reader.html?type=ebook'"><i
+                                class="fa-solid fa-book-open"></i> Đọc sách điện tử</button>
+                        <button class="btn-action btn-orange" onclick="window.location.href='reader.html?type=audio'"><i
+                                class="fa-solid fa-headphones"></i> Nghe sách nói</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Tabs Section -->
+            <!-- BODY CONTENT (Split) -->
+            <div class="detail-body-grid">
+                <!-- Left: Content & Comments -->
+                <div class="detail-body-left">
+                    <!-- Tabs -->
+                    <div class="content-tabs-detail">
+                        <div class="tab-detail-link active">Giới thiệu</div>
+                        <div class="tab-detail-link">Mục lục</div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="detail-desc">
+                        <p>Tất cả những trải nghiệm trong chuyến phiêu du theo đuổi vận mệnh của mình đã giúp Santiago
+                            thấu hiểu được ý nghĩa sâu xa nhất của hạnh phúc, hòa hợp với vũ trụ và con người.</p>
+                        <p class="mt-4">Tiểu thuyết <strong>Nhà giả kim</strong> của Paulo Coelho như một câu chuyện cổ
+                            tích giản dị, nhân ái, giàu chất thơ, thấm đẫm những minh triết huyền bí của phương Đông.
+                            Trong lần xuất bản đầu tiên tại Brazil vào năm 1988, sách chỉ bán được 900 bản. Nhưng, với
+                            số phận đặc biệt của cuốn sách dành cho toàn nhân loại, vượt ra ngoài biên giới quốc gia,
+                            Nhà giả kim đã làm rung động hàng triệu tâm hồn, trở thành một trong những cuốn sách bán
+                            chạy nhất mọi thời đại, và có thể làm thay đổi cuộc đời người đọc.</p>
+                        <div class="text-center mt-4">
+                            <span class="text-primary cursor-pointer text-sm font-semibold"><i
+                                    class="fa-solid fa-chevron-down"></i> Xem đầy đủ</span>
+                        </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="comment-section mt-8">
+                        <div class="content-tabs-detail">
+                            <div class="tab-detail-link active">Bình luận</div>
+                        </div>
+
+                        <!-- Comment 1 -->
+                        <div class="comment-item">
+                            <div class="comment-avatar">T</div>
+                            <div class="comment-box">
+                                <div class="comment-header">
+                                    <span class="comment-name">Tiến</span>
+                                </div>
+                                <p class="text-sm">Mình không tải được file. Huhu này Ad ơi?</p>
+                                <div class="mt-2 text-xs text-primary font-semibold cursor-pointer">Trả lời <span
+                                        class="text-gray font-normal">- 23 giờ trước</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Reply -->
+                        <div class="comment-item comment-reply-admin">
+                            <div class="comment-avatar bg-primary text-white"><i class="fa-solid fa-user-shield"></i>
+                            </div>
+                            <div class="comment-box bg-white border border-gray-200">
+                                <div class="comment-header">
+                                    <span class="comment-name text-primary">Thành Luân <span
+                                            class="bg-yellow-400 text-xs px-1 rounded text-black ml-1">Quản trị
+                                            viên</span></span>
+                                </div>
+                                <p class="text-sm">Chào bạn! Mình đã nhắn tin hướng dẫn, bạn vui lòng kiểm tra email
+                                    nhé! Xin cảm ơn bạn.</p>
+                                <div class="mt-2 text-xs text-gray">- 23 giờ trước</div>
+                            </div>
+                        </div>
+
+                        <!-- Input -->
+                        <div class="comment-input-area mt-6">
+                            <textarea placeholder="Mời Bạn để lại bình luận..."></textarea>
+                            <div class="text-right">
+                                <button class="btn-action btn-blue"
+                                    style="width: auto; padding: 10px 30px; display: inline-flex;">Gửi bình
+                                    luận</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Sidebar Filters (Global Reuse) -->
+                <aside class="sidebar-filter">
+                    <div class="filter-header">Bộ lọc tìm kiếm</div>
+
+                    <div class="filter-group">
+                        <div class="filter-group-title">Danh mục sách <i class="fa-solid fa-chevron-up"></i></div>
+                        <ul class="filter-list">
+                            <li class="filter-item"><input type="checkbox"> <span>Tên danh mục 1</span></li>
+                            <li class="filter-item"><input type="checkbox"> <span>Tên danh mục 2</span></li>
+                            <li class="filter-item"><input type="checkbox"> <span>Tên danh mục 3</span></li>
+                        </ul>
+                        <span class="view-more-filter">Xem thêm +</span>
+                    </div>
+
+                    <div class="filter-group">
+                        <div class="filter-group-title">Tác giả <i class="fa-solid fa-chevron-up"></i></div>
+                        <ul class="filter-list">
+                            <li class="filter-item"><input type="checkbox"> <span>Tên tác giả 1</span></li>
+                            <li class="filter-item"><input type="checkbox"> <span>Tên tác giả 2</span></li>
+                        </ul>
+                        <div class="mt-2 text-sm border rounded p-1"><input type="text"
+                                placeholder="Nhập tên Tác giả..." class="w-full outline-none text-xs"></div>
+                        <span class="view-more-filter text-right mt-1">Xem thêm +</span>
+                    </div>
+
+                    <div class="filter-group">
+                        <div class="filter-group-title">Nhà xuất bản <i class="fa-solid fa-chevron-up"></i></div>
+                        <ul class="filter-list">
+                            <li class="filter-item"><input type="checkbox"> <span>Nhà xuất bản Xây dựng</span></li>
+                            <li class="filter-item"><input type="checkbox"> <span>Nhà xuất bản Y học</span></li>
+                        </ul>
+                        <span class="view-more-filter">Xem thêm +</span>
+                    </div>
+
+                    <button class="btn-filter-apply">Lọc</button>
+                </aside>
+            </div>
+
+            <!-- Carousel -->
             <div class="mt-12">
-                <div class="flex gap-6 border-b border-gray-200 mb-6">
-                    <button class="pb-2 text-primary font-bold border-b-2 border-primary">Giới thiệu sách</button>
-                    <button class="pb-2 text-gray font-medium hover:text-primary">Mục lục</button>
-                    <button class="pb-2 text-gray font-medium hover:text-primary">Đánh giá độc giả</button>
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-bold font-outfit text-primary-dark">Có thể bạn thích</h3>
+                    <div class="flex gap-2 text-gray">
+                        <button class="hover:text-primary"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="hover:text-primary"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
                 </div>
-
-                <div class="tab-content text-gray leading-7">
-                    <p class="mb-4">"Đắc nhân tâm" (tên tiếng Anh: How to Win Friends and Influence People) là một quyển
-                        sách thuộc thể loại self-help nổi tiếng nhất thế giới. Sách được viết bởi Dale Carnegie và xuất
-                        bản lần đầu vào năm 1936.</p>
-                    <p>Quyển sách đã được bán ra hơn 15 triệu bản trên khắp thế giới. Đây là cuốn sách liên tục đứng đầu
-                        danh mục sách bán chạy nhất do báo The New York Times bình chọn suốt 10 năm liền. Tác phẩm được
-                        đánh giá là cuốn sách đầu tiên và hay nhất, có ảnh hưởng nhất làm thay đổi cuộc đời của hàng
-                        triệu người trên thế giới.</p>
-                </div>
-            </div>
-
-            <!-- Related Books -->
-            <div class="mt-16">
-                <h2 class="module-title text-primary uppercase font-bold text-xl mb-6">Sách cùng thể loại</h2>
-                <div class="grid grid-5 gap-4">
-                    <!-- Reuse Compact Cards -->
-                    <article class="book-card compact">
-                        <div class="book-cover"><img
-                                src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300" alt="Book"></div>
-                        <h3 class="book-title"><a href="book-detail.html">Đời Thay Đổi Khi Chúng Ta Thay Đổi</a></h3>
+                <div class="grid grid-5 gap-6">
+                    <article class="book-card compact text-center">
+                        <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3"><img
+                                src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300"
+                                class="w-full h-full object-cover"></div>
+                        <h3 class="font-bold text-sm">Hoa xương rồng</h3>
                     </article>
-                    <article class="book-card compact">
-                        <div class="book-cover"><img
-                                src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300" alt="Book">
-                        </div>
-                        <h3 class="book-title"><a href="book-detail.html">Quẳng Gánh Lo Đi Và Vui Sống</a></h3>
+                    <article class="book-card compact text-center">
+                        <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3"><img
+                                src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=300"
+                                class="w-full h-full object-cover"></div>
+                        <h3 class="font-bold text-sm">Ngủ giữa hoa sen</h3>
                     </article>
-                    <article class="book-card compact">
-                        <div class="book-cover"><img
-                                src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=300" alt="Book">
-                        </div>
-                        <h3 class="book-title"><a href="book-detail.html">Hạt Giống Tâm Hồn</a></h3>
+                    <article class="book-card compact text-center">
+                        <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3"><img
+                                src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300"
+                                class="w-full h-full object-cover"></div>
+                        <h3 class="font-bold text-sm">Miền ký ức</h3>
                     </article>
-                    <article class="book-card compact">
-                        <div class="book-cover"><img
-                                src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300" alt="Book"></div>
-                        <h3 class="book-title"><a href="book-detail.html">Đánh Thức Con Người Phi Thường</a></h3>
+                    <article class="book-card compact text-center">
+                        <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3"><img
+                                src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300"
+                                class="w-full h-full object-cover"></div>
+                        <h3 class="font-bold text-sm">Chuyện làng Buông</h3>
                     </article>
-                    <article class="book-card compact">
-                        <div class="book-cover"><img
-                                src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300" alt="Book">
-                        </div>
-                        <h3 class="book-title"><a href="book-detail.html">Người Nam Châm</a></h3>
+                    <article class="book-card compact text-center">
+                        <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3"><img
+                                src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300"
+                                class="w-full h-full object-cover"></div>
+                        <h3 class="font-bold text-sm">Chuyên đề Viết</h3>
                     </article>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer-simple" style="background: #1e3a8a; padding: 20px 0; border-top: 4px solid #2563eb;">
-        <div class="container text-center">
-            <p class="footer-copyright text-white text-sm opacity-80">© 2026 TV4C - Thư Viện Điện Tử Cộng Đồng. All
-                rights reserved.</p>
+    <!-- Detailed Footer -->
+    <footer class="footer-detailed">
+        <div class="container">
+            <div class="grid grid-4 gap-8 mb-8" style="grid-template-columns: 1.5fr 1fr 1fr 1fr;">
+                <div class="footer-info">
+                    <h4 class="mb-6">THƯ VIỆN ĐIỆN TỬ CỘNG ĐỒNG</h4>
+                    <p>Cung cấp bản quyền Công ty Cổ phần Công nghệ TV4C Việt Nam</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Địa chỉ: 289A, Khuất Duy Tiến, Cầu Giấy, Hà Nội</p>
+                    <p><i class="fa-solid fa-phone"></i> Hotline: 024.37627819 - Email: info@tv4c.vn</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>VỀ CHÚNG TÔI</h4>
+                    <ul class="footer-links-list leading-loose opacity-80">
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Cơ cấu tổ chức</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>DỊCH VỤ</h4>
+                    <ul class="footer-links-list leading-loose opacity-80">
+                        <li><a href="#">Đọc sách Online</a></li>
+                        <li><a href="#">Mượn sách giấy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>HỖ TRỢ</h4>
+                    <ul class="footer-links-list leading-loose opacity-80">
+                        <li><a href="#">Hướng dẫn sử dụng</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                Copyright © 2026 Thư viện Điện tử Cộng đồng. All rights reserved.
+            </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
 </body>
 
 </html>
