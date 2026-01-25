@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="TV4C - Thư Viện Điện Tử Cộng Đồng. Nền tảng đọc sách online và cho mượn sách giấy miễn phí.">
+    <meta name="keywords" content="thư viện, sách, đọc sách online, mượn sách, TV4C">
+    <title>TV4C - Thư Viện Điện Tử Cộng Đồng</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo.png" alt="TV4C Logo">
+                </a>
+
+                <div class="search-container">
+                    <form class="search-bar" action="books.html" method="GET">
+                        <input type="text" name="q" placeholder="Tìm kiếm sách, tác giả, ISBN...">
+                        <button type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="header-actions">
+                    <a href="login.html" class="header-action-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        <span>Đăng nhập</span>
+                    </a>
+                    <button class="mobile-menu-toggle" aria-label="Menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+                            Trang chủ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            </svg>
+                            Danh mục
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="books.html?cat=literature" class="dropdown-link">Văn học</a></li>
+                            <li><a href="books.html?cat=economy" class="dropdown-link">Kinh tế</a></li>
+                            <li><a href="books.html?cat=science" class="dropdown-link">Khoa học</a></li>
+                            <li><a href="books.html?cat=children" class="dropdown-link">Thiếu nhi</a></li>
+                            <li><a href="books.html?cat=history" class="dropdown-link">Lịch sử</a></li>
+                            <li><a href="books.html?cat=psychology" class="dropdown-link">Tâm lý học</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="books.html" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                            Tất cả sách
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                            Sách nói
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                            </svg>
+                            Tin tức
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Giới thiệu
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            Liên hệ
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Slider -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active"
+                style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920')">
+                <div class="container hero-content">
+                    <h1>Chào mừng đến với TV4C</h1>
+                    <p>Thư viện điện tử cộng đồng với hàng nghìn đầu sách miễn phí. Đọc sách online hoặc mượn sách về
+                        nhà.</p>
+                    <a href="books.html" class="hero-btn">
+                        Khám phá ngay
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-slide"
+                style="background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1920')">
+                <div class="container hero-content">
+                    <h1>Sách mới hàng tuần</h1>
+                    <p>Cập nhật liên tục các đầu sách mới nhất từ nhiều thể loại khác nhau.</p>
+                    <a href="books.html?sort=new" class="hero-btn">
+                        Xem sách mới
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-slide"
+                style="background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1920')">
+                <div class="container hero-content">
+                    <h1>Dịch vụ mượn sách</h1>
+                    <p>Đăng ký thành viên để mượn sách giấy miễn phí, giao hàng tận nhà.</p>
+                    <a href="register.html" class="hero-btn">
+                        Đăng ký ngay
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-arrows">
+            <button class="slider-arrow prev" aria-label="Trước">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button class="slider-arrow next" aria-label="Tiếp">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="slider-nav">
+            <button class="slider-dot active" data-slide="0"></button>
+            <button class="slider-dot" data-slide="1"></button>
+            <button class="slider-dot" data-slide="2"></button>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Announcement & News Section -->
+        <section class="section" style="background: var(--white);">
+            <div class="container">
+                <div class="grid" style="grid-template-columns: 1fr 2fr; gap: var(--space-8);">
+                    <!-- Announcements -->
+                    <div class="announcement-box">
+                        <h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+                            </svg>
+                            Thông báo
+                        </h3>
+                        <div class="announcement-item">
+                            <div class="announcement-date">
+                                <div class="day">25</div>
+                                <div class="month">Th1</div>
+                            </div>
+                            <div class="announcement-content">
+                                <div class="announcement-title">Lịch nghỉ Tết Nguyên đán 2026</div>
+                                <div class="announcement-desc">Thư viện nghỉ từ 28/01 - 05/02/2026</div>
+                            </div>
+                        </div>
+                        <div class="announcement-item">
+                            <div class="announcement-date">
+                                <div class="day">20</div>
+                                <div class="month">Th1</div>
+                            </div>
+                            <div class="announcement-content">
+                                <div class="announcement-title">Cập nhật 500 đầu sách mới</div>
+                                <div class="announcement-desc">Bổ sung sách văn học, kinh tế</div>
+                            </div>
+                        </div>
+                        <div class="announcement-item">
+                            <div class="announcement-date">
+                                <div class="day">15</div>
+                                <div class="month">Th1</div>
+                            </div>
+                            <div class="announcement-content">
+                                <div class="announcement-title">Ra mắt tính năng sách nói</div>
+                                <div class="announcement-desc">Nghe sách mọi lúc mọi nơi</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- News -->
+                    <div>
+                        <h2 class="section-title">Tin tức & Sự kiện</h2>
+                        <div class="grid" style="grid-template-columns: repeat(2, 1fr); gap: var(--space-4);">
+                            <article class="news-card">
+                                <div class="news-card-image">
+                                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300"
+                                        alt="Tin tức">
+                                </div>
+                                <div class="news-card-content">
+                                    <h3 class="news-card-title">Hội sách mùa xuân 2026 - Giảm giá đến 50%</h3>
+                                    <span class="news-card-date">24/01/2026</span>
+                                </div>
+                            </article>
+                            <article class="news-card">
+                                <div class="news-card-image">
+                                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=300"
+                                        alt="Tin tức">
+                                </div>
+                                <div class="news-card-content">
+                                    <h3 class="news-card-title">Top 10 sách được mượn nhiều nhất tháng 1</h3>
+                                    <span class="news-card-date">22/01/2026</span>
+                                </div>
+                            </article>
+                            <article class="news-card">
+                                <div class="news-card-image">
+                                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300"
+                                        alt="Tin tức">
+                                </div>
+                                <div class="news-card-content">
+                                    <h3 class="news-card-title">Workshop: Kỹ năng đọc sách hiệu quả</h3>
+                                    <span class="news-card-date">20/01/2026</span>
+                                </div>
+                            </article>
+                            <article class="news-card">
+                                <div class="news-card-image">
+                                    <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300"
+                                        alt="Tin tức">
+                                </div>
+                                <div class="news-card-content">
+                                    <h3 class="news-card-title">Gặp gỡ tác giả: Nguyễn Nhật Ánh</h3>
+                                    <span class="news-card-date">18/01/2026</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Books -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Sách nổi bật</h2>
+                <div class="grid grid-5">
+                    <article class="book-card">
+                        <div class="book-card-image">
+                            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400" alt="Sách">
+                            <span class="book-card-badge">HOT</span>
+                            <div class="book-card-actions">
+                                <button class="book-action-btn" title="Yêu thích">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                                <button class="book-action-btn" title="Mượn sách">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="book-card-content">
+                            <h3 class="book-card-title"><a href="book-detail.html">Đắc Nhân Tâm</a></h3>
+                            <p class="book-card-author">Dale Carnegie</p>
+                            <div class="book-card-meta">
+                                <div class="book-rating">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <span>4.8</span>
+                                </div>
+                                <div class="book-views">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                    2.3k
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="book-card">
+                        <div class="book-card-image">
+                            <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400" alt="Sách">
+                            <span class="book-card-badge">MỚI</span>
+                            <div class="book-card-actions">
+                                <button class="book-action-btn" title="Yêu thích">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                                <button class="book-action-btn" title="Mượn sách">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="book-card-content">
+                            <h3 class="book-card-title"><a href="book-detail.html">Nhà Giả Kim</a></h3>
+                            <p class="book-card-author">Paulo Coelho</p>
+                            <div class="book-card-meta">
+                                <div class="book-rating">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <span>4.9</span>
+                                </div>
+                                <div class="book-views">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                    1.8k
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="book-card">
+                        <div class="book-card-image">
+                            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400" alt="Sách">
+                            <div class="book-card-actions">
+                                <button class="book-action-btn" title="Yêu thích">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                                <button class="book-action-btn" title="Mượn sách">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="book-card-content">
+                            <h3 class="book-card-title"><a href="book-detail.html">Tư Duy Nhanh Và Chậm</a></h3>
+                            <p class="book-card-author">Daniel Kahneman</p>
+                            <div class="book-card-meta">
+                                <div class="book-rating">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <span>4.7</span>
+                                </div>
+                                <div class="book-views">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                    1.5k
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="book-card">
+                        <div class="book-card-image">
+                            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=400" alt="Sách">
+                            <div class="book-card-actions">
+                                <button class="book-action-btn" title="Yêu thích">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                                <button class="book-action-btn" title="Mượn sách">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="book-card-content">
+                            <h3 class="book-card-title"><a href="book-detail.html">Sapiens: Lược Sử Loài Người</a></h3>
+                            <p class="book-card-author">Yuval Noah Harari</p>
+                            <div class="book-card-meta">
+                                <div class="book-rating">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <span>4.9</span>
+                                </div>
+                                <div class="book-views">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                    2.1k
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="book-card">
+                        <div class="book-card-image">
+                            <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=400" alt="Sách">
+                            <div class="book-card-actions">
+                                <button class="book-action-btn" title="Yêu thích">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                                <button class="book-action-btn" title="Mượn sách">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="book-card-content">
+                            <h3 class="book-card-title"><a href="book-detail.html">Atomic Habits</a></h3>
+                            <p class="book-card-author">James Clear</p>
+                            <div class="book-card-meta">
+                                <div class="book-rating">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <span>4.8</span>
+                                </div>
+                                <div class="book-views">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                    1.9k
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="section" style="background: var(--white);">
+            <div class="container">
+                <h2 class="section-title">Danh mục sách mượn</h2>
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="tab1">Văn học</button>
+                    <button class="tab-btn" data-tab="tab2">Kinh tế</button>
+                    <button class="tab-btn" data-tab="tab3">Khoa học</button>
+                    <button class="tab-btn" data-tab="tab4">Thiếu nhi</button>
+                </div>
+
+                <div class="tab-content active" id="tab1">
+                    <div class="grid grid-5">
+                        <article class="book-card">
+                            <div class="book-card-image">
+                                <img src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=400"
+                                    alt="Sách">
+                            </div>
+                            <div class="book-card-content">
+                                <h3 class="book-card-title"><a href="book-detail.html">Mắt Biếc</a></h3>
+                                <p class="book-card-author">Nguyễn Nhật Ánh</p>
+                            </div>
+                        </article>
+                        <article class="book-card">
+                            <div class="book-card-image">
+                                <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=400"
+                                    alt="Sách">
+                            </div>
+                            <div class="book-card-content">
+                                <h3 class="book-card-title"><a href="book-detail.html">Dế Mèn Phiêu Lưu Ký</a></h3>
+                                <p class="book-card-author">Tô Hoài</p>
+                            </div>
+                        </article>
+                        <article class="book-card">
+                            <div class="book-card-image">
+                                <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?w=400"
+                                    alt="Sách">
+                            </div>
+                            <div class="book-card-content">
+                                <h3 class="book-card-title"><a href="book-detail.html">Tôi Thấy Hoa Vàng Trên Cỏ
+                                        Xanh</a></h3>
+                                <p class="book-card-author">Nguyễn Nhật Ánh</p>
+                            </div>
+                        </article>
+                        <article class="book-card">
+                            <div class="book-card-image">
+                                <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=400"
+                                    alt="Sách">
+                            </div>
+                            <div class="book-card-content">
+                                <h3 class="book-card-title"><a href="book-detail.html">Cho Tôi Xin Một Vé Đi Tuổi
+                                        Thơ</a></h3>
+                                <p class="book-card-author">Nguyễn Nhật Ánh</p>
+                            </div>
+                        </article>
+                        <article class="book-card">
+                            <div class="book-card-image">
+                                <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400"
+                                    alt="Sách">
+                            </div>
+                            <div class="book-card-content">
+                                <h3 class="book-card-title"><a href="book-detail.html">Số Đỏ</a></h3>
+                                <p class="book-card-author">Vũ Trọng Phụng</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab2">
+                    <div class="grid grid-5">
+                        <article class="book-card">
+                            <div class="book-card-image">
+                                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400" alt="Sách">
+                            </div>
+                            <div class="book-card-content">
+                                <h3 class="book-card-title"><a href="book-detail.html">Cha Giàu Cha Nghèo</a></h3>
+                                <p class="book-card-author">Robert Kiyosaki</p>
+                            </div>
+                        </article>
+                        <article class="book-card">
+                            <div class="book-card-image">
+                                <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400" alt="Sách">
+                            </div>
+                            <div class="book-card-content">
+                                <h3 class="book-card-title"><a href="book-detail.html">Người Giàu Nhất Babylon</a></h3>
+                                <p class="book-card-author">George S. Clason</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab3">
+                    <div class="grid grid-5">
+                        <article class="book-card">
+                            <div class="book-card-image">
+                                <img src="https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=400"
+                                    alt="Sách">
+                            </div>
+                            <div class="book-card-content">
+                                <h3 class="book-card-title"><a href="book-detail.html">Lược Sử Thời Gian</a></h3>
+                                <p class="book-card-author">Stephen Hawking</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab4">
+                    <div class="grid grid-5">
+                        <article class="book-card">
+                            <div class="book-card-image">
+                                <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=400"
+                                    alt="Sách">
+                            </div>
+                            <div class="book-card-content">
+                                <h3 class="book-card-title"><a href="book-detail.html">Hoàng Tử Bé</a></h3>
+                                <p class="book-card-author">Antoine de Saint-Exupéry</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collection Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Bộ sưu tập sách</h2>
+                <div class="grid grid-4">
+                    <div class="book-card" style="aspect-ratio: 16/9; position: relative;">
+                        <img src="https://images.unsplash.com/photo-1491841573634-28140fc7ced7?w=600" alt="Collection"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
+                        <div
+                            style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); border-radius: var(--radius-xl); display: flex; align-items: flex-end; padding: var(--space-4);">
+                            <div style="color: white;">
+                                <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-1);">Sách văn học kinh
+                                    điển</h3>
+                                <p style="font-size: var(--text-sm); opacity: 0.8;">120 cuốn sách</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book-card" style="aspect-ratio: 16/9; position: relative;">
+                        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600" alt="Collection"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
+                        <div
+                            style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); border-radius: var(--radius-xl); display: flex; align-items: flex-end; padding: var(--space-4);">
+                            <div style="color: white;">
+                                <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-1);">Sách kỹ năng sống
+                                </h3>
+                                <p style="font-size: var(--text-sm); opacity: 0.8;">85 cuốn sách</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book-card" style="aspect-ratio: 16/9; position: relative;">
+                        <img src="https://images.unsplash.com/photo-1535905557558-afc4877a26fc?w=600" alt="Collection"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
+                        <div
+                            style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); border-radius: var(--radius-xl); display: flex; align-items: flex-end; padding: var(--space-4);">
+                            <div style="color: white;">
+                                <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-1);">Sách khoa học</h3>
+                                <p style="font-size: var(--text-sm); opacity: 0.8;">95 cuốn sách</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book-card" style="aspect-ratio: 16/9; position: relative;">
+                        <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=600" alt="Collection"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl);">
+                        <div
+                            style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); border-radius: var(--radius-xl); display: flex; align-items: flex-end; padding: var(--space-4);">
+                            <div style="color: white;">
+                                <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-1);">Sách thiếu nhi
+                                </h3>
+                                <p style="font-size: var(--text-sm); opacity: 0.8;">150 cuốn sách</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/images/logo.png" alt="TV4C Logo">
+                    <p>TV4C - Thư Viện Điện Tử Cộng Đồng là nền tảng đọc sách online và cho mượn sách giấy miễn phí,
+                        phục vụ cộng đồng yêu sách trên toàn quốc.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Zalo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+                                <path d="M8 11h8v2H8zm0-3h8v2H8zm0 6h5v2H8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Thư viện</h4>
+                    <div class="footer-links">
+                        <a href="#">Giới thiệu</a>
+                        <a href="#">Danh mục sách</a>
+                        <a href="#">Sách mới</a>
+                        <a href="#">Sách hay</a>
+                        <a href="#">Sách nói</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Hỗ trợ</h4>
+                    <div class="footer-links">
+                        <a href="#">Hướng dẫn mượn sách</a>
+                        <a href="#">Câu hỏi thường gặp</a>
+                        <a href="#">Chính sách bảo mật</a>
+                        <a href="#">Điều khoản sử dụng</a>
+                        <a href="#">Liên hệ</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Liên hệ</h4>
+                    <div class="footer-contact">
+                        <div class="footer-contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <span>1900 1234 56</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span>contact@tv4c.vn</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 TV4C. Tất cả quyền được bảo lưu.</p>
+                <div class="footer-legal">
+                    <a href="#">Điều khoản</a>
+                    <a href="#">Bảo mật</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Đắc Nhân Tâm - Dale Carnegie. Đọc sách online miễn phí tại TV4C.">
+    <title>Đắc Nhân Tâm - TV4C</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo.png" alt="TV4C Logo">
+                </a>
+
+                <div class="search-container">
+                    <form class="search-bar" action="books.html" method="GET">
+                        <input type="text" name="q" placeholder="Tìm kiếm sách, tác giả, ISBN...">
+                        <button type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="header-actions">
+                    <a href="login.html" class="header-action-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        <span>Đăng nhập</span>
+                    </a>
+                    <button class="mobile-menu-toggle" aria-label="Menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+                            Trang chủ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="books.html" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                            Tất cả sách
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                            Sách nói
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="container" style="padding-top: var(--space-6);">
+        <nav style="font-size: var(--text-sm); color: var(--gray-500);">
+            <a href="index.html" style="color: var(--primary-blue);">Trang chủ</a>
+            <span style="margin: 0 var(--space-2);">/</span>
+            <a href="books.html" style="color: var(--primary-blue);">Sách</a>
+            <span style="margin: 0 var(--space-2);">/</span>
+            <span>Đắc Nhân Tâm</span>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container">
+            <div class="book-detail">
+                <!-- Book Gallery -->
+                <div class="book-gallery">
+                    <div class="book-main-image">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600" alt="Đắc Nhân Tâm"
+                            id="mainBookImage">
+                    </div>
+                    <div class="book-thumbnails">
+                        <div class="book-thumbnail active">
+                            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=150"
+                                alt="Thumbnail 1">
+                        </div>
+                        <div class="book-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=150"
+                                alt="Thumbnail 2">
+                        </div>
+                        <div class="book-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=150"
+                                alt="Thumbnail 3">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Info -->
+                <div class="book-info">
+                    <span class="book-category">Kỹ năng sống</span>
+                    <h1 class="book-title">Đắc Nhân Tâm</h1>
+
+                    <div class="book-stats">
+                        <div class="book-stat rating">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <strong>4.8</strong>
+                            <span style="color: var(--gray-500);">(256 đánh giá)</span>
+                        </div>
+                        <div class="book-stat">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            <span>2,345 lượt xem</span>
+                        </div>
+                        <div class="book-stat">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                            <span>567 lượt mượn</span>
+                        </div>
+                    </div>
+
+                    <div class="book-meta-table">
+                        <div class="book-meta-row">
+                            <span class="book-meta-label">Tác giả</span>
+                            <span class="book-meta-value"><a href="books.html?author=dale-carnegie">Dale
+                                    Carnegie</a></span>
+                        </div>
+                        <div class="book-meta-row">
+                            <span class="book-meta-label">Dịch giả</span>
+                            <span class="book-meta-value">Nguyễn Văn Phước</span>
+                        </div>
+                        <div class="book-meta-row">
+                            <span class="book-meta-label">Nhà xuất bản</span>
+                            <span class="book-meta-value"><a href="books.html?publisher=nxb-tre">NXB Trẻ</a></span>
+                        </div>
+                        <div class="book-meta-row">
+                            <span class="book-meta-label">Năm xuất bản</span>
+                            <span class="book-meta-value">2020</span>
+                        </div>
+                        <div class="book-meta-row">
+                            <span class="book-meta-label">Số trang</span>
+                            <span class="book-meta-value">320 trang</span>
+                        </div>
+                        <div class="book-meta-row">
+                            <span class="book-meta-label">ISBN</span>
+                            <span class="book-meta-value">978-604-1-12345-6</span>
+                        </div>
+                        <div class="book-meta-row">
+                            <span class="book-meta-label">Định dạng</span>
+                            <span class="book-meta-value">Sách giấy, Sách điện tử, Sách nói</span>
+                        </div>
+                        <div class="book-meta-row">
+                            <span class="book-meta-label">Tình trạng</span>
+                            <span class="book-meta-value" style="color: var(--success); font-weight: 600;">Còn
+                                sách</span>
+                        </div>
+                    </div>
+
+                    <div class="book-actions">
+                        <button class="book-action-main primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                            Mượn sách
+                        </button>
+                        <button class="book-action-main secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                            Đọc sách điện tử
+                        </button>
+                        <button class="book-action-main tertiary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 010-7.072m-2.83 9.9a9 9 0 010-12.728" />
+                            </svg>
+                            Nghe sách nói
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Book Description Tabs -->
+            <div class="comments-section" style="margin-top: var(--space-8);">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="intro">Giới thiệu</button>
+                    <button class="tab-btn" data-tab="toc">Mục lục</button>
+                </div>
+
+                <div class="tab-content active" id="intro">
+                    <div style="line-height: 1.8; color: var(--gray-700);">
+                        <p><strong>Đắc Nhân Tâm</strong> (How to Win Friends and Influence People) là cuốn sách nổi
+                            tiếng nhất, bán chạy nhất và có ảnh hưởng nhất của mọi thời đại do tác giả Dale Carnegie
+                            viết.</p>
+
+                        <p>Đây là cuốn sách duy nhất về thể loại self-help liên tục đứng đầu danh mục sách bán chạy nhất
+                            do báo The New York Times bình chọn suốt 10 năm liền. Được xuất bản lần đầu vào năm 1936,
+                            cho đến nay, cuốn sách đã được dịch ra hầu hết các thứ tiếng trên thế giới và có mặt ở hàng
+                            trăm quốc gia.</p>
+
+                        <p>Nội dung cuốn sách đề cập đến nghệ thuật thu phục lòng người, cách gây dựng và duy trì các
+                            mối quan hệ, cách ứng xử với người khác để đạt được sự hợp tác và thành công trong cuộc sống
+                            cũng như trong công việc.</p>
+
+                        <h3 style="margin-top: var(--space-6); margin-bottom: var(--space-3); color: var(--gray-900);">
+                            Những điểm chính trong sách:</h3>
+                        <ul style="padding-left: var(--space-6); margin-bottom: var(--space-4);">
+                            <li style="margin-bottom: var(--space-2);">Nghệ thuật ứng xử cơ bản</li>
+                            <li style="margin-bottom: var(--space-2);">Sáu cách tạo thiện cảm</li>
+                            <li style="margin-bottom: var(--space-2);">Mười hai cách hướng người khác suy nghĩ theo bạn
+                            </li>
+                            <li style="margin-bottom: var(--space-2);">Chín cách thay đổi người khác mà không gây ra sự
+                                phẫn nộ</li>
+                        </ul>
+
+                        <p>Cuốn sách phù hợp với mọi đối tượng, đặc biệt là những ai muốn phát triển kỹ năng giao tiếp,
+                            xây dựng mối quan hệ và đạt được thành công trong cuộc sống.</p>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="toc">
+                    <div style="line-height: 1.8; color: var(--gray-700);">
+                        <h3 style="margin-bottom: var(--space-4); color: var(--gray-900);">Phần 1: Nghệ thuật ứng xử cơ
+                            bản</h3>
+                        <ol style="padding-left: var(--space-6); margin-bottom: var(--space-6);">
+                            <li style="margin-bottom: var(--space-2);">Không chỉ trích, lên án hay phàn nàn</li>
+                            <li style="margin-bottom: var(--space-2);">Thật lòng khen ngợi người khác</li>
+                            <li style="margin-bottom: var(--space-2);">Khơi gợi nhu cầu của người khác</li>
+                        </ol>
+
+                        <h3 style="margin-bottom: var(--space-4); color: var(--gray-900);">Phần 2: Sáu cách tạo thiện
+                            cảm</h3>
+                        <ol style="padding-left: var(--space-6); margin-bottom: var(--space-6);">
+                            <li style="margin-bottom: var(--space-2);">Thật lòng quan tâm đến người khác</li>
+                            <li style="margin-bottom: var(--space-2);">Mỉm cười</li>
+                            <li style="margin-bottom: var(--space-2);">Nhớ tên người khác</li>
+                            <li style="margin-bottom: var(--space-2);">Lắng nghe và khuyến khích người khác nói</li>
+                            <li style="margin-bottom: var(--space-2);">Nói về những gì họ quan tâm</li>
+                            <li style="margin-bottom: var(--space-2);">Làm cho họ cảm thấy mình quan trọng</li>
+                        </ol>
+
+                        <h3 style="margin-bottom: var(--space-4); color: var(--gray-900);">Phần 3: Cách hướng người khác
+                            suy nghĩ theo bạn</h3>
+                        <ol style="padding-left: var(--space-6);">
+                            <li style="margin-bottom: var(--space-2);">Tránh tranh cãi</li>
+                            <li style="margin-bottom: var(--space-2);">Tôn trọng ý kiến người khác</li>
+                            <li style="margin-bottom: var(--space-2);">Thừa nhận sai lầm nhanh chóng</li>
+                            <li style="margin-bottom: var(--space-2);">Bắt đầu bằng sự thân thiện</li>
+                            <li style="margin-bottom: var(--space-2);">... và nhiều bài học khác</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comments Section -->
+            <section class="comments-section">
+                <h2 class="section-title">Bình luận (24)</h2>
+
+                <form class="comment-form">
+                    <textarea placeholder="Viết bình luận của bạn..."></textarea>
+                    <button type="submit" class="btn btn-primary">Gửi bình luận</button>
+                </form>
+
+                <div class="comment-list">
+                    <div class="comment-item">
+                        <div class="comment-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Nguyen+Van+A&background=3b82f6&color=fff"
+                                alt="Avatar">
+                        </div>
+                        <div class="comment-content">
+                            <div class="comment-header">
+                                <span class="comment-author">Nguyễn Văn A</span>
+                                <span class="comment-date">2 ngày trước</span>
+                            </div>
+                            <p class="comment-text">Sách rất hay và bổ ích! Tôi đã học được rất nhiều kỹ năng giao tiếp
+                                từ cuốn sách này. Highly recommended cho những ai muốn phát triển bản thân.</p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Tran+Thi+B&background=10b981&color=fff"
+                                alt="Avatar">
+                        </div>
+                        <div class="comment-content">
+                            <div class="comment-header">
+                                <span class="comment-author">Trần Thị B</span>
+                                <span class="comment-date">1 tuần trước</span>
+                            </div>
+                            <p class="comment-text">Đây là cuốn sách kinh điển mà ai cũng nên đọc ít nhất một lần trong
+                                đời. Những bài học trong sách rất thực tế và dễ áp dụng.</p>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Le+Van+C&background=f59e0b&color=fff"
+                                alt="Avatar">
+                        </div>
+                        <div class="comment-content">
+                            <div class="comment-header">
+                                <span class="comment-author">Lê Văn C</span>
+                                <span class="comment-date">2 tuần trước</span>
+                            </div>
+                            <p class="comment-text">Tôi đã mượn sách từ TV4C và đọc xong trong 1 tuần. Dịch vụ mượn sách
+                                rất tiện lợi, sách còn mới và đẹp. Cảm ơn TV4C!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Books -->
+            <section style="margin-top: var(--space-16);">
+                <h2 class="section-title">Có thể bạn thích</h2>
+                <div class="grid grid-5">
+                    <article class="book-card">
+                        <div class="book-card-image">
+                            <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400" alt="Sách">
+                        </div>
+                        <div class="book-card-content">
+                            <h3 class="book-card-title"><a href="book-detail.html">Nhà Giả Kim</a></h3>
+                            <p class="book-card-author">Paulo Coelho</p>
+                        </div>
+                    </article>
+                    <article class="book-card">
+                        <div class="book-card-image">
+                            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400" alt="Sách">
+                        </div>
+                        <div class="book-card-content">
+                            <h3 class="book-card-title"><a href="book-detail.html">Tư Duy Nhanh Và Chậm</a></h3>
+                            <p class="book-card-author">Daniel Kahneman</p>
+                        </div>
+                    </article>
+                    <article class="book-card">
+                        <div class="book-card-image">
+                            <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=400" alt="Sách">
+                        </div>
+                        <div class="book-card-content">
+                            <h3 class="book-card-title"><a href="book-detail.html">Atomic Habits</a></h3>
+                            <p class="book-card-author">James Clear</p>
+                        </div>
+                    </article>
+                    <article class="book-card">
+                        <div class="book-card-image">
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400" alt="Sách">
+                        </div>
+                        <div class="book-card-content">
+                            <h3 class="book-card-title"><a href="book-detail.html">Cha Giàu Cha Nghèo</a></h3>
+                            <p class="book-card-author">Robert Kiyosaki</p>
+                        </div>
+                    </article>
+                    <article class="book-card">
+                        <div class="book-card-image">
+                            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=400" alt="Sách">
+                        </div>
+                        <div class="book-card-content">
+                            <h3 class="book-card-title"><a href="book-detail.html">Sapiens</a></h3>
+                            <p class="book-card-author">Yuval Noah Harari</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/images/logo.png" alt="TV4C Logo">
+                    <p>TV4C - Thư Viện Điện Tử Cộng Đồng là nền tảng đọc sách online và cho mượn sách giấy miễn phí.</p>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Thư viện</h4>
+                    <div class="footer-links">
+                        <a href="#">Giới thiệu</a>
+                        <a href="#">Danh mục sách</a>
+                        <a href="#">Sách mới</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Hỗ trợ</h4>
+                    <div class="footer-links">
+                        <a href="#">Hướng dẫn</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Liên hệ</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Liên hệ</h4>
+                    <div class="footer-contact">
+                        <div class="footer-contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span>contact@tv4c.vn</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 TV4C. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Book gallery functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const mainImage = document.getElementById('mainBookImage');
+            const thumbnails = document.querySelectorAll('.book-thumbnail');
+
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function () {
+                    const newSrc = this.querySelector('img').src.replace('w=150', 'w=600');
+                    mainImage.src = newSrc;
+
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
