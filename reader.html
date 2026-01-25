@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đọc sách - TV4C</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #e5e5e5;
+        }
+
+        .reader-header {
+            height: 60px;
+            background: #1f2937;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .reader-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .back-btn {
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.8;
+        }
+
+        .back-btn:hover {
+            opacity: 1;
+        }
+
+        /* Ebook Mode */
+        .ebook-container {
+            height: calc(100vh - 60px);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            background: #d1d5db;
+        }
+
+        .book-page {
+            width: 800px;
+            height: 1100px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 60px;
+            margin-bottom: 20px;
+            color: #374151;
+            line-height: 1.8;
+            text-align: justify;
+            display: none;
+            /* JS will show */
+        }
+
+        .book-page.active {
+            display: block;
+        }
+
+        /* Audio Mode */
+        .audio-container {
+            height: calc(100vh - 60px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, #1e3a8a, #0f172a);
+            color: white;
+        }
+
+        .player-ui {
+            width: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .audio-disk {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: url('https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400') center/cover;
+            margin: 0 auto 30px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            animation: spin 10s linear infinite;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+
+        .play-btn {
+            width: 60px;
+            height: 60px;
+            background: white;
+            color: #1e3a8a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reader-header">
+        <a href="book-detail.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Quay lại chi tiết</a>
+        <span class="reader-title">Đắc Nhân Tâm</span>
+        <div class="w-20"></div> <!-- Spacer -->
+    </div>
+
+    <!-- EBOOK VIEW -->
+    <div id="ebookView" class="ebook-container" style="display: none;">
+        <div class="book-page active">
+            <h1 style="text-align: center; margin-bottom: 40px;">ĐẮC NHÂN TÂM</h1>
+            <h3 style="text-align: center; margin-bottom: 80px;">DALE CARNEGIE</h3>
+            <p><strong>CHƯƠNG 1: MUỐN LẤY MẬT THÌ ĐỪNG PHÁ TỔ ONG</strong></p>
+            <p>Ngày 7 tháng 5 năm 1931, tiếng súng huyên náo cả thành phố New York...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.</p>
+            <div style="margin-top: 50px; text-align: center; color: #9ca3af;">Trang 1</div>
+        </div>
+        <div class="book-page active">
+            <p><strong>CHƯƠNG 2: BÍ MẬT LỚN NHẤT TRONG PHÉP ỨNG XỬ</strong></p>
+            <p>Trên đời này chỉ có một cách duy nhất để khiến ai đó làm bất cứ điều gì. Bạn có bao giờ nghĩ đến điều đó
+                chưa? Vâng, chỉ có một cách duy nhất. Đó là làm cho họ *muốn* làm điều đó.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            <div style="margin-top: 400px; text-align: center; color: #9ca3af;">Trang 2</div>
+        </div>
+    </div>
+
+    <!-- AUDIO VIEW -->
+    <div id="audioView" class="audio-container" style="display: none;">
+        <div class="player-ui">
+            <div class="audio-disk"></div>
+            <h2 class="text-xl font-bold mb-1">Đắc Nhân Tâm</h2>
+            <p class="text-sm opacity-70 mb-6">Chương 1: Muốn lấy mật...</p>
+
+            <!-- Progress Bar -->
+            <div class="w-full bg-white/20 h-1 rounded-full mb-6 relative">
+                <div class="bg-white h-full rounded-full" style="width: 30%;"></div>
+            </div>
+
+            <div class="controls items-center">
+                <i class="fa-solid fa-backward-step cursor-pointer hover:opacity-80"></i>
+                <div class="play-btn"><i class="fa-solid fa-play" style="margin-left: 5px;"></i></div>
+                <i class="fa-solid fa-forward-step cursor-pointer hover:opacity-80"></i>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const type = urlParams.get('type');
+
+        if (type === 'audio') {
+            document.getElementById('audioView').style.display = 'flex';
+        } else {
+            // Default to ebook
+            document.getElementById('ebookView').style.display = 'flex';
+        }
+    </script>
+</body>
+
+</html>

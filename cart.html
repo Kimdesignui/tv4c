@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ mượn sách - TV4C</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+
+<body>
+    <header class="top-header">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="TV4C Logo"></a>
+            <div class="header-right flex items-center gap-6">
+                <div class="hotline flex items-center gap-2 text-primary font-bold"><i
+                        class="fa-solid fa-phone-volume"></i> <span>024.37627819</span></div>
+                <div class="user-actions flex gap-3">
+                    <a href="profile.html?tab=saved" class="icon-btn"><i class="fa-regular fa-bookmark"></i></a>
+                    <a href="profile.html?tab=favorites" class="icon-btn"><i class="fa-regular fa-heart"></i></a>
+                    <a href="login.html" class="icon-btn user-btn"><i class="fa-regular fa-user"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="main-navbar">
+        <div class="container flex items-center justify-between h-full">
+            <div class="nav-left"><button class="cat-trigger-btn"><i class="fa-solid fa-bars"></i> <span>DANH MỤC THƯ
+                        VIỆN</span></button></div>
+            <div class="nav-center flex-1 mx-8">
+                <div class="search-box">
+                    <select class="search-select">
+                        <option>Sách bản quyền</option>
+                    </select>
+                    <input type="text" placeholder="Tìm kiếm..." class="search-input">
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-links flex gap-6">
+                    <li><a href="#">Thông tin chung</a></li>
+                    <li><a href="news.html">Tin tức</a></li>
+                    <li><a href="#">Hướng dẫn</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="section bg-gray-50">
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Trang chủ</a> <i class="fa-solid fa-chevron-right"></i> <span
+                    class="text-primary">Giỏ mượn sách</span></div>
+            <h2 class="page-title">Giỏ sách của bạn</h2>
+
+            <div class="bg-white p-6 rounded shadow-sm mb-6">
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">#</th>
+                                <th>Thông tin sách</th>
+                                <th>Tác giả</th>
+                                <th>Năm XB</th>
+                                <th>Trạng thái</th>
+                                <th style="text-align: right;">Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <div class="flex items-center gap-3">
+                                        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=100"
+                                            class="w-12 h-16 object-cover rounded">
+                                        <span class="font-bold">Đắc Nhân Tâm</span>
+                                    </div>
+                                </td>
+                                <td>Dale Carnegie</td>
+                                <td>2024</td>
+                                <td class="text-green-600 font-medium">Có sẵn</td>
+                                <td style="text-align: right;">
+                                    <button class="text-red hover:bg-red-50 p-2 rounded"><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <div class="flex items-center gap-3">
+                                        <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=100"
+                                            class="w-12 h-16 object-cover rounded">
+                                        <span class="font-bold">Nhà Giả Kim</span>
+                                    </div>
+                                </td>
+                                <td>Paulo Coelho</td>
+                                <td>2023</td>
+                                <td class="text-green-600 font-medium">Có sẵn</td>
+                                <td style="text-align: right;">
+                                    <button class="text-red hover:bg-red-50 p-2 rounded"><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="flex justify-end gap-4">
+                <a href="books.html" class="px-6 py-3 rounded border border-gray-300 font-medium bg-white">Tiếp tục chọn
+                    sách</a>
+                <button class="px-6 py-3 rounded bg-primary text-white font-bold"
+                    style="background: var(--primary-blue);">Đăng ký mượn (2 cuốn)</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-simple" style="background: #1e3a8a; padding: 20px 0; border-top: 4px solid #2563eb;">
+        <div class="container text-center">
+            <p class="footer-copyright text-white text-sm opacity-80">© 2026 TV4C. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

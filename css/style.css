@@ -226,6 +226,273 @@ img {
 }
 
 /* ============================================
+   8. INNER PAGES GLOBAL
+   ============================================ */
+.breadcrumb {
+  padding: var(--space-4) 0;
+  color: var(--text-gray);
+  font-size: 0.9rem;
+}
+
+.breadcrumb a:hover {
+  color: var(--primary-blue);
+  text-decoration: underline;
+}
+
+.breadcrumb i {
+  font-size: 0.7rem;
+  margin: 0 8px;
+  opacity: 0.5;
+}
+
+.page-title {
+  font-family: 'Outfit';
+  font-size: 1.75rem;
+  color: var(--primary-blue-dark);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid #e5e7eb;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.page-link {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--text-gray);
+  cursor: pointer;
+}
+
+.page-link:hover,
+.page-link.active {
+  background: var(--primary-blue);
+  color: var(--white);
+  border-color: var(--primary-blue);
+}
+
+/* Sidebar Filters (books.html) */
+.filter-group {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 20px;
+}
+
+.filter-group:last-child {
+  border: none;
+}
+
+.filter-title {
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  cursor: pointer;
+}
+
+.filter-item input {
+  width: 16px;
+  height: 16px;
+}
+
+/* Book Detail (book-detail.html) */
+.book-info-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 40px;
+}
+
+.book-detail-cover {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-action {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-borrow {
+  background: var(--primary-blue);
+  color: var(--white);
+}
+
+.btn-read {
+  background: var(--white);
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+.btn-listen {
+  background: var(--white);
+  border-color: var(--accent-yellow);
+  color: #b45309;
+}
+
+/* Profile/Table Styles (profile.html, cart.html) */
+.table-container {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.data-table th {
+  background: #f9fafb;
+  font-weight: 600;
+  color: var(--text-gray);
+}
+
+.profile-tabs {
+  width: 250px;
+  flex-shrink: 0;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 10px;
+  height: fit-content;
+}
+
+.profile-tab-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border-radius: var(--radius-sm);
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+.profile-tab-item:hover,
+.profile-tab-item.active {
+  background: #eff6ff;
+  color: var(--primary-blue);
+}
+
+/* Reader (reader.html) */
+.reader-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #e5e5e5;
+}
+
+.reader-toolbar {
+  height: 60px;
+  background: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.reader-content {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.pdf-page {
+  background: white;
+  width: 800px;
+  height: 1131px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+/* Audio Player */
+.audio-player-ui {
+  max-width: 800px;
+  margin: 50px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.disk-cover {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 30px;
+  animation: spin 10s linear infinite;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  animation-play-state: paused;
+}
+
+.disk-cover.playing {
+  animation-play-state: running;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   19. Authentication Pages
+   ============================================ */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+}
+
+/* ... (Keep existing Auth styles) */
+
+/* ============================================
    2. NAVBAR (Blue)
    ============================================ */
 .main-navbar {
