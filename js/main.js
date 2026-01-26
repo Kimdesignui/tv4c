@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize all components
     initSlider();
+    initNewsSlider(); // Added News Slider
     initMobileMenu();
     initTabs();
     initDropdown();
@@ -15,16 +16,22 @@ document.addEventListener('DOMContentLoaded', function () {
 /**
  * Hero Slider
  */
+/**
+ * Hero Slider
+ */
 function initSlider() {
-    const slides = document.querySelectorAll('.hero-slide');
-    const dots = document.querySelectorAll('.slider-dot');
-    const prevBtn = document.querySelector('.slider-arrow.prev');
-    const nextBtn = document.querySelector('.slider-arrow.next');
+    // Selectors matching index.html
+    const sliderContainer = document.querySelector('.hero-slider');
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.slider-btn.prev');
+    const nextBtn = document.querySelector('.slider-btn.next');
 
-    if (slides.length === 0) return;
+    if (!slides.length) return;
 
     let currentSlide = 0;
     let autoSlideInterval;
+    const intervalTime = 5000;
 
     function showSlide(index) {
         // Handle wrapping
@@ -38,7 +45,7 @@ function initSlider() {
 
         // Update dots
         dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === index);
+            if (dot) dot.classList.toggle('active', i === index);
         });
 
         currentSlide = index;
@@ -53,34 +60,35 @@ function initSlider() {
     }
 
     function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 5000);
+        stopAutoSlide(); // Clear existing to allow restart
+        autoSlideInterval = setInterval(nextSlide, intervalTime);
     }
 
     function stopAutoSlide() {
-        clearInterval(autoSlideInterval);
+        if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = null;
+        }
     }
 
     // Event listeners
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
             nextSlide();
-            stopAutoSlide();
-            startAutoSlide();
+            startAutoSlide(); // Restart timer
         });
     }
 
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
             prevSlide();
-            stopAutoSlide();
-            startAutoSlide();
+            startAutoSlide(); // Restart timer
         });
     }
 
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             showSlide(index);
-            stopAutoSlide();
             startAutoSlide();
         });
     });
@@ -88,11 +96,10 @@ function initSlider() {
     // Start auto slide
     startAutoSlide();
 
-    // Pause on hover
-    const heroSection = document.querySelector('.hero');
-    if (heroSection) {
-        heroSection.addEventListener('mouseenter', stopAutoSlide);
-        heroSection.addEventListener('mouseleave', startAutoSlide);
+    // Pause on hover (Optional, but good UX)
+    if (sliderContainer) {
+        sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+        sliderContainer.addEventListener('mouseleave', startAutoSlide);
     }
 }
 
@@ -444,4 +451,33 @@ function initCommentForm() {
         textarea.value = '';
         showToast('Bình luận đã được gửi', 'success');
     });
+}
+
+/**
+ * News Slider (Hot News)
+ */
+function initNewsSlider() {
+    const slides = document.querySelectorAll('.news-slide');
+    if (!slides.length) return;
+
+    let currentIndex = 0;
+    const intervalTime = 4000; // 4 seconds
+
+    function showSlide(index) {
+        // Wrap around
+        if (index >= slides.length) index = 0;
+        if (index < 0) index = slides.length - 1;
+
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        currentIndex = index;
+    }
+
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+    // Auto Play
+    setInterval(nextSlide, intervalTime);
 }

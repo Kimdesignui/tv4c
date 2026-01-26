@@ -88,12 +88,14 @@
             <!-- Center: Search Bar -->
             <div class="nav-center flex-1 mx-8">
                 <div class="search-box">
-                    <select class="search-select">
-                        <option>Sách bản quyền</option>
-                        <option>Tài liệu thư viện</option>
-                        <option>Tài liệu sưu tầm</option>
-                    </select>
-                    <input type="text" placeholder="Nhập từ khoá để tìm kiếm..." class="search-input">
+                    <div class="search-input-group">
+                        <select class="search-select">
+                            <option>Ebook</option>
+                            <option>Audiobooks</option>
+                            <option>Đa phương tiện</option>
+                        </select>
+                        <input type="text" placeholder="Nhập từ khoá để tìm kiếm" class="search-input">
+                    </div>
                     <button class="search-btn">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
@@ -203,74 +205,177 @@
     <section class="section news-section">
         <div class="container">
             <div class="section-header flex justify-between items-center mb-6">
-                <h2 class="section-title text-primary">Tin tức</h2>
-                <a href="news.html" class="view-all-link text-red">Xem tất cả <i
-                        class="fa-solid fa-chevron-right"></i></a>
+                <!-- Title left aligned as usual, or as per design. Design shows "Tin tức" left, "Xem tất cả" right -->
+                <h2 class="section-title text-primary font-bold text-2xl">Tin tức</h2>
+                <a href="news.html" class="view-all-link text-red font-semibold text-sm">Xem tất cả <i
+                        class="fa-solid fa-chevron-right ml-1"></i></a>
             </div>
 
-            <div class="news-grid">
-                <!-- Main News (Left) -->
-                <article class="news-main">
-                    <div class="news-thumb big">
-                        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800" alt="News">
+            <div class="news-redesign-grid">
+                <!-- Left: Hot News Slider (40%) -->
+                <div class="news-left-slider rel">
+                    <!-- Slides Container -->
+                    <div class="news-slider-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="news-slide active">
+                            <a href="news-detail.html" class="block w-full h-full relative group">
+                                <img src="assets/images/banner-sub-1.png" alt="News Hot"
+                                    class="w-full h-full object-cover rounded-md">
+                                <div
+                                    class="news-overlay absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white rounded-b-md">
+                                    <h3
+                                        class="font-bold text-lg mb-2 leading-tight group-hover:text-yellow-400 transition">
+                                        Ra mắt cuốn sách của Tổng Bí thư Nguyễn Phú Trọng về phát triển văn hóa</h3>
+                                    <p class="text-xs opacity-90 limit-2 mb-2">Chiều 21-6, tại Hà Nội, Ban Tuyên giáo
+                                        Trung ương, Bộ Văn hóa, Thể thao và Du lịch, Nhà Xuất bản Chính trị quốc gia Sự
+                                        thật...</p>
+                                    <span class="text-yellow-400 text-xs font-bold uppercase">Chi tiết</span>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="news-slide">
+                            <a href="news-detail.html" class="block w-full h-full relative group">
+                                <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800"
+                                    alt="News Hot 2" class="w-full h-full object-cover rounded-md">
+                                <div
+                                    class="news-overlay absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white rounded-b-md">
+                                    <h3
+                                        class="font-bold text-lg mb-2 leading-tight group-hover:text-yellow-400 transition">
+                                        Hội nghị văn hóa toàn quốc triển khai nghị quyết đại hội XIII</h3>
+                                    <p class="text-xs opacity-90 limit-2 mb-2">Quán triệt sâu sắc các quan điểm, chủ
+                                        trương của Đảng về xây dựng và phát triển văn hóa, con người Việt Nam...</p>
+                                    <span class="text-yellow-400 text-xs font-bold uppercase">Chi tiết</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="news-info mt-4">
-                        <h3 class="news-title big"><a href="news.html">Ra mắt cuốn sách của Tổng Bí thư về phát triển
-                                văn hóa</a></h3>
-                        <p class="news-desc">Chiều 21-6, tại Hà Nội, Ban Tuyên giáo Trung ương, Bộ Văn hóa, Thể thao và
-                            Du lịch phối hợp ra mắt cuốn sách quý...</p>
-                        <a href="news.html" class="read-more">Chi tiết</a>
-                    </div>
-                </article>
+                </div>
 
-                <!-- Sub News (Right - Grid 2) -->
-                <div class="news-sub-list grid grid-2 gap-6">
+                <!-- Right: News Grid (60%) -> 2 Cols x 3 Rows -->
+                <div class="news-right-grid">
                     <!-- Item 1 -->
-                    <article class="news-item flex gap-4">
-                        <div class="news-thumb small">
-                            <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=200" alt="News">
+                    <a href="news-detail.html" class="news-card-item flex gap-4 group">
+                        <div class="thumb w-[120px] h-[80px] shrink-0 overflow-hidden rounded-md">
+                            <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=200" alt="News"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
                         </div>
-                        <div class="news-info">
-                            <h4 class="news-title small"><a href="#">Cách thức dự thi trực tuyến</a></h4>
-                            <p class="news-desc limit-2">Hướng dẫn chi tiết cách tham gia cuộc thi...</p>
-                            <a href="#" class="read-more">Chi tiết</a>
+                        <div class="info">
+                            <h4
+                                class="font-bold text-sm mb-1 text-primary group-hover:text-blue-600 transition line-clamp-2">
+                                Cách thức dự thi Cách thức dự thi</h4>
+                            <p class="text-xs text-gray-500 mb-1 line-clamp-2">Người dự thi sử dụng các thiết bị điện tử
+                                có kết nối Internet...</p>
+                            <span class="text-red-500 text-xs font-semibold">Chi tiết</span>
                         </div>
-                    </article>
+                    </a>
+
                     <!-- Item 2 -->
-                    <article class="news-item flex gap-4">
-                        <div class="news-thumb small">
-                            <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=200" alt="News">
+                    <a href="news-detail.html" class="news-card-item flex gap-4 group">
+                        <div class="thumb w-[120px] h-[80px] shrink-0 overflow-hidden rounded-md">
+                            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=200" alt="News"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
                         </div>
-                        <div class="news-info">
-                            <h4 class="news-title small"><a href="#">Hành trình nhân loại</a></h4>
-                            <p class="news-desc limit-2">Cuốn sách mới về lịch sử phát triển...</p>
-                            <a href="#" class="read-more">Chi tiết</a>
+                        <div class="info">
+                            <h4
+                                class="font-bold text-sm mb-1 text-primary group-hover:text-blue-600 transition line-clamp-2">
+                                Cách thức dự thi Cách thức dự thi</h4>
+                            <p class="text-xs text-gray-500 mb-1 line-clamp-2">Người dự thi sử dụng các thiết bị điện tử
+                                có kết nối Internet...</p>
+                            <span class="text-red-500 text-xs font-semibold">Chi tiết</span>
                         </div>
-                    </article>
+                    </a>
+
                     <!-- Item 3 -->
-                    <article class="news-item flex gap-4">
-                        <div class="news-thumb small">
-                            <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=200" alt="News">
+                    <a href="news-detail.html" class="news-card-item flex gap-4 group">
+                        <div class="thumb w-[120px] h-[80px] shrink-0 overflow-hidden rounded-md">
+                            <img src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?w=200" alt="News"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
                         </div>
-                        <div class="news-info">
-                            <h4 class="news-title small"><a href="#">Nơi rìa thế giới</a></h4>
-                            <p class="news-desc limit-2">Tác phẩm đạt giải thưởng văn học 2024...</p>
-                            <a href="#" class="read-more">Chi tiết</a>
+                        <div class="info">
+                            <h4
+                                class="font-bold text-sm mb-1 text-primary group-hover:text-blue-600 transition line-clamp-2">
+                                Cách thức dự thi Cách thức dự thi</h4>
+                            <p class="text-xs text-gray-500 mb-1 line-clamp-2">Người dự thi sử dụng các thiết bị điện tử
+                                có kết nối Internet...</p>
+                            <span class="text-red-500 text-xs font-semibold">Chi tiết</span>
                         </div>
-                    </article>
+                    </a>
+
                     <!-- Item 4 -->
-                    <article class="news-item flex gap-4">
-                        <div class="news-thumb small">
-                            <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=200" alt="News">
+                    <a href="news-detail.html" class="news-card-item flex gap-4 group">
+                        <div class="thumb w-[120px] h-[80px] shrink-0 overflow-hidden rounded-md">
+                            <img src="https://images.unsplash.com/photo-1535905557558-afc4877a26fc?w=200" alt="News"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
                         </div>
-                        <div class="news-info">
-                            <h4 class="news-title small"><a href="#">Các đế chế ngôn từ</a></h4>
-                            <p class="news-desc limit-2">Khám phá sức mạnh của ngôn ngữ...</p>
-                            <a href="#" class="read-more">Chi tiết</a>
+                        <div class="info">
+                            <h4
+                                class="font-bold text-sm mb-1 text-primary group-hover:text-blue-600 transition line-clamp-2">
+                                Cách thức dự thi Cách thức dự thi</h4>
+                            <p class="text-xs text-gray-500 mb-1 line-clamp-2">Người dự thi sử dụng các thiết bị điện tử
+                                có kết nối Internet...</p>
+                            <span class="text-red-500 text-xs font-semibold">Chi tiết</span>
                         </div>
-                    </article>
+                    </a>
+
+                    <!-- Item 5 -->
+                    <a href="news-detail.html" class="news-card-item flex gap-4 group">
+                        <div class="thumb w-[120px] h-[80px] shrink-0 overflow-hidden rounded-md">
+                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=200" alt="News"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                        </div>
+                        <div class="info">
+                            <h4
+                                class="font-bold text-sm mb-1 text-primary group-hover:text-blue-600 transition line-clamp-2">
+                                Cách thức dự thi Cách thức dự thi</h4>
+                            <p class="text-xs text-gray-500 mb-1 line-clamp-2">Người dự thi sử dụng các thiết bị điện tử
+                                có kết nối Internet...</p>
+                            <span class="text-red-500 text-xs font-semibold">Chi tiết</span>
+                        </div>
+                    </a>
+
+                    <!-- Item 6 -->
+                    <a href="news-detail.html" class="news-card-item flex gap-4 group">
+                        <div class="thumb w-[120px] h-[80px] shrink-0 overflow-hidden rounded-md">
+                            <img src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?w=200" alt="News"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                        </div>
+                        <div class="info">
+                            <h4
+                                class="font-bold text-sm mb-1 text-primary group-hover:text-blue-600 transition line-clamp-2">
+                                Cách thức dự thi Cách thức dự thi</h4>
+                            <p class="text-xs text-gray-500 mb-1 line-clamp-2">Người dự thi sử dụng các thiết bị điện tử
+                                có kết nối Internet...</p>
+                            <span class="text-red-500 text-xs font-semibold">Chi tiết</span>
+                        </div>
+                    </a>
                 </div>
             </div>
+        </div>
+        <!-- Item 3 -->
+        <article class="news-item flex gap-4">
+            <div class="news-thumb small">
+                <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=200" alt="News">
+            </div>
+            <div class="news-info">
+                <h4 class="news-title small"><a href="#">Nơi rìa thế giới</a></h4>
+                <p class="news-desc limit-2">Tác phẩm đạt giải thưởng văn học 2024...</p>
+                <a href="#" class="read-more">Chi tiết</a>
+            </div>
+        </article>
+        <!-- Item 4 -->
+        <article class="news-item flex gap-4">
+            <div class="news-thumb small">
+                <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=200" alt="News">
+            </div>
+            <div class="news-info">
+                <h4 class="news-title small"><a href="#">Các đế chế ngôn từ</a></h4>
+                <p class="news-desc limit-2">Khám phá sức mạnh của ngôn ngữ...</p>
+                <a href="#" class="read-more">Chi tiết</a>
+            </div>
+        </article>
+        </div>
+        </div>
         </div>
     </section>
 
@@ -583,7 +688,6 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="js/slider.js"></script>
 </body>
 
 </html>
