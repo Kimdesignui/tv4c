@@ -28,10 +28,14 @@
                     <a href="profile.html?tab=favorites" class="icon-btn" title="Yêu thích"><i
                             class="fa-regular fa-heart"></i></a>
                     <div class="user-dropdown-container">
-                        <a href="profile.html" class="icon-btn user-btn"><i class="fa-regular fa-user"></i></a>
+                        <a href="login.html" class="icon-btn user-btn"><i class="fa-regular fa-user"></i></a>
+                        <!-- Dropdown Menu (Hover) -->
                         <div class="user-menu-dropdown">
                             <a href="profile.html"><i class="fa-solid fa-circle-info"></i> Thông tin tài khoản</a>
                             <a href="profile.html?tab=password"><i class="fa-solid fa-key"></i> Thay đổi mật khẩu</a>
+                            <a href="profile.html?tab=reading"><i class="fa-solid fa-book-open"></i> Sách đang đọc</a>
+                            <a href="profile.html?tab=favorites"><i class="fa-solid fa-heart"></i> Tủ sách yêu thích</a>
+                            <div class="divider"></div>
                             <a href="login.html" class="text-red"><i class="fa-solid fa-right-from-bracket"></i> Đăng
                                 xuất</a>
                         </div>
@@ -42,8 +46,29 @@
     </header>
     <nav class="main-navbar">
         <div class="container flex items-center justify-between h-full">
-            <div class="nav-left"><button class="cat-trigger-btn"><i class="fa-solid fa-bars"></i> <span>DANH MỤC THƯ
-                        VIỆN</span></button></div>
+            <div class="nav-left">
+                <button class="cat-trigger-btn">
+                    <i class="fa-solid fa-bars"></i>
+                    <span>DANH MỤC THƯ VIỆN</span>
+                </button>
+                <!-- Dropdown Menu for Inner Pages -->
+                <div class="cat-dropdown">
+                    <ul class="cat-list">
+                        <li><a href="books.html?cat=vh">Văn học Việt Nam</a></li>
+                        <li><a href="books.html?cat=nn">Văn học Nước ngoài</a></li>
+                        <li><a href="books.html?cat=kt">Kinh tế & Quản trị</a></li>
+                        <li><a href="books.html?cat=kn">Tâm lý & Kỹ năng</a></li>
+                        <li><a href="books.html?cat=tn">Thiếu nhi</a></li>
+                        <li><a href="books.html?cat=ls">Lịch sử & Chính trị</a></li>
+                        <li><a href="books.html?cat=vhnt">Văn hóa & Nghệ thuật</a></li>
+                        <li><a href="books.html?cat=kh">Khoa học & Kỹ thuật</a></li>
+                        <li><a href="books.html?cat=gk">Sách Giáo khoa</a></li>
+                    </ul>
+                    <a href="books.html" class="cat-view-all">
+                        <i class="fa-solid fa-bars"></i> Xem tất cả
+                    </a>
+                </div>
+            </div>
             <div class="nav-center flex-1 mx-8">
                 <div class="search-box">
                     <select class="search-select">
@@ -274,9 +299,27 @@
     </main>
 
     <!-- Footer Simple -->
-    <footer class="footer-simple" style="background: #1e3a8a; padding: 20px 0; border-top: 4px solid #2563eb;">
-        <div class="container text-center">
-            <p class="footer-copyright text-white text-sm opacity-80">© 2026 TV4C. All rights reserved.</p>
+    <!-- Unified Footer -->
+    <footer class="main-footer">
+        <div class="footer-content container">
+            <h3 class="footer-title">THƯ VIỆN ĐIỆN TỬ CỘNG ĐỒNG</h3>
+            <p class="footer-text">Cơ quan chủ quản: Công ty Cổ phần Công nghệ VHMT Việt Nam</p>
+            <p class="footer-text">Địa chỉ: 28D2, Khu giãn dân Yên Phúc, Phúc La, Hà Đông, Hà Nội</p>
+            <p class="footer-text">Điện thoại: 069.232.0381 | Email: info@tc4v.vn</p>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-socials">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-messenger"></i></a>
+                <a href="#" class="font-bold text-sm">Zalo</a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>Copyright © 2024 - Thư viện điện tử Cộng đồng. All Rights Reserved</p>
+            </div>
         </div>
     </footer>
 </body>

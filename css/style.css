@@ -185,8 +185,11 @@ img {
 }
 
 /* User Dropdown */
+/* User Dropdown */
 .user-dropdown-container {
   position: relative;
+  /* Ensure this container has height/width to be hoverable */
+  display: inline-block;
 }
 
 .user-menu-dropdown {
@@ -195,12 +198,26 @@ img {
   right: 0;
   width: 250px;
   background: var(--white);
-  box-shadow: var(--shadow-md);
+  /* User Request 3: Drop Shadow */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   border-radius: var(--radius-md);
   padding: var(--space-2);
+  /* Use visibility/opacity for cleaner transitions if desired, but display is fine for now */
   display: none;
   z-index: 100;
   margin-top: 10px;
+}
+
+/* User Request 2: Fix "disappearing when sliding" (Bridge) */
+.user-dropdown-container::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  height: 15px;
+  /* Bridges the gap between icon and menu */
+  background: transparent;
 }
 
 .user-dropdown-container:hover .user-menu-dropdown {
@@ -208,10 +225,14 @@ img {
 }
 
 .user-menu-dropdown a {
-  display: block;
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
   border-radius: var(--radius-sm);
   font-size: 0.9rem;
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
 .user-menu-dropdown a:hover {
@@ -219,10 +240,17 @@ img {
   color: var(--primary-blue);
 }
 
-.user-menu-dropdown i {
+/* Icon separation */
+.user-menu-dropdown a i {
   width: 25px;
   text-align: center;
-  margin-right: 5px;
+  margin-right: 10px;
+}
+
+.divider {
+  height: 1px;
+  background: #f3f4f6;
+  margin: 5px 0;
 }
 
 /* ============================================
@@ -429,67 +457,77 @@ img {
   color: var(--text-dark);
 }
 
-/* Detailed Footer (Restored) */
-.footer-detailed {
+/* ============================================
+   Unified Main Footer
+   ============================================ */
+.main-footer {
   background: #1e3a8a;
-  /* Dark Blue */
+  /* Deep Blue base */
   color: var(--white);
-  padding-top: 60px;
-  padding-bottom: 20px;
+  padding-top: 40px;
+  font-size: 0.95rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.footer-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.footer-text {
+  margin-bottom: 6px;
+  opacity: 0.9;
   font-size: 0.9rem;
 }
 
-.footer-detailed h4 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-  padding-bottom: 10px;
-  display: inline-block;
+.footer-divider {
+  width: 60px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 20px auto;
 }
 
-.footer-info p {
-  margin-bottom: 10px;
-  display: flex;
-  gap: 10px;
-}
-
-.footer-info i {
-  opacity: 0.7;
-  margin-top: 4px;
-}
-
-.social-links {
+.footer-socials {
   display: flex;
   gap: 15px;
-  margin-top: 20px;
+  justify-content: center;
 }
 
-.social-links a {
+.footer-socials a {
   width: 36px;
   height: 36px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--white);
+  color: #1e3a8a;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  transition: 0.3s;
+  font-size: 1.1rem;
+  transition: 0.2s;
 }
 
-.social-links a:hover {
-  background: var(--white);
-  color: #1e3a8a;
+.footer-socials a:hover {
+  background: var(--primary-cyan);
+  color: var(--white);
+  transform: translateY(-2px);
 }
 
 .footer-bottom {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px 0;
   text-align: center;
-  opacity: 0.7;
   font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* Book Detail (book-detail.html) */
@@ -1114,34 +1152,47 @@ img {
 }
 
 /* Slider */
+/* Slider */
 .hero-slider {
   height: 400px;
+  /* Or auto if you want aspect ratio based, but fixed height is safer for layout */
   border-radius: var(--radius-md);
   position: relative;
   overflow: hidden;
-  background: #000;
+  background: #f3f4f6;
 }
 
 .slide {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
   display: flex;
   align-items: center;
-  padding: 60px;
+  justify-content: center;
   opacity: 0;
-  transition: 0.5s;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .slide.active {
   opacity: 1;
+  z-index: 10;
 }
 
+.slider-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Slide Content Overlay (if used) */
 .slide-content {
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
   color: var(--white);
   max-width: 500px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 20;
 }
 
 .slide-content h2 {
@@ -1160,6 +1211,66 @@ img {
   margin-top: 20px;
   font-weight: 600;
   text-shadow: none;
+}
+
+/* Slider Controls */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.5);
+  /* Semi-transparent white */
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 30;
+  color: var(--text-dark);
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+.slider-btn:hover {
+  background: var(--white);
+  color: var(--primary-blue);
+}
+
+.slider-btn.prev {
+  left: 20px;
+}
+
+.slider-btn.next {
+  right: 20px;
+}
+
+/* Slider Dots */
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 30;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.dot.active,
+.dot:hover {
+  background: var(--white);
+  transform: scale(1.2);
 }
 
 /* Sub Banners */
@@ -1387,26 +1498,163 @@ img {
 }
 
 /* Responsive (Basic) */
-@media (max-width: 1024px) {
+@media (min-width: 1025px) {
+
+  /* Enforce equal width for Nav Button and Sidebar */
+  .nav-left {
+    width: 270px;
+    /* Fixed width */
+    flex-shrink: 0;
+  }
+
+  .cat-trigger-btn {
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+
+  /* Home Page Layout: Sidebar matches Nav width and sits directly below */
+  .hero-section {
+    padding-top: 0;
+    /* Remove top padding to stick to navbar */
+  }
+
   .hero-grid {
-    grid-template-columns: 1fr;
+    display: grid;
+    /* 270px sidebar + gap + remaining slider */
+    grid-template-columns: 270px 1fr;
+    gap: 0;
+    /* No gap between sidebar and slider visually if needed, but slider typically has margin */
+    position: relative;
+  }
+
+  /* Slider needs to push right a bit or just sit next to it. 
+     If we want the sidebar to look "connected" to navbar, gap should be handled carefully. 
+     Let's keep a small gap for content but ensure sidebar aligns. */
+  .hero-content {
+    padding-left: 30px;
+    /* Space between sidebar and slider */
+    padding-top: 30px;
+    /* Top spacing for slider */
   }
 
   .hero-sidebar {
+    background: var(--white);
+    border-right: 1px solid #e5e7eb;
+    border-left: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    height: 400px;
+    /* Explicit height to match slider */
+    overflow-y: auto;
+    /* Scroll if content exceeds height */
+    position: relative;
+    z-index: 90;
+    display: block;
+    margin-top: 0;
+    /* Ensure no top margin */
+  }
+
+  /* Special handling for dropdown on OTHER pages */
+  /* We will use a class .has-hero-sidebar on body or main to differentiate */
+
+  /* On non-home pages, .hero-sidebar might not exist in HTML in the same place. 
+     We need a dropdown mechanism. */
+
+  /* Sub-menu Dropdown Logic for Non-Home Pages (or hover) */
+  .nav-left {
+    position: relative;
+  }
+
+  /* Example: If we have a .dropdown-menu inside .nav-left in other pages */
+  .cat-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 270px;
+    background: var(--white);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     display: none;
+    z-index: 200;
   }
 
-  .main-layout {
-    grid-template-columns: 1fr !important;
+  .nav-left:hover .cat-dropdown {
+    display: block;
   }
+}
 
-  .grid-5 {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.cat-list {
+  list-style: none;
+  padding: 0;
+  /* Removed padding to eliminate gap at top */
+}
 
-  .news-grid {
-    grid-template-columns: 1fr;
-  }
+.cat-list li a {
+  display: block;
+  padding: 12px 20px;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  border-bottom: 1px solid #f3f4f6;
+  transition: 0.2s;
+}
+
+.cat-list li a:hover {
+  background: #eff6ff;
+  color: var(--primary-blue);
+  padding-left: 25px;
+}
+
+/* User Request: "View All" link at bottom of category */
+.cat-view-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  color: var(--primary-blue);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  border-top: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: 0.2s;
+  background: #f9fafb;
+}
+
+.cat-view-all:hover {
+  background: #eff6ff;
+}
+
+/* 3. Sub Banners Section */
+.sub-banner-section {
+  padding-bottom: 40px;
+}
+
+.sub-banner-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 0;
+}
+
+.sub-banner-item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 3/1;
+  /* Or auto based on image */
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease;
+}
+
+.sub-banner-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.sub-banner-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* ============================================
