@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết tin tức - TV4C</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+
+<body>
+    <!-- 1. Top Header -->
+    <header class="top-header">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="TV4C Logo">
+            </a>
+            <div class="header-right flex items-center gap-6">
+                <div class="hotline flex items-center gap-2 text-primary font-bold">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <div>
+                        <span class="block text-xs text-gray">Hỗ trợ độc giả:</span>
+                        <span class="text-lg">024.37627819</span>
+                    </div>
+                </div>
+                <!-- User Actions -->
+                <div class="user-actions flex gap-3">
+                    <a href="profile.html?tab=saved" class="icon-btn" title="Tủ sách đã lưu"><i
+                            class="fa-regular fa-bookmark"></i></a>
+                    <a href="profile.html?tab=favorites" class="icon-btn" title="Yêu thích"><i
+                            class="fa-regular fa-heart"></i></a>
+                    <div class="user-dropdown-container">
+                        <a href="login.html" class="icon-btn user-btn"><i class="fa-regular fa-user"></i></a>
+                        <div class="user-menu-dropdown">
+                            <a href="profile.html"><i class="fa-solid fa-circle-info"></i> Thông tin tài khoản</a>
+                            <a href="profile.html?tab=password"><i class="fa-solid fa-key"></i> Thay đổi mật khẩu</a>
+                            <a href="profile.html?tab=reading"><i class="fa-solid fa-book-open"></i> Sách đang đọc</a>
+                            <a href="profile.html?tab=favorites"><i class="fa-solid fa-heart"></i> Tủ sách yêu thích</a>
+                            <div class="divider"></div>
+                            <a href="login.html" class="text-red"><i class="fa-solid fa-right-from-bracket"></i> Đăng
+                                xuất</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Navbar -->
+    <nav class="main-navbar">
+        <div class="container flex items-center justify-between h-full">
+            <div class="nav-left">
+                <button class="cat-trigger-btn">
+                    <i class="fa-solid fa-bars"></i>
+                    <span>DANH MỤC THƯ VIỆN</span>
+                </button>
+            </div>
+            <div class="nav-center flex-1 mx-8">
+                <div class="search-box">
+                    <select class="search-select">
+                        <option>Sách bản quyền</option>
+                        <option>Tài liệu thư viện</option>
+                    </select>
+                    <input type="text" placeholder="Nhập từ khoá để tìm kiếm..." class="search-input">
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-links flex gap-6">
+                    <li><a href="#">Thông tin chung <i class="fa-solid fa-caret-down"></i></a></li>
+                    <li><a href="news.html">Tin tức</a></li>
+                    <li><a href="#">Hướng dẫn <i class="fa-solid fa-caret-down"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="section bg-white">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="index.html">Trang chủ</a> <i class="fa-solid fa-chevron-right"></i> <a href="news.html">Tin
+                    tức</a> <i class="fa-solid fa-chevron-right"></i> <span class="text-primary">Chi tiết tin</span>
+            </div>
+
+            <div class="grid grid-cols-12 gap-8" style="display:grid; grid-template-columns: 3fr 1fr; gap: 30px;">
+                <!-- Main Article -->
+                <article class="news-detail-content">
+                    <span class="inline-block px-3 py-1 bg-blue-100 text-primary text-xs font-bold rounded mb-4">TIN
+                        HOẠT ĐỘNG</span>
+                    <h1 class="text-3xl font-bold font-outfit text-primary-dark mb-4 leading-tight">Ra mắt Không gian
+                        văn hóa Hồ Chí Minh tại Thư viện số TV4C</h1>
+
+                    <div class="meta text-sm text-gray mb-6 flex items-center gap-4 border-b pb-4">
+                        <span><i class="fa-regular fa-clock"></i> 26/01/2026</span>
+                        <span><i class="fa-regular fa-user"></i> Ban biên tập</span>
+                        <span><i class="fa-regular fa-eye"></i> 1,234 lượt xem</span>
+                    </div>
+
+                    <div class="article-body text-justify leading-relaxed text-lg text-text-dark">
+                        <p class="font-bold mb-4">Sự kiện đánh dấu bước ngoặt quan trọng trong việc lan tỏa giá trị văn
+                            hóa đọc đến cộng đồng, với sự tham gia của lãnh đạo các Bộ ban ngành và đông đảo bạn đọc yêu
+                            sách.</p>
+
+                        <div class="my-6">
+                            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1000"
+                                alt="Sự kiện ra mắt" class="w-full rounded-lg">
+                            <p class="text-center text-sm text-gray mt-2 italic">Toàn cảnh buổi lễ ra mắt</p>
+                        </div>
+
+                        <p class="mb-4">Sáng ngày 26/01/2026, tại Hà Nội, Thư viện Điện tử Cộng đồng TV4C đã long trọng
+                            tổ chức lễ ra mắt "Không gian văn hóa Hồ Chí Minh". Đây là công trình ý nghĩa chào mừng kỷ
+                            niệm các ngày lễ lớn của đất nước.</p>
+
+                        <p class="mb-4">Không gian được thiết kế hiện đại, kết hợp giữa trưng bày truyền thống và công
+                            nghệ số, giúp độc giả dễ dàng tiếp cận các tư liệu, sách báo, phim ảnh về cuộc đời và sự
+                            nghiệp của Chủ tịch Hồ Chí Minh.</p>
+
+                        <h3 class="text-xl font-bold text-primary-dark mt-6 mb-3">Ứng dụng công nghệ số trong trưng bày
+                        </h3>
+
+                        <p class="mb-4">Điểm nhấn của không gian là hệ thống màn hình cảm ứng tương tác và công nghệ
+                            thực tế ảo (VR), cho phép người xem tham quan Nhà sàn Bác Hồ, Lăng Bác và các di tích lịch
+                            sử khác ngay tại thư viện.</p>
+
+                        <p class="mb-4">Phát biểu tại buổi lễ, Giám đốc TV4C nhấn mạnh: "Chúng tôi hy vọng đây sẽ là địa
+                            chỉ đỏ giáo dục truyền thống cách mạng cho thế hệ trẻ, đồng thời là không gian văn hóa thân
+                            thiện, gần gũi với mọi người dân."</p>
+                    </div>
+
+                    <!-- Related Tags -->
+                    <div class="tags mt-8 pt-4 border-t flex gap-2">
+                        <span class="text-sm font-bold mr-2">Tags:</span>
+                        <a href="#"
+                            class="px-2 py-1 bg-gray-100 text-xs rounded hover:bg-primary hover:text-white transition">Hồ
+                            Chí Minh</a>
+                        <a href="#"
+                            class="px-2 py-1 bg-gray-100 text-xs rounded hover:bg-primary hover:text-white transition">Văn
+                            hóa đọc</a>
+                        <a href="#"
+                            class="px-2 py-1 bg-gray-100 text-xs rounded hover:bg-primary hover:text-white transition">Sự
+                            kiện</a>
+                    </div>
+                </article>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="mb-8">
+                        <h3 class="font-bold text-lg uppercase border-l-4 border-primary pl-3 mb-4">Tin tức mới nhất
+                        </h3>
+                        <div class="flex flex-col gap-4">
+                            <!-- Item -->
+                            <div class="flex gap-3">
+                                <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=100"
+                                    class="w-20 h-20 object-cover rounded">
+                                <div>
+                                    <h4 class="text-sm font-bold leading-tight mb-1"><a href="#"
+                                            class="hover:text-primary">Hội sách Mùa Xuân 2026</a></h4>
+                                    <span class="text-xs text-gray">25/01/2026</span>
+                                </div>
+                            </div>
+                            <!-- Item -->
+                            <div class="flex gap-3">
+                                <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=100"
+                                    class="w-20 h-20 object-cover rounded">
+                                <div>
+                                    <h4 class="text-sm font-bold leading-tight mb-1"><a href="#"
+                                            class="hover:text-primary">Tọa đàm: Văn học trẻ</a></h4>
+                                    <span class="text-xs text-gray">22/01/2026</span>
+                                </div>
+                            </div>
+                            <!-- Item -->
+                            <div class="flex gap-3">
+                                <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=100"
+                                    class="w-20 h-20 object-cover rounded">
+                                <div>
+                                    <h4 class="text-sm font-bold leading-tight mb-1"><a href="#"
+                                            class="hover:text-primary">Ra mắt ứng dụng TV4C Mobile</a></h4>
+                                    <span class="text-xs text-gray">20/01/2026</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="font-bold text-lg uppercase border-l-4 border-primary pl-3 mb-4">Danh mục</h3>
+                        <ul class="text-sm text-gray-700">
+                            <li class="mb-2 pb-2 border-b border-dashed"><a href="#" class="hover:text-primary"><i
+                                        class="fa-solid fa-angle-right text-xs mr-2"></i> Tin hoạt động</a></li>
+                            <li class="mb-2 pb-2 border-b border-dashed"><a href="#" class="hover:text-primary"><i
+                                        class="fa-solid fa-angle-right text-xs mr-2"></i> Sự kiện sắp tới</a></li>
+                            <li class="mb-2 pb-2 border-b border-dashed"><a href="#" class="hover:text-primary"><i
+                                        class="fa-solid fa-angle-right text-xs mr-2"></i> Thông báo</a></li>
+                            <li class="mb-2 pb-2 border-b border-dashed"><a href="#" class="hover:text-primary"><i
+                                        class="fa-solid fa-angle-right text-xs mr-2"></i> Góc bạn đọc</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-simple" style="background: #1e3a8a; padding: 20px 0; border-top: 4px solid #2563eb;">
+        <div class="container text-center">
+            <p class="footer-copyright text-white text-sm opacity-80">© 2026 TV4C - Thư Viện Điện Tử Cộng Đồng. All
+                rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

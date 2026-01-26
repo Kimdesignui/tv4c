@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn sử dụng - TV4C</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+
+<body>
+    <!-- 1. Top Header -->
+    <header class="top-header">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="TV4C Logo">
+            </a>
+            <div class="header-right flex items-center gap-6">
+                <div class="hotline flex items-center gap-2 text-primary font-bold">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <div>
+                        <span class="block text-xs text-gray">Hỗ trợ độc giả:</span>
+                        <span class="text-lg">024.37627819</span>
+                    </div>
+                </div>
+                <!-- User Actions -->
+                <div class="user-actions flex gap-3">
+                    <a href="profile.html?tab=saved" class="icon-btn" title="Tủ sách đã lưu"><i
+                            class="fa-regular fa-bookmark"></i></a>
+                    <a href="profile.html?tab=favorites" class="icon-btn" title="Yêu thích"><i
+                            class="fa-regular fa-heart"></i></a>
+                    <div class="user-dropdown-container">
+                        <a href="login.html" class="icon-btn user-btn"><i class="fa-regular fa-user"></i></a>
+                        <div class="user-menu-dropdown">
+                            <a href="profile.html"><i class="fa-solid fa-circle-info"></i> Thông tin tài khoản</a>
+                            <a href="profile.html?tab=password"><i class="fa-solid fa-key"></i> Thay đổi mật khẩu</a>
+                            <a href="profile.html?tab=reading"><i class="fa-solid fa-book-open"></i> Sách đang đọc</a>
+                            <a href="profile.html?tab=favorites"><i class="fa-solid fa-heart"></i> Tủ sách yêu thích</a>
+                            <div class="divider"></div>
+                            <a href="login.html" class="text-red"><i class="fa-solid fa-right-from-bracket"></i> Đăng
+                                xuất</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Navbar -->
+    <nav class="main-navbar">
+        <div class="container flex items-center justify-between h-full">
+            <div class="nav-left">
+                <button class="cat-trigger-btn">
+                    <i class="fa-solid fa-bars"></i>
+                    <span>DANH MỤC THƯ VIỆN</span>
+                </button>
+            </div>
+            <div class="nav-center flex-1 mx-8">
+                <div class="search-box">
+                    <select class="search-select">
+                        <option>Sách bản quyền</option>
+                        <option>Tài liệu thư viện</option>
+                    </select>
+                    <input type="text" placeholder="Nhập từ khoá để tìm kiếm..." class="search-input">
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-links flex gap-6">
+                    <li><a href="about.html">Thông tin chung <i class="fa-solid fa-caret-down"></i></a></li>
+                    <li><a href="news.html">Tin tức</a></li>
+                    <li><a href="guide.html" class="active">Hướng dẫn <i class="fa-solid fa-caret-down"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENT -->
+    <main class="section bg-gray-50">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Trang chủ</a> <i class="fa-solid fa-chevron-right"></i> <span
+                    class="text-primary">Hướng dẫn sử dụng</span>
+            </div>
+
+            <h1 class="page-title text-primary-dark mb-8">Hướng dẫn & Trợ giúp</h1>
+
+            <div class="grid grid-2 gap-8" style="grid-template-columns: 1fr 2fr;">
+                <!-- Sidebar Menu -->
+                <div class="guide-sidebar bg-white p-4 rounded shadow-sm h-fit">
+                    <ul class="space-y-2">
+                        <li><a href="#" class="block p-2 rounded bg-blue-50 text-primary font-bold">Câu hỏi thường
+                                gặp</a></li>
+                        <li><a href="#" class="block p-2 rounded hover:bg-gray-50 text-gray-700">Hướng dẫn đăng ký tài
+                                khoản</a></li>
+                        <li><a href="#" class="block p-2 rounded hover:bg-gray-50 text-gray-700">Hướng dẫn mượn sách</a>
+                        </li>
+                        <li><a href="#" class="block p-2 rounded hover:bg-gray-50 text-gray-700">Quy định thư viện</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Content -->
+                <div class="guide-content">
+                    <!-- FAQ Item -->
+                    <div class="faq-item bg-white p-6 rounded shadow-sm mb-4">
+                        <h3 class="font-bold text-lg mb-2 text-primary-dark">1. Làm thế nào để đăng ký tài khoản?</h3>
+                        <p class="text-gray-700">Để đăng ký tài khoản, bạn vui lòng nhấn vào biểu tượng Người dùng ở góc
+                            trên bên phải màn hình, chọn "Đăng ký" và điền đầy đủ thông tin theo mẫu. Đối với học
+                            sinh/sinh viên các trường liên kết, vui lòng sử dụng Email nhà trường cấp để đăng nhập ngay.
+                        </p>
+                    </div>
+
+                    <!-- FAQ Item -->
+                    <div class="faq-item bg-white p-6 rounded shadow-sm mb-4">
+                        <h3 class="font-bold text-lg mb-2 text-primary-dark">2. Tôi có thể mượn bao nhiêu cuốn sách cùng
+                            lúc?</h3>
+                        <p class="text-gray-700">Tùy thuộc vào hạng thẻ thành viên, bạn có thể mượn tối đa:</p>
+                        <ul class="list-disc pl-6 mt-2 text-gray-700">
+                            <li>Thẻ thường: 3 cuốn/lần</li>
+                            <li>Thẻ VIP: 5 cuốn/lần</li>
+                            <li>Ebook: Không giới hạn số lượng đọc online</li>
+                        </ul>
+                    </div>
+
+                    <!-- FAQ Item -->
+                    <div class="faq-item bg-white p-6 rounded shadow-sm mb-4">
+                        <h3 class="font-bold text-lg mb-2 text-primary-dark">3. Quên mật khẩu thì phải làm sao?</h3>
+                        <p class="text-gray-700">Bạn vui lòng truy cập trang Đăng nhập, chọn "Quên mật khẩu", sau đó
+                            nhập địa chỉ Email đã đăng ký để nhận liên kết đặt lại mật khẩu mới.</p>
+                    </div>
+
+                    <!-- FAQ Item -->
+                    <div class="faq-item bg-white p-6 rounded shadow-sm mb-4">
+                        <h3 class="font-bold text-lg mb-2 text-primary-dark">4. Phí phạt quá hạn là bao nhiêu?</h3>
+                        <p class="text-gray-700">Phí phạt quá hạn là 2.000đ/cuốn/ngày. Vui lòng gia hạn sách trực tuyến
+                            nếu bạn chưa đọc xong để tránh phát sinh chi phí.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-simple" style="background: #1e3a8a; padding: 20px 0; border-top: 4px solid #2563eb;">
+        <div class="container text-center">
+            <p class="footer-copyright text-white text-sm opacity-80">© 2026 TV4C - Thư Viện Điện Tử Cộng Đồng. All
+                rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
