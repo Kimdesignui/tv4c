@@ -141,7 +141,7 @@
 
     <!-- EBOOK VIEW -->
     <div id="ebookView" class="ebook-container" style="display: none;">
-        <div class="book-page active">
+        <div class="book-page active" id="page-1">
             <h1 style="text-align: center; margin-bottom: 40px;">ĐẮC NHÂN TÂM</h1>
             <h3 style="text-align: center; margin-bottom: 80px;">DALE CARNEGIE</h3>
             <p><strong>CHƯƠNG 1: MUỐN LẤY MẬT THÌ ĐỪNG PHÁ TỔ ONG</strong></p>
@@ -154,31 +154,97 @@
                 laborum.</p>
             <div style="margin-top: 50px; text-align: center; color: #9ca3af;">Trang 1</div>
         </div>
-        <div class="book-page active">
+        <div class="book-page" id="page-2">
             <p><strong>CHƯƠNG 2: BÍ MẬT LỚN NHẤT TRONG PHÉP ỨNG XỬ</strong></p>
             <p>Trên đời này chỉ có một cách duy nhất để khiến ai đó làm bất cứ điều gì. Bạn có bao giờ nghĩ đến điều đó
                 chưa? Vâng, chỉ có một cách duy nhất. Đó là làm cho họ *muốn* làm điều đó.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
             <div style="margin-top: 400px; text-align: center; color: #9ca3af;">Trang 2</div>
         </div>
+
+        <!-- Pagination Controls -->
+        <div class="reader-controls" style="margin-top: 20px; display: flex; gap: 10px;">
+            <button class="btn-page prev-page"
+                style="padding: 10px 20px; background: #374151; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                <i class="fa-solid fa-chevron-left"></i> Trang trước
+            </button>
+            <button class="btn-page next-page"
+                style="padding: 10px 20px; background: #2563eb; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                Trang sau <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
     </div>
 
     <!-- AUDIO VIEW -->
     <div id="audioView" class="audio-container" style="display: none;">
-        <div class="player-ui">
-            <div class="audio-disk"></div>
-            <h2 class="text-xl font-bold mb-1">Đắc Nhân Tâm</h2>
-            <p class="text-sm opacity-70 mb-6">Chương 1: Muốn lấy mật...</p>
+        <div class="player-wrapper" style="display: flex; gap: 40px;">
+            <!-- Player UI -->
+            <div class="player-ui">
+                <div class="audio-disk"></div>
+                <h2 class="text-xl font-bold mb-1">Đắc Nhân Tâm</h2>
+                <p class="text-sm opacity-70 mb-6">Chương 1: Muốn lấy mật...</p>
 
-            <!-- Progress Bar -->
-            <div class="w-full bg-white/20 h-1 rounded-full mb-6 relative">
-                <div class="bg-white h-full rounded-full" style="width: 30%;"></div>
+                <!-- Progress Bar -->
+                <div class="w-full bg-white/20 h-1 rounded-full mb-2 relative cursor-pointer group">
+                    <div class="bg-white h-full rounded-full relative" style="width: 30%;">
+                        <div
+                            class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full opacity-0 group-hover:opacity-100 transition">
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between text-xs opacity-60 mb-6">
+                    <span>04:20</span>
+                    <span>15:00</span>
+                </div>
+
+                <div class="controls items-center justify-center gap-6 mb-6">
+                    <i class="fa-solid fa-backward-step cursor-pointer hover:opacity-100 opacity-70 text-lg"
+                        title="Previous"></i>
+                    <i class="fa-solid fa-rotate-left cursor-pointer hover:opacity-100 opacity-70 text-lg"
+                        title="Rewind 15s"></i>
+                    <div class="play-btn hovering"><i class="fa-solid fa-play" style="margin-left: 5px;"></i></div>
+                    <i class="fa-solid fa-rotate-right cursor-pointer hover:opacity-100 opacity-70 text-lg"
+                        title="Forward 15s"></i>
+                    <i class="fa-solid fa-forward-step cursor-pointer hover:opacity-100 opacity-70 text-lg"
+                        title="Next"></i>
+                </div>
+
+                <!-- Volume -->
+                <div class="flex items-center justify-center gap-3 opacity-80">
+                    <i class="fa-solid fa-volume-low text-xs"></i>
+                    <input type="range" min="0" max="100" value="80"
+                        class="w-24 h-1 bg-white/30 rounded-lg appearance-none cursor-pointer">
+                    <i class="fa-solid fa-volume-high text-xs"></i>
+                </div>
             </div>
 
-            <div class="controls items-center">
-                <i class="fa-solid fa-backward-step cursor-pointer hover:opacity-80"></i>
-                <div class="play-btn"><i class="fa-solid fa-play" style="margin-left: 5px;"></i></div>
-                <i class="fa-solid fa-forward-step cursor-pointer hover:opacity-80"></i>
+            <!-- Playlist Sidebar -->
+            <div class="playlist-ui"
+                style="width: 300px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1); padding: 20px; height: fit-content;">
+                <h3 class="font-bold border-b border-white/10 pb-3 mb-3 text-sm uppercase tracking-wider">Danh sách
+                    chương</h3>
+                <div class="playlist-items space-y-2">
+                    <div
+                        class="p-3 bg-white/10 rounded cursor-pointer flex justify-between items-center border border-white/20">
+                        <span class="text-sm font-semibold">Chương 1: Muốn lấy mật...</span>
+                        <i class="fa-solid fa-chart-simple text-xs animate-pulse"></i>
+                    </div>
+                    <div
+                        class="p-3 hover:bg-white/5 rounded cursor-pointer flex justify-between items-center transition">
+                        <span class="text-sm opacity-80">Chương 2: Bí mật lớn...</span>
+                        <span class="text-xs opacity-50">12:30</span>
+                    </div>
+                    <div
+                        class="p-3 hover:bg-white/5 rounded cursor-pointer flex justify-between items-center transition">
+                        <span class="text-sm opacity-80">Chương 3: Ai làm được...</span>
+                        <span class="text-xs opacity-50">14:15</span>
+                    </div>
+                    <div
+                        class="p-3 hover:bg-white/5 rounded cursor-pointer flex justify-between items-center transition">
+                        <span class="text-sm opacity-80">Chương 4: Đừng tranh cãi...</span>
+                        <span class="text-xs opacity-50">10:05</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -190,8 +256,31 @@
         if (type === 'audio') {
             document.getElementById('audioView').style.display = 'flex';
         } else {
-            // Default to ebook
             document.getElementById('ebookView').style.display = 'flex';
+        }
+
+        // Simple Ebook Pagination Logic
+        const pages = document.querySelectorAll('.book-page');
+        let currentPage = 0;
+        const prevBtn = document.querySelector('.prev-page');
+        const nextBtn = document.querySelector('.next-page');
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 0) {
+                    pages[currentPage].classList.remove('active');
+                    currentPage--;
+                    pages[currentPage].classList.add('active');
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (currentPage < pages.length - 1) {
+                    pages[currentPage].classList.remove('active');
+                    currentPage++;
+                    pages[currentPage].classList.add('active');
+                }
+            });
         }
     </script>
 </body>
