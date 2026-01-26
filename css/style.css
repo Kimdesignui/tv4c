@@ -1062,22 +1062,40 @@ img {
 
 /* Search Box */
 .search-box {
-  background: var(--white);
+  background: transparent;
+  /* Changed from white to transparent to separate button */
   border-radius: var(--radius-sm);
   display: flex;
-  overflow: hidden;
+  align-items: center;
   height: 40px;
-  max-width: 600px;
+  max-width: 650px;
+  width: 100%;
+  margin: 0 auto;
+  /* Center the search box */
+}
+
+/* New wrapper for input and select */
+.search-input-group {
+  display: flex;
+  background: var(--white);
+  border-radius: 40px;
+  /* Rounded pill shape for input area */
+  overflow: hidden;
+  flex: 1;
+  /* Take remaining space */
+  height: 100%;
 }
 
 .search-select {
   border: none;
-  background: #f9fafb;
-  padding: 0 10px;
+  background: transparent;
+  padding: 0 15px;
   font-size: 0.9rem;
   border-right: 1px solid #e5e7eb;
   outline: none;
-  max-width: 150px;
+  max-width: 160px;
+  color: var(--text-gray);
+  cursor: pointer;
 }
 
 .search-input {
@@ -1085,18 +1103,35 @@ img {
   flex: 1;
   padding: 0 15px;
   outline: none;
+  font-size: 0.95rem;
 }
 
 .search-btn {
   background: var(--accent-yellow);
   border: none;
-  width: 50px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* Rounded circle */
   cursor: pointer;
-  color: var(--text-dark);
+  color: var(--white);
+  font-size: 1.1rem;
+  margin-left: 10px;
+  /* Detached from input */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+  flex-shrink: 0;
+}
+
+.search-btn i {
+  color: var(--white);
 }
 
 .search-btn:hover {
   background: #facc15;
+  transform: scale(1.05);
 }
 
 .nav-links a {
@@ -1545,11 +1580,12 @@ img {
     border-bottom: 1px solid #e5e7eb;
     height: 400px;
     /* Explicit height to match slider */
-    overflow-y: auto;
-    /* Scroll if content exceeds height */
+    /* overflow-y: auto; Handled in cat-list now */
     position: relative;
     z-index: 90;
-    display: block;
+    display: flex;
+    /* FLEX! for sticky footer */
+    flex-direction: column;
     margin-top: 0;
     /* Ensure no top margin */
   }
@@ -1575,17 +1611,49 @@ img {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     display: none;
     z-index: 200;
+    /* Sticky footer logic for dropdown too */
+    flex-direction: column;
+    height: 400px;
+    /* Enforce same height */
   }
 
   .nav-left:hover .cat-dropdown {
-    display: block;
+    display: flex;
+    /* Flex to activate sticky layout */
   }
 }
 
 .cat-list {
   list-style: none;
   padding: 0;
+  margin: 0;
+  /* Clear margin */
   /* Removed padding to eliminate gap at top */
+  overflow-y: auto;
+  /* Scroll here */
+  flex: 1;
+  /* Grow to fill space */
+}
+
+/* Sticky View All Link styles */
+.cat-view-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  color: var(--primary-blue);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  border-top: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: 0.2s;
+  background: #f9fafb;
+  margin-top: auto;
+  /* Push to bottom if flex spacing allows */
+  flex-shrink: 0;
+  /* Never shrink */
 }
 
 .cat-list li a {
