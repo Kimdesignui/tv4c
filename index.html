@@ -214,8 +214,8 @@
             <div class="news-cols-3">
                 <!-- COL 1: Featured Carousel (Placeholder for carousel logic, showing 1 static active slide for now) -->
                 <div class="news-featured-col">
-                    <div class="news-featured-carousel" style="height: 100%;">
-                        <!-- Single Slide Item -->
+                    <div class="news-featured-carousel" style="height: 100%; position: relative;">
+                        <!-- Slide Item 1 -->
                         <article class="news-featured-card">
                             <img src="assets/images/banner-sub-1.png" alt="Featured News" class="news-featured-img">
                             <a href="news-detail.html">
@@ -229,9 +229,21 @@
                                 Việt Nam.</p>
                             <div class="news-featured-meta">
                                 <span class="news-time">21/06/2024</span>
-                                <a href="news-detail.html" class="btn-news-detail">Xem chi tiết</a>
+                                <a href="news-detail.html" class="btn-news-detail">Chi tiết</a>
                             </div>
                         </article>
+
+                        <!-- Slide Item 2 (Hidden by default or stacked if JS was active) -->
+                        <!-- For static demo, we just keep one visible, but structure implies carousel -->
+                        <div class="carousel-dots"
+                            style="margin-top: 10px; display: flex; gap: 5px; justify-content: center;">
+                            <span class="dot active"
+                                style="width: 8px; height: 8px; background: #2563eb; border-radius: 50%;"></span>
+                            <span class="dot"
+                                style="width: 8px; height: 8px; background: #ddd; border-radius: 50%;"></span>
+                            <span class="dot"
+                                style="width: 8px; height: 8px; background: #ddd; border-radius: 50%;"></span>
+                        </div>
                     </div>
                 </div>
 
@@ -377,56 +389,32 @@
 
                 <!-- COLUMN LEFT (Main Content - 75%) -->
                 <div class="body-left">
-                    <!-- Module 1: Điểm sách / Sách hay -->
+                    <!-- Module 1: Điểm sách -->
                     <div class="book-module mb-8">
                         <div class="module-header flex justify-between items-center mb-4 border-b pb-2">
-                            <h2 class="module-title text-primary uppercase font-bold text-xl">Điểm sách</h2>
-                            <a href="books.html" class="view-all-btn text-sm">Xem tất cả <i
-                                    class="fa-solid fa-angle-right"></i></a>
+                            <h2 class="module-title text-primary">Điểm sách</h2>
+                            <div class="module-nav flex gap-2 text-gray-400 text-sm">
+                                <i class="fa-solid fa-chevron-left cursor-pointer hover:text-blue-600"></i>
+                                <span class="text-gray-300">|</span>
+                                <i class="fa-solid fa-chevron-right cursor-pointer hover:text-blue-600"></i>
+                            </div>
                         </div>
-                        <div class="book-grid-5 grid grid-5 gap-4">
-                            <!-- Book Card 1 -->
-                            <article class="book-card compact">
-                                <div class="book-cover">
-                                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300"
-                                        alt="Book">
-                                </div>
-                                <h3 class="book-title"><a href="book-detail.html">Sống Thực Tế Giữa Đời Thực Dụng</a>
-                                </h3>
-                            </article>
-                            <!-- Book Card 2 -->
-                            <article class="book-card compact">
-                                <div class="book-cover">
-                                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=300"
-                                        alt="Book">
-                                </div>
-                                <h3 class="book-title"><a href="book-detail.html">Không Gia Đình</a></h3>
-                            </article>
-                            <!-- Book Card 3 -->
-                            <article class="book-card compact">
-                                <div class="book-cover">
-                                    <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300"
-                                        alt="Book">
-                                </div>
-                                <h3 class="book-title"><a href="book-detail.html">Nhà Giả Kim</a></h3>
-                            </article>
-                            <!-- Book Card 4 -->
-                            <article class="book-card compact">
-                                <div class="book-cover">
-                                    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300"
-                                        alt="Book">
-                                </div>
-                                <h3 class="book-title"><a href="book-detail.html">Tư Duy Nhanh Và Chậm</a></h3>
-                            </article>
-                            <!-- Book Card 5 -->
-                            <article class="book-card compact">
-                                <div class="book-cover">
-                                    <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300"
-                                        alt="Book">
-                                </div>
-                                <h3 class="book-title"><a href="book-detail.html">Đắc Nhân Tâm</a></h3>
-                            </article>
-                        </div>
+
+                        <!-- New Design: Featured Article Card -->
+                        <article class="book-review-card">
+                            <div class="book-review-cover-img">
+                                <img src="assets/images/book-review-cover.png" alt="Book Cover">
+                            </div>
+                            <div class="book-review-content">
+                                <h3 class="book-review-title">Giới thiệu sách Những điểm mới về an ninh quốc gia trong
+                                    Văn kiện Đại hội XIII của Đảng</h3>
+                                <p class="book-review-desc">Chiều 30/11 tại Hà Nội, Nhà xuất bản Chính trị quốc gia Sự
+                                    thật phối hợp với Bộ Công an tổ chức Lễ giới thiệu cuốn sách Những điểm mới về an
+                                    ninh quốc gia trong Văn kiện Đại hội XIII của Đảng.</p>
+                                <a href="#" class="btn-review-detail">Chi tiết <i
+                                        class="fa-solid fa-chevron-right ml-1 text-sm"></i></a>
+                            </div>
+                        </article>
                     </div>
 
                     <!-- Middle Banner (Example of separation) -->
@@ -438,41 +426,47 @@
                     <!-- Module 2: Sách Mới -->
                     <div class="book-module mb-8">
                         <div class="module-header flex justify-between items-center mb-4 border-b pb-2">
-                            <h2 class="module-title text-primary uppercase font-bold text-xl">Sách Mới Cập Nhật</h2>
+                            <h2 class="module-title text-primary">Sách Mới Cập Nhật</h2>
                             <a href="books.html?sort=new" class="view-all-btn text-sm">Xem tất cả <i
                                     class="fa-solid fa-angle-right"></i></a>
                         </div>
                         <div class="book-grid-5 grid grid-5 gap-4">
-                            <!-- Reuse cards for demo -->
+                            <!-- Book 7 -->
                             <article class="book-card compact">
                                 <div class="book-cover"><img
-                                        src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=300"
+                                        src="http://nxbqdnd.com.vn/pictures/books15_05_2025_XAY%20DUNG%20HE%20THONG%20CHINH%20TRI%20CO%20SO.jpg"
                                         alt="Book"></div>
-                                <h3 class="book-title"><a href="book-detail.html">Lược Sử Loài Người</a></h3>
+                                <h3 class="book-title"><a href="book-detail.html">Xây dựng hệ thống chính trị cơ sở</a>
+                                </h3>
                             </article>
+                            <!-- Book 8 -->
                             <article class="book-card compact">
                                 <div class="book-cover"><img
-                                        src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=300"
+                                        src="http://nxbqdnd.com.vn/pictures/books12_07_2024_CHIEN%20DICH%20QUAN%20SU%20DAC%20BIET.jpg"
                                         alt="Book"></div>
-                                <h3 class="book-title"><a href="book-detail.html">Tâm Lý Học Tội Phạm</a></h3>
+                                <h3 class="book-title"><a href="book-detail.html">Chiến dịch quân sự đặc biệt Nga -
+                                        Ucraina</a></h3>
                             </article>
+                            <!-- Book 9 -->
                             <article class="book-card compact">
                                 <div class="book-cover"><img
-                                        src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=300"
+                                        src="http://nxbqdnd.com.vn/pictures/books23_07_2024_KHOI%20DAY%20KHAT%20VONG%20CONG%20HIEN.jpg"
                                         alt="Book"></div>
-                                <h3 class="book-title"><a href="book-detail.html">Cà Phê Cùng Tony</a></h3>
+                                <h3 class="book-title"><a href="book-detail.html">Khơi dậy khát vọng cống hiến</a></h3>
                             </article>
+                            <!-- Book 10 -->
                             <article class="book-card compact">
                                 <div class="book-cover"><img
-                                        src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=300"
+                                        src="http://nxbqdnd.com.vn/pictures/books30_10_2024_CHIEN%20DICH%20DIEN%20BIEN%20PHU%20THANG%20LOI%20CUA%20BAN%20LINH.jpg"
                                         alt="Book"></div>
-                                <h3 class="book-title"><a href="book-detail.html">Atomic Habits</a></h3>
+                                <h3 class="book-title"><a href="book-detail.html">Chiến dịch Điện Biên Phủ</a></h3>
                             </article>
+                            <!-- Book 11 -->
                             <article class="book-card compact">
                                 <div class="book-cover"><img
-                                        src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300"
+                                        src="http://nxbqdnd.com.vn/pictures/books30_10_2024_8.%20BIA%20-%20HOI%20DAP%20TRIET%20HOC%20MAC%20-%20LENIN.jpg"
                                         alt="Book"></div>
-                                <h3 class="book-title"><a href="book-detail.html">Rừng Na Uy</a></h3>
+                                <h3 class="book-title"><a href="book-detail.html">Hỏi đáp triết học Mác - Lênin</a></h3>
                             </article>
                         </div>
                     </div>
@@ -480,7 +474,7 @@
                     <!-- Module 3: Sách Hay -->
                     <div class="book-module mb-8">
                         <div class="module-header flex justify-between items-center mb-4 border-b pb-2">
-                            <h2 class="module-title text-primary uppercase font-bold text-xl">Sách Hay Nên Đọc</h2>
+                            <h2 class="module-title text-primary">Sách Hay Nên Đọc</h2>
                             <a href="books.html" class="view-all-btn text-sm">Xem tất cả <i
                                     class="fa-solid fa-angle-right"></i></a>
                         </div>
@@ -573,7 +567,7 @@
     <section class="section featured-carousel bg-white py-8 border-t">
         <div class="container">
             <div class="module-header flex justify-between items-center mb-6">
-                <h2 class="module-title text-primary uppercase font-bold text-2xl">Sách nổi bật</h2>
+                <h2 class="module-title text-primary">Sách nổi bật</h2>
                 <div class="carousel-nav flex gap-2">
                     <button class="nav-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
                     <button class="nav-btn next"><i class="fa-solid fa-chevron-right"></i></button>
@@ -582,21 +576,58 @@
             </div>
 
             <div class="featured-list flex gap-6 overflow-hidden">
-                <!-- Book 1: Hoa Xương Rồng (Primary Example) -->
+                <!-- Book 1 -->
                 <a href="book-detail.html" class="book-demo-card" style="min-width: 180px;">
                     <div class="book-demo-cover">
-                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300" alt="Hoa Xương Rồng">
+                        <img src="http://nxbqdnd.com.vn/pictures/books14_05_2025_Bia%20sach%20Tap%201%20Giu%20vung%20tran%20dia%20tu%20tuong%20chuyen%20Ngoc.jpg"
+                            alt="Giữ vững trận địa tư tưởng văn hóa">
                     </div>
-                    <h3 class="book-demo-title">Hoa Xương Rồng</h3>
+                    <h3 class="book-demo-title">Giữ vững trận địa tư tưởng văn hóa</h3>
                 </a>
 
                 <!-- Book 2 -->
                 <a href="book-detail.html" class="book-demo-card" style="min-width: 180px;">
                     <div class="book-demo-cover">
-                        <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=300"
-                            alt="Ngủ giữa hoa sen">
+                        <img src="http://nxbqdnd.com.vn/pictures/books01_04_2025_VU%20KHI%20%20TU%20TAO%20DIEN%20HINH.jpg"
+                            alt="Vũ khí tự tạo điển hình trong chiến tranh giải phóng">
                     </div>
-                    <h3 class="book-demo-title">Ngủ giữa hoa sen</h3>
+                    <h3 class="book-demo-title">Vũ khí tự tạo điển hình trong chiến tranh giải phóng</h3>
+                </a>
+
+                <!-- Book 3 -->
+                <a href="book-detail.html" class="book-demo-card" style="min-width: 180px;">
+                    <div class="book-demo-cover">
+                        <img src="http://nxbqdnd.com.vn/pictures/books12_12_2024_TAI%20LIEU%20TUYEN%20TRUYEN%2080%20NAM%201.jpg"
+                            alt="Tài liệu tuyên truyền kỷ niệm 80 năm">
+                    </div>
+                    <h3 class="book-demo-title">Tài liệu tuyên truyền kỷ niệm 80 năm</h3>
+                </a>
+
+                <!-- Book 4 -->
+                <a href="book-detail.html" class="book-demo-card" style="min-width: 180px;">
+                    <div class="book-demo-cover">
+                        <img src="http://nxbqdnd.com.vn/pictures/books12_12_2024_NHUNG%20PHAT%20%20TRIEN%20VE%20QUOC%20PHONG%20QUAN%20SU.jpg"
+                            alt="Những phát triển về quốc phòng, quân sự">
+                    </div>
+                    <h3 class="book-demo-title">Những phát triển về quốc phòng, quân sự</h3>
+                </a>
+
+                <!-- Book 5 -->
+                <a href="book-detail.html" class="book-demo-card" style="min-width: 180px;">
+                    <div class="book-demo-cover">
+                        <img src="http://nxbqdnd.com.vn/pictures/books12_12_2024_A1%20(1).jpg"
+                            alt="Cha tôi - Thiếu tướng Hà Vi Tùng">
+                    </div>
+                    <h3 class="book-demo-title">Cha tôi - Thiếu tướng Hà Vi Tùng</h3>
+                </a>
+
+                <!-- Book 6 -->
+                <a href="book-detail.html" class="book-demo-card" style="min-width: 180px;">
+                    <div class="book-demo-cover">
+                        <img src="http://nxbqdnd.com.vn/pictures/books12_12_2024_MAI%20TRUONG%20NANG%20CANH%20UOC%20MO%20BAY.jpg"
+                            alt="Mái trường nâng cánh ước mơ bay">
+                    </div>
+                    <h3 class="book-demo-title">Mái trường nâng cánh ước mơ bay</h3>
                 </a>
 
                 <!-- Book 3 -->
