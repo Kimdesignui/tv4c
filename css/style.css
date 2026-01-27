@@ -1799,35 +1799,54 @@ img {
 }
 
 /* Feature Book Review Card (Điểm sách) - New Design */
-.book-review-card {
+.book-review-wrapper {
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
-  /* Use image as background or fallback gradient */
+  /* Background moves here to wrap title */
   background: url('../assets/images/book-review-bg.png') no-repeat center center/cover, linear-gradient(135deg, #fce7f3 0%, #e0f2fe 100%);
-  padding: 30px;
+  padding: 25px 30px 30px 30px;
+}
+
+.book-review-card {
   display: flex;
   gap: 30px;
-  align-items: center;
+  align-items: stretch;
+  /* Equal height */
+  /* No background/padding here */
+}
+
+/* Ensure active class display logic if needed for JS, otherwise simple flex */
+.book-review-card.active {
+  display: flex;
 }
 
 .book-review-cover-img {
-  width: 250px;
-  flex-shrink: 0;
+  width: 50%;
+  /* 50/50 split */
+  flex: 1;
   border-radius: var(--radius-sm);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   overflow: hidden;
+  position: relative;
 }
 
 .book-review-cover-img img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
 .book-review-content {
+  width: 50%;
+  /* 50/50 split */
   flex: 1;
   color: #334155;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Center content vertically if image is taller? Or stretch? */
 }
 
 .book-review-title {
@@ -1844,7 +1863,8 @@ img {
   line-height: 1.6;
   margin-bottom: 25px;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
+  /* More space available in 50/50 */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1860,6 +1880,9 @@ img {
   border-radius: 4px;
   transition: 0.2s;
   font-size: 1rem;
+  width: fit-content;
+  margin-top: auto;
+  /* Push to bottom if flex stretch */
 }
 
 .btn-review-detail:hover {
