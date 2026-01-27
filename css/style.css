@@ -2046,6 +2046,62 @@ img {
   text-align: center;
 }
 
+/* Most Read Books Widget */
+.most-read-widget {
+  margin-bottom: var(--space-4);
+}
+
+.most-read-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.most-read-item {
+  display: flex;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.most-read-item:first-child {
+  padding-top: 0;
+}
+
+.most-read-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.most-read-thumb {
+  width: 60px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.most-read-thumb img {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+.most-read-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--news-title-color);
+  line-height: 1.4;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.most-read-title a:hover {
+  color: var(--primary-blue);
+}
+
 /* ============================================
    6 & 7. FEATURED & COLLECTIONS
    ============================================ */
