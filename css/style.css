@@ -1684,7 +1684,7 @@ img {
   margin-bottom: 1rem;
   line-height: 1.6;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1704,11 +1704,11 @@ img {
 }
 
 .btn-news-detail {
-  font-size: 0.875rem;
+  font-size: 14px;
   /* Keep small or match user request? User said "Chi tiết" link. Usually these are smaller/uppercase */
-  font-weight: 700;
+  font-weight: 400;
   color: var(--primary-blue);
-  text-transform: uppercase;
+  text-transform: none;
   text-decoration: none;
   background: none;
   padding: 0;
