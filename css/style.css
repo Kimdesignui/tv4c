@@ -1917,7 +1917,7 @@ img {
 
 .book-card.compact {
   background: transparent;
-  padding: 0;
+  padding: 10px;
   border: none;
   border-radius: var(--radius-sm);
   transition: 0.2s;
