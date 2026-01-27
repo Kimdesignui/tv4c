@@ -1547,6 +1547,11 @@ img {
   align-items: center;
 }
 
+/* Enforce link size in list */
+.news-list-bottom a {
+  font-size: 14px !important;
+}
+
 .news-section-title {
   font-size: 2.4rem;
   /* 24px */
@@ -1695,6 +1700,8 @@ img {
   color: #9ca3af;
   margin-right: 15px;
   /* Add spacing between date and link */
+  display: none !important;
+  /* Force hide date */
 }
 
 .news-featured-meta {
@@ -1707,7 +1714,8 @@ img {
   font-size: 14px;
   /* Keep small or match user request? User said "Chi tiết" link. Usually these are smaller/uppercase */
   font-weight: 400;
-  color: var(--primary-blue);
+  color: #e11d48;
+  /* Red */
   text-transform: none;
   text-decoration: none;
   background: none;
