@@ -1540,8 +1540,8 @@ img {
 }
 
 .news-list-bottom {
-  margin-top: auto;
-  /* Push to bottom */
+  margin-top: 5px;
+  /* Push to bottom removed */
   display: flex;
   justify-content: space-between;
   align-items: center;
