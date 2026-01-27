@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize all components
     initSlider();
     initNewsSlider(); // Added News Slider
+    initFeaturedCarousel(); // Added Featured Carousel
     initMobileMenu();
     initTabs();
     initDropdown();
@@ -480,4 +481,87 @@ function initNewsSlider() {
 
     // Auto Play
     setInterval(nextSlide, intervalTime);
+}
+
+/**
+ * Featured Carousel (6 items visible)
+ */
+function initFeaturedCarousel() {
+    const track = document.querySelector('.featured-list');
+    const items = document.querySelectorAll('.featured-list .book-demo-card');
+    const prevBtn = document.querySelector('.featured-carousel .nav-btn.prev');
+    const nextBtn = document.querySelector('.featured-carousel .nav-btn.next');
+
+    if (!track || items.length === 0) return;
+
+    let currentIndex = 0;
+    const itemsToShow = 6;
+    const totalItems = items.length;
+    let autoPlayInterval;
+
+    function updateCarousel() {
+        if (currentIndex < 0) {
+            currentIndex = totalItems - itemsToShow;
+        } else if (currentIndex > totalItems - itemsToShow) {
+            currentIndex = 0;
+        }
+
+        // Use offsetLeft for precise sliding including gaps
+        const targetItem = items[currentIndex];
+        // Calculate offset relative to the track's start
+        // Actually, just standard implementation: move track left by item's offset
+        const moveX = targetItem.offsetLeft;
+
+        track.style.transform = `translateX(-${moveX}px)`;
+    }
+
+    function nextSlide() {
+        currentIndex++;
+        if (currentIndex > totalItems - itemsToShow) {
+            currentIndex = 0;
+        }
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = totalItems - itemsToShow;
+        }
+        updateCarousel();
+    }
+
+    function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayInterval = setInterval(nextSlide, 3000); // 3 seconds
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayInterval) clearInterval(autoPlayInterval);
+    }
+
+    // Listeners
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            startAutoPlay();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            startAutoPlay();
+        });
+    }
+
+    // Pause on hover
+    track.parentElement.addEventListener('mouseenter', stopAutoPlay);
+    track.parentElement.addEventListener('mouseleave', startAutoPlay);
+
+    // Initial start
+    startAutoPlay();
+
+    // Handle Window Resize
+    window.addEventListener('resize', updateCarousel);
 }

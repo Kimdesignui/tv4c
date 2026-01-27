@@ -84,7 +84,6 @@ img {
 
 .container {
   max-width: var(--container-width);
-  margin: 0 auto;
   padding: 0 var(--space-4);
 }
 
@@ -1099,9 +1098,14 @@ img {
   /* Use px max-width instead of % for stability */
   width: 100%;
   margin: 0 auto;
-  /* Center it */
-  padding: 2px;
-  /* Reduced padding */
+}
+
+/* ============================================
+   Featured Carousel (6 items)
+   ============================================ */
+/* Center it */
+padding: 2px;
+/* Reduced padding */
 }
 
 /* Wrapper for input and select */
