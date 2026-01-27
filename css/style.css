@@ -52,7 +52,7 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   color: var(--text-dark);
-  background: var(--bg-light);
+  background: var(--white);
   line-height: 1.5;
   font-size: 1rem;
   /* 16px */
@@ -1916,9 +1916,9 @@ img {
 }
 
 .book-card.compact {
-  background: var(--white);
-  padding: 10px;
-  border: 1px solid #f3f4f6;
+  background: transparent;
+  padding: 0;
+  border: none;
   border-radius: var(--radius-sm);
   transition: 0.2s;
 }
