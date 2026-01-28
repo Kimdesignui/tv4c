@@ -1098,7 +1098,7 @@ img {
   /* Increased height */
   width: 60%;
   margin: 0 auto;
-  padding: 4px;
+  padding: 5px;
   /* Space for button padding */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   /* Soft shadow */
@@ -1144,8 +1144,8 @@ img {
   background: #ffb700;
   /* Distinct yellow from image */
   border: none;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   cursor: pointer;
   color: var(--white);
@@ -1155,7 +1155,7 @@ img {
   justify-content: center;
   transition: 0.2s;
   flex-shrink: 0;
-  margin-right: 2px;
+  margin-right: 0;
 }
 
 .search-btn:hover {
@@ -2824,6 +2824,11 @@ body.reader-mode {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+/* User Request: Padding for headers with carousel nav */
+.featured-section .module-header,
+.collections-section .module-header {
   padding-bottom: 12px;
 }
 
