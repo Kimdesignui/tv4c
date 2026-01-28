@@ -823,82 +823,78 @@
         </div>
     </section>
 
-    <!-- 6. Featured Carousel (Full Width) -->
-    <section class="section featured-carousel bg-white py-8 border-t">
+    <!-- 6. Featured Books (New Design based on Collections) -->
+    <section class="section featured-section bg-white py-8 border-t">
         <div class="container">
             <div class="module-header flex justify-between items-center mb-6">
-                <!-- Fixed title color: text-primary is blue, user wants consistent color -->
-                <!-- Assuming #46648D is the consistent color. text-primary is blue. Let's use the explicit color or class used elsewhere like .news-section-title which is #46648D -->
-                <h2 class="module-title" style="color: #46648D; font-size: 24px; font-weight: 700;">Sách nổi bật</h2>
+                <!-- Using the same styling as collections but explicit color requested previously #46648D -->
+                <h2 class="module-title font-bold text-2xl uppercase" style="color: #46648D;">Sách nổi bật</h2>
                 <div class="carousel-nav flex gap-2">
                     <button class="nav-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
                     <button class="nav-btn next"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
 
-            <div class="featured-list-wrapper overflow-hidden relative"> <!-- Wrapper for hiding overflow -->
-                <div class="featured-list flex gap-6 transition-transform duration-500 ease-in-out">
-                    <!-- Book 1 -->
-                    <a href="book-detail.html" class="book-demo-card">
-                        <div class="book-demo-cover">
-                            <img src="assets/images/featured-1.png"
-                                alt="Lịch sử nghệ thuật quân sự Việt Nam - tập 3 (1958-1954)" loading="lazy"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="book-demo-title">Lịch sử nghệ thuật quân sự Việt Nam - tập 3 (1958-1954)</h3>
-                    </a>
+            <div class="featured-grid grid grid-6 gap-6">
+                <!-- Book 1 -->
+                <article class="collection-card">
+                    <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-3-2">
+                        <img src="assets/images/featured-1.png" alt="Lịch sử nghệ thuật quân sự Việt Nam"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="collection-title font-bold text-lg mb-2 text-center" style="font-size: 1rem;"><a
+                            href="book-detail.html">Lịch sử nghệ thuật quân sự Việt Nam - tập 3</a></h3>
+                </article>
 
-                    <!-- Book 2 -->
-                    <a href="book-detail.html" class="book-demo-card">
-                        <div class="book-demo-cover">
-                            <img src="assets/images/featured-2.png"
-                                alt="Lịch sử Học viện phòng không - không quân - tập 1" loading="lazy"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="book-demo-title">Lịch sử Học viện phòng không - không quân - tập 1</h3>
-                    </a>
+                <!-- Book 2 -->
+                <article class="collection-card">
+                    <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-3-2">
+                        <img src="assets/images/featured-2.png" alt="Lịch sử Học viện phòng không"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="collection-title font-bold text-lg mb-2 text-center" style="font-size: 1rem;"><a
+                            href="book-detail.html">Lịch sử Học viện phòng không - không quân</a></h3>
+                </article>
 
-                    <!-- Book 3 -->
-                    <a href="book-detail.html" class="book-demo-card">
-                        <div class="book-demo-cover">
-                            <img src="assets/images/featured-3.png"
-                                alt="Chiến thắng Điện Biên Phủ 1954 - Tầm vóc thắng lợi và giá trị hiện thực"
-                                loading="lazy" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="book-demo-title">Chiến thắng Điện Biên Phủ 1954 - Tầm vóc thắng lợi và giá trị hiện
-                            thực</h3>
-                    </a>
+                <!-- Book 3 -->
+                <article class="collection-card">
+                    <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-3-2">
+                        <img src="assets/images/featured-3.png" alt="Chiến thắng Điện Biên Phủ 1954"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="collection-title font-bold text-lg mb-2 text-center" style="font-size: 1rem;"><a
+                            href="book-detail.html">Chiến thắng Điện Biên Phủ 1954</a></h3>
+                </article>
 
-                    <!-- Book 4 -->
-                    <a href="book-detail.html" class="book-demo-card">
-                        <div class="book-demo-cover">
-                            <img src="assets/images/featured-4.png"
-                                alt="Nâng cao chất lượng giáo dục, rèn luyện đảng viên" loading="lazy"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="book-demo-title">Nâng cao chất lượng giáo dục, rèn luyện đảng viên</h3>
-                    </a>
+                <!-- Book 4 -->
+                <article class="collection-card">
+                    <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-3-2">
+                        <img src="assets/images/featured-4.png" alt="Nâng cao chất lượng giáo dục"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="collection-title font-bold text-lg mb-2 text-center" style="font-size: 1rem;"><a
+                            href="book-detail.html">Nâng cao chất lượng giáo dục đảng viên</a></h3>
+                </article>
 
-                    <!-- Book 5 -->
-                    <a href="book-detail.html" class="book-demo-card">
-                        <div class="book-demo-cover">
-                            <img src="assets/images/featured-5.png" alt="Chuyện thường ngày của Võ Đại tướng"
-                                loading="lazy" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="book-demo-title">Chuyện thường ngày của Võ Đại tướng</h3>
-                    </a>
+                <!-- Book 5 -->
+                <article class="collection-card">
+                    <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-3-2">
+                        <img src="assets/images/featured-5.png" alt="Chuyện thường ngày của Võ Đại tướng"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="collection-title font-bold text-lg mb-2 text-center" style="font-size: 1rem;"><a
+                            href="book-detail.html">Chuyện thường ngày của Võ Đại tướng</a></h3>
+                </article>
 
-                    <!-- Book 6 -->
-                    <a href="book-detail.html" class="book-demo-card">
-                        <div class="book-demo-cover">
-                            <img src="assets/images/featured-6.png"
-                                alt="Văn học nghệ thuật góp phần xây dựng bản lĩnh và nhân cách Bộ đội Cụ Hồ"
-                                loading="lazy" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="book-demo-title">Văn học nghệ thuật góp phần xây dựng bản lĩnh và nhân cách Bộ đội Cụ
-                            Hồ</h3>
-                    </a>
-                </div>
+                <!-- Book 6 -->
+                <article class="collection-card">
+                    <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-3-2">
+                        <img src="assets/images/featured-6.png" alt="Văn học nghệ thuật góp phần xây dựng"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="collection-title font-bold text-lg mb-2 text-center" style="font-size: 1rem;"><a
+                            href="book-detail.html">Văn học nghệ thuật góp phần xây dựng bản lĩnh</a></h3>
+                </article>
             </div>
         </div>
     </section>

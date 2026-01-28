@@ -165,3 +165,22 @@
         flex-wrap: wrap;
     }
 }
+
+/* Grid 6 Responsive */
+@media (max-width: 1200px) {
+    .grid-6 {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-6 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-6 {
+        grid-template-columns: 1fr !important;
+    }
+}

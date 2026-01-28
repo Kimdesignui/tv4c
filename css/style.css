@@ -1098,7 +1098,7 @@ img {
   height: 2.25rem;
   /* Reduced to 36px */
   /* max-width removal as per user request for strict % */
-  width: 30%;
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -2755,4 +2755,22 @@ body.reader-mode {
 
 .book-demo-card:hover .book-demo-cover img {
   transform: scale(1.05);
+}
+
+/* ============================================
+   Updates for New Featured Section (User Request)
+   ============================================ */
+.grid-6 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+}
+
+.aspect-3-2 {
+  aspect-ratio: 3/2 !important;
+}
+
+/* Footer Title Color Fix */
+.footer-title {
+  color: var(--white) !important;
 }
