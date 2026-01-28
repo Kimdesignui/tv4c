@@ -1963,6 +1963,12 @@ padding: 2px;
   color: #055BF5;
 }
 
+/* User Request: Body-left modules below "Điểm sách" get 24px padding */
+.body-left>div:nth-child(n+2) {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
 .book-cover {
   aspect-ratio: 2/3;
   overflow: hidden;
