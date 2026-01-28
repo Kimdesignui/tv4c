@@ -1097,9 +1097,9 @@ img {
   height: 50px;
   /* Increased height */
   width: 60%;
+  /* Increased height */
+  width: 60%;
   margin: 0 auto;
-  padding: 5px;
-  /* Space for button padding */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   /* Soft shadow */
 }
