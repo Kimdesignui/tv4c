@@ -85,6 +85,7 @@ img {
 .container {
   max-width: var(--container-width);
   padding: 0 var(--space-4);
+  margin: 0 auto;
 }
 
 /* Flex Utilities */
@@ -2722,7 +2723,7 @@ body.reader-mode {
 
 .book-demo-cover {
   width: 100%;
-  aspect-ratio: 2/3;
+  aspect-ratio: 3/2;
   border-radius: 4px;
   /* var(--radius-sm) */
   overflow: hidden;
