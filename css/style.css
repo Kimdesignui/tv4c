@@ -1207,7 +1207,7 @@ color: var(--text-dark);
 }
 
 .sub-banner-section {
-  padding-bottom: 0;
+  padding-bottom: 0 !important;
   /* User Request */
 }
 
