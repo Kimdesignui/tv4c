@@ -1090,93 +1090,76 @@ img {
 /* Search Box */
 .search-box {
   background: var(--white);
-  /* White background for the whole container */
-  border-radius: 30px;
-  /* Pill shape */
+  border-radius: 50px;
+  /* High radius for pill shape */
   display: flex;
   align-items: center;
-  height: 2.25rem;
-  /* Reduced to 36px */
-  /* max-width removal as per user request for strict % */
+  height: 50px;
+  /* Increased height */
   width: 60%;
   margin: 0 auto;
-}
-
-/* ============================================
-   Featured Carousel (6 items)
-   ============================================ */
-/* Center it */
-padding: 2px;
-/* Reduced padding */
+  padding: 4px;
+  /* Space for button padding */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  /* Soft shadow */
 }
 
 /* Wrapper for input and select */
 .search-input-group {
   display: flex;
-  background: transparent;
   flex: 1;
   height: 100%;
   align-items: center;
-  /* Removed padding-left so select touches edge */
-  overflow: hidden;
+}
+
+/* User Request: Search select styling */
+.search-select {
+  border: none;
+  background: transparent;
+  padding: 0 15px 0 20px;
+  font-size: 0.95rem;
+  border-right: 2px solid #e0e0e0;
+  /* Explicit divider */
+  outline: none;
+  color: #555;
+  cursor: pointer;
+  height: 60%;
+  /* Divider height */
+  font-family: inherit;
 }
 
 .search-input {
   border: none;
   background: transparent;
   outline: none;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--text-dark);
-  width: 100%;
   flex: 1;
   min-width: 0;
-  padding-right: 10px;
-  padding-left: 15px;
-  /* Add padding to input */
-}
-
-/* User Request: Search select height 100% and only border right */
-.search-select {
-  border: none;
-  background: transparent;
-  padding: 0 10px 0 15px;
-  /* 15px left, 10px right */
-  font-size: 0.875rem;
-  border-right: 1px solid #e5e7eb;
-  outline: none;
-  max-width: 160px;
-  color: var(--text-gray);
-  cursor: pointer;
+  padding: 0 15px;
   height: 100%;
 }
 
-/* 15px */
-outline: none;
-font-size: 0.875rem;
-/* 14px */
-background: transparent;
-height: 100%;
-color: var(--text-dark);
-}
-
 .search-btn {
-  background: var(--accent-yellow);
+  background: #ffb700;
+  /* Distinct yellow from image */
   border: none;
-  width: 2.25rem;
-  /* 36px */
-  height: 2.25rem;
-  /* 36px */
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   cursor: pointer;
   color: var(--white);
-  font-size: 1.1rem;
-  /* 17.6px */
-  margin-left: 5px;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: 0.2s;
   flex-shrink: 0;
+  margin-right: 2px;
+}
+
+.search-btn:hover {
+  background: #e5a500;
 }
 
 .search-btn i {
