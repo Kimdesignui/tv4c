@@ -905,51 +905,83 @@
             <div class="module-header flex justify-between items-center mb-6">
                 <h2 class="module-title text-primary uppercase font-bold text-2xl">Bộ sưu tập số</h2>
                 <div class="carousel-nav flex gap-2">
-                    <button class="nav-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
-                    <button class="nav-btn next"><i class="fa-solid fa-chevron-right"></i></button>
+                    <button class="nav-btn prev collection-prev"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="nav-btn next collection-next"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
 
-            <div class="collections-grid grid grid-4 gap-6">
-                <!-- Collection 1 -->
-                <article class="collection-card">
-                    <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-square">
-                        <img src="assets/images/collection-1.png" alt="Combo Sách" class="w-full h-full object-cover">
-                        <span class="badge-overlay">Freeship</span>
-                    </div>
-                    <h3 class="collection-title font-bold text-lg mb-2"><a href="#">Hoa xương rồng</a></h3>
-                    <p class="collection-desc text-sm text-gray limit-3">Tuyển tập những tác phẩm văn học kinh điển viết
-                        về nghị lực sống và sự vươn lên trong nghịch cảnh.</p>
-                </article>
-                <!-- Collection 2 -->
-                <article class="collection-card">
-                    <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-square">
-                        <img src="assets/images/collection-2.png" alt="Collection" class="w-full h-full object-cover">
-                        <span class="badge-overlay">Mới</span>
-                    </div>
-                    <h3 class="collection-title font-bold text-lg mb-2"><a href="#">Pricing With Confidence</a></h3>
-                    <p class="collection-desc text-sm text-gray limit-3">Bộ sách chuyên sâu về chiến lược định giá sản
-                        phẩm dành cho CEO và các nhà quản lý thị trường.</p>
-                </article>
-                <!-- Collection 3 -->
-                <article class="collection-card">
-                    <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-square">
-                        <img src="assets/images/collection-3.png" alt="Collection" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="collection-title font-bold text-lg mb-2"><a href="#">Tư duy ngược</a></h3>
-                    <p class="collection-desc text-sm text-gray limit-3">Khám phá những phương pháp tư duy đột phá giúp
-                        bạn giải quyết vấn đề theo cách khác biệt.</p>
-                </article>
-                <!-- Collection 4 -->
-                <article class="collection-card">
-                    <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-square">
-                        <img src="assets/images/collection-4.png" alt="Collection" class="w-full h-full object-cover">
-                        <span class="badge-overlay">Hot</span>
-                    </div>
-                    <h3 class="collection-title font-bold text-lg mb-2"><a href="#">Định giá đúng</a></h3>
-                    <p class="collection-desc text-sm text-gray limit-3">Hướng dẫn toàn diện về nghệ thuật định giá dựa
-                        trên giá trị thực tế của sản phẩm.</p>
-                </article>
+            <div class="collections-list-wrapper">
+                <div class="collections-list">
+                    <!-- Collection 1 -->
+                    <article class="collection-card">
+                        <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-square">
+                            <img src="assets/images/collection-1.png" alt="Combo Sách"
+                                class="w-full h-full object-cover" loading="lazy">
+                            <span class="badge-overlay">Freeship</span>
+                        </div>
+                        <h3 class="collection-title font-bold text-lg mb-2"><a href="#">Hoa xương rồng</a></h3>
+                        <p class="collection-desc text-sm text-gray limit-3">Tuyển tập những tác phẩm văn học kinh điển
+                            viết
+                            về nghị lực sống và sự vươn lên trong nghịch cảnh.</p>
+                    </article>
+                    <!-- Collection 2 -->
+                    <article class="collection-card">
+                        <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-square">
+                            <img src="assets/images/collection-2.png" alt="Collection"
+                                class="w-full h-full object-cover" loading="lazy">
+                            <span class="badge-overlay">Mới</span>
+                        </div>
+                        <h3 class="collection-title font-bold text-lg mb-2"><a href="#">Pricing With Confidence</a></h3>
+                        <p class="collection-desc text-sm text-gray limit-3">Bộ sách chuyên sâu về chiến lược định giá
+                            sản
+                            phẩm dành cho CEO và các nhà quản lý thị trường.</p>
+                    </article>
+                    <!-- Collection 3 -->
+                    <article class="collection-card">
+                        <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-square">
+                            <img src="assets/images/collection-3.png" alt="Collection"
+                                class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                        <h3 class="collection-title font-bold text-lg mb-2"><a href="#">Tư duy ngược</a></h3>
+                        <p class="collection-desc text-sm text-gray limit-3">Khám phá những phương pháp tư duy đột phá
+                            giúp
+                            bạn giải quyết vấn đề theo cách khác biệt.</p>
+                    </article>
+                    <!-- Collection 4 -->
+                    <article class="collection-card">
+                        <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-square">
+                            <img src="assets/images/collection-4.png" alt="Collection"
+                                class="w-full h-full object-cover" loading="lazy">
+                            <span class="badge-overlay">Hot</span>
+                        </div>
+                        <h3 class="collection-title font-bold text-lg mb-2"><a href="#">Định giá đúng</a></h3>
+                        <p class="collection-desc text-sm text-gray limit-3">Hướng dẫn toàn diện về nghệ thuật định giá
+                            dựa
+                            trên giá trị thực tế của sản phẩm.</p>
+                    </article>
+                    <!-- Collection 5 (New) -->
+                    <article class="collection-card">
+                        <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-square">
+                            <img src="assets/images/collection-5.png" alt="Pricing With Confidence"
+                                class="w-full h-full object-cover" loading="lazy">
+                            <span class="badge-overlay">Freeship</span>
+                        </div>
+                        <h3 class="collection-title font-bold text-lg mb-2"><a href="#">Pricing With Confidence</a></h3>
+                        <p class="collection-desc text-sm text-gray limit-3">Bộ sách chuyên sâu về chiến lược định giá
+                            sản phẩm dành cho CEO và các nhà quản lý thị trường.</p>
+                    </article>
+                    <!-- Collection 6 (New) -->
+                    <article class="collection-card">
+                        <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-square">
+                            <img src="assets/images/collection-6.png" alt="Định giá đúng"
+                                class="w-full h-full object-cover" loading="lazy">
+                            <span class="badge-overlay">Freeship</span>
+                        </div>
+                        <h3 class="collection-title font-bold text-lg mb-2"><a href="#">Định giá đúng</a></h3>
+                        <p class="collection-desc text-sm text-gray limit-3">Hướng dẫn toàn diện về nghệ thuật định giá
+                            dựa trên giá trị thực tế của sản phẩm.</p>
+                    </article>
+                </div>
             </div>
         </div>
     </section>

@@ -184,3 +184,31 @@
         grid-template-columns: 1fr !important;
     }
 }
+
+@media (max-width: 480px) {
+    .grid-6 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Collections Slider Mobile */
+    .collections-list .collection-card {
+        min-width: 100% !important;
+        /* 1 item */
+    }
+}
+
+@media (max-width: 1024px) {
+
+    /* Tablet: 3 items? or 2? Let's say 3 items -> (100% - 48px)/3 */
+    .collections-list .collection-card {
+        min-width: calc((100% - 48px) / 3);
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Mobile Large: 2 items -> (100% - 24px)/2 */
+    .collections-list .collection-card {
+        min-width: calc((100% - 24px) / 2);
+    }
+}

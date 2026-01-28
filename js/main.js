@@ -8,11 +8,122 @@ document.addEventListener('DOMContentLoaded', function () {
     initSlider();
     initNewsSlider(); // Added News Slider
     initFeaturedCarousel(); // Added Featured Carousel
+    initCollectionsCarousel(); // Added Collections Carousel
     initMobileMenu();
     initTabs();
     initDropdown();
     initScrollEffects();
 });
+
+// ... existing code ...
+
+/**
+ * Collections Carousel (Digital Collections)
+ */
+function initCollectionsCarousel() {
+    const track = document.querySelector('.collections-list');
+    const items = document.querySelectorAll('.collections-list .collection-card');
+    const prevBtn = document.querySelector('.collection-prev');
+    const nextBtn = document.querySelector('.collection-next');
+
+    if (!track || items.length === 0) return;
+
+    let currentIndex = 0;
+    let autoPlayInterval;
+
+    function getItemsToShow() {
+        const w = window.innerWidth;
+        if (w <= 480) return 1;
+        if (w <= 768) return 2;
+        if (w <= 1024) return 3;
+        return 4; // Desktop standard for collections
+    }
+
+    function updateCarousel() {
+        const itemsToShow = getItemsToShow();
+        const totalItems = items.length;
+
+        // Clamp index
+        if (currentIndex < 0) currentIndex = 0;
+        if (currentIndex > totalItems - itemsToShow) currentIndex = totalItems - itemsToShow;
+
+        // Calculate move distance
+        const itemWidth = items[0].offsetWidth;
+        // Get gap from computed style
+        const style = window.getComputedStyle(track);
+        const gap = parseFloat(style.gap) || 24;
+
+        const moveX = currentIndex * (itemWidth + gap);
+        track.style.transform = `translateX(-${moveX}px)`;
+
+        // Update buttons state
+        if (prevBtn) {
+            prevBtn.disabled = currentIndex === 0;
+            prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        }
+        if (nextBtn) {
+            nextBtn.disabled = currentIndex >= totalItems - itemsToShow;
+            nextBtn.style.opacity = currentIndex >= totalItems - itemsToShow ? '0.5' : '1';
+        }
+    }
+
+    function nextSlide() {
+        const itemsToShow = getItemsToShow();
+        if (currentIndex < items.length - itemsToShow) {
+            currentIndex++;
+            updateCarousel();
+        } else {
+            // Loop back to start for auto-play
+            currentIndex = 0;
+            updateCarousel();
+        }
+    }
+
+    function prevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    }
+
+    function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayInterval = setInterval(nextSlide, 4000); // 4 seconds
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayInterval) clearInterval(autoPlayInterval);
+    }
+
+    // Listeners
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            startAutoPlay();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            startAutoPlay();
+        });
+    }
+
+    // Pause on hover
+    track.parentElement.addEventListener('mouseenter', stopAutoPlay);
+    track.parentElement.addEventListener('mouseleave', startAutoPlay);
+
+    // Initial start
+    startAutoPlay();
+    updateCarousel();
+
+    // Reset on resize
+    window.addEventListener('resize', () => {
+        currentIndex = 0;
+        updateCarousel();
+    });
+}
 
 /**
  * Hero Slider
