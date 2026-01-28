@@ -113,39 +113,30 @@
                 <!-- LEFT COLUMN (Main Content) -->
                 <div class="main-content">
                     <!-- Section Header -->
-                    <div class="flex items-center justify-between mb-6 border-b border-gray-200 pb-3">
-                        <h2 class="text-xl font-bold text-gray-800 uppercase tracking-tight flex items-center gap-3">
-                            <span class="w-1.5 h-6 bg-red-600 rounded-sm"></span>
+                    <div class="mb-6 pb-2 border-b border-gray-200">
+                        <h2 class="text-xl font-bold text-gray-800 uppercase tracking-tight flex items-center gap-2">
+                            <span class="w-1 h-5 bg-red-600 block"></span>
                             Tin tức nổi bật
                         </h2>
                     </div>
 
-                    <!-- Featured News Item -->
-                    <div class="news-featured mb-10 relative rounded-xl overflow-hidden group shadow-md">
-                        <a href="news-detail.html" class="block relative aspect-video">
-                            <img src="assets/images/news-featured-demo.png"
-                                class="w-full h-full object-cover transition duration-700 group-hover:scale-105 transform">
-
-                            <!-- Gradient Overlay -->
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90">
+                    <!-- Featured News Item (Dark Bar Style) -->
+                    <div class="news-featured mb-10 group relative rounded-lg overflow-hidden shadow-sm bg-white">
+                        <a href="news-detail.html" class="block w-full">
+                            <!-- Image Container -->
+                            <div class="aspect-video w-full overflow-hidden relative">
+                                <img src="assets/images/news-featured-demo.png"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    alt="Featured News">
                             </div>
-
-                            <!-- Content -->
-                            <div class="absolute bottom-0 left-0 w-full p-8 text-white">
-                                <span
-                                    class="inline-block px-3 py-1 bg-red-600 text-white text-xs font-bold uppercase rounded mb-3 tracking-wider shadow-sm">
-                                    Điểm sách
-                                </span>
-                                <h3
-                                    class="font-bold text-2xl md:text-3xl hover:text-red-100 transition leading-tight mb-2 text-shadow-sm">
-                                    Những đóng góp to lớn của đồng chí Nguyễn Phú Trọng với sự nghiệp cách mạng của Đảng
-                                    và dân tộc
+                            <!-- Dark Text Overlay (Bottom Bar style) -->
+                            <div
+                                class="absolute bottom-0 left-0 right-0 bg-gray-900/90 text-white p-6 backdrop-blur-sm">
+                                <div class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Giới thiệu
+                                    sách</div>
+                                <h3 class="text-2xl font-bold leading-tight group-hover:text-red-400 transition-colors">
+                                    Ra mắt cuốn sách về Quốc hội của Tổng Bí thư Nguyễn Phú Trọng
                                 </h3>
-                                <div class="flex items-center gap-4 text-sm text-gray-300 font-medium mt-3">
-                                    <span><i class="fa-regular fa-clock mr-1"></i> 13/01/2024</span>
-                                    <span><i class="fa-regular fa-eye mr-1"></i> 1,234 lượt xem</span>
-                                </div>
                             </div>
                         </a>
                     </div>
