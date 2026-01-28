@@ -112,296 +112,326 @@
             <div class="content-wrapper" style="display: grid; grid-template-columns: 3fr 1fr; gap: 30px;">
                 <!-- LEFT COLUMN (Main Content) -->
                 <div class="main-content">
+                    <h2 class="text-sm font-bold text-gray-600 mb-5 uppercase tracking-wide">Tất cả bài viết (32)</h2>
 
-                    <!-- 1. Featured News Carousel -->
-                    <div class="news-carousel-wrapper mb-8 bg-white rounded-lg shadow-sm overflow-hidden">
-                        <div class="carousel-view news-hero-carousel">
-                            <div class="carousel-track">
-                                <div class="carousel-item col-12" style="width: 100%;">
-                                    <!-- Slide -->
-                                    <div class="news-feature-slide"
-                                        style="display: grid; grid-template-columns: 60% 40%;">
-                                        <div class="slide-img h-full">
-                                            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800"
-                                                class="w-full h-full object-cover" style="min-height: 300px;">
-                                        </div>
-                                        <div class="slide-content p-6 flex flex-col justify-center bg-dark text-white"
-                                            style="background: #333;">
-                                            <span class="text-xs uppercase tracking-wider mb-2 text-yellow-400">Giới
-                                                thiệu sách</span>
-                                            <h2 class="text-xl font-bold mb-3 leading-tight">Ra mắt cuốn sách về Quốc
-                                                hội của Tổng Bí thư Nguyễn Phú Trọng</h2>
-                                            <p class="text-gray-300 text-sm mb-4 limit-3">Cuốn sách tuyển chọn các bài
-                                                phát biểu, bài viết của Tổng Bí thư về hoạt động của Quốc hội...</p>
-                                        </div>
-                                    </div>
-                                </div>
+                    <!-- Featured News Item -->
+                    <div class="news-featured mb-8 relative rounded-lg overflow-hidden group shadow-sm">
+                        <a href="#" class="block relative aspect-video">
+                            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800"
+                                class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
                             </div>
-                        </div>
+                            <div class="absolute bottom-0 left-0 w-full p-6 text-white">
+                                <h3 class="font-bold text-xl mb-1 hover:underline">Thông báo tạm ngưng xử lý đơn hàng để
+                                    kiểm kê kho</h3>
+                                <p class="text-sm opacity-90"><span class="text-yellow-400 font-medium">Cảm nhận
+                                        sách</span> | eBook</p>
+                            </div>
+                        </a>
                     </div>
 
-                    <!-- 2. News List -->
-                    <div class="news-list flex flex-col gap-6">
+                    <!-- News List -->
+                    <div class="news-list flex flex-col gap-8">
                         <!-- News Item 1 -->
-                        <article class="news-item-horizontal bg-white rounded shadow-sm p-4 flex gap-6 align-start"
-                            style="display: flex; gap: 20px;">
-                            <div class="news-thumb rounded overflow-hidden flex-shrink-0"
-                                style="width: 200px; height: 140px;">
+                        <article
+                            class="news-item flex gap-5 group border-b pb-8 last:border-0 last:pb-0 border-gray-100">
+                            <div class="news-thumb w-[220px] h-[140px] flex-shrink-0 overflow-hidden rounded relative">
                                 <img src="assets/images/news-1.png"
-                                    onerror="this.src='https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=400'"
-                                    class="w-full h-full object-cover">
+                                    onerror="this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400'"
+                                    class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
                             </div>
-                            <div class="news-info flex-1">
-                                <h3 class="font-bold text-lg mb-2"><a href="#" class="hover:text-primary"
-                                        style="color: #333;">Cách thức dự thi Cách thức dự thi</a></h3>
-                                <p class="text-sm text-gray mb-3 limit-3" style="color: #666; line-height: 1.6;">Người
-                                    dự thi sử dụng các thiết bị điện tử có kết nối Internet để tham gia Cuộc thi, truy
-                                    cập tại địa chỉ: https://thitructuyen.sachquocgia.vn/hoặc các báo, tạp chí điện tử,
-                                    trang thông tin điện tử có link liên kết Cuộc thi...</p>
-                                <a href="#" class="text-red-500 text-sm hover:underline" style="color: #e11d48;">Chi
-                                    tiết</a>
+                            <div class="news-info flex-1 flex flex-col justify-between">
+                                <div>
+                                    <h3
+                                        class="font-bold text-base mb-2 text-primary-dark leading-snug group-hover:text-primary transition">
+                                        <a href="#">Thúc đẩy văn hóa đọc phát triển mạnh mẽ hơn nữa</a>
+                                    </h3>
+                                    <p class="text-sm text-gray-600 line-clamp-3 mb-2 text-justify leading-relaxed">
+                                        Nói về sự phát triển của văn hóa đọc trong những năm gần đây, ông Nguyễn Nguyên,
+                                        Cục trưởng Cục Xuất bản, In và Phát hành, Phó Chủ tịch Hội Xuất bản Việt Nam cho
+                                        biết, mặc dù còn gặp rất nhiều khó khăn, nhưng trong năm qua ngành xuất bản đã
+                                        đạt được những thắng lợi có tính vượt bậc...
+                                    </p>
+                                </div>
+                                <div class="text-xs text-gray-400 font-medium flex items-center gap-2">
+                                    <i class="fa-regular fa-clock"></i> 01/08/2023 | 14:26
+                                </div>
                             </div>
                         </article>
 
                         <!-- Item 2 -->
-                        <article class="news-item-horizontal bg-white rounded shadow-sm p-4 flex gap-6 align-start"
-                            style="display: flex; gap: 20px;">
-                            <div class="news-thumb rounded overflow-hidden flex-shrink-0"
-                                style="width: 200px; height: 140px;">
+                        <article
+                            class="news-item flex gap-5 group border-b pb-8 last:border-0 last:pb-0 border-gray-100">
+                            <div class="news-thumb w-[220px] h-[140px] flex-shrink-0 overflow-hidden rounded relative">
                                 <img src="assets/images/news-2.png"
                                     onerror="this.src='https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400'"
-                                    class="w-full h-full object-cover">
+                                    class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
                             </div>
-                            <div class="news-info flex-1">
-                                <h3 class="font-bold text-lg mb-2"><a href="#" class="hover:text-primary"
-                                        style="color: #333;">Cách thức dự thi Cách thức dự thi</a></h3>
-                                <p class="text-sm text-gray mb-3 limit-3" style="color: #666; line-height: 1.6;">Người
-                                    dự thi sử dụng các thiết bị điện tử có kết nối Internet để tham gia Cuộc thi, truy
-                                    cập tại địa chỉ: https://thitructuyen.sachquocgia.vn/hoặc các báo, tạp chí điện tử,
-                                    trang thông tin điện tử có link liên kết Cuộc thi...</p>
-                                <a href="#" class="text-red-500 text-sm hover:underline" style="color: #e11d48;">Chi
-                                    tiết</a>
+                            <div class="news-info flex-1 flex flex-col justify-between">
+                                <div>
+                                    <h3
+                                        class="font-bold text-base mb-2 text-primary-dark leading-snug group-hover:text-primary transition">
+                                        <a href="#">Sách nói - động lực số hóa ngành xuất bản trong thời đại 4.0</a>
+                                    </h3>
+                                    <p class="text-sm text-gray-600 line-clamp-3 mb-2 text-justify leading-relaxed">
+                                        Không nằm ngoài xu thế phát triển của các xuất bản phẩm điện tử trên thế giới,
+                                        sách nói ngày càng được ưa chuộng ở nước ta, đáp ứng kịp thời những thay đổi
+                                        trong hành vi của người dùng theo hướng...
+                                    </p>
+                                </div>
+                                <div class="text-xs text-gray-400 font-medium flex items-center gap-2">
+                                    <i class="fa-regular fa-clock"></i> 01/08/2023 | 14:26
+                                </div>
                             </div>
                         </article>
 
                         <!-- Item 3 -->
-                        <article class="news-item-horizontal bg-white rounded shadow-sm p-4 flex gap-6 align-start"
-                            style="display: flex; gap: 20px;">
-                            <div class="news-thumb rounded overflow-hidden flex-shrink-0"
-                                style="width: 200px; height: 140px;">
+                        <article
+                            class="news-item flex gap-5 group border-b pb-8 last:border-0 last:pb-0 border-gray-100">
+                            <div class="news-thumb w-[220px] h-[140px] flex-shrink-0 overflow-hidden rounded relative">
                                 <img src="assets/images/news-3.png"
                                     onerror="this.src='https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=400'"
-                                    class="w-full h-full object-cover">
+                                    class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
                             </div>
-                            <div class="news-info flex-1">
-                                <h3 class="font-bold text-lg mb-2"><a href="#" class="hover:text-primary"
-                                        style="color: #333;">Cách thức dự thi Cách thức dự thi</a></h3>
-                                <p class="text-sm text-gray mb-3 limit-3" style="color: #666; line-height: 1.6;">Người
-                                    dự thi sử dụng các thiết bị điện tử có kết nối Internet để tham gia Cuộc thi...</p>
-                                <a href="#" class="text-red-500 text-sm hover:underline" style="color: #e11d48;">Chi
-                                    tiết</a>
+                            <div class="news-info flex-1 flex flex-col justify-between">
+                                <div>
+                                    <h3
+                                        class="font-bold text-base mb-2 text-primary-dark leading-snug group-hover:text-primary transition">
+                                        <a href="#">Mạnh tay với sách giả, sách lậu</a>
+                                    </h3>
+                                    <p class="text-sm text-gray-600 line-clamp-3 mb-2 text-justify leading-relaxed">
+                                        Một trong những mục tiêu trong nhiệm kỳ mới mà Hội Xuất bản Việt Nam chú trọng,
+                                        là mạnh tay hơn với sách giả, sách lậu, bằng những chế tài và biện pháp chặt chẽ
+                                        hơn, góp phần bảo vệ quyền lợi chính...
+                                    </p>
+                                </div>
+                                <div class="text-xs text-gray-400 font-medium flex items-center gap-2">
+                                    <i class="fa-regular fa-clock"></i> 01/08/2023 | 14:26
+                                </div>
                             </div>
                         </article>
+
                         <!-- Item 4 -->
-                        <article class="news-item-horizontal bg-white rounded shadow-sm p-4 flex gap-6 align-start"
-                            style="display: flex; gap: 20px;">
-                            <div class="news-thumb rounded overflow-hidden flex-shrink-0"
-                                style="width: 200px; height: 140px;">
+                        <article
+                            class="news-item flex gap-5 group border-b pb-8 last:border-0 last:pb-0 border-gray-100">
+                            <div class="news-thumb w-[220px] h-[140px] flex-shrink-0 overflow-hidden rounded relative">
                                 <img src="assets/images/news-4.png"
                                     onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400'"
-                                    class="w-full h-full object-cover">
+                                    class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
                             </div>
-                            <div class="news-info flex-1">
-                                <h3 class="font-bold text-lg mb-2"><a href="#" class="hover:text-primary"
-                                        style="color: #333;">Cách thức dự thi Cách thức dự thi</a></h3>
-                                <p class="text-sm text-gray mb-3 limit-3" style="color: #666; line-height: 1.6;">Người
-                                    dự thi sử dụng các thiết bị điện tử có kết nối Internet để tham gia Cuộc thi...</p>
-                                <a href="#" class="text-red-500 text-sm hover:underline" style="color: #e11d48;">Chi
-                                    tiết</a>
+                            <div class="news-info flex-1 flex flex-col justify-between">
+                                <div>
+                                    <h3
+                                        class="font-bold text-base mb-2 text-primary-dark leading-snug group-hover:text-primary transition">
+                                        <a href="#">Tổng thống K. Thứ Tư</a>
+                                    </h3>
+                                    <p class="text-sm text-gray-600 line-clamp-3 mb-2 text-justify leading-relaxed">
+                                        10 vạn câu hỏi vì sao (Động vật - Thực vật - Khủng long - Vũ trụ)10 vạn câu hỏi
+                                        vì sao (Động vật - Thực vật - Khủng long - Vũ trụ)
+                                    </p>
+                                </div>
+                                <div class="text-xs text-gray-400 font-medium flex items-center gap-2">
+                                    <i class="fa-regular fa-clock"></i> 01/08/2023 | 14:26
+                                </div>
                             </div>
                         </article>
+
                         <!-- Item 5 -->
-                        <article class="news-item-horizontal bg-white rounded shadow-sm p-4 flex gap-6 align-start"
-                            style="display: flex; gap: 20px;">
-                            <div class="news-thumb rounded overflow-hidden flex-shrink-0"
-                                style="width: 200px; height: 140px;">
+                        <article
+                            class="news-item flex gap-5 group border-b pb-8 last:border-0 last:pb-0 border-gray-100">
+                            <div class="news-thumb w-[220px] h-[140px] flex-shrink-0 overflow-hidden rounded relative">
                                 <img src="assets/images/news-5.png"
                                     onerror="this.src='https://images.unsplash.com/photo-1550399105-c4db5fb85c18?w=400'"
-                                    class="w-full h-full object-cover">
+                                    class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
                             </div>
-                            <div class="news-info flex-1">
-                                <h3 class="font-bold text-lg mb-2"><a href="#" class="hover:text-primary"
-                                        style="color: #333;">Cách thức dự thi Cách thức dự thi</a></h3>
-                                <p class="text-sm text-gray mb-3 limit-3" style="color: #666; line-height: 1.6;">Người
-                                    dự thi sử dụng các thiết bị điện tử có kết nối Internet để tham gia Cuộc thi...</p>
-                                <a href="#" class="text-red-500 text-sm hover:underline" style="color: #e11d48;">Chi
-                                    tiết</a>
+                            <div class="news-info flex-1 flex flex-col justify-between">
+                                <div>
+                                    <h3
+                                        class="font-bold text-base mb-2 text-primary-dark leading-snug group-hover:text-primary transition">
+                                        <a href="#">Anh không bận, chỉ là không nhớ em (Tuệ Mẫn)</a>
+                                    </h3>
+                                    <p class="text-sm text-gray-600 line-clamp-3 mb-2 text-justify leading-relaxed">
+                                        Dành cho những năm tháng cô đơn đợi một người... Dành cho bạn, người quên yêu
+                                        bản thân lúc vụn vỡ nhất...
+                                    </p>
+                                </div>
+                                <div class="text-xs text-gray-400 font-medium flex items-center gap-2">
+                                    <i class="fa-regular fa-clock"></i> 01/08/2023 | 14:26
+                                </div>
                             </div>
                         </article>
                     </div>
 
-                    <!-- 3. Pagination -->
-                    <div class="pagination mt-8 flex justify-center gap-2 items-center"
-                        style="display: flex; justify-content: center; gap: 8px; margin-top: 30px;">
-                        <button
-                            class="w-8 h-8 rounded-full border hover:bg-primary hover:text-white flex items-center justify-center"
-                            style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #ddd; background: #fff;"><i
-                                class="fa-solid fa-chevron-left"></i></button>
-                        <button
-                            class="w-8 h-8 rounded-full border bg-primary text-white flex items-center justify-center"
-                            style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #46648D; background: #46648D; color: #fff;">1</button>
-                        <button
-                            class="w-8 h-8 rounded-full border hover:bg-primary hover:text-white flex items-center justify-center"
-                            style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #ddd; background: #fff;">2</button>
-                        <button
-                            class="w-8 h-8 rounded-full border hover:bg-primary hover:text-white flex items-center justify-center"
-                            style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #ddd; background: #fff;">3</button>
-                        <span class="w-8 h-8 flex items-center justify-center">...</span>
-                        <button
-                            class="w-8 h-8 rounded-full border hover:bg-primary hover:text-white flex items-center justify-center"
-                            style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #ddd; background: #fff;">20</button>
-                        <button
-                            class="w-8 h-8 rounded-full border hover:bg-primary hover:text-white flex items-center justify-center"
-                            style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #ddd; background: #fff;"><i
-                                class="fa-solid fa-chevron-right"></i></button>
+                    <!-- Pagination -->
+                    <div class="pagination mt-10 flex justify-center gap-2 items-center">
+                        <a href="#"
+                            class="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-50 transition text-xs">
+                            <i class="fa-solid fa-angle-left"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-50 transition text-xs">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-yellow-400 text-white font-bold flex items-center justify-center shadow-sm text-sm">1</a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition font-medium text-sm">2</a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition font-medium text-sm">3</a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition font-medium text-sm">...</a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition font-medium text-sm">8</a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-50 transition text-xs">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-50 transition text-xs">
+                            <i class="fa-solid fa-angle-double-right"></i>
+                        </a>
                     </div>
-
                 </div>
+                class="w-8 h-8 rounded-full border hover:bg-primary hover:text-white flex items-center justify-center"
+                style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #ddd; background:
+                #fff;">20</button>
+                <button
+                    class="w-8 h-8 rounded-full border hover:bg-primary hover:text-white flex items-center justify-center"
+                    style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #ddd; background: #fff;"><i
+                        class="fa-solid fa-chevron-right"></i></button>
+            </div>
 
-                <!-- RIGHT COLUMN (Sidebar) -->
-                <div class="sidebar flex flex-col gap-6" style="display: flex; flex-direction: column; gap: 24px;">
+        </div>
 
-                    <!-- Widget 1: Latest News -->
-                    <div class="sidebar-widget bg-white rounded shadow-sm border p-0 overflow-hidden"
-                        style="border: 1px solid #eee; border-radius: 8px;">
-                        <div class="widget-header p-3 border-b bg-gray-50 flex items-center gap-2"
-                            style="padding: 12px; background: #f9fafb; border-bottom: 1px solid #eee;">
-                            <i class="fa-solid fa-newspaper text-primary"></i>
-                            <h3 class="widget-title font-bold text-primary"
-                                style="font-size: 16px; margin: 0; color: #46648D;">Tin mới nhất</h3>
+        <!-- RIGHT COLUMN (Sidebar) -->
+        <div class="sidebar flex flex-col gap-6" style="display: flex; flex-direction: column; gap: 24px;">
+
+            <!-- Widget 1: Latest News -->
+            <div class="sidebar-widget bg-white rounded shadow-sm border p-0 overflow-hidden"
+                style="border: 1px solid #eee; border-radius: 8px;">
+                <div class="widget-header p-3 border-b bg-gray-50 flex items-center gap-2"
+                    style="padding: 12px; background: #f9fafb; border-bottom: 1px solid #eee;">
+                    <i class="fa-solid fa-newspaper text-primary"></i>
+                    <h3 class="widget-title font-bold text-primary" style="font-size: 16px; margin: 0; color: #46648D;">
+                        Tin mới nhất</h3>
+                </div>
+                <div class="latest-news-list p-3 flex flex-col gap-4">
+                    <!-- Item -->
+                    <article class="latest-news-item flex gap-3 align-start"
+                        style="display: flex; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0;">
+                        <div class="w-16 h-12 rounded overflow-hidden flex-shrink-0 bg-gray-200 border"
+                            style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-regular fa-image text-gray-400" style="font-size: 1.2rem; color: #999;"></i>
                         </div>
-                        <div class="latest-news-list p-3 flex flex-col gap-4">
-                            <!-- Item -->
-                            <article class="latest-news-item flex gap-3 align-start"
-                                style="display: flex; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0;">
-                                <div class="w-16 h-12 rounded overflow-hidden flex-shrink-0 bg-gray-200 border"
-                                    style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
-                                    <i class="fa-regular fa-image text-gray-400"
-                                        style="font-size: 1.2rem; color: #999;"></i>
-                                </div>
-                                <h4 class="text-sm font-medium limit-3" style="font-size: 14px; line-height: 1.4;"><a
-                                        href="#" style="color: #333;">Tiêu đề tin tức hiển thị ở đây</a></h4>
-                            </article>
-                            <!-- Item -->
-                            <article class="latest-news-item flex gap-3 align-start"
-                                style="display: flex; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0;">
-                                <div class="w-16 h-12 rounded overflow-hidden flex-shrink-0 bg-gray-200 border"
-                                    style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
-                                    <i class="fa-regular fa-image text-gray-400"
-                                        style="font-size: 1.2rem; color: #999;"></i>
-                                </div>
-                                <h4 class="text-sm font-medium limit-3" style="font-size: 14px; line-height: 1.4;"><a
-                                        href="#" style="color: #333;">Tiêu đề tin tức hiển thị ở đây</a></h4>
-                            </article>
-                            <!-- Item -->
-                            <article class="latest-news-item flex gap-3 align-start"
-                                style="display: flex; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0;">
-                                <div class="w-16 h-12 rounded overflow-hidden flex-shrink-0 bg-gray-200 border"
-                                    style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
-                                    <i class="fa-regular fa-image text-gray-400"
-                                        style="font-size: 1.2rem; color: #999;"></i>
-                                </div>
-                                <h4 class="text-sm font-medium limit-3" style="font-size: 14px; line-height: 1.4;"><a
-                                        href="#" style="color: #333;">Tiêu đề tin tức hiển thị ở đây</a></h4>
-                            </article>
-                            <!-- Item -->
-                            <article class="latest-news-item flex gap-3 align-start"
-                                style="display: flex; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0;">
-                                <div class="w-16 h-12 rounded overflow-hidden flex-shrink-0 bg-gray-200 border"
-                                    style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
-                                    <i class="fa-regular fa-image text-gray-400"
-                                        style="font-size: 1.2rem; color: #999;"></i>
-                                </div>
-                                <h4 class="text-sm font-medium limit-3" style="font-size: 14px; line-height: 1.4;"><a
-                                        href="#" style="color: #333;">Tiêu đề tin tức hiển thị ở đây</a></h4>
-                            </article>
-                            <!-- Item -->
-                            <article class="latest-news-item flex gap-3 align-start" style="display: flex; gap: 12px;">
-                                <div class="w-16 h-12 rounded overflow-hidden flex-shrink-0 bg-gray-200 border"
-                                    style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
-                                    <i class="fa-regular fa-image text-gray-400"
-                                        style="font-size: 1.2rem; color: #999;"></i>
-                                </div>
-                                <h4 class="text-sm font-medium limit-3" style="font-size: 14px; line-height: 1.4;"><a
-                                        href="#" style="color: #333;">Tiêu đề tin tức hiển thị ở đây</a></h4>
-                            </article>
+                        <h4 class="text-sm font-medium limit-3" style="font-size: 14px; line-height: 1.4;"><a href="#"
+                                style="color: #333;">Tiêu đề tin tức hiển thị ở đây</a></h4>
+                    </article>
+                    <!-- Item -->
+                    <article class="latest-news-item flex gap-3 align-start"
+                        style="display: flex; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0;">
+                        <div class="w-16 h-12 rounded overflow-hidden flex-shrink-0 bg-gray-200 border"
+                            style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-regular fa-image text-gray-400" style="font-size: 1.2rem; color: #999;"></i>
                         </div>
-                    </div>
-
-                    <!-- Widget 2: Banner -->
-                    <div class="sidebar-banner rounded overflow-hidden shadow-sm" style="border-radius: 8px;">
-                        <img src="assets/images/placeholder-banner.png"
-                            onerror="this.src='https://via.placeholder.com/300x200?text=Banner'" class="w-full h-auto">
-                    </div>
-
-                    <!-- Widget 3: Linked Library -->
-                    <div class="sidebar-widget library-link-widget mb-4 bg-white p-4 rounded shadow-sm border"
-                        style="border: 1px solid #eee;">
-                        <h3 class="widget-title mb-3 font-bold" style="font-size: 1rem; color: #46648D;">Thư viện liên
-                            kết</h3>
-                        <div class="library-select-wrapper">
-                            <select class="library-select w-full p-2 border rounded"
-                                style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
-                                <option value="">-- Chọn thư viện --</option>
-                                <option value="tv1">Thư viện Quốc gia</option>
-                                <option value="tv2">Thư viện Hà Nội</option>
-                                <option value="tv3">Thư viện Quân đội</option>
-                                <option value="tv4">Thư viện KHTH TP.HCM</option>
-                            </select>
+                        <h4 class="text-sm font-medium limit-3" style="font-size: 14px; line-height: 1.4;"><a href="#"
+                                style="color: #333;">Tiêu đề tin tức hiển thị ở đây</a></h4>
+                    </article>
+                    <!-- Item -->
+                    <article class="latest-news-item flex gap-3 align-start"
+                        style="display: flex; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0;">
+                        <div class="w-16 h-12 rounded overflow-hidden flex-shrink-0 bg-gray-200 border"
+                            style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-regular fa-image text-gray-400" style="font-size: 1.2rem; color: #999;"></i>
                         </div>
-                    </div>
-
-                    <!-- Widget 4: Library Statistics -->
-                    <div class="sidebar-widget statistics-widget bg-white p-4 rounded shadow-sm border"
-                        style="border: 1px solid #eee;">
-                        <h3 class="widget-title mb-3 font-bold text-primary"
-                            style="color: #46648D; text-transform: none; font-size: 1rem;">Thống kê thư viện</h3>
-                        <div class="stats-content">
-                            <div class="stat-group mb-4">
-                                <div class="stat-row flex justify-between mb-2"
-                                    style="display: flex; justify-content: space-between;">
-                                    <span class="label text-gray-600 text-sm">Lượt truy cập</span>
-                                    <span class="value font-bold text-blue-600">28.872</span>
-                                </div>
-                                <div class="stat-row flex justify-between mb-2"
-                                    style="display: flex; justify-content: space-between;">
-                                    <span class="label text-gray-600 text-sm">Đang online</span>
-                                    <span class="value font-bold text-blue-600">23</span>
-                                </div>
-                            </div>
-                            <div class="border-t my-2" style="border-top: 1px solid #eee; margin: 8px 0;"></div>
-                            <div class="stat-group">
-                                <div class="stat-row flex justify-between mb-2"
-                                    style="display: flex; justify-content: space-between;">
-                                    <span class="label text-gray-600 text-sm">Lượt đọc</span>
-                                    <span class="value font-bold text-blue-600">13.134</span>
-                                </div>
-                                <div class="stat-row flex justify-between mb-2"
-                                    style="display: flex; justify-content: space-between;">
-                                    <span class="label text-gray-600 text-sm">Lượt nghe</span>
-                                    <span class="value font-bold text-blue-600">3.872</span>
-                                </div>
-                                <div class="stat-row flex justify-between mb-2"
-                                    style="display: flex; justify-content: space-between;">
-                                    <span class="label text-gray-600 text-sm">Lượt tải về</span>
-                                    <span class="value font-bold text-blue-600">28.872</span>
-                                </div>
-                            </div>
+                        <h4 class="text-sm font-medium limit-3" style="font-size: 14px; line-height: 1.4;"><a href="#"
+                                style="color: #333;">Tiêu đề tin tức hiển thị ở đây</a></h4>
+                    </article>
+                    <!-- Item -->
+                    <article class="latest-news-item flex gap-3 align-start"
+                        style="display: flex; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0;">
+                        <div class="w-16 h-12 rounded overflow-hidden flex-shrink-0 bg-gray-200 border"
+                            style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-regular fa-image text-gray-400" style="font-size: 1.2rem; color: #999;"></i>
                         </div>
-                    </div>
-
+                        <h4 class="text-sm font-medium limit-3" style="font-size: 14px; line-height: 1.4;"><a href="#"
+                                style="color: #333;">Tiêu đề tin tức hiển thị ở đây</a></h4>
+                    </article>
+                    <!-- Item -->
+                    <article class="latest-news-item flex gap-3 align-start" style="display: flex; gap: 12px;">
+                        <div class="w-16 h-12 rounded overflow-hidden flex-shrink-0 bg-gray-200 border"
+                            style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-regular fa-image text-gray-400" style="font-size: 1.2rem; color: #999;"></i>
+                        </div>
+                        <h4 class="text-sm font-medium limit-3" style="font-size: 14px; line-height: 1.4;"><a href="#"
+                                style="color: #333;">Tiêu đề tin tức hiển thị ở đây</a></h4>
+                    </article>
                 </div>
             </div>
+
+            <!-- Widget 2: Banner -->
+            <div class="sidebar-banner rounded overflow-hidden shadow-sm" style="border-radius: 8px;">
+                <img src="assets/images/placeholder-banner.png"
+                    onerror="this.src='https://via.placeholder.com/300x200?text=Banner'" class="w-full h-auto">
+            </div>
+
+            <!-- Widget 3: Linked Library -->
+            <div class="sidebar-widget library-link-widget mb-4 bg-white p-4 rounded shadow-sm border"
+                style="border: 1px solid #eee;">
+                <h3 class="widget-title mb-3 font-bold" style="font-size: 1rem; color: #46648D;">Thư viện liên
+                    kết</h3>
+                <div class="library-select-wrapper">
+                    <select class="library-select w-full p-2 border rounded"
+                        style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                        <option value="">-- Chọn thư viện --</option>
+                        <option value="tv1">Thư viện Quốc gia</option>
+                        <option value="tv2">Thư viện Hà Nội</option>
+                        <option value="tv3">Thư viện Quân đội</option>
+                        <option value="tv4">Thư viện KHTH TP.HCM</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Widget 4: Library Statistics -->
+            <div class="sidebar-widget statistics-widget bg-white p-4 rounded shadow-sm border"
+                style="border: 1px solid #eee;">
+                <h3 class="widget-title mb-3 font-bold text-primary"
+                    style="color: #46648D; text-transform: none; font-size: 1rem;">Thống kê thư viện</h3>
+                <div class="stats-content">
+                    <div class="stat-group mb-4">
+                        <div class="stat-row flex justify-between mb-2"
+                            style="display: flex; justify-content: space-between;">
+                            <span class="label text-gray-600 text-sm">Lượt truy cập</span>
+                            <span class="value font-bold text-blue-600">28.872</span>
+                        </div>
+                        <div class="stat-row flex justify-between mb-2"
+                            style="display: flex; justify-content: space-between;">
+                            <span class="label text-gray-600 text-sm">Đang online</span>
+                            <span class="value font-bold text-blue-600">23</span>
+                        </div>
+                    </div>
+                    <div class="border-t my-2" style="border-top: 1px solid #eee; margin: 8px 0;"></div>
+                    <div class="stat-group">
+                        <div class="stat-row flex justify-between mb-2"
+                            style="display: flex; justify-content: space-between;">
+                            <span class="label text-gray-600 text-sm">Lượt đọc</span>
+                            <span class="value font-bold text-blue-600">13.134</span>
+                        </div>
+                        <div class="stat-row flex justify-between mb-2"
+                            style="display: flex; justify-content: space-between;">
+                            <span class="label text-gray-600 text-sm">Lượt nghe</span>
+                            <span class="value font-bold text-blue-600">3.872</span>
+                        </div>
+                        <div class="stat-row flex justify-between mb-2"
+                            style="display: flex; justify-content: space-between;">
+                            <span class="label text-gray-600 text-sm">Lượt tải về</span>
+                            <span class="value font-bold text-blue-600">28.872</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
         </div>
     </main>
 
