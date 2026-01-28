@@ -36,12 +36,10 @@
         position: relative;
     }
 
-    /* Order Shifts */
-    .body-right,
-    .sidebar-filter {
-        order: 10;
-        /* Sidebar drops below content */
-    }
+    /* Order Shifts - REMOVED based on user feedback "Return right body to old position" */
+    /* .body-right, .sidebar-filter {
+        order: 10; 
+    } */
 
     /* Navbar Components */
     .nav-links {
@@ -54,30 +52,16 @@
         width: 100%;
     }
 
-    /* Featured Carousel Fix (User Request: 6 items logic) */
-    /* On mobile, we might show fewer items, but ensuring NO overflow scrollbar on body */
+    /* Featured Carousel Fix (User Request: 6 items visible on desktop, fewer here) */
+    /* Tablet (Small) / Mobile Large */
+    /* Show 3 items: (100% - 2 gaps) / 3 */
     .featured-list a.book-demo-card {
-        min-width: calc(100% / 3 - 20px) !important;
-        /* Show 3 on tablet */
+        min-width: calc((100% - 48px) / 3) !important;
     }
 }
 
-/* Featured Carousel Global Fix */
-.featured-list-wrapper {
-    overflow: hidden;
-    /* Crucial: Hides the part of the track that sticks out */
-    padding: 10px 0;
-    /* Add space for shadow */
-    margin: -10px 0;
-}
-
-.featured-list {
-    display: flex;
-    transition: transform 0.5s ease;
-    width: 100%;
-    /* Just fill wrapper */
-    /* The children will stretch the width */
-}
+/* Featured Carousel Global Fix Override (if needed here, but style.css handles it) */
+/* .featured-list-wrapper { overflow: hidden; } */
 
 /* Tablet (max-width: 768px) */
 @media (max-width: 768px) {
@@ -134,9 +118,9 @@
     }
 
     /* Featured Carousel Fix (Mobile) */
-    /* Show 2 items */
+    /* Show 2 items: (100% - 1 gap) / 2 */
     .featured-list a.book-demo-card {
-        min-width: calc(100% / 2 - 15px) !important;
+        min-width: calc((100% - 24px) / 2) !important;
     }
 
     /* Book Collections */
@@ -167,8 +151,9 @@
 
     /* Featured Carousel Fix (Small Mobile) */
     /* Show 1.5 items or 1 item */
+    /* Let's show 1 item for simplicity on small screens */
     .featured-list a.book-demo-card {
-        min-width: calc(100% - 20px) !important;
+        min-width: 100% !important;
     }
 
     /* Footer */

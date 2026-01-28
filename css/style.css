@@ -2643,3 +2643,114 @@ body.reader-mode {
   color: #46648D;
   font-weight: 700;
 }
+
+/* ============================================
+   Desktop Grid Layouts (Restoring lost inline styles)
+   ============================================ */
+
+/* Main Layout (index.html) - 3fr content, 1fr sidebar */
+.main-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 32px;
+  /* gap-8 */
+}
+
+/* Books Layout (books.html) - 250px sidebar, rest content */
+.main-layout-books {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 32px;
+}
+
+/* Guide Layout (guide.html) - 1fr sidebar, 2fr content */
+.guide-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 32px;
+}
+
+/* Book Detail Top (book-detail.html) - 400px sidebar, rest content */
+.detail-top-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 32px;
+}
+
+/* Book Detail Body (book-detail.html) - Content, 300px sidebar */
+.detail-body-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 32px;
+}
+
+
+/* ============================================
+   Fixed Featured Carousel (Desktop Default)
+   ============================================ */
+.featured-carousel .container {
+  max-width: 1280px;
+  /* Ensure container has a max width for calc to work reliably */
+  margin: 0 auto;
+}
+
+.featured-list-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  padding: 10px 0;
+  /* Space for shadow */
+}
+
+.featured-list {
+  display: flex;
+  gap: 24px;
+  /* Fixed gap */
+  transition: transform 0.5s ease-out;
+  width: 100%;
+}
+
+.book-demo-card {
+  /* Exact calculation for 6 items with 24px gap:
+       Width = (100% - (5 * 24px)) / 6
+    */
+  min-width: calc((100% - 120px) / 6);
+  flex-shrink: 0;
+  display: block;
+  text-decoration: none;
+}
+
+.book-demo-cover {
+  width: 100%;
+  aspect-ratio: 2/3;
+  border-radius: 4px;
+  /* var(--radius-sm) */
+  overflow: hidden;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.book-demo-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dark, #333);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Ensure images cover area */
+.book-demo-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.book-demo-card:hover .book-demo-cover img {
+  transform: scale(1.05);
+}
