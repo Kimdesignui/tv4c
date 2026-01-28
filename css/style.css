@@ -2841,12 +2841,13 @@ body.reader-mode {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  padding-bottom: 12px;
 }
 
-/* User Request: Padding for headers with carousel nav */
-.featured-section .module-header,
-.collections-section .module-header {
-  padding-bottom: 12px;
+/* User Request: Fix font size for Most Read */
+.most-read-title {
+  font-size: 16px !important;
+  /* Force 16px */
 }
 
 /* Responsive Carousel widths matching JS logic */
