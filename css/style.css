@@ -1661,7 +1661,8 @@ padding: 2px;
 .news-redesign-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.875rem;
+  gap: 0;
+  /* Removing gap to rely on padding/borders for equal spacing */
   align-items: stretch;
 }
 
@@ -1678,6 +1679,7 @@ padding: 2px;
   height: 100%;
   border-right: 1px solid #e5e7eb;
   padding-right: 1.25rem;
+  /* Equal spacing setup */
 }
 
 .news-featured-img {
@@ -1762,6 +1764,8 @@ padding: 2px;
   gap: 1.25rem;
   border-right: 1px solid #e5e7eb;
   padding-right: 1.25rem;
+  padding-left: 1.25rem;
+  /* Add left padding for spacing from previous col */
   height: 100%;
 }
 
@@ -1769,6 +1773,7 @@ padding: 2px;
   border-right: none;
   padding-right: 0;
   padding-left: 1.25rem;
+  /* Ensure left padding stays */
 }
 
 .news-item-small {
@@ -1940,7 +1945,8 @@ padding: 2px;
 
 .book-card.compact {
   background: transparent;
-  padding: 10px;
+  padding: 10px 0;
+  /* Removed horizontal padding as requested */
   border: none;
   border-radius: var(--radius-sm);
   transition: 0.2s;
@@ -1950,6 +1956,11 @@ padding: 2px;
   border-color: var(--primary-blue);
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
+}
+
+/* Add hover effect for book title in body-left */
+.book-card.compact:hover .book-title {
+  color: #055BF5;
 }
 
 .book-cover {
@@ -1974,6 +1985,7 @@ padding: 2px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  transition: color 0.2s;
 }
 
 /* Sidebar Widgets */
