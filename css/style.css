@@ -2796,7 +2796,8 @@ body.reader-mode {
   border-radius: var(--radius-sm);
 }
 
-Updates for New Featured Section (User Request)============================================*/ .grid-6 {
+/* Updates for New Featured Section (User Request) ============================================ */
+.grid-6 {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 24px;
