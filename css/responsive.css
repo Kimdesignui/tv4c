@@ -1,0 +1,182 @@
+/* ============================================
+   RESPONSIVE STYLES (Mobile & Tablet)
+   ============================================ */
+
+/* Tablet and Smaller (max-width: 1024px) */
+@media (max-width: 1024px) {
+    :root {
+        --container-width: 100%;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    /* Grids to Stack */
+    .hero-grid,
+    .main-layout,
+    .detail-body-grid,
+    .detail-top-grid,
+    .guide-layout,
+    .news-cols-3 {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    /* Hero Sidebar */
+    .hero-sidebar {
+        display: none;
+        /* Mobile Menu handles this */
+    }
+
+    .hero-slider,
+    .hero-slider .slide,
+    .hero-slider .slider-img {
+        height: 300px;
+        position: relative;
+    }
+
+    /* Order Shifts */
+    .body-right,
+    .sidebar-filter {
+        order: 10;
+        /* Sidebar drops below content */
+    }
+
+    /* Navbar Components */
+    .nav-links {
+        display: none;
+        /* Use mobile menu instead */
+    }
+
+    .search-box {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    /* Featured Carousel Fix (User Request: 6 items logic) */
+    /* On mobile, we might show fewer items, but ensuring NO overflow scrollbar on body */
+    .featured-list a.book-demo-card {
+        min-width: calc(100% / 3 - 20px) !important;
+        /* Show 3 on tablet */
+    }
+}
+
+/* Featured Carousel Global Fix */
+.featured-list-wrapper {
+    overflow: hidden;
+    /* Crucial: Hides the part of the track that sticks out */
+    padding: 10px 0;
+    /* Add space for shadow */
+    margin: -10px 0;
+}
+
+.featured-list {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+    /* Just fill wrapper */
+    /* The children will stretch the width */
+}
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+    .top-header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .main-navbar {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .main-navbar .container {
+        flex-wrap: wrap;
+    }
+
+    .nav-left {
+        width: 100%;
+    }
+
+    .cat-trigger-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Mobile Menu Active */
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Grids */
+    .grid-5,
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Featured Carousel Fix (Mobile) */
+    /* Show 2 items */
+    .featured-list a.book-demo-card {
+        min-width: calc(100% / 2 - 15px) !important;
+    }
+
+    /* Book Collections */
+    .collections-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .hotline {
+        display: none;
+    }
+
+    .hero-slider {
+        height: 200px;
+        min-height: 200px;
+    }
+
+    .search-select {
+        display: none;
+    }
+
+    .grid-5,
+    .grid-4 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Featured Carousel Fix (Small Mobile) */
+    /* Show 1.5 items or 1 item */
+    .featured-list a.book-demo-card {
+        min-width: calc(100% - 20px) !important;
+    }
+
+    /* Footer */
+    .footer-content {
+        padding-top: 20px;
+    }
+
+    .footer-socials {
+        flex-wrap: wrap;
+    }
+}

@@ -486,6 +486,10 @@ function initNewsSlider() {
 /**
  * Featured Carousel (6 items visible)
  */
+
+/**
+ * Featured Carousel (Responsive)
+ */
 function initFeaturedCarousel() {
     const track = document.querySelector('.featured-list');
     const items = document.querySelectorAll('.featured-list .book-demo-card');
@@ -495,45 +499,69 @@ function initFeaturedCarousel() {
     if (!track || items.length === 0) return;
 
     let currentIndex = 0;
-    const itemsToShow = 6;
-    const totalItems = items.length;
     let autoPlayInterval;
 
+    function getItemsToShow() {
+        const w = window.innerWidth;
+        if (w <= 480) return 1;
+        if (w <= 768) return 2;
+        if (w <= 1024) return 3;
+        return 6;
+    }
+
     function updateCarousel() {
+        const itemsToShow = getItemsToShow();
+        const totalItems = items.length;
+
+        // Clamp index
         if (currentIndex < 0) {
+            currentIndex = 0; // Don't wrap for smoother feel, or wrap to totalItems - itemsToShow
+        }
+        if (currentIndex > totalItems - itemsToShow) {
             currentIndex = totalItems - itemsToShow;
-        } else if (currentIndex > totalItems - itemsToShow) {
-            currentIndex = 0;
         }
 
-        // Use offsetLeft for precise sliding including gaps
-        const targetItem = items[currentIndex];
-        // Calculate offset relative to the track's start
-        // Actually, just standard implementation: move track left by item's offset
-        const moveX = targetItem.offsetLeft;
+        // Calculate move distance based on item width + gap
+        // We assume CSS sets min-width correctly with calc.
+        // Let's get actual width of first item
+        const itemWidth = items[0].offsetWidth;
+        // Get gap from computed style of track
+        const style = window.getComputedStyle(track);
+        const gap = parseFloat(style.gap) || 24; // Default 24px/1.5rem if not set
+
+        const moveX = currentIndex * (itemWidth + gap);
 
         track.style.transform = `translateX(-${moveX}px)`;
+
+        // Disable buttons if at ends
+        if (prevBtn) prevBtn.disabled = currentIndex === 0;
+        if (nextBtn) nextBtn.disabled = currentIndex >= totalItems - itemsToShow;
+        if (prevBtn) prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        if (nextBtn) nextBtn.style.opacity = currentIndex >= totalItems - itemsToShow ? '0.5' : '1';
     }
 
     function nextSlide() {
-        currentIndex++;
-        if (currentIndex > totalItems - itemsToShow) {
+        const itemsToShow = getItemsToShow();
+        if (currentIndex < items.length - itemsToShow) {
+            currentIndex++;
+            updateCarousel();
+        } else {
+            // Optional: Loop back to start
             currentIndex = 0;
+            updateCarousel();
         }
-        updateCarousel();
     }
 
     function prevSlide() {
-        currentIndex--;
-        if (currentIndex < 0) {
-            currentIndex = totalItems - itemsToShow;
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
         }
-        updateCarousel();
     }
 
     function startAutoPlay() {
         stopAutoPlay();
-        autoPlayInterval = setInterval(nextSlide, 3000); // 3 seconds
+        autoPlayInterval = setInterval(nextSlide, 4000);
     }
 
     function stopAutoPlay() {
@@ -560,8 +588,13 @@ function initFeaturedCarousel() {
     track.parentElement.addEventListener('mouseleave', startAutoPlay);
 
     // Initial start
-    startAutoPlay();
+    // startAutoPlay(); // Optional: autoplay
+    updateCarousel();
 
     // Handle Window Resize
-    window.addEventListener('resize', updateCarousel);
+    window.addEventListener('resize', () => {
+        // Reset index to 0 to avoid layout breaking on resize
+        currentIndex = 0;
+        updateCarousel();
+    });
 }
