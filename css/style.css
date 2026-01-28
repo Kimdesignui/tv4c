@@ -2803,6 +2803,71 @@ body.reader-mode {
   gap: 24px;
 }
 
+/* Generic Carousel Styles */
+.carousel-view {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.5s ease-out;
+}
+
+.carousel-item {
+  flex-shrink: 0;
+}
+
+/* 6 items: (100% - 5*24px) / 6 */
+.carousel-item.col-6 {
+  width: calc((100% - 120px) / 6);
+}
+
+/* 4 items: (100% - 3*24px) / 4 */
+.carousel-item.col-4 {
+  width: calc((100% - 72px) / 4);
+}
+
+/* Responsive Carousel widths matching JS logic */
+@media (max-width: 1200px) {
+  .carousel-item.col-6 {
+    width: calc((100% - 72px) / 4);
+  }
+
+  /* 4 items */
+}
+
+@media (max-width: 992px) {
+
+  .carousel-item.col-6,
+  .carousel-item.col-4 {
+    width: calc((100% - 48px) / 3);
+  }
+
+  /* 3 items */
+}
+
+@media (max-width: 768px) {
+
+  .carousel-item.col-6,
+  .carousel-item.col-4 {
+    width: calc((100% - 24px) / 2);
+  }
+
+  /* 2 items */
+}
+
+@media (max-width: 576px) {
+
+  .carousel-item.col-6,
+  .carousel-item.col-4 {
+    width: 100%;
+  }
+
+  /* 1 item */
+}
+
 .aspect-3-2 {
   aspect-ratio: 3/2 !important;
 }
