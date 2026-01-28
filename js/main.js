@@ -499,8 +499,8 @@ function initBookCarousels() {
     // Featured Books: 6 items on desktop
     setupCarousel('.featured-section', 6);
 
-    // Digital Collections: 6 items on desktop (User Request)
-    setupCarousel('.collections-section', 6);
+    // Digital Collections: 4 items on desktop (User Request: Restore old design)
+    setupCarousel('.collections-section', 4);
 }
 
 function setupCarousel(sectionSelector, maxItemsDesktop) {
