@@ -2797,10 +2797,14 @@ body.reader-mode {
   transform: scale(1.05);
 }
 
-/* ============================================
-   Updates for New Featured Section (User Request)
-   ============================================ */
-.grid-6 {
+/* User Request: Aspect Ratio 2/3 for Featured Books */
+.aspect-2-3 {
+  aspect-ratio: 2/3;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+
+Updates for New Featured Section (User Request)============================================*/ .grid-6 {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 24px;
