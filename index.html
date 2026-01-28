@@ -773,7 +773,8 @@
 
                     <!-- Linked Library Widget -->
                     <div class="sidebar-widget library-link-widget mb-4">
-                        <h3 class="widget-title mb-3 font-bold text-primary" style="font-size: 1rem;">Thư viện liên kết
+                        <h3 class="widget-title mb-3 font-bold" style="font-size: 1rem; color: #46648D;">Thư viện liên
+                            kết
                         </h3>
                         <div class="library-select-wrapper">
                             <select class="library-select">
@@ -826,7 +827,9 @@
     <section class="section featured-carousel bg-white py-8 border-t">
         <div class="container">
             <div class="module-header flex justify-between items-center mb-6">
-                <h2 class="module-title text-primary">Sách nổi bật</h2>
+                <!-- Fixed title color: text-primary is blue, user wants consistent color -->
+                <!-- Assuming #46648D is the consistent color. text-primary is blue. Let's use the explicit color or class used elsewhere like .news-section-title which is #46648D -->
+                <h2 class="module-title" style="color: #46648D; font-size: 24px; font-weight: 700;">Sách nổi bật</h2>
                 <div class="carousel-nav flex gap-2">
                     <button class="nav-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
                     <button class="nav-btn next"><i class="fa-solid fa-chevron-right"></i></button>
@@ -838,108 +841,62 @@
                     <!-- Book 1 -->
                     <a href="book-detail.html" class="book-demo-card">
                         <div class="book-demo-cover">
-                            <img src="assets/images/placeholder.png"
-                                data-src="http://nxbqdnd.com.vn/pictures/books14_05_2025_Bia%20sach%20Tap%201%20Giu%20vung%20tran%20dia%20tu%20tuong%20chuyen%20Ngoc.jpg"
-                                alt="Giữ vững trận địa tư tưởng văn hóa" loading="lazy"
+                            <img src="assets/images/featured-1.png"
+                                alt="Lịch sử nghệ thuật quân sự Việt Nam - tập 3 (1958-1954)" loading="lazy"
                                 class="w-full h-full object-cover">
                         </div>
-                        <h3 class="book-demo-title">Giữ vững trận địa tư tưởng văn hóa</h3>
+                        <h3 class="book-demo-title">Lịch sử nghệ thuật quân sự Việt Nam - tập 3 (1958-1954)</h3>
                     </a>
 
                     <!-- Book 2 -->
                     <a href="book-detail.html" class="book-demo-card">
                         <div class="book-demo-cover">
-                            <img src="assets/images/placeholder.png"
-                                data-src="http://nxbqdnd.com.vn/pictures/books01_04_2025_VU%20KHI%20%20TU%20TAO%20DIEN%20HINH.jpg"
-                                alt="Vũ khí tự tạo điển hình trong chiến tranh giải phóng" loading="lazy"
+                            <img src="assets/images/featured-2.png"
+                                alt="Lịch sử Học viện phòng không - không quân - tập 1" loading="lazy"
                                 class="w-full h-full object-cover">
                         </div>
-                        <h3 class="book-demo-title">Vũ khí tự tạo điển hình trong chiến tranh giải phóng</h3>
+                        <h3 class="book-demo-title">Lịch sử Học viện phòng không - không quân - tập 1</h3>
                     </a>
 
                     <!-- Book 3 -->
                     <a href="book-detail.html" class="book-demo-card">
                         <div class="book-demo-cover">
-                            <img src="assets/images/placeholder.png"
-                                data-src="http://nxbqdnd.com.vn/pictures/books12_12_2024_TAI%20LIEU%20TUYEN%20TRUYEN%2080%20NAM%201.jpg"
-                                alt="Tài liệu tuyên truyền kỷ niệm 80 năm" loading="lazy"
-                                class="w-full h-full object-cover">
+                            <img src="assets/images/featured-3.png"
+                                alt="Chiến thắng Điện Biên Phủ 1954 - Tầm vóc thắng lợi và giá trị hiện thực"
+                                loading="lazy" class="w-full h-full object-cover">
                         </div>
-                        <h3 class="book-demo-title">Tài liệu tuyên truyền kỷ niệm 80 năm</h3>
+                        <h3 class="book-demo-title">Chiến thắng Điện Biên Phủ 1954 - Tầm vóc thắng lợi và giá trị hiện
+                            thực</h3>
                     </a>
 
                     <!-- Book 4 -->
                     <a href="book-detail.html" class="book-demo-card">
                         <div class="book-demo-cover">
-                            <img src="assets/images/placeholder.png"
-                                data-src="http://nxbqdnd.com.vn/pictures/books12_12_2024_NHUNG%20PHAT%20%20TRIEN%20VE%20QUOC%20PHONG%20QUAN%20SU.jpg"
-                                alt="Những phát triển về quốc phòng, quân sự" loading="lazy"
+                            <img src="assets/images/featured-4.png"
+                                alt="Nâng cao chất lượng giáo dục, rèn luyện đảng viên" loading="lazy"
                                 class="w-full h-full object-cover">
                         </div>
-                        <h3 class="book-demo-title">Những phát triển về quốc phòng, quân sự</h3>
+                        <h3 class="book-demo-title">Nâng cao chất lượng giáo dục, rèn luyện đảng viên</h3>
                     </a>
 
                     <!-- Book 5 -->
                     <a href="book-detail.html" class="book-demo-card">
                         <div class="book-demo-cover">
-                            <img src="assets/images/placeholder.png"
-                                data-src="http://nxbqdnd.com.vn/pictures/books12_12_2024_A1%20(1).jpg"
-                                alt="Cha tôi - Thiếu tướng Hà Vi Tùng" loading="lazy"
-                                class="w-full h-full object-cover">
+                            <img src="assets/images/featured-5.png" alt="Chuyện thường ngày của Võ Đại tướng"
+                                loading="lazy" class="w-full h-full object-cover">
                         </div>
-                        <h3 class="book-demo-title">Cha tôi - Thiếu tướng Hà Vi Tùng</h3>
+                        <h3 class="book-demo-title">Chuyện thường ngày của Võ Đại tướng</h3>
                     </a>
 
                     <!-- Book 6 -->
                     <a href="book-detail.html" class="book-demo-card">
                         <div class="book-demo-cover">
-                            <img src="assets/images/placeholder.png"
-                                data-src="http://nxbqdnd.com.vn/pictures/books12_12_2024_MAI%20TRUONG%20NANG%20CANH%20UOC%20MO%20BAY.jpg"
-                                alt="Mái trường nâng cánh ước mơ bay" loading="lazy" class="w-full h-full object-cover">
+                            <img src="assets/images/featured-6.png"
+                                alt="Văn học nghệ thuật góp phần xây dựng bản lĩnh và nhân cách Bộ đội Cụ Hồ"
+                                loading="lazy" class="w-full h-full object-cover">
                         </div>
-                        <h3 class="book-demo-title">Mái trường nâng cánh ước mơ bay</h3>
-                    </a>
-
-                    <!-- Book 7 -->
-                    <a href="book-detail.html" class="book-demo-card">
-                        <div class="book-demo-cover">
-                            <img src="assets/images/placeholder.png"
-                                data-src="http://nxbqdnd.com.vn/pictures/books15_05_2025_XAY%20DUNG%20HE%20THONG%20CHINH%20TRI%20CO%20SO.jpg"
-                                alt="Xây dựng hệ thống chính trị cơ sở" loading="lazy"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="book-demo-title">Xây dựng hệ thống chính trị cơ sở</h3>
-                    </a>
-
-                    <!-- Book 8 -->
-                    <a href="book-detail.html" class="book-demo-card">
-                        <div class="book-demo-cover">
-                            <img src="assets/images/placeholder.png"
-                                data-src="http://nxbqdnd.com.vn/pictures/books12_07_2024_CHIEN%20DICH%20QUAN%20SU%20DAC%20BIET.jpg"
-                                alt="Chiến dịch quân sự đặc biệt Nga - Ucraina" loading="lazy"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="book-demo-title">Chiến dịch quân sự đặc biệt Nga - Ucraina</h3>
-                    </a>
-
-                    <!-- Book 9 -->
-                    <a href="book-detail.html" class="book-demo-card">
-                        <div class="book-demo-cover">
-                            <img src="assets/images/placeholder.png"
-                                data-src="http://nxbqdnd.com.vn/pictures/books23_07_2024_KHOI%20DAY%20KHAT%20VONG%20CONG%20HIEN.jpg"
-                                alt="Khơi dậy khát vọng cống hiến" loading="lazy" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="book-demo-title">Khơi dậy khát vọng cống hiến</h3>
-                    </a>
-
-                    <!-- Book 10 -->
-                    <a href="book-detail.html" class="book-demo-card">
-                        <div class="book-demo-cover">
-                            <img src="assets/images/placeholder.png"
-                                data-src="http://nxbqdnd.com.vn/pictures/books30_10_2024_CHIEN%20DICH%20DIEN%20BIEN%20PHU%20THANG%20LOI%20CUA%20BAN%20LINH.jpg"
-                                alt="Chiến dịch Điện Biên Phủ" loading="lazy" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="book-demo-title">Chiến dịch Điện Biên Phủ</h3>
+                        <h3 class="book-demo-title">Văn học nghệ thuật góp phần xây dựng bản lĩnh và nhân cách Bộ đội Cụ
+                            Hồ</h3>
                     </a>
                 </div>
             </div>

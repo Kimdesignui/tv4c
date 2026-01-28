@@ -1079,6 +1079,8 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-family: 'Inter', sans-serif;
+  /* Explicitly set font */
 }
 
 .cat-trigger-btn:hover {
