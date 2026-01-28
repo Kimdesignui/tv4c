@@ -2843,6 +2843,12 @@ body.reader-mode {
   height: 100%;
 }
 
+/* User Request: Padding for headers with carousel nav */
+.featured-section .module-header,
+.collections-section .module-header {
+  padding-bottom: 12px;
+}
+
 /* Responsive Carousel widths matching JS logic */
 @media (max-width: 1200px) {
   .carousel-item.col-6 {
