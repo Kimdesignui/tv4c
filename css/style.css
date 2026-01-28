@@ -1117,10 +1117,8 @@ padding: 2px;
   flex: 1;
   height: 100%;
   align-items: center;
-  padding-left: 15px;
-  /* Add padding to container */
+  /* Removed padding-left so select touches edge */
   overflow: hidden;
-  /* Prevent spill */
 }
 
 .search-input {
@@ -1130,22 +1128,20 @@ padding: 2px;
   font-size: 0.9rem;
   color: var(--text-dark);
   width: 100%;
-  /* Take full width of group */
   flex: 1;
-  /* Grow to fill */
   min-width: 0;
-  /* Important for flex containers */
   padding-right: 10px;
-}
+  padding-left: 15px;
+  /* Add padding to input */
 }
 
+/* User Request: Search select height 100% and only border right */
 .search-select {
   border: none;
   background: transparent;
-  padding: 0 1.5rem;
-  /* 15px */
+  padding: 0 10px 0 15px;
+  /* 15px left, 10px right */
   font-size: 0.875rem;
-  /* 14px */
   border-right: 1px solid #e5e7eb;
   outline: none;
   max-width: 160px;
@@ -1154,17 +1150,13 @@ padding: 2px;
   height: 100%;
 }
 
-.search-input {
-  border: none;
-  flex: 1;
-  padding: 0 1.5rem;
-  /* 15px */
-  outline: none;
-  font-size: 0.875rem;
-  /* 14px */
-  background: transparent;
-  height: 100%;
-  color: var(--text-dark);
+/* 15px */
+outline: none;
+font-size: 0.875rem;
+/* 14px */
+background: transparent;
+height: 100%;
+color: var(--text-dark);
 }
 
 .search-btn {
