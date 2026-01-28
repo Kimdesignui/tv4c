@@ -1234,16 +1234,18 @@ img {
   display: block;
   padding: 12px 20px;
   font-size: 0.95rem;
-  color: #e11d48;
-  /* Red to match News style */
+  color: var(--primary-blue-dark);
+  /* User requested Blue (Navbar bg) */
   font-weight: 600;
+  text-align: center;
+  /* User requested Center */
   border-top: 1px solid #e5e7eb;
   transition: 0.2s;
 }
 
 .cat-view-all:hover {
-  color: #be123c;
-  background: #fff1f2;
+  color: var(--primary-blue);
+  background: #eff6ff;
 }
 
 
@@ -2955,8 +2957,14 @@ body.reader-mode {
 }
 
 /* Compact modifier (optional, for smaller grids) */
+.book-card.compact:hover {
+  box-shadow: none;
+  /* User requested no shadow */
+}
+
 .book-card.compact .book-title {
-  font-size: 0.875rem;
+  font-size: 1rem;
+  /* User requested 1rem */
 }
 
 /* Footer Title Color Fix */
@@ -2972,26 +2980,7 @@ body.reader-mode {
    UPDATES (Session: Refine UI & Profile)
    ============================================ */
 
-/* 1. Category View All Link - RED Style */
-.cat-view-all {
-  display: block;
-  padding: 12px 20px;
-  font-size: 0.95rem;
-  color: #e11d48;
-  /* Red */
-  font-weight: 600;
-  border-top: 1px solid #e5e7eb;
-  transition: 0.2s;
-}
 
-.cat-view-all:hover {
-  color: #be123c;
-  background: #fff1f2;
-}
-
-.cat-view-all i {
-  color: #e11d48;
-}
 
 /* 2. Grid 5 Columns (For Profile) */
 .grid-5 {
@@ -3063,4 +3052,17 @@ body.reader-mode {
   .grid-5 {
     grid-template-columns: 1fr;
   }
+}
+
+/* User Request: Fix Search Bar Height to 40px */
+.search-box,
+.search-select,
+.search-input,
+.search-btn {
+  height: 40px !important;
+}
+
+.search-input,
+.search-select {
+  line-height: 40px;
 }
