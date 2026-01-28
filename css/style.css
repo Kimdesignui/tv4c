@@ -1097,9 +1097,8 @@ img {
   align-items: center;
   height: 2.25rem;
   /* Reduced to 36px */
-  max-width: 600px;
-  /* Use px max-width instead of % for stability */
-  width: 100%;
+  /* max-width removal as per user request for strict % */
+  width: 30%;
   margin: 0 auto;
 }
 
