@@ -1953,9 +1953,7 @@ padding: 2px;
 }
 
 .book-card.compact:hover {
-  border-color: var(--primary-blue);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  /* Removed shadow, border, transform as requested */
 }
 
 /* Add hover effect for book title in body-left */
@@ -1967,6 +1965,11 @@ padding: 2px;
 .body-left>div:nth-child(n+2) {
   padding-top: 24px;
   padding-bottom: 24px;
+}
+
+/* User Request: Middle banner padding 0 */
+.body-left>.middle-banner {
+  padding: 0 !important;
 }
 
 .book-cover {
