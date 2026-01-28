@@ -1230,6 +1230,23 @@ img {
   font-weight: 500;
 }
 
+.cat-view-all {
+  display: block;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  color: #e11d48;
+  /* Red to match News style */
+  font-weight: 600;
+  border-top: 1px solid #e5e7eb;
+  transition: 0.2s;
+}
+
+.cat-view-all:hover {
+  color: #be123c;
+  background: #fff1f2;
+}
+
+
 /* Slider */
 /* Slider */
 .hero-slider {
@@ -2887,3 +2904,102 @@ body.reader-mode {
 }
 
 /* User Request: Body-left modules below "Điểm sách" get 24px padding */
+
+/* ... (Any previous rules for that request, seemingly empty here) ... */
+
+/* ============================================
+   UPDATES (Session: Refine UI & Profile)
+   ============================================ */
+
+/* 1. Category View All Link - RED Style */
+.cat-view-all {
+  display: block;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  color: #e11d48;
+  /* Red */
+  font-weight: 600;
+  border-top: 1px solid #e5e7eb;
+  transition: 0.2s;
+}
+
+.cat-view-all:hover {
+  color: #be123c;
+  background: #fff1f2;
+}
+
+.cat-view-all i {
+  color: #e11d48;
+}
+
+/* 2. Grid 5 Columns (For Profile) */
+.grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+/* 3. Bootstrap-style Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 2rem;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  color: var(--primary-blue);
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  /* Bootstrap rounded-1ish */
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  cursor: pointer;
+  min-width: 38px;
+  text-align: center;
+}
+
+.page-link:hover {
+  z-index: 2;
+  color: var(--primary-dark);
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.page-link.active {
+  z-index: 3;
+  color: #fff;
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+}
+
+/* Responsive Grid 5 */
+@media (max-width: 1200px) {
+  .grid-5 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .grid-5 {
+    grid-template-columns: 1fr;
+  }
+}
