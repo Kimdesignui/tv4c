@@ -3067,6 +3067,38 @@ body.reader-mode {
 }
 
 /* Responsive Grid 5 */
+
+/* News Item Fixes */
+.news-thumb {
+  width: 240px;
+  aspect-ratio: 4/3;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #f3f4f6;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.news-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.news-item:hover .news-thumb img {
+  transform: scale(1.05);
+}
+
+.news-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 5px;
+}
+
 @media (max-width: 1200px) {
   .grid-5 {
     grid-template-columns: repeat(4, 1fr);
