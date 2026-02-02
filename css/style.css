@@ -343,34 +343,7 @@ img {
   border-bottom: 2px solid #e5e7eb;
 }
 
-/* Pagination */
-.pagination {
-  display: flex;
-  gap: 5px;
-  justify-content: center;
-  margin-top: 40px;
-}
 
-.page-link {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #e5e7eb;
-  border-radius: var(--radius-sm);
-  background: var(--white);
-  color: var(--text-gray);
-  cursor: pointer;
-}
-
-.page-link:hover,
-.page-link.active {
-  padding: 15px 0;
-  color: var(--text-gray);
-  font-size: 0.9rem;
-  background: transparent;
-}
 
 .breadcrumb a:hover {
   color: var(--primary-blue);
@@ -3041,7 +3014,9 @@ body.reader-mode {
 
 .page-link {
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   color: var(--primary-blue);
@@ -3053,6 +3028,8 @@ body.reader-mode {
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   cursor: pointer;
   min-width: 38px;
+  height: 38px;
+  /* Ensure height matches width/font constraint */
   text-align: center;
 }
 
