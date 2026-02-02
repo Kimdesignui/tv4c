@@ -166,48 +166,101 @@
                     </div>
                 </article>
 
-                <!-- Sidebar -->
-                <aside class="sidebar">
-                    <div class="mb-8">
-                        <h3 class="font-bold text-lg uppercase border-l-4 border-primary pl-3 mb-4">Tin tức mới nhất
-                        </h3>
-                        <div class="flex flex-col gap-4">
-                            <!-- Item -->
-                            <div class="flex gap-3">
-                                <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=100"
-                                    class="w-20 h-20 object-cover rounded">
-                                <div>
-                                    <h4 class="text-sm font-bold leading-tight mb-1"><a href="#"
-                                            class="hover:text-primary">Hội sách Mùa Xuân 2026</a></h4>
-                                    <span class="text-xs text-gray">25/01/2026</span>
+                <!-- Sidebar (Standardized) -->
+                <aside class="body-right flex flex-col gap-6">
+
+                    <!-- Widget 1: Latest News -->
+                    <div class="sidebar-widget bg-white rounded shadow-sm border p-0 overflow-hidden">
+                        <div class="widget-header p-3 border-b bg-gray-50 flex items-center gap-2">
+                            <i class="fa-solid fa-newspaper text-primary"></i>
+                            <h3 class="widget-title font-bold text-primary text-base m-0 text-[#46648D]">
+                                Tin mới nhất</h3>
+                        </div>
+                        <div class="latest-news-list p-4 flex flex-col gap-4">
+                            <!-- Item 1 -->
+                            <article
+                                class="latest-news-item flex gap-3 align-start border-b border-gray-100 pb-4 last:border-0 last:pb-0">
+                                <div class="latest-news-thumb">
+                                    <img src="assets/images/news-demo.png" alt="Tin mới">
                                 </div>
-                            </div>
-                            <!-- Item -->
-                            <div class="flex gap-3">
-                                <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=100"
-                                    class="w-20 h-20 object-cover rounded">
-                                <div>
-                                    <h4 class="text-sm font-bold leading-tight mb-1"><a href="#"
-                                            class="hover:text-primary">Tọa đàm: Văn học trẻ</a></h4>
-                                    <span class="text-xs text-gray">22/01/2026</span>
+                                <div class="latest-news-content">
+                                    <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
+                                        <a href="#" class="hover:text-primary transition-colors">Thông báo tuyển sinh
+                                            lớp bồi dưỡng nghiệp vụ thư viện năm 2026</a>
+                                    </h4>
+                                    <span class="news-category-tag">Tin hoạt động</span>
                                 </div>
-                            </div>
-                            <!-- Item -->
-                            <div class="flex gap-3">
-                                <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=100"
-                                    class="w-20 h-20 object-cover rounded">
-                                <div>
-                                    <h4 class="text-sm font-bold leading-tight mb-1"><a href="#"
-                                            class="hover:text-primary">Ra mắt ứng dụng TV4C Mobile</a></h4>
-                                    <span class="text-xs text-gray">20/01/2026</span>
+                            </article>
+                            <!-- Item 2 -->
+                            <article
+                                class="latest-news-item flex gap-3 align-start border-b border-gray-100 pb-4 last:border-0 last:pb-0">
+                                <div class="latest-news-thumb">
+                                    <img src="assets/images/news-demo.png" alt="Tin mới">
                                 </div>
-                            </div>
+                                <div class="latest-news-content">
+                                    <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
+                                        <a href="#" class="hover:text-primary transition-colors">Hội thảo khoa học về
+                                            Văn hóa đọc trong kỷ nguyên số</a>
+                                    </h4>
+                                    <span class="news-category-tag">Sự kiện</span>
+                                </div>
+                            </article>
+                            <!-- Item 3 -->
+                            <article
+                                class="latest-news-item flex gap-3 align-start border-b border-gray-100 pb-4 last:border-0 last:pb-0">
+                                <div class="latest-news-thumb">
+                                    <img src="assets/images/news-demo.png" alt="Tin mới">
+                                </div>
+                                <div class="latest-news-content">
+                                    <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
+                                        <a href="#" class="hover:text-primary transition-colors">Triển khai dự án số hóa
+                                            tài liệu Hán Nôm</a>
+                                    </h4>
+                                    <span class="news-category-tag">Dự án</span>
+                                </div>
+                            </article>
+                            <!-- Item 4 -->
+                            <article
+                                class="latest-news-item flex gap-3 align-start border-b border-gray-100 pb-4 last:border-0 last:pb-0">
+                                <div class="latest-news-thumb">
+                                    <img src="assets/images/news-demo.png" alt="Tin mới">
+                                </div>
+                                <div class="latest-news-content">
+                                    <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
+                                        <a href="#" class="hover:text-primary transition-colors">Ra mắt bộ sưu tập sách
+                                            thiếu nhi mới</a>
+                                    </h4>
+                                    <span class="news-category-tag">Giới thiệu sách</span>
+                                </div>
+                            </article>
+                            <!-- Item 5 -->
+                            <article class="latest-news-item flex gap-3 align-start">
+                                <div class="latest-news-thumb">
+                                    <img src="assets/images/news-demo.png" alt="Tin mới">
+                                </div>
+                                <div class="latest-news-content">
+                                    <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
+                                        <a href="#" class="hover:text-primary transition-colors">Hoạt động ngoại khóa:
+                                            Em yêu thư viện</a>
+                                    </h4>
+                                    <span class="news-category-tag">Hoạt động</span>
+                                </div>
+                            </article>
                         </div>
                     </div>
 
-                    <div class="mb-8">
-                        <h3 class="font-bold text-lg uppercase border-l-4 border-primary pl-3 mb-4">Danh mục</h3>
-                        <ul class="text-sm text-gray-700">
+                    <!-- Widget 2: Banner -->
+                    <div class="sidebar-banner rounded overflow-hidden shadow-sm mt-0">
+                        <img src="assets/images/sidebar-qc-banner.png"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Banner'" class="w-full h-auto">
+                    </div>
+
+                    <!-- Widget 3: Categories (Reusing standardized styles if available or kept clean) -->
+                    <div class="sidebar-widget bg-white rounded shadow-sm border p-0 overflow-hidden">
+                        <div class="widget-header p-3 border-b bg-gray-50 flex items-center gap-2">
+                            <h3 class="widget-title font-bold text-primary text-base m-0 text-[#46648D]">Danh mục</h3>
+                        </div>
+                        <ul class="text-sm text-gray-700 p-3">
                             <li class="mb-2 pb-2 border-b border-dashed"><a href="#" class="hover:text-primary"><i
                                         class="fa-solid fa-angle-right text-xs mr-2"></i> Tin hoạt động</a></li>
                             <li class="mb-2 pb-2 border-b border-dashed"><a href="#" class="hover:text-primary"><i
