@@ -3100,7 +3100,9 @@ body.reader-mode {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  /* Align to top */
+  gap: 4px;
 }
 
 .text-clamp-2 {
@@ -3108,6 +3110,23 @@ body.reader-mode {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.text-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.news-category-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: var(--text-gray);
+  background: #f3f4f6;
+  padding: 2px 8px;
+  border-radius: 4px;
+  width: fit-content;
 }
 
 @media (max-width: 1200px) {
