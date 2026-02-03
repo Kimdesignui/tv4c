@@ -127,6 +127,24 @@
     .collections-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
+
+    /* News List Items Responsive */
+    .news-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .news-thumb {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .news-thumb img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+    }
 }
 
 /* Mobile (max-width: 480px) */
