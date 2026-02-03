@@ -318,7 +318,8 @@ img {
 /* ============================================
    8. INNER PAGES GLOBAL
    ============================================ */
-.breadcrumb {
+.breadcrumb,
+.breadcrumb-section {
   padding: var(--space-4) 0;
   color: var(--text-gray);
   font-size: 0.9rem;
@@ -346,12 +347,14 @@ img {
 
 
 
-.breadcrumb a:hover {
+.breadcrumb a:hover,
+.breadcrumb-section a:hover {
   color: var(--primary-blue);
   margin-right: 5px;
 }
 
-.breadcrumb i {
+.breadcrumb i,
+.breadcrumb-section i {
   font-size: 0.7rem;
   margin: 0 10px;
   opacity: 0.5;
