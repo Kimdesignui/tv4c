@@ -318,11 +318,17 @@ img {
 /* ============================================
    8. INNER PAGES GLOBAL
    ============================================ */
+.main-navbar {
+  margin-bottom: 0 !important;
+}
+
 .breadcrumb,
 .breadcrumb-section {
   padding: var(--space-4) 0;
+  margin-top: 0 !important;
   color: var(--text-gray);
   font-size: 0.9rem;
+  border-bottom: none !important;
 }
 
 .breadcrumb a:hover {
