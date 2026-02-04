@@ -423,6 +423,31 @@
         <img class="lightbox-content" id="lightbox-img">
     </div>
 
+    <!-- Mobile Sidebar Menu -->
+    <div id="mobile-backdrop" class="mobile-backdrop"></div>
+    <div id="mobile-sidebar" class="mobile-sidebar">
+        <div class="sidebar-header">
+            <button class="close-sidebar-btn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="sidebar-title"><i class="fa-solid fa-bars"></i> DANH MỤC THƯ VIỆN</div>
+        </div>
+        <div class="sidebar-content">
+            <ul class="mobile-cat-list">
+                <li><a href="books.html?cat=vh">Văn học Việt Nam</a></li>
+                <li><a href="books.html?cat=nn">Văn học Nước ngoài</a></li>
+                <li><a href="books.html?cat=kt">Kinh tế & Quản trị</a></li>
+                <li><a href="books.html?cat=kn">Tâm lý & Kỹ năng</a></li>
+                <li><a href="books.html?cat=tn">Thiếu nhi</a></li>
+                <li><a href="books.html?cat=ls">Lịch sử & Chính trị</a></li>
+                <li><a href="books.html?cat=vhnt">Văn hóa & Nghệ thuật</a></li>
+                <li><a href="books.html?cat=kh">Khoa học & Kỹ thuật</a></li>
+                <li><a href="books.html?cat=gk">Sách Giáo khoa</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="books.html" class="view-all-btn"><i class="fa-solid fa-bars"></i> Xem tất cả</a>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Gallery Functions
         function changeImage(element, src) {
@@ -458,6 +483,27 @@
                 closeLightbox();
             }
         });
+
+        // Mobile Sidebar Logic (Same as index)
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileSidebar = document.getElementById('mobile-sidebar');
+        const mobileBackdrop = document.getElementById('mobile-backdrop');
+        const closeSidebarBtn = document.querySelector('.close-sidebar-btn');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileSidebar.classList.add('active');
+                mobileBackdrop.classList.add('active');
+            });
+        }
+
+        const closeMenu = () => {
+            mobileSidebar.classList.remove('active');
+            mobileBackdrop.classList.remove('active');
+        };
+
+        if (closeSidebarBtn) closeSidebarBtn.addEventListener('click', closeMenu);
+        if (mobileBackdrop) mobileBackdrop.addEventListener('click', closeMenu);
     </script>
     <script src="js/main.js"></script>
 </body>
