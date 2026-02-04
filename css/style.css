@@ -3368,3 +3368,13 @@ body.reader-mode {
 }
 
      
+/* ============================================
+   GLOBAL: LINKED BOOK COVERS
+   ============================================ */
+.book-cover a,
+.book-review-cover-img a {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
