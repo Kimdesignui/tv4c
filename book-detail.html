@@ -109,290 +109,217 @@
     <!-- MAIN CONTENT -->
     <main class="section bg-white py-8">
         <div class="container">
+            class="text-primary text-sm font-semibold flex items-center justify-center gap-1 mb-6 hover:underline"><i
+                class="fa-solid fa-chevron-down"></i> Xem đầy đủ</a>
 
-            <!-- TOP DETAIL AREA -->
-            <div class="detail-top-grid">
-                <!-- Left: Gallery -->
-                <div class="detail-gallery">
-                    <div class="detail-thumbs">
-                        <!-- Thumbs -->
-                        <div class="thumb-item active"
-                            onclick="changeImage(this, 'assets/images/book-detail-main.jpg')">
-                            <img src="assets/images/book-cover-1.jpg"
-                                onerror="this.src='https://via.placeholder.com/60x80'">
-                        </div>
-                        <div class="thumb-item" onclick="changeImage(this, 'assets/images/book-detail-2.jpg')">
-                            <img src="assets/images/book-cover-2.jpg"
-                                onerror="this.src='https://via.placeholder.com/60x80'">
-                        </div>
-                        <div class="thumb-item" onclick="changeImage(this, 'assets/images/book-detail-3.jpg')">
-                            <img src="assets/images/book-cover-3.jpg"
-                                onerror="this.src='https://via.placeholder.com/60x80'">
-                        </div>
-                        <!-- Arrow Down if needed -->
-                        <div class="text-center text-gray-400 text-xs py-1"><i class="fa-solid fa-chevron-down"></i>
-                        </div>
-                    </div>
-                    <div class="detail-main-img" onclick="openLightbox()">
-                        <img id="mainImage" src="assets/images/book-cover-1.jpg" alt="Nhà Giả Kim"
-                            onerror="this.src='https://via.placeholder.com/400x600'">
+            <div class="detail-actions">
+                <button class="btn-action btn-green" onclick="alert('Đã thêm vào giỏ mượn!')"><i
+                        class="fa-solid fa-cart-plus"></i> Mượn sách</button>
+                <button class="btn-action btn-blue" onclick="window.location.href='reader.html'"><i
+                        class="fa-regular fa-eye"></i> Đọc sách điện tử</button>
+                <button class="btn-action btn-orange" onclick="window.location.href='audio-player.html'"><i
+                        class="fa-solid fa-headphones"></i> Nghe sách nói</button>
+            </div>
+        </div>
+        </div>
+
+        <!-- BODY CONTENT (Tabs & Related) -->
+        <!-- ... Keeping existing content/structure logic for tabs below ... -->
+
+        <div class="detail-body-grid">
+            <!-- Left: Content & Comments -->
+            <div class="detail-body-left">
+                <!-- Tabs -->
+                <div class="content-tabs-detail">
+                    <div class="tab-detail-link active">Giới thiệu</div>
+                    <div class="tab-detail-link">Mục lục</div>
+                </div>
+
+                <!-- Description -->
+                <div class="detail-desc mt-6">
+                    <p>Tất cả những trải nghiệm trong chuyến phiêu du theo đuổi vận mệnh của mình đã giúp Santiago
+                        thấu hiểu được ý nghĩa sâu xa nhất của hạnh phúc, hòa hợp với vũ trụ và con người.</p>
+                    <p class="mt-4">Tiểu thuyết <strong>Nhà giả kim</strong> của Paulo Coelho như một câu chuyện cổ
+                        tích giản dị, nhân ái, giàu chất thơ, thấm đẫm những minh triết huyền bí của phương Đông.
+                        Trong lần xuất bản đầu tiên tại Brazil vào năm 1988, sách chỉ bán được 900 bản. Nhưng, với
+                        số phận đặc biệt của cuốn sách dành cho toàn nhân loại, vượt ra ngoài biên giới quốc gia,
+                        Nhà giả kim đã làm rung động hàng triệu tâm hồn.</p>
+                </div>
+            </div>
+            <!-- Right: Sidebar Filters (Global Reuse) -->
+            <aside class="sidebar-filter">
+                <!-- Keeping existing sidebar structure but simplified for brevity in this task -->
+                <div class="filter-header">Sách cùng tác giả</div>
+                <div class="p-4 grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=200"
+                        class="rounded w-full shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=200"
+                        class="rounded w-full shadow-sm">
+                </div>
+            </aside>
+        </div>
+
+
+        <!-- Carousel (Keeping existing) -->
+        <!-- Featured Books Module (Copied from books.html) -->
+        <section class="section featured-section bg-white py-12 border-t mt-12">
+            <div class="container">
+                <div class="module-header flex justify-between items-center mb-6">
+                    <h2 class="module-title font-bold text-2xl uppercase" style="color: #46648D;">Có thể bạn thích
+                    </h2>
+                    <div class="carousel-nav flex gap-2">
+                        <button class="nav-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="nav-btn next"><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
 
-                <!-- Right: Info -->
-                <div class="detail-right-info">
-                    <h1 class="detail-title">Nhà Giả Kim (Tái Bản 2020)</h1>
-                    <p class="text-sm text-gray mb-2">Trong bộ sưu tập: <a href="#" class="text-red hover:underline">Top
-                            sách được phiên dịch nhiều nhất</a></p>
+                <div class="carousel-view featured-carousel">
+                    <div class="carousel-track">
+                        <!-- Book 1 -->
+                        <article class="collection-card carousel-item col-6">
+                            <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
+                                <img src="assets/images/featured-1.png" alt="Lịch sử nghệ thuật quân sự Việt Nam"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="collection-title font-bold text-lg mb-2 text-center" style="font-size: 1rem;"><a
+                                    href="book-detail.html" title="Lịch sử nghệ thuật quân sự Việt Nam - tập 3">Lịch sử
+                                    nghệ
+                                    thuật quân sự Việt Nam - tập 3</a></h3>
+                        </article>
 
-                    <div class="flex items-center gap-4 mb-4 text-sm border-b border-gray-100 pb-4">
-                        <div class="rating text-yellow-400 font-bold text-base">4.5 <i
-                                class="fa-solid fa-star text-sm"></i></div>
-                        <div class="text-gray pl-4 border-l border-gray-200"><strong>52358</strong> Lượt xem</div>
-                        <div class="text-gray pl-4 border-l border-gray-200"><strong>3639</strong> Đã bán</div>
-                    </div>
+                        <!-- Book 2 -->
+                        <article class="collection-card carousel-item col-6">
+                            <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
+                                <img src="assets/images/featured-2.png" alt="Lịch sử Học viện phòng không"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="collection-title font-bold text-lg mb-2 text-center" style="font-size: 1rem;"><a
+                                    href="book-detail.html" title="Lịch sử Học viện phòng không - không quân">Lịch sử
+                                    Học
+                                    viện phòng không - không quân</a></h3>
+                        </article>
 
-                    <table class="detail-meta-table">
-                        <tr>
-                            <td>Tác giả</td>
-                            <td class="text-primary font-medium">Paulo Coelho</td>
-                        </tr>
-                        <tr>
-                            <td>Dịch giả</td>
-                            <td>Lê Chu Cầu</td>
-                        </tr>
-                        <tr>
-                            <td>ISBN</td>
-                            <td>32098ES392</td>
-                        </tr>
-                        <tr>
-                            <td>Năm xuất bản</td>
-                            <td>2020</td>
-                        </tr>
-                        <tr>
-                            <td>Nhà xuất bản</td>
-                            <td>NXB Hội Nhà Văn</td>
-                        </tr>
-                        <tr>
-                            <td>Định dạng</td>
-                            <td class="text-primary-blue-dark">Ebook; Audio book; Sách giấy</td>
-                        </tr>
-                    </table>
+                        <!-- Book 3 -->
+                        <article class="collection-card carousel-item col-6">
+                            <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
+                                <img src="assets/images/featured-3.png" alt="Chiến thắng Điện Biên Phủ 1954"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="collection-title font-bold text-lg mb-2 text-center" style="font-size: 1rem;"><a
+                                    href="book-detail.html" title="Chiến thắng Điện Biên Phủ 1954">Chiến thắng Điện Biên
+                                    Phủ
+                                    1954</a></h3>
+                        </article>
 
-                    <a href="#"
-                        class="text-primary text-sm font-semibold flex items-center justify-center gap-1 mb-6 hover:underline"><i
-                            class="fa-solid fa-chevron-down"></i> Xem đầy đủ</a>
+                        <!-- Book 4 -->
+                        <article class="collection-card carousel-item col-6">
+                            <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
+                                <img src="assets/images/featured-4.png" alt="Nâng cao chất lượng giáo dục"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="collection-title font-bold text-lg mb-2 text-center" style="font-size: 1rem;"><a
+                                    href="book-detail.html" title="Nâng cao chất lượng giáo dục đảng viên">Nâng cao chất
+                                    lượng giáo dục đảng viên</a></h3>
+                        </article>
 
-                    <div class="detail-actions">
-                        <button class="btn-action btn-green" onclick="alert('Đã thêm vào giỏ mượn!')"><i
-                                class="fa-solid fa-cart-plus"></i> Mượn sách</button>
-                        <button class="btn-action btn-blue" onclick="window.location.href='reader.html'"><i
-                                class="fa-regular fa-eye"></i> Đọc sách điện tử</button>
-                        <button class="btn-action btn-orange" onclick="window.location.href='audio-player.html'"><i
-                                class="fa-solid fa-headphones"></i> Nghe sách nói</button>
+                        <!-- Book 5 -->
+                        <article class="collection-card carousel-item col-6">
+                            <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
+                                <img src="assets/images/featured-5.png" alt="Chuyện thường ngày của Võ Đại tướng"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="collection-title font-bold text-lg mb-2 text-center" style="font-size: 1rem;"><a
+                                    href="book-detail.html" title="Chuyện thường ngày của Võ Đại tướng">Chuyện thường
+                                    ngày
+                                    của Võ Đại tướng</a></h3>
+                        </article>
+
+                        <!-- Book 6 -->
+                        <article class="collection-card carousel-item col-6">
+                            <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
+                                <img src="assets/images/featured-6.png" alt="Văn học nghệ thuật góp phần xây dựng"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="collection-title font-bold text-lg mb-2 text-center" style="font-size: 1rem;"><a
+                                    href="book-detail.html" title="Văn học nghệ thuật góp phần xây dựng bản lĩnh">Văn
+                                    học
+                                    nghệ thuật góp phần xây dựng bản lĩnh</a></h3>
+                        </article>
+
+                        <!-- Book 1 (Duplicate) -->
+                        <article class="collection-card carousel-item col-6">
+                            <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
+                                <img src="assets/images/featured-1.png" alt="Lịch sử nghệ thuật quân sự Việt Nam"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="collection-title font-bold text-lg mb-2 text-center" style="font-size: 1rem;"><a
+                                    href="book-detail.html" title="Lịch sử nghệ thuật quân sự Việt Nam - tập 3">Lịch sử
+                                    nghệ
+                                    thuật quân sự Việt Nam - tập 3</a></h3>
+                        </article>
+
+                        <!-- Book 2 (Duplicate) -->
+                        <article class="collection-card carousel-item col-6">
+                            <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
+                                <img src="assets/images/featured-2.png" alt="Lịch sử Học viện phòng không"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="collection-title font-bold text-lg mb-2 text-center" style="font-size: 1rem;"><a
+                                    href="book-detail.html" title="Lịch sử Học viện phòng không - không quân">Lịch sử
+                                    Học
+                                    viện phòng không - không quân</a></h3>
+                        </article>
+
+                        <!-- Book 3 (Duplicate) -->
+                        <article class="collection-card carousel-item col-6">
+                            <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
+                                <img src="assets/images/featured-3.png" alt="Chiến thắng Điện Biên Phủ"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="collection-title font-bold text-lg mb-2 text-center" style="font-size: 1rem;"><a
+                                    href="book-detail.html" title="Chiến thắng Điện Biên Phủ 1954">Chiến thắng Điện Biên
+                                    Phủ
+                                    1954</a></h3>
+                        </article>
+
+                        <!-- Book 4 (Duplicate) -->
+                        <article class="collection-card carousel-item col-6">
+                            <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
+                                <img src="assets/images/featured-4.png" alt="Nâng cao chất lượng giáo dục"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="collection-title font-bold text-lg mb-2 text-center" style="font-size: 1rem;"><a
+                                    href="book-detail.html" title="Nâng cao chất lượng giáo dục đảng viên">Nâng cao chất
+                                    lượng giáo dục đảng viên</a></h3>
+                        </article>
+
+                        <!-- Book 5 (Duplicate) -->
+                        <article class="collection-card carousel-item col-6">
+                            <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
+                                <img src="assets/images/featured-5.png" alt="Chuyện thường ngày của Võ Đại tướng"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="collection-title font-bold text-lg mb-2 text-center" style="font-size: 1rem;"><a
+                                    href="book-detail.html" title="Chuyện thường ngày của Võ Đại tướng">Chuyện thường
+                                    ngày
+                                    của Võ Đại tướng</a></h3>
+                        </article>
+
+                        <!-- Book 6 (Duplicate) -->
+                        <article class="collection-card carousel-item col-6">
+                            <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
+                                <img src="assets/images/featured-6.png" alt="Văn học nghệ thuật góp phần xây dựng"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="collection-title font-bold text-lg mb-2 text-center" style="font-size: 1rem;"><a
+                                    href="book-detail.html" title="Văn học nghệ thuật góp phần xây dựng bản lĩnh">Văn
+                                    học
+                                    nghệ thuật góp phần xây dựng bản lĩnh</a></h3>
+                        </article>
                     </div>
                 </div>
             </div>
-
-            <!-- BODY CONTENT (Tabs & Related) -->
-            <!-- ... Keeping existing content/structure logic for tabs below ... -->
-
-            <div class="detail-body-grid">
-                <!-- Left: Content & Comments -->
-                <div class="detail-body-left">
-                    <!-- Tabs -->
-                    <div class="content-tabs-detail">
-                        <div class="tab-detail-link active">Giới thiệu</div>
-                        <div class="tab-detail-link">Mục lục</div>
-                    </div>
-
-                    <!-- Description -->
-                    <div class="detail-desc mt-6">
-                        <p>Tất cả những trải nghiệm trong chuyến phiêu du theo đuổi vận mệnh của mình đã giúp Santiago
-                            thấu hiểu được ý nghĩa sâu xa nhất của hạnh phúc, hòa hợp với vũ trụ và con người.</p>
-                        <p class="mt-4">Tiểu thuyết <strong>Nhà giả kim</strong> của Paulo Coelho như một câu chuyện cổ
-                            tích giản dị, nhân ái, giàu chất thơ, thấm đẫm những minh triết huyền bí của phương Đông.
-                            Trong lần xuất bản đầu tiên tại Brazil vào năm 1988, sách chỉ bán được 900 bản. Nhưng, với
-                            số phận đặc biệt của cuốn sách dành cho toàn nhân loại, vượt ra ngoài biên giới quốc gia,
-                            Nhà giả kim đã làm rung động hàng triệu tâm hồn.</p>
-                    </div>
-                </div>
-                <!-- Right: Sidebar Filters (Global Reuse) -->
-                <aside class="sidebar-filter">
-                    <!-- Keeping existing sidebar structure but simplified for brevity in this task -->
-                    <div class="filter-header">Sách cùng tác giả</div>
-                    <div class="p-4 grid grid-cols-2 gap-4">
-                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=200"
-                            class="rounded w-full shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=200"
-                            class="rounded w-full shadow-sm">
-                    </div>
-                </aside>
-            </div>
-
-
-            <!-- Carousel (Keeping existing) -->
-            <!-- Featured Books Module (Copied from books.html) -->
-            <section class="section featured-section bg-white py-12 border-t mt-12">
-                <div class="container">
-                    <div class="module-header flex justify-between items-center mb-6">
-                        <h2 class="module-title font-bold text-2xl uppercase" style="color: #46648D;">Có thể bạn thích
-                        </h2>
-                        <div class="carousel-nav flex gap-2">
-                            <button class="nav-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
-                            <button class="nav-btn next"><i class="fa-solid fa-chevron-right"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="carousel-view featured-carousel">
-                        <div class="carousel-track">
-                            <!-- Book 1 -->
-                            <article class="collection-card carousel-item col-6">
-                                <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
-                                    <img src="assets/images/featured-1.png" alt="Lịch sử nghệ thuật quân sự Việt Nam"
-                                        class="w-full h-full object-cover">
-                                </div>
-                                <h3 class="collection-title font-bold text-lg mb-2 text-center"
-                                    style="font-size: 1rem;"><a href="book-detail.html"
-                                        title="Lịch sử nghệ thuật quân sự Việt Nam - tập 3">Lịch sử nghệ
-                                        thuật quân sự Việt Nam - tập 3</a></h3>
-                            </article>
-
-                            <!-- Book 2 -->
-                            <article class="collection-card carousel-item col-6">
-                                <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
-                                    <img src="assets/images/featured-2.png" alt="Lịch sử Học viện phòng không"
-                                        class="w-full h-full object-cover">
-                                </div>
-                                <h3 class="collection-title font-bold text-lg mb-2 text-center"
-                                    style="font-size: 1rem;"><a href="book-detail.html"
-                                        title="Lịch sử Học viện phòng không - không quân">Lịch sử Học
-                                        viện phòng không - không quân</a></h3>
-                            </article>
-
-                            <!-- Book 3 -->
-                            <article class="collection-card carousel-item col-6">
-                                <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
-                                    <img src="assets/images/featured-3.png" alt="Chiến thắng Điện Biên Phủ 1954"
-                                        class="w-full h-full object-cover">
-                                </div>
-                                <h3 class="collection-title font-bold text-lg mb-2 text-center"
-                                    style="font-size: 1rem;"><a href="book-detail.html"
-                                        title="Chiến thắng Điện Biên Phủ 1954">Chiến thắng Điện Biên Phủ
-                                        1954</a></h3>
-                            </article>
-
-                            <!-- Book 4 -->
-                            <article class="collection-card carousel-item col-6">
-                                <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
-                                    <img src="assets/images/featured-4.png" alt="Nâng cao chất lượng giáo dục"
-                                        class="w-full h-full object-cover">
-                                </div>
-                                <h3 class="collection-title font-bold text-lg mb-2 text-center"
-                                    style="font-size: 1rem;"><a href="book-detail.html"
-                                        title="Nâng cao chất lượng giáo dục đảng viên">Nâng cao chất
-                                        lượng giáo dục đảng viên</a></h3>
-                            </article>
-
-                            <!-- Book 5 -->
-                            <article class="collection-card carousel-item col-6">
-                                <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
-                                    <img src="assets/images/featured-5.png" alt="Chuyện thường ngày của Võ Đại tướng"
-                                        class="w-full h-full object-cover">
-                                </div>
-                                <h3 class="collection-title font-bold text-lg mb-2 text-center"
-                                    style="font-size: 1rem;"><a href="book-detail.html"
-                                        title="Chuyện thường ngày của Võ Đại tướng">Chuyện thường ngày
-                                        của Võ Đại tướng</a></h3>
-                            </article>
-
-                            <!-- Book 6 -->
-                            <article class="collection-card carousel-item col-6">
-                                <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
-                                    <img src="assets/images/featured-6.png" alt="Văn học nghệ thuật góp phần xây dựng"
-                                        class="w-full h-full object-cover">
-                                </div>
-                                <h3 class="collection-title font-bold text-lg mb-2 text-center"
-                                    style="font-size: 1rem;"><a href="book-detail.html"
-                                        title="Văn học nghệ thuật góp phần xây dựng bản lĩnh">Văn học
-                                        nghệ thuật góp phần xây dựng bản lĩnh</a></h3>
-                            </article>
-
-                            <!-- Book 1 (Duplicate) -->
-                            <article class="collection-card carousel-item col-6">
-                                <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
-                                    <img src="assets/images/featured-1.png" alt="Lịch sử nghệ thuật quân sự Việt Nam"
-                                        class="w-full h-full object-cover">
-                                </div>
-                                <h3 class="collection-title font-bold text-lg mb-2 text-center"
-                                    style="font-size: 1rem;"><a href="book-detail.html"
-                                        title="Lịch sử nghệ thuật quân sự Việt Nam - tập 3">Lịch sử nghệ
-                                        thuật quân sự Việt Nam - tập 3</a></h3>
-                            </article>
-
-                            <!-- Book 2 (Duplicate) -->
-                            <article class="collection-card carousel-item col-6">
-                                <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
-                                    <img src="assets/images/featured-2.png" alt="Lịch sử Học viện phòng không"
-                                        class="w-full h-full object-cover">
-                                </div>
-                                <h3 class="collection-title font-bold text-lg mb-2 text-center"
-                                    style="font-size: 1rem;"><a href="book-detail.html"
-                                        title="Lịch sử Học viện phòng không - không quân">Lịch sử Học
-                                        viện phòng không - không quân</a></h3>
-                            </article>
-
-                            <!-- Book 3 (Duplicate) -->
-                            <article class="collection-card carousel-item col-6">
-                                <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
-                                    <img src="assets/images/featured-3.png" alt="Chiến thắng Điện Biên Phủ"
-                                        class="w-full h-full object-cover">
-                                </div>
-                                <h3 class="collection-title font-bold text-lg mb-2 text-center"
-                                    style="font-size: 1rem;"><a href="book-detail.html"
-                                        title="Chiến thắng Điện Biên Phủ 1954">Chiến thắng Điện Biên Phủ
-                                        1954</a></h3>
-                            </article>
-
-                            <!-- Book 4 (Duplicate) -->
-                            <article class="collection-card carousel-item col-6">
-                                <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
-                                    <img src="assets/images/featured-4.png" alt="Nâng cao chất lượng giáo dục"
-                                        class="w-full h-full object-cover">
-                                </div>
-                                <h3 class="collection-title font-bold text-lg mb-2 text-center"
-                                    style="font-size: 1rem;"><a href="book-detail.html"
-                                        title="Nâng cao chất lượng giáo dục đảng viên">Nâng cao chất
-                                        lượng giáo dục đảng viên</a></h3>
-                            </article>
-
-                            <!-- Book 5 (Duplicate) -->
-                            <article class="collection-card carousel-item col-6">
-                                <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
-                                    <img src="assets/images/featured-5.png" alt="Chuyện thường ngày của Võ Đại tướng"
-                                        class="w-full h-full object-cover">
-                                </div>
-                                <h3 class="collection-title font-bold text-lg mb-2 text-center"
-                                    style="font-size: 1rem;"><a href="book-detail.html"
-                                        title="Chuyện thường ngày của Võ Đại tướng">Chuyện thường ngày
-                                        của Võ Đại tướng</a></h3>
-                            </article>
-
-                            <!-- Book 6 (Duplicate) -->
-                            <article class="collection-card carousel-item col-6">
-                                <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
-                                    <img src="assets/images/featured-6.png" alt="Văn học nghệ thuật góp phần xây dựng"
-                                        class="w-full h-full object-cover">
-                                </div>
-                                <h3 class="collection-title font-bold text-lg mb-2 text-center"
-                                    style="font-size: 1rem;"><a href="book-detail.html"
-                                        title="Văn học nghệ thuật góp phần xây dựng bản lĩnh">Văn học
-                                        nghệ thuật góp phần xây dựng bản lĩnh</a></h3>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        </section>
         </div>
     </main>
 
@@ -421,17 +348,18 @@
     <!-- Mobile Gallery (Custom Slider) -->
     <div class="book-gallery-mobile">
         <div class="gallery-track">
-            <!-- Will be populated by JS or static -->
-            <div class="gallery-slide"><img src="assets/images/book-cover-large.png" alt="Book Cover"></div>
-            <div class="gallery-slide"><img src="assets/images/book-detail-thumb-1.png" alt="Thumb 1"></div>
-            <div class="gallery-slide"><img src="assets/images/book-detail-thumb-2.png" alt="Thumb 2"></div>
-            <div class="gallery-slide"><img src="assets/images/book-detail-thumb-3.png" alt="Thumb 3"></div>
+            <div class="gallery-slide"><img src="assets/images/nha-gia-kim-cover.jpg" alt="Nhà Giả Kim"></div>
+            <div class="gallery-slide"><img src="assets/images/nha-gia-kim-1.png" alt="Context 1"></div>
+            <div class="gallery-slide"><img src="assets/images/nha-gia-kim-2.jpg" alt="Context 2"></div>
+            <div class="gallery-slide"><img src="assets/images/nha-gia-kim-3.png" alt="Page 1"></div>
+            <div class="gallery-slide"><img src="assets/images/nha-gia-kim-4.png" alt="Page 2"></div>
         </div>
         <div class="gallery-dots">
             <span class="g-dot active" data-index="0"></span>
             <span class="g-dot" data-index="1"></span>
             <span class="g-dot" data-index="2"></span>
             <span class="g-dot" data-index="3"></span>
+            <span class="g-dot" data-index="4"></span>
         </div>
     </div>
 
