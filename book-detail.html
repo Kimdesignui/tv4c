@@ -418,9 +418,21 @@
     </footer>
 
     <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox-modal">
-        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
+    <!-- Mobile Gallery (Custom Slider) -->
+    <div class="book-gallery-mobile">
+        <div class="gallery-track">
+            <!-- Will be populated by JS or static -->
+            <div class="gallery-slide"><img src="assets/images/book-cover-large.png" alt="Book Cover"></div>
+            <div class="gallery-slide"><img src="assets/images/book-detail-thumb-1.png" alt="Thumb 1"></div>
+            <div class="gallery-slide"><img src="assets/images/book-detail-thumb-2.png" alt="Thumb 2"></div>
+            <div class="gallery-slide"><img src="assets/images/book-detail-thumb-3.png" alt="Thumb 3"></div>
+        </div>
+        <div class="gallery-dots">
+            <span class="g-dot active" data-index="0"></span>
+            <span class="g-dot" data-index="1"></span>
+            <span class="g-dot" data-index="2"></span>
+            <span class="g-dot" data-index="3"></span>
+        </div>
     </div>
 
     <!-- Mobile Sidebar Menu -->
@@ -446,6 +458,16 @@
                 <a href="books.html" class="view-all-btn"><i class="fa-solid fa-bars"></i> Xem tất cả</a>
             </div>
         </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal">
+        <button class="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+        <button class="lightbox-nav-btn lightbox-prev"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="lightbox-img-wrapper">
+            <img src="" alt="Full Image" class="lightbox-img">
+        </div>
+        <button class="lightbox-nav-btn lightbox-next"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
 
     <script>

@@ -321,6 +321,9 @@
 /* =========================================
    MOBILE SIDEBAR STYLES
    ========================================= */
+/* =========================================
+   MOBILE SIDEBAR STYLES (Right Aligned)
+   ========================================= */
 .mobile-backdrop {
     position: fixed;
     top: 0;
@@ -339,64 +342,66 @@
     opacity: 1;
 }
 
+/* Right-aligned Sidebar */
 .mobile-sidebar {
     position: fixed;
     top: 0;
-    left: -320px;
+    right: -320px;
+    /* Start hidden on the RIGHT */
+    left: auto;
+    /* Unlock left */
     width: 280px;
     height: 100%;
     background: #fff;
     z-index: 9999;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    transition: left 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    /* Shadow on left */
+    transition: right 0.3s ease;
     display: flex;
     flex-direction: column;
 }
 
 .mobile-sidebar.active {
-    left: 0;
+    right: 0;
+    /* Slide in to right edge */
+    left: auto;
 }
 
-.sidebar-header {
-    background: #055BF5;
-    color: #fff;
-    padding: 20px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-    /* Close button on the right of the container?? Design shows X floating */
-}
-
-/* Re-reading design roughly: Design likely has X outside or top right. Let's put X top right inside header or outside. 
-   User said: "Bên cạnh thanh menu danh mục mở ra có 1 nút X để đóng lại" -> Next to the menu. 
-   Let's float it outside or just put it in header right. 
-*/
-
+/* Header */
 .sidebar-header {
     position: relative;
     background: #055BF5;
     color: white;
-    padding: 60px 20px 20px 20px;
-    /* High top padding like design likely */
-    /* Wait, usually header is simple. Let's stick to standard blue header. */
     padding: 20px;
+    /* Match list item padding */
+    display: flex;
+    align-items: center;
+    min-height: 60px;
 }
 
 .sidebar-title {
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-transform: uppercase;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+    /* Gap between icon and text */
 }
 
+.sidebar-title i {
+    font-size: 1.2rem;
+    width: 20px;
+    /* Fixed width for alignment */
+    text-align: center;
+}
+
+/* Close Button - Outside LEFT */
 .close-sidebar-btn {
     position: absolute;
-    top: 10px;
-    right: -40px;
-    /* Floated outside */
+    top: 15px;
+    left: -50px;
+    /* Move to LEFT of sidebar */
     width: 35px;
     height: 35px;
     background: #fff;
@@ -407,7 +412,8 @@
     justify-content: center;
     border: none;
     font-size: 1.2rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .sidebar-content {
@@ -422,13 +428,226 @@
 .mobile-cat-list a {
     display: block;
     padding: 15px 20px;
+    /* Vertical 15, Horizontal 20 */
     color: #333;
     font-weight: 500;
+    padding-left: 20px;
+    /* Strict left alignment */
 }
+
+/* Alignment Check:
+   Header Icon: Starts at 20px padding-left. Width 20px center.
+   List Text: Starts at 20px padding-left. 
+   User wants Icon to align with Text? 
+   No, "icon Danh mục thư viện căn trái thằng hàng với text của các menu con".
+   
+   Header: [20px Pad] [Icon 20px] [15px Gap] [Title]
+   List:   [20px Pad] [Text]
+   
+   Wait. The user implies the "Header Icon" (likely the bars) should align with the "Menu Item Text".
+   Currently: Header Icon starts at 20px. Menu Text starts at 20px. They ARE aligned.
+*/
 
 .mobile-cat-list a:hover {
     background: #f9f9f9;
     color: #055BF5;
+}
+
+/* =========================================
+   HEADER RESPONSIVE (<= 992px)
+   ========================================= */
+@media (max-width: 992px) {
+
+    /* Hide specific elements: Favorites, Bookmarks only if they are separate icons or part of header-right */
+    /* User requested to KEEP Search Bar */
+    .header-actions a[title="Tủ sách đã lưu"],
+    .header-actions a[title="Yêu thích"],
+    .header-actions .icon-btn:not(.user-btn):not(.mobile-menu-btn) {
+        display: none !important;
+    }
+
+    /* Ensure User & Menu are visible and styled */
+    .header-actions {
+        gap: 10px;
+    }
+
+    /* Circle Outline Style for Icons */
+    .header-actions .icon-btn {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #1e3a8a;
+        /* Dark Blue Border */
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #1e3a8a;
+        font-size: 1.2rem;
+    }
+
+    .header-actions .user-dropdown-container {
+        display: block;
+    }
+}
+
+/* =========================================
+   HOMEPAGE GRID (5 -> 4 -> 2)
+   ========================================= */
+@media (max-width: 992px) {
+    .book-grid-5 {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+
+    /* Hide 5th item */
+    .book-grid-5 .book-card.compact:nth-child(5) {
+        display: none !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .book-grid-5 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* 5th still hidden */
+}
+
+/* =========================================
+   BOOK DETAIL MOBILE SLIDER
+   ========================================= */
+.book-gallery-mobile {
+    display: none;
+    /* Hidden by default (Desktop) */
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .book-gallery-mobile {
+        display: block;
+    }
+
+    /* Hide Desktop Cover */
+    .book-detail-grid .book-cover-section {
+        display: none !important;
+    }
+}
+
+.gallery-track {
+    display: flex;
+    transition: transform 0.3s ease-out;
+}
+
+.gallery-slide {
+    min-width: 100%;
+    aspect-ratio: 2/3;
+    /* Book ratio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f9f9f9;
+}
+
+.gallery-slide img {
+    height: 100%;
+    object-fit: contain;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.g-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.g-dot.active {
+    background: #055BF5;
+    width: 20px;
+    border-radius: 4px;
+}
+
+/* =========================================
+   LIGHTBOX MODAL
+   ========================================= */
+#lightbox-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10005;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#lightbox-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-img-wrapper {
+    max-width: 90%;
+    max-height: 80vh;
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.lightbox-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+/* Desktop Clickable Cover */
+.book-cover-main {
+    cursor: pointer;
 }
 
 .sidebar-footer {
