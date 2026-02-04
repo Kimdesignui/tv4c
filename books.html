@@ -110,85 +110,68 @@
 
                     <!-- Category Filter -->
                     <div class="filter-group">
-                        <div class="filter-group-title cursor-pointer flex justify-between items-center"
-                            onclick="toggleFilter(this)">
+                        <div class="filter-group-title" onclick="toggleFilter(this)">
                             Danh mục sách <i class="fa-solid fa-chevron-up transition-transform duration-300"></i>
                         </div>
-                        <ul class="filter-list transition-all duration-300 overflow-hidden">
-                            <li class="filter-item"><label class="flex items-center gap-2 cursor-pointer"><input
-                                        type="checkbox" class="accent-primary"> <span>Văn học Việt Nam
+                        <ul class="filter-list" style="max-height: 1000px; opacity: 1; margin-top: 10px;">
+                            <li class="filter-item"><label><input type="checkbox"> <span>Văn học Việt Nam
                                         (120)</span></label></li>
-                            <li class="filter-item"><label class="flex items-center gap-2 cursor-pointer"><input
-                                        type="checkbox" class="accent-primary"> <span>Văn học Nước ngoài
+                            <li class="filter-item"><label><input type="checkbox"> <span>Văn học Nước ngoài
                                         (85)</span></label></li>
-                            <li class="filter-item"><label class="flex items-center gap-2 cursor-pointer"><input
-                                        type="checkbox" class="accent-primary"> <span>Kinh tế & Quản trị
+                            <li class="filter-item"><label><input type="checkbox"> <span>Kinh tế & Quản trị
                                         (45)</span></label></li>
-                            <li class="filter-item"><label class="flex items-center gap-2 cursor-pointer"><input
-                                        type="checkbox" class="accent-primary"> <span>Tâm lý & Kỹ năng
+                            <li class="filter-item"><label><input type="checkbox"> <span>Tâm lý & Kỹ năng
                                         (30)</span></label></li>
-                            <li class="filter-item"><label class="flex items-center gap-2 cursor-pointer"><input
-                                        type="checkbox" class="accent-primary"> <span>Thiếu nhi (60)</span></label></li>
-                            <li class="filter-item hidden extra-item"><label
-                                    class="flex items-center gap-2 cursor-pointer"><input type="checkbox"
-                                        class="accent-primary"> <span>Sách giáo khoa (100)</span></label></li>
-                            <li class="filter-item hidden extra-item"><label
-                                    class="flex items-center gap-2 cursor-pointer"><input type="checkbox"
-                                        class="accent-primary"> <span>Ngoại ngữ (50)</span></label></li>
+                            <li class="filter-item"><label><input type="checkbox"> <span>Thiếu nhi (60)</span></label>
+                            </li>
+                            <li class="filter-item hidden extra-item"><label><input type="checkbox"> <span>Sách giáo
+                                        khoa (100)</span></label></li>
+                            <li class="filter-item hidden extra-item"><label><input type="checkbox"> <span>Ngoại ngữ
+                                        (50)</span></label></li>
                         </ul>
-                        <span
-                            class="view-more-filter text-primary text-sm cursor-pointer mt-2 inline-block hover:underline"
-                            onclick="toggleViewMore(this)">Xem thêm +</span>
+                        <span class="view-more-filter" onclick="toggleViewMore(this)">Xem thêm +</span>
                     </div>
 
                     <!-- Author Filter -->
                     <div class="filter-group">
-                        <div class="filter-group-title cursor-pointer flex justify-between items-center"
-                            onclick="toggleFilter(this)">
+                        <div class="filter-group-title" onclick="toggleFilter(this)">
                             Tác giả <i class="fa-solid fa-chevron-up transition-transform duration-300"></i>
                         </div>
-                        <ul class="filter-list transition-all duration-300 overflow-hidden">
-                            <li class="filter-item"><label class="flex items-center gap-2 cursor-pointer"><input
-                                        type="checkbox" class="accent-primary"> <span>Nguyễn Nhật Ánh</span></label>
+                        <ul class="filter-list" style="max-height: 1000px; opacity: 1; margin-top: 10px;">
+                            <li class="filter-item"><label><input type="checkbox"> <span>Nguyễn Nhật Ánh</span></label>
                             </li>
-                            <li class="filter-item"><label class="flex items-center gap-2 cursor-pointer"><input
-                                        type="checkbox" class="accent-primary"> <span>Rosie Nguyễn</span></label></li>
-                            <li class="filter-item"><label class="flex items-center gap-2 cursor-pointer"><input
-                                        type="checkbox" class="accent-primary"> <span>Tô Hoài</span></label></li>
+                            <li class="filter-item"><label><input type="checkbox"> <span>Rosie Nguyễn</span></label>
+                            </li>
+                            <li class="filter-item"><label><input type="checkbox"> <span>Tô Hoài</span></label></li>
                         </ul>
-                        <div class="mt-2 relative">
-                            <input type="text" placeholder="Tìm tác giả..."
-                                class="w-full border border-gray-300 rounded px-2 py-1.5 text-sm focus:border-primary focus:outline-none">
-                            <i
-                                class="fa-solid fa-magnifying-glass absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+                        <div class="filter-search-box">
+                            <input type="text" placeholder="Nhập tên Tác giả">
+                            <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
+                        <span class="view-more-filter" onclick="toggleViewMore(this)">Xem thêm +</span>
                     </div>
 
                     <!-- Publisher Filter -->
                     <div class="filter-group">
-                        <div class="filter-group-title cursor-pointer flex justify-between items-center"
-                            onclick="toggleFilter(this)">
+                        <div class="filter-group-title" onclick="toggleFilter(this)">
                             Nhà xuất bản <i class="fa-solid fa-chevron-up transition-transform duration-300"></i>
                         </div>
-                        <ul class="filter-list transition-all duration-300 overflow-hidden">
-                            <li class="filter-item"><label class="flex items-center gap-2 cursor-pointer"><input
-                                        type="checkbox" class="accent-primary"> <span>NXB Trẻ</span></label></li>
-                            <li class="filter-item"><label class="flex items-center gap-2 cursor-pointer"><input
-                                        type="checkbox" class="accent-primary"> <span>NXB Kim Đồng</span></label></li>
-                            <li class="filter-item"><label class="flex items-center gap-2 cursor-pointer"><input
-                                        type="checkbox" class="accent-primary"> <span>Nhã Nam</span></label></li>
-                            <li class="filter-item hidden extra-item"><label
-                                    class="flex items-center gap-2 cursor-pointer"><input type="checkbox"
-                                        class="accent-primary"> <span>Hội nhà văn</span></label></li>
+                        <ul class="filter-list" style="max-height: 1000px; opacity: 1; margin-top: 10px;">
+                            <li class="filter-item"><label><input type="checkbox"> <span>Nhà xuất bản Xây
+                                        dựng</span></label></li>
+                            <li class="filter-item"><label><input type="checkbox"> <span>Nhà xuất bản Y
+                                        học</span></label></li>
+                            <li class="filter-item"><label><input type="checkbox"> <span>Nhà xuất bản Bách
+                                        khoa</span></label></li>
+                            <li class="filter-item hidden extra-item"><label><input type="checkbox"> <span>Nhà xuất bản
+                                        Tri thức</span></label></li>
+                            <li class="filter-item hidden extra-item"><label><input type="checkbox"> <span>Nhà xuất bản
+                                        Hà Nội</span></label></li>
                         </ul>
-                        <span
-                            class="view-more-filter text-primary text-sm cursor-pointer mt-2 inline-block hover:underline"
-                            onclick="toggleViewMore(this)">Xem thêm +</span>
+                        <span class="view-more-filter" onclick="toggleViewMore(this)">Xem thêm +</span>
                     </div>
 
-                    <button
-                        class="btn-filter-apply w-full bg-primary text-white py-2 rounded mt-4 hover:bg-blue-700 transition font-bold shadow-sm">Áp
-                        dụng bộ lọc</button>
+                    <button class="btn-filter-apply">Lọc</button>
 
                     <!-- Ad Banner -->
                     <div class="sidebar-banner">
