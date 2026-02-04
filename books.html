@@ -105,77 +105,90 @@
 
             <div class="grid gap-8 main-layout-books">
                 <!-- SIDEBAR FILTERS -->
-                <aside class="sidebar-filter">
-                    <div class="filter-header">Bộ lọc tìm kiếm</div>
+                <aside class="sidebar-wrapper">
+                    <!-- Filter Box -->
+                    <div class="sidebar-filter">
+                        <div class="filter-header">Bộ lọc tìm kiếm</div>
 
-                    <!-- Category Filter -->
-                    <div class="filter-group">
-                        <div class="filter-group-title" onclick="toggleFilter(this)">
-                            Danh mục sách <i class="fa-solid fa-chevron-up transition-transform duration-300"></i>
+                        <!-- Category Filter -->
+                        <div class="filter-group">
+                            <div class="filter-group-title" onclick="toggleFilter(this)">
+                                Danh mục sách <i class="fa-solid fa-chevron-up transition-transform duration-300"></i>
+                            </div>
+                            <ul class="filter-list" style="max-height: 1000px; opacity: 1; margin-top: 10px;">
+                                <li class="filter-item"><label><input type="checkbox"> <span>Văn học Việt Nam
+                                            (120)</span></label></li>
+                                <li class="filter-item"><label><input type="checkbox"> <span>Văn học Nước ngoài
+                                            (85)</span></label></li>
+                                <li class="filter-item"><label><input type="checkbox"> <span>Kinh tế & Quản trị
+                                            (45)</span></label></li>
+                                <li class="filter-item"><label><input type="checkbox"> <span>Tâm lý & Kỹ năng
+                                            (30)</span></label></li>
+                                <li class="filter-item"><label><input type="checkbox"> <span>Thiếu nhi
+                                            (60)</span></label>
+                                </li>
+                                <li class="filter-item hidden extra-item"><label><input type="checkbox"> <span>Sách giáo
+                                            khoa (100)</span></label></li>
+                                <li class="filter-item hidden extra-item"><label><input type="checkbox"> <span>Ngoại ngữ
+                                            (50)</span></label></li>
+                            </ul>
+                            <span class="view-more-filter" onclick="toggleViewMore(this)">Xem thêm +</span>
                         </div>
-                        <ul class="filter-list" style="max-height: 1000px; opacity: 1; margin-top: 10px;">
-                            <li class="filter-item"><label><input type="checkbox"> <span>Văn học Việt Nam
-                                        (120)</span></label></li>
-                            <li class="filter-item"><label><input type="checkbox"> <span>Văn học Nước ngoài
-                                        (85)</span></label></li>
-                            <li class="filter-item"><label><input type="checkbox"> <span>Kinh tế & Quản trị
-                                        (45)</span></label></li>
-                            <li class="filter-item"><label><input type="checkbox"> <span>Tâm lý & Kỹ năng
-                                        (30)</span></label></li>
-                            <li class="filter-item"><label><input type="checkbox"> <span>Thiếu nhi (60)</span></label>
-                            </li>
-                            <li class="filter-item hidden extra-item"><label><input type="checkbox"> <span>Sách giáo
-                                        khoa (100)</span></label></li>
-                            <li class="filter-item hidden extra-item"><label><input type="checkbox"> <span>Ngoại ngữ
-                                        (50)</span></label></li>
-                        </ul>
-                        <span class="view-more-filter" onclick="toggleViewMore(this)">Xem thêm +</span>
+
+                        <!-- Author Filter -->
+                        <div class="filter-group">
+                            <div class="filter-group-title" onclick="toggleFilter(this)">
+                                Tác giả <i class="fa-solid fa-chevron-up transition-transform duration-300"></i>
+                            </div>
+                            <ul class="filter-list" style="max-height: 1000px; opacity: 1; margin-top: 10px;">
+                                <li class="filter-item"><label><input type="checkbox"> <span>Nguyễn Nhật
+                                            Ánh</span></label>
+                                </li>
+                                <li class="filter-item"><label><input type="checkbox"> <span>Rosie
+                                            Nguyễn</span></label>
+                                </li>
+                                <li class="filter-item"><label><input type="checkbox"> <span>Tô Hoài</span></label></li>
+                            </ul>
+                            <div class="filter-search-box">
+                                <input type="text" placeholder="Nhập tên Tác giả">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <span class="view-more-filter" onclick="toggleViewMore(this)">Xem thêm +</span>
+                        </div>
+
+                        <!-- Publisher Filter -->
+                        <div class="filter-group">
+                            <div class="filter-group-title" onclick="toggleFilter(this)">
+                                Nhà xuất bản <i class="fa-solid fa-chevron-up transition-transform duration-300"></i>
+                            </div>
+                            <ul class="filter-list" style="max-height: 1000px; opacity: 1; margin-top: 10px;">
+                                <li class="filter-item"><label><input type="checkbox"> <span>Nhà xuất bản Xây
+                                            dựng</span></label></li>
+                                <li class="filter-item"><label><input type="checkbox"> <span>Nhà xuất bản Y
+                                            học</span></label></li>
+                                <li class="filter-item"><label><input type="checkbox"> <span>Nhà xuất bản Bách
+                                            khoa</span></label></li>
+                                <li class="filter-item hidden extra-item"><label><input type="checkbox"> <span>Nhà xuất
+                                            bản
+                                            Tri thức</span></label></li>
+                                <li class="filter-item hidden extra-item"><label><input type="checkbox"> <span>Nhà xuất
+                                            bản
+                                            Hà Nội</span></label></li>
+                            </ul>
+                            <span class="view-more-filter" onclick="toggleViewMore(this)">Xem thêm +</span>
+                        </div>
+
+                        <div class="w-full">
+                            <button class="btn-filter-apply">Áp dụng</button>
+                        </div>
                     </div>
 
-                    <!-- Author Filter -->
-                    <div class="filter-group">
-                        <div class="filter-group-title" onclick="toggleFilter(this)">
-                            Tác giả <i class="fa-solid fa-chevron-up transition-transform duration-300"></i>
-                        </div>
-                        <ul class="filter-list" style="max-height: 1000px; opacity: 1; margin-top: 10px;">
-                            <li class="filter-item"><label><input type="checkbox"> <span>Nguyễn Nhật Ánh</span></label>
-                            </li>
-                            <li class="filter-item"><label><input type="checkbox"> <span>Rosie Nguyễn</span></label>
-                            </li>
-                            <li class="filter-item"><label><input type="checkbox"> <span>Tô Hoài</span></label></li>
-                        </ul>
-                        <div class="filter-search-box">
-                            <input type="text" placeholder="Nhập tên Tác giả">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </div>
-                        <span class="view-more-filter" onclick="toggleViewMore(this)">Xem thêm +</span>
-                    </div>
-
-                    <!-- Publisher Filter -->
-                    <div class="filter-group">
-                        <div class="filter-group-title" onclick="toggleFilter(this)">
-                            Nhà xuất bản <i class="fa-solid fa-chevron-up transition-transform duration-300"></i>
-                        </div>
-                        <ul class="filter-list" style="max-height: 1000px; opacity: 1; margin-top: 10px;">
-                            <li class="filter-item"><label><input type="checkbox"> <span>Nhà xuất bản Xây
-                                        dựng</span></label></li>
-                            <li class="filter-item"><label><input type="checkbox"> <span>Nhà xuất bản Y
-                                        học</span></label></li>
-                            <li class="filter-item"><label><input type="checkbox"> <span>Nhà xuất bản Bách
-                                        khoa</span></label></li>
-                            <li class="filter-item hidden extra-item"><label><input type="checkbox"> <span>Nhà xuất bản
-                                        Tri thức</span></label></li>
-                            <li class="filter-item hidden extra-item"><label><input type="checkbox"> <span>Nhà xuất bản
-                                        Hà Nội</span></label></li>
-                        </ul>
-                        <span class="view-more-filter" onclick="toggleViewMore(this)">Xem thêm +</span>
-                    </div>
-
-                    <button class="btn-filter-apply">Lọc</button>
-
-                    <!-- Ad Banner -->
-                    <div class="sidebar-banner">
-                        <img src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?w=400" class="w-full">
+                    <!-- Ad Banner (Outside Border) -->
+                    <div class="sidebar-banner mt-6">
+                        <a href="#" target="_blank">
+                            <img src="assets/images/sidebar-banner-new.png" alt="Promotion"
+                                class="w-full rounded-lg shadow-sm">
+                        </a>
                     </div>
                 </aside>
 
@@ -321,59 +334,79 @@
 
                     <!-- You might like (Carousel area) -->
                     <!-- You might like (Standardized Book Module) -->
-                    <div class="book-module mt-12 mb-8">
-                        <div class="module-header flex justify-between items-center mb-4 border-b pb-2">
-                            <h2 class="module-title" style="color: #46648D; font-size: 18px;">Có thể bạn thích</h2>
-                            <div class="flex gap-2 text-gray-400 text-sm">
-                                <button class="hover:text-primary transition"><i
-                                        class="fa-solid fa-chevron-left"></i></button>
-                                <span class="text-gray-300">|</span>
-                                <button class="hover:text-primary transition"><i
-                                        class="fa-solid fa-chevron-right"></i></button>
+                    <!-- You might like (Featured Carousel Style) -->
+                    <div class="section featured-section bg-white py-8 border-t mt-8">
+                        <div class="module-header flex justify-between items-center mb-6">
+                            <h2 class="module-title font-bold text-2xl uppercase" style="color: #46648D;">Có thể bạn
+                                thích</h2>
+                            <div class="carousel-nav flex gap-2">
+                                <button class="nav-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
+                                <button class="nav-btn next"><i class="fa-solid fa-chevron-right"></i></button>
                             </div>
                         </div>
-                        <div class="book-grid-5 grid grid-5 gap-6">
-                            <!-- Reuse 5 cards -->
-                            <article class="book-card compact text-center">
-                                <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3 relative">
-                                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300"
-                                        class="w-full h-full object-cover">
-                                </div>
-                                <h3 class="font-bold text-sm text-[#46648D]"><a href="book-detail.html">Hoa xương
-                                        rồng</a></h3>
-                            </article>
-                            <article class="book-card compact text-center">
-                                <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3 relative">
-                                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=300"
-                                        class="w-full h-full object-cover">
-                                </div>
-                                <h3 class="font-bold text-sm text-[#46648D]"><a href="book-detail.html">Ngủ giữa hoa
-                                        sen</a></h3>
-                            </article>
-                            <article class="book-card compact text-center">
-                                <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3 relative">
-                                    <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300"
-                                        class="w-full h-full object-cover">
-                                </div>
-                                <h3 class="font-bold text-sm text-[#46648D]"><a href="book-detail.html">Miền ký ức</a>
-                                </h3>
-                            </article>
-                            <article class="book-card compact text-center">
-                                <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3 relative">
-                                    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300"
-                                        class="w-full h-full object-cover">
-                                </div>
-                                <h3 class="font-bold text-sm text-[#46648D]"><a href="book-detail.html">Chuyện làng
-                                        Buông</a></h3>
-                            </article>
-                            <article class="book-card compact text-center">
-                                <div class="book-cover rounded overflow-hidden aspect-[2/3] mb-3 relative">
-                                    <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300"
-                                        class="w-full h-full object-cover">
-                                </div>
-                                <h3 class="font-bold text-sm text-[#46648D]"><a href="book-detail.html">Chuyên đề
-                                        Viết</a></h3>
-                            </article>
+
+                        <div class="carousel-view featured-carousel">
+                            <div class="carousel-track" style="display: flex; gap: 20px; overflow-x: auto;">
+                                <!-- Book 1 -->
+                                <article class="collection-card carousel-item"
+                                    style="min-width: calc((100% - 80px) / 5);">
+                                    <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
+                                        <img src="assets/images/featured-1.png" alt="Book"
+                                            class="w-full h-full object-cover">
+                                    </div>
+                                    <h3 class="collection-title font-bold text-lg mb-2 text-center"
+                                        style="font-size: 1rem;"><a href="book-detail.html">Lịch sử nghệ thuật quân sự
+                                            Việt Nam</a></h3>
+                                </article>
+
+                                <!-- Book 2 -->
+                                <article class="collection-card carousel-item"
+                                    style="min-width: calc((100% - 80px) / 5);">
+                                    <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
+                                        <img src="assets/images/featured-2.png" alt="Book"
+                                            class="w-full h-full object-cover">
+                                    </div>
+                                    <h3 class="collection-title font-bold text-lg mb-2 text-center"
+                                        style="font-size: 1rem;"><a href="book-detail.html">Lịch sử Học viện phòng
+                                            không</a></h3>
+                                </article>
+
+                                <!-- Book 3 -->
+                                <article class="collection-card carousel-item"
+                                    style="min-width: calc((100% - 80px) / 5);">
+                                    <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
+                                        <img src="assets/images/featured-3.png" alt="Book"
+                                            class="w-full h-full object-cover">
+                                    </div>
+                                    <h3 class="collection-title font-bold text-lg mb-2 text-center"
+                                        style="font-size: 1rem;"><a href="book-detail.html">Chiến thắng Điện Biên Phủ
+                                            1954</a></h3>
+                                </article>
+
+                                <!-- Book 4 -->
+                                <article class="collection-card carousel-item"
+                                    style="min-width: calc((100% - 80px) / 5);">
+                                    <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
+                                        <img src="assets/images/featured-4.png" alt="Book"
+                                            class="w-full h-full object-cover">
+                                    </div>
+                                    <h3 class="collection-title font-bold text-lg mb-2 text-center"
+                                        style="font-size: 1rem;"><a href="book-detail.html">Nâng cao chất lượng giáo
+                                            dục</a></h3>
+                                </article>
+
+                                <!-- Book 5 -->
+                                <article class="collection-card carousel-item"
+                                    style="min-width: calc((100% - 80px) / 5);">
+                                    <div class="collection-thumb rounded-lg overflow-hidden mb-4 relative aspect-2-3">
+                                        <img src="assets/images/featured-5.png" alt="Book"
+                                            class="w-full h-full object-cover">
+                                    </div>
+                                    <h3 class="collection-title font-bold text-lg mb-2 text-center"
+                                        style="font-size: 1rem;"><a href="book-detail.html">Chuyện thường ngày của Võ
+                                            Đại tướng</a></h3>
+                                </article>
+                            </div>
                         </div>
                     </div>
                 </div>

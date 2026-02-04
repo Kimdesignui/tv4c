@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hướng dẫn sử dụng - TV4C</title>
+    <title>Hướng dẫn mượn sách - TV4C</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
         rel="stylesheet">
@@ -104,7 +104,9 @@
             <div class="text-sm">
                 <a href="index.html" class="text-gray-500 hover:text-primary">Trang chủ</a>
                 <span class="mx-2 text-gray-300">/</span>
-                <span class="text-primary font-medium">Hướng dẫn sử dụng</span>
+                <a href="guide.html" class="text-gray-500 hover:text-primary">Hướng dẫn</a>
+                <span class="mx-2 text-gray-300">/</span>
+                <span class="text-primary font-medium">Hướng dẫn mượn sách</span>
             </div>
         </div>
     </nav>
@@ -118,110 +120,63 @@
                 <aside class="sidebar-wrapper">
                     <div class="guide-sidebar bg-white p-4 rounded shadow-sm h-fit border border-gray-200">
                         <ul class="space-y-2">
-                            <li><a href="guide.html" class="block p-2 rounded bg-blue-50 text-primary font-bold">Câu hỏi
-                                    thường
-                                    gặp</a></li>
+                            <li><a href="guide.html" class="block p-2 rounded hover:bg-gray-50 text-gray-700">Câu hỏi
+                                    thường gặp</a></li>
                             <li><a href="guide-register.html"
                                     class="block p-2 rounded hover:bg-gray-50 text-gray-700">Hướng dẫn đăng ký tài
                                     khoản</a></li>
                             <li><a href="guide-borrow.html"
-                                    class="block p-2 rounded hover:bg-gray-50 text-gray-700">Hướng dẫn mượn sách</a>
+                                    class="block p-2 rounded bg-blue-50 text-primary font-bold">Hướng dẫn mượn sách</a>
                             </li>
                             <li><a href="guide-rules.html" class="block p-2 rounded hover:bg-gray-50 text-gray-700">Quy
-                                    định thư viện</a>
-                            </li>
+                                    định thư viện</a></li>
                         </ul>
                     </div>
                 </aside>
 
-                <!-- Content -->
-                <div class="guide-content">
-                    <!-- FAQ Item 1 (Open by Default) -->
-                    <div class="faq-item bg-white rounded shadow-sm mb-4 border border-gray-200 overflow-hidden">
-                        <div class="faq-header flex justify-between items-center p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 transition"
-                            onclick="toggleFaq(this)">
-                            <h3 class="font-bold text-lg text-primary-dark">1. Làm thế nào để đăng ký tài khoản?</h3>
-                            <i class="fa-solid fa-chevron-up text-gray-500 transition-transform duration-300"></i>
-                        </div>
-                        <div class="faq-body p-4 border-t border-gray-100" style="display: block;">
-                            <p class="text-gray-700 leading-relaxed">Để đăng ký tài khoản, bạn vui lòng nhấn vào biểu
-                                tượng Người dùng ở góc
-                                trên bên phải màn hình, chọn "Đăng ký" và điền đầy đủ thông tin theo mẫu. Đối với học
-                                sinh/sinh viên các trường liên kết, vui lòng sử dụng Email nhà trường cấp để đăng nhập
-                                ngay.
-                            </p>
-                        </div>
-                    </div>
+                <!-- Content (Article Style) -->
+                <div class="guide-content bg-white p-8 rounded shadow-sm border border-gray-200">
+                    <h2 class="text-2xl font-bold text-primary-dark mb-6 border-b pb-4">Quy trình mượn sách và tài liệu
+                    </h2>
 
-                    <!-- FAQ Item 2 -->
-                    <div class="faq-item bg-white rounded shadow-sm mb-4 border border-gray-200 overflow-hidden">
-                        <div class="faq-header flex justify-between items-center p-4 cursor-pointer hover:bg-gray-50 transition"
-                            onclick="toggleFaq(this)">
-                            <h3 class="font-bold text-lg text-primary-dark">2. Tôi có thể mượn bao nhiêu cuốn sách cùng
-                                lúc?</h3>
-                            <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
-                        </div>
-                        <div class="faq-body p-4 border-t border-gray-100" style="display: none;">
-                            <p class="text-gray-700 mb-2">Tùy thuộc vào hạng thẻ thành viên, bạn có thể mượn tối đa:</p>
-                            <ul class="list-disc pl-6 text-gray-700 space-y-1">
-                                <li>Thẻ thường: 3 cuốn/lần</li>
-                                <li>Thẻ VIP: 5 cuốn/lần</li>
-                                <li>Ebook: Không giới hạn số lượng đọc online</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <div class="article-body text-gray-700 leading-relaxed space-y-4">
+                        <p>Thư viện TV4C cung cấp quy trình mượn sách đơn giản và thuận tiện cho mọi độc giả. Bạn có thể
+                            mượn sách giấy tại thư viện hoặc đọc sách điện tử trực tuyến.</p>
 
-                    <!-- FAQ Item 3 -->
-                    <div class="faq-item bg-white rounded shadow-sm mb-4 border border-gray-200 overflow-hidden">
-                        <div class="faq-header flex justify-between items-center p-4 cursor-pointer hover:bg-gray-50 transition"
-                            onclick="toggleFaq(this)">
-                            <h3 class="font-bold text-lg text-primary-dark">3. Quên mật khẩu thì phải làm sao?</h3>
-                            <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                        <h3 class="text-lg font-bold text-primary mt-6 mb-2">1. Mượn sách giấy (Tại thư viện)</h3>
+                        <p>Dành cho độc giả đến trực tiếp thư viện để mượn sách về nhà.</p>
+                        <div class="my-4">
+                            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800"
+                                alt="Mượn sách giấy" class="w-full rounded shadow-sm">
                         </div>
-                        <div class="faq-body p-4 border-t border-gray-100" style="display: none;">
-                            <p class="text-gray-700">Bạn vui lòng truy cập trang Đăng nhập, chọn "Quên mật khẩu", sau đó
-                                nhập địa chỉ Email đã đăng ký để nhận liên kết đặt lại mật khẩu mới.</p>
-                        </div>
-                    </div>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li><strong>Tra cứu:</strong> Sử dụng máy tính tại sảnh hoặc app TV4C để tìm vị trí sách
+                                trên kệ.</li>
+                            <li><strong>Lấy sách:</strong> Đến đúng kệ sách để lấy cuốn sách bạn cần.</li>
+                            <li><strong>Làm thủ tục:</strong> Mang sách và thẻ thành viên đến quầy thủ thư để quét mã
+                                mượn.</li>
+                            <li><strong>Thời hạn:</strong> Mỗi lần mượn được tối đa 7 ngày (có thể gia hạn thêm 1 lần).
+                            </li>
+                        </ul>
 
-                    <!-- FAQ Item 4 -->
-                    <div class="faq-item bg-white rounded shadow-sm mb-4 border border-gray-200 overflow-hidden">
-                        <div class="faq-header flex justify-between items-center p-4 cursor-pointer hover:bg-gray-50 transition"
-                            onclick="toggleFaq(this)">
-                            <h3 class="font-bold text-lg text-primary-dark">4. Phí phạt quá hạn là bao nhiêu?</h3>
-                            <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
-                        </div>
-                        <div class="faq-body p-4 border-t border-gray-100" style="display: none;">
-                            <p class="text-gray-700">Phí phạt quá hạn là 2.000đ/cuốn/ngày. Vui lòng gia hạn sách trực
-                                tuyến
-                                nếu bạn chưa đọc xong để tránh phát sinh chi phí.</p>
+                        <h3 class="text-lg font-bold text-primary mt-6 mb-2">2. Đọc sách điện tử (Ebook)</h3>
+                        <p>Dành cho độc giả muốn đọc sách mọi lúc mọi nơi trên thiết bị cá nhân.</p>
+                        <ul class="list-disc pl-6 space-y-1">
+                            <li><strong>Đăng nhập:</strong> Truy cập website hoặc ứng dụng TV4C và đăng nhập tài khoản.
+                            </li>
+                            <li><strong>Chọn sách:</strong> Tìm sách có biểu tượng "Ebook" hoặc "Đọc online".</li>
+                            <li><strong>Đọc ngay:</strong> Nhấn nút "Đọc sách" để mở trình đọc. Hệ thống sẽ tự động lưu
+                                lại trang bạn đang đọc dở.</li>
+                        </ul>
+
+                        <div class="bg-yellow-50 p-4 rounded border-l-4 border-yellow-500 mt-6">
+                            <p class="font-bold text-yellow-700">Lưu ý quan trọng:</p>
+                            <p class="text-sm text-yellow-600">Vui lòng bảo quản sách cẩn thận. Mọi trường hợp làm rách,
+                                vẽ bậy hoặc mất sách sẽ phải bồi thường theo quy định của thư viện.</p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <script>
-                function toggleFaq(header) {
-                    const body = header.nextElementSibling;
-                    const icon = header.querySelector('i');
-                    const isClosed = body.style.display === 'none';
-
-                    // Close all others (optional, but requested behavior is "click... answer expands", usually accordion effect implies one active or multiple. I will allow multiple for utility, or single strict? Let's do Standard Accordion: Close others)
-                    // "mặc định câu đầu tiên luôn hiển thị đầy đủ" - suggests stateful.
-                    // For simple FQA, often allows multiple open. I will toggle current one.
-                    // If user wants strict accordion, I can add that logic. For now, simple toggle is best UX for scrolling.
-
-                    if (isClosed) {
-                        body.style.display = 'block';
-                        icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
-                        header.classList.add('bg-gray-50');
-                    } else {
-                        body.style.display = 'none';
-                        icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
-                        header.classList.remove('bg-gray-50');
-                    }
-                }
-            </script>
         </div>
     </main>
 
