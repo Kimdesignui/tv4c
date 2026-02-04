@@ -373,7 +373,9 @@ img {
 /* Sidebar Filters */
 .sidebar-filter {
   background: var(--white);
-  padding: 0;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
 }
 
 .filter-header {
