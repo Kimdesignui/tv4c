@@ -43,7 +43,13 @@ function initSlider() {
 
         // Update slides
         slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
+            if (i === index) {
+                slide.classList.add('active');
+                slide.style.display = 'block'; // Force display
+            } else {
+                slide.classList.remove('active');
+                slide.style.display = 'none'; // Force hide
+            }
         });
 
         // Update dots
@@ -109,44 +115,55 @@ function initSlider() {
 /**
  * Mobile Menu Toggle
  */
+/**
+ * Mobile Menu Toggle (Sidebar Overlay)
+ */
 function initMobileMenu() {
-    const toggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+    // New Selectors
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn'); // Hamburger in header
+    const mobileSidebar = document.getElementById('mobile-sidebar');
+    const mobileBackdrop = document.getElementById('mobile-backdrop');
+    const closeSidebarBtn = document.querySelector('.close-sidebar-btn');
 
-    if (!toggle || !navMenu) return;
+    if (!mobileMenuBtn || !mobileSidebar || !mobileBackdrop) return;
 
-    toggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        toggle.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+    function openMenu() {
+        mobileSidebar.classList.add('active');
+        mobileBackdrop.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
 
-        // Update icon
-        const icon = toggle.querySelector('svg');
-        if (navMenu.classList.contains('active')) {
-            icon.innerHTML = `
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-      `;
-        } else {
-            icon.innerHTML = `
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-      `;
-        }
+    function closeMenu() {
+        mobileSidebar.classList.remove('active');
+        mobileBackdrop.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Toggle Button
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openMenu();
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!toggle.contains(e.target) && !navMenu.contains(e.target)) {
-            navMenu.classList.remove('active');
-            toggle.setAttribute('aria-expanded', 'false');
-        }
-    });
+    // Close Button
+    if (closeSidebarBtn) {
+        closeSidebarBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeMenu();
+        });
+    }
 
-    // Close menu on window resize
+    // Backdrop Click
+    mobileBackdrop.addEventListener('click', closeMenu);
+
+    // Close on window resize if larger than breakpoint
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-            navMenu.classList.remove('active');
-            toggle.setAttribute('aria-expanded', 'false');
+        if (window.innerWidth > 992) {
+            closeMenu();
         }
     });
+
+    console.log("Mobile Menu Initialized");
 }
 
 /**

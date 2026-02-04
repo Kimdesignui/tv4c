@@ -2355,6 +2355,45 @@ img {
     position: relative;
   }
 
+  /* Standardized Hero Slider */
+  .hero-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    /* 21:9 ratio for desktop consistency */
+    aspect-ratio: 21/9;
+    background: #f0f0f0;
+    margin-bottom: 20px;
+  }
+
+  .hero-slider .slide {
+    width: 100%;
+    height: 100%;
+    display: none;
+    /* Controlled by JS */
+  }
+
+  .hero-slider .slide.active {
+    display: block;
+  }
+
+  .hero-slider .slider-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+  }
+
   /* Slider needs to push right a bit or just sit next to it. 
      If we want the sidebar to look "connected" to navbar, gap should be handled carefully. 
      Let's keep a small gap for content but ensure sidebar aligns. */
