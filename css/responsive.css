@@ -693,3 +693,153 @@
         display: none !important;
     }
 }
+
+/* =========================================
+   MOBILE BOOK DETAIL INFO (Custom)
+   ========================================= */
+.book-info-mobile {
+    display: none;
+    padding: 20px;
+    background: #fff;
+}
+
+@media (max-width: 768px) {
+    .book-info-mobile {
+        display: block;
+    }
+
+    /* Hide Desktop Grid */
+    .book-detail-grid {
+        display: none !important;
+    }
+}
+
+.m-detail-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    /* Dark Blue */
+    margin-bottom: 8px;
+}
+
+.m-collection {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.m-collection a {
+    color: #ef4444;
+    /* Red */
+    font-weight: 500;
+}
+
+.m-stats {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.m-stat-item.rating {
+    font-weight: 700;
+    font-size: 16px;
+    color: #1e3a8a;
+}
+
+/* Meta Table */
+.m-meta-table-wrapper {
+    margin-bottom: 20px;
+}
+
+.m-meta-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.m-meta-table td {
+    padding: 10px 0;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.m-meta-table td.label {
+    width: 40%;
+    color: #666;
+    font-weight: 500;
+}
+
+.m-meta-table td.value {
+    color: #333;
+    font-weight: 500;
+}
+
+.m-meta-table td.value.text-blue {
+    color: #2563eb;
+}
+
+.m-meta-table td.value.text-dark-blue {
+    color: #1e3a8a;
+}
+
+.view-more-link {
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Mobile Actions Buttons */
+.m-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn-m-action {
+    flex: 1;
+    /* Side by side on larger mobile */
+    min-width: 140px;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-m-action:hover {
+    opacity: 0.9;
+}
+
+.btn-green {
+    background: #198754;
+}
+
+.btn-blue {
+    background: #0d6efd;
+}
+
+.btn-orange {
+    background: #fd7e14;
+}
+
+/* Stack Buttons < 576px */
+@media (max-width: 576px) {
+    .m-actions {
+        flex-direction: column;
+    }
+
+    .btn-m-action {
+        width: 100%;
+    }
+}
