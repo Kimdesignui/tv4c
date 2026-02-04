@@ -109,18 +109,171 @@
     <!-- MAIN CONTENT -->
     <main class="section bg-white py-8">
         <div class="container">
-            class="text-primary text-sm font-semibold flex items-center justify-center gap-1 mb-6 hover:underline"><i
-                class="fa-solid fa-chevron-down"></i> Xem đầy đủ</a>
-
-            <div class="detail-actions">
-                <button class="btn-action btn-green" onclick="alert('Đã thêm vào giỏ mượn!')"><i
-                        class="fa-solid fa-cart-plus"></i> Mượn sách</button>
-                <button class="btn-action btn-blue" onclick="window.location.href='reader.html'"><i
-                        class="fa-regular fa-eye"></i> Đọc sách điện tử</button>
-                <button class="btn-action btn-orange" onclick="window.location.href='audio-player.html'"><i
-                        class="fa-solid fa-headphones"></i> Nghe sách nói</button>
+            <!-- MOBILE VIEW ONLY -->
+            <div class="book-gallery-mobile">
+                <div class="gallery-track">
+                    <div class="gallery-slide"><img src="assets/images/nha-gia-kim-cover.jpg" alt="Nhà Giả Kim"></div>
+                    <div class="gallery-slide"><img src="assets/images/nha-gia-kim-1.png" alt="Context 1"></div>
+                    <div class="gallery-slide"><img src="assets/images/nha-gia-kim-2.jpg" alt="Context 2"></div>
+                    <div class="gallery-slide"><img src="assets/images/nha-gia-kim-3.png" alt="Page 1"></div>
+                    <div class="gallery-slide"><img src="assets/images/nha-gia-kim-4.png" alt="Page 2"></div>
+                </div>
+                <div class="gallery-dots">
+                    <span class="g-dot active" data-index="0"></span>
+                    <span class="g-dot" data-index="1"></span>
+                    <span class="g-dot" data-index="2"></span>
+                    <span class="g-dot" data-index="3"></span>
+                    <span class="g-dot" data-index="4"></span>
+                </div>
             </div>
-        </div>
+
+            <div class="book-info-mobile">
+                <h1 class="m-detail-title">Nhà Giả Kim (Tái Bản 2020)</h1>
+                <p class="m-collection">Trong bộ sưu tập: <a href="#">Top sách được phiên dịch nhiều nhất</a></p>
+
+                <div class="m-stats">
+                    <div class="m-stat-item rating">
+                        <strong>4.5</strong> <i class="fa-solid fa-star text-yellow-400"></i>
+                    </div>
+                    <div class="m-stat-item border-l pl-3">
+                        <strong>52358</strong> Lượt xem
+                    </div>
+                    <div class="m-stat-item border-l pl-3">
+                        <strong>3639</strong> Đã mượn
+                    </div>
+                </div>
+
+                <div class="m-meta-table-wrapper">
+                    <table class="m-meta-table">
+                        <tr>
+                            <td class="label">Tác giả</td>
+                            <td class="value text-blue">Paulo Coelho</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Dịch giả</td>
+                            <td class="value">Lê Chu Cầu</td>
+                        </tr>
+                        <tr>
+                            <td class="label">ISBN</td>
+                            <td class="value">32098ES392</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Năm xuất bản</td>
+                            <td class="value">2020</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Nhà xuất bản</td>
+                            <td class="value">NXB Hội Nhà Văn</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Định dạng</td>
+                            <td class="value text-dark-blue">Ebook; Audio book; Sách giấy</td>
+                        </tr>
+                    </table>
+                    <div class="text-center mt-3">
+                        <a href="#" class="view-more-link"><i class="fa-solid fa-chevron-down"></i> Xem đầy đủ</a>
+                    </div>
+                </div>
+
+                <hr class="my-4 border-gray-200">
+
+                <div class="m-actions">
+                    <button class="btn-m-action btn-green"><i class="fa-solid fa-cart-shopping"></i> Mượn sách</button>
+                    <button class="btn-m-action btn-blue"><i class="fa-solid fa-eye"></i> Đọc sách điện tử</button>
+                    <button class="btn-m-action btn-orange"><i class="fa-solid fa-microphone"></i> Nghe sách
+                        nói</button>
+                </div>
+            </div>
+
+            <!-- DESKTOP GRID (Hidden on Mobile) -->
+            <div class="book-detail-grid">
+                <!-- Left: Cover & Thumbs (Desktop Only) -->
+                <div class="book-cover-section">
+                    <div class="book-cover">
+                        <div class="book-cover-main">
+                            <img src="assets/images/nha-gia-kim-cover.jpg" alt="Nhà Giả Kim" id="main-book-img">
+                        </div>
+                    </div>
+                    <div class="thumb-list">
+                        <div class="thumb-item active"
+                            onclick="changeImage(this, 'assets/images/nha-gia-kim-cover.jpg')">
+                            <img src="assets/images/nha-gia-kim-cover.jpg" alt="Cover" class="thumb-img">
+                        </div>
+                        <div class="thumb-item" onclick="changeImage(this, 'assets/images/nha-gia-kim-1.png')">
+                            <img src="assets/images/nha-gia-kim-1.png" alt="Thumb 1" class="thumb-img">
+                        </div>
+                        <div class="thumb-item" onclick="changeImage(this, 'assets/images/nha-gia-kim-2.jpg')">
+                            <img src="assets/images/nha-gia-kim-2.jpg" alt="Thumb 2" class="thumb-img">
+                        </div>
+                        <div class="thumb-item" onclick="changeImage(this, 'assets/images/nha-gia-kim-3.png')">
+                            <img src="assets/images/nha-gia-kim-3.png" alt="Thumb 3" class="thumb-img">
+                        </div>
+                        <div class="thumb-item" onclick="changeImage(this, 'assets/images/nha-gia-kim-4.png')">
+                            <img src="assets/images/nha-gia-kim-4.png" alt="Thumb 4" class="thumb-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Info -->
+                <div class="book-info-section">
+                    <h1 class="book-detail-title">Nhà Giả Kim</h1>
+                    <div class="book-meta-row">
+                        <div class="meta-item">
+                            <span class="meta-label">Tác giả:</span>
+                            <span class="meta-value author-name">Paulo Coelho</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Dịch giả:</span>
+                            <span class="meta-value">Lê Chu Cầu</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Nhà xuất bản:</span>
+                            <span class="meta-value">NXB Hội Nhà Văn / Nhã Nam</span>
+                        </div>
+                    </div>
+
+                    <div class="book-rating">
+                        <div class="stars">
+                            <i class="fa-solid fa-star text-yellow-400"></i>
+                            <i class="fa-solid fa-star text-yellow-400"></i>
+                            <i class="fa-solid fa-star text-yellow-400"></i>
+                            <i class="fa-solid fa-star text-yellow-400"></i>
+                            <i class="fa-solid fa-star text-yellow-400"></i>
+                        </div>
+                        <span class="rating-count">(342 đánh giá)</span>
+                    </div>
+
+                    <div class="book-actions">
+                        <a href="#" class="btn-read-now"><i class="fa-brands fa-readme"></i> Đọc ngay</a>
+                        <a href="#" class="btn-listen"><i class="fa-solid fa-headphones"></i> Nghe sách</a>
+                        <button class="action-icon-btn" title="Thêm vào yêu thích"><i
+                                class="fa-regular fa-heart"></i></button>
+                        <button class="action-icon-btn" title="Lưu vào tủ sách"><i
+                                class="fa-regular fa-bookmark"></i></button>
+                        <button class="action-icon-btn" title="Chia sẻ"><i class="fa-solid fa-share-nodes"></i></button>
+                    </div>
+
+                    <div class="book-description">
+                        <h3>Giới thiệu nội dung</h3>
+                        <div class="desc-content">
+                            <p><strong>Nhà Giả Kim</strong> (The Alchemist) là tiểu thuyết nổi tiếng nhất của nhà văn
+                                Paulo Coelho. Cuốn sách kể về hành trình của Santiago, một cậu bé chăn cừu người Tây Ban
+                                Nha, người đã mơ về kho báu nơi các kim tự tháp Ai Cập.</p>
+                            <p>Tất cả những trải nghiệm trong chuyến phiêu du theo đuổi vận mệnh của mình đã giúp
+                                Santiago thấu hiểu được ý nghĩa sâu xa nhất của hạnh phúc, hòa hợp với vũ trụ và con
+                                người.</p>
+                            <p>"Khi anh quyết tâm muốn điều gì, cả vũ trụ sẽ chung sức để anh đạt được điều đó."</p>
+                        </div>
+                        <a href="#" class="read-more-desc">Xem thêm</a>
+                    </div>
+
+                    <div class="book-tags mt-4">
+                        <span class="tag">Tiểu thuyết</span>
+                        <span class="tag">Văn học nước ngoài</span>
+                        <span class="tag">Best Seller</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- BODY CONTENT (Tabs & Related) -->
@@ -345,82 +498,7 @@
     </footer>
 
     <!-- Lightbox Modal -->
-    <!-- Mobile Gallery (Custom Slider) -->
-    <div class="book-gallery-mobile">
-        <div class="gallery-track">
-            <div class="gallery-slide"><img src="assets/images/nha-gia-kim-cover.jpg" alt="Nhà Giả Kim"></div>
-            <div class="gallery-slide"><img src="assets/images/nha-gia-kim-1.png" alt="Context 1"></div>
-            <div class="gallery-slide"><img src="assets/images/nha-gia-kim-2.jpg" alt="Context 2"></div>
-            <div class="gallery-slide"><img src="assets/images/nha-gia-kim-3.png" alt="Page 1"></div>
-            <div class="gallery-slide"><img src="assets/images/nha-gia-kim-4.png" alt="Page 2"></div>
-        </div>
-        <div class="gallery-dots">
-            <span class="g-dot active" data-index="0"></span>
-            <span class="g-dot" data-index="1"></span>
-            <span class="g-dot" data-index="2"></span>
-            <span class="g-dot" data-index="3"></span>
-            <span class="g-dot" data-index="4"></span>
-        </div>
-    </div>
 
-    <!-- Mobile Info Section (Matches Design) -->
-    <div class="book-info-mobile">
-        <h1 class="m-detail-title">Nhà Giả Kim (Tái Bản 2020)</h1>
-        <p class="m-collection">Trong bộ sưu tập: <a href="#">Top sách được phiên dịch nhiều nhất</a></p>
-
-        <div class="m-stats">
-            <div class="m-stat-item rating">
-                <strong>4.5</strong> <i class="fa-solid fa-star text-yellow-400"></i>
-            </div>
-            <div class="m-stat-item border-l pl-3">
-                <strong>52358</strong> Lượt xem
-            </div>
-            <div class="m-stat-item border-l pl-3">
-                <strong>3639</strong> Đã mượn
-            </div>
-        </div>
-
-        <div class="m-meta-table-wrapper">
-            <table class="m-meta-table">
-                <tr>
-                    <td class="label">Tác giả</td>
-                    <td class="value text-blue">Paulo Coelho</td>
-                </tr>
-                <tr>
-                    <td class="label">Dịch giả</td>
-                    <td class="value">Lê Chu Cầu</td>
-                </tr>
-                <tr>
-                    <td class="label">ISBN</td>
-                    <td class="value">32098ES392</td>
-                </tr>
-                <tr>
-                    <td class="label">Năm xuất bản</td>
-                    <td class="value">2020</td>
-                </tr>
-                <tr>
-                    <td class="label">Nhà xuất bản</td>
-                    <td class="value">NXB Hội Nhà Văn</td>
-                </tr>
-                <tr>
-                    <td class="label">Định dạng</td>
-                    <td class="value text-dark-blue">Ebook; Audio book; Sách giấy</td>
-                </tr>
-            </table>
-            <div class="text-center mt-3">
-                <a href="#" class="view-more-link"><i class="fa-solid fa-chevron-down"></i> Xem đầy đủ</a>
-            </div>
-        </div>
-
-        <hr class="my-4 border-gray-200">
-
-        <!-- Mobile Action Buttons -->
-        <div class="m-actions">
-            <button class="btn-m-action btn-green"><i class="fa-solid fa-cart-shopping"></i> Mượn sách</button>
-            <button class="btn-m-action btn-blue"><i class="fa-solid fa-eye"></i> Đọc sách điện tử</button>
-            <button class="btn-m-action btn-orange"><i class="fa-solid fa-microphone"></i> Nghe sách nói</button>
-        </div>
-    </div>
 
     <!-- Mobile Sidebar Menu -->
     <div id="mobile-backdrop" class="mobile-backdrop"></div>
