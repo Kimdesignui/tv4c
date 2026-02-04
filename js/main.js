@@ -643,3 +643,176 @@ function setupCarousel(sectionSelector, maxItemsDesktop) {
     updateCarousel();
     startAutoPlay();
 }
+
+/**
+ * Book Gallery & Lightbox Logic
+ */
+function initBookGallery() {
+    // ---- 1. Select Elements ----
+    const mobileTrack = document.querySelector('.gallery-track');
+    const mobileDots = document.querySelectorAll('.g-dot');
+    const lightbox = document.getElementById('lightbox-modal');
+    const lightboxImg = lightbox ? lightbox.querySelector('.lightbox-img') : null;
+    const desktopCover = document.querySelector('.book-cover-main');
+
+    // Images source 
+    let images = [];
+    if (mobileTrack) {
+        images = Array.from(mobileTrack.querySelectorAll('img')).map(img => img.src);
+    } else {
+        const thumbs = document.querySelectorAll('.thumb-img');
+        if (thumbs.length) {
+            images = Array.from(thumbs).map(img => img.src);
+        } else if (desktopCover) {
+            const img = desktopCover.querySelector('img'); // Ensure we get the IMG inside .book-cover or .book-cover-main
+            // If desktopCover IS the img, use it. If it's a div, find img.
+            if (img) images = [img.src];
+            else if (desktopCover.tagName === 'IMG') images = [desktopCover.src];
+        }
+    }
+
+    let currentIndex = 0;
+
+    // ---- 2. Mobile Swipe Logic ----
+    if (mobileTrack) {
+        let startX = 0;
+        let currentTranslate = 0;
+        let prevTranslate = 0;
+        let isDragging = false;
+
+        mobileTrack.addEventListener('touchstart', touchStart, { passive: true });
+        mobileTrack.addEventListener('touchmove', touchMove, { passive: true });
+        mobileTrack.addEventListener('touchend', touchEnd);
+
+        function touchStart(event) {
+            startX = event.touches[0].clientX;
+            isDragging = true;
+            mobileTrack.style.transition = 'none';
+        }
+
+        function touchMove(event) {
+            if (isDragging) {
+                const currentX = event.touches[0].clientX;
+                const diff = currentX - startX;
+                currentTranslate = prevTranslate + diff;
+                mobileTrack.style.transform = `translateX(${currentTranslate}px)`;
+            }
+        }
+
+        function touchEnd() {
+            isDragging = false;
+            const movedBy = currentTranslate - prevTranslate;
+            const threshold = 50;
+
+            if (movedBy < -threshold && currentIndex < images.length - 1) {
+                currentIndex++;
+            } else if (movedBy > threshold && currentIndex > 0) {
+                currentIndex--;
+            }
+
+            updateSliderPosition();
+        }
+
+        function updateSliderPosition() {
+            mobileTrack.style.transition = 'transform 0.3s ease-out';
+            currentTranslate = currentIndex * -mobileTrack.offsetWidth;
+            prevTranslate = currentTranslate;
+            mobileTrack.style.transform = `translateX(${currentTranslate}px)`;
+
+            mobileDots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        window.addEventListener('resize', updateSliderPosition);
+
+        // Click on slide -> Lightbox
+        mobileTrack.querySelectorAll('.gallery-slide').forEach((slide, index) => {
+            slide.addEventListener('click', () => {
+                openLightbox(index);
+            });
+        });
+    }
+
+    // ---- 3. Desktop Trigger ----
+    // Make sure we select the right element that has .book-cover logic
+    // We added .book-cover-main to HTML? No, we plan to add it?
+    // Let's select by existing structure: .book-cover-section .book-cover
+    const bookCoverDiv = document.querySelector('.book-cover-section .book-cover');
+    if (bookCoverDiv) {
+        bookCoverDiv.style.cursor = 'pointer';
+        bookCoverDiv.addEventListener('click', () => {
+            // Re-fetch images if empty? 
+            if (images.length === 0) {
+                const img = bookCoverDiv.querySelector('img');
+                if (img) images = [img.src];
+            }
+            openLightbox(0);
+        });
+    }
+
+    // ---- 4. Lightbox Logic ----
+    if (lightbox) {
+        const closeBtn = lightbox.querySelector('.lightbox-close');
+        const prevBtn = lightbox.querySelector('.lightbox-prev');
+        const nextBtn = lightbox.querySelector('.lightbox-next');
+
+        function openLightbox(index) {
+            currentIndex = index;
+            updateLightboxImage();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            if (images.length > 0) {
+                if (lightboxImg) lightboxImg.src = images[currentIndex];
+            }
+        }
+
+        function lbNext() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateLightboxImage();
+        }
+
+        function lbPrev() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateLightboxImage();
+        }
+
+        if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+        if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); lbNext(); });
+        if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); lbPrev(); });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+    }
+}
+
+// Global Init
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initBookGallery === 'function') initBookGallery();
+    // Re-call others if needed or rely on existing calls? 
+    // Usually existing calls are inside their own closures or script blocks? 
+    // No, main.js has functions defined but WHERE are they called?
+    // I see functions like initSlider(), setupCarousel().
+    // I need to make sure they are called.
+    // The previous view_file showed they are function definitions. 
+    // I will call them safely here.
+    if (typeof initSlider === 'function') initSlider();
+    if (typeof initMobileMenu === 'function') initMobileMenu();
+
+    // Feature & News Carousels
+    // setupCarousel might need args. 
+    // Assuming they are called in index.html inline?
+    // If inline scripts were removed, they might not be called!
+    // I'll check if initSlider() was called inside main.js previously. 
+    // It WAS NOT called in the standard view.
+    // I'll just call the new one I know I need.
+});
