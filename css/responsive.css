@@ -65,85 +65,163 @@
 
 /* Tablet (max-width: 768px) */
 @media (max-width: 768px) {
+
+    /* Header Layout */
     .top-header .container {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .header-right {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .main-navbar {
-        height: auto;
-        padding: 10px 0;
-    }
-
-    .main-navbar .container {
+        flex-direction: row;
+        /* Keep row */
         flex-wrap: wrap;
+        /* Allow wrapping if needed, but mainly we want row */
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px 15px;
     }
 
-    .nav-left {
-        width: 100%;
+    .logo img {
+        height: 40px;
+        /* Smaller logo on mobile */
+        width: auto;
     }
 
-    .cat-trigger-btn {
-        width: 100%;
+    /* Hide specific desktop elements */
+    .hotline,
+    .user-btn,
+    .user-dropdown-container {
+        display: none !important;
+    }
+
+    /* Mobile Menu Button - Visible here */
+    .mobile-menu-btn {
+        display: flex !important;
+        font-size: 1.2rem;
+    }
+
+    /* Icon Buttons Style for Mobile */
+    .icon-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid #1e293b;
+        /* Border matches design */
+        color: #1e293b;
+        display: flex;
+        align-items: center;
         justify-content: center;
     }
 
-    /* Mobile Menu Active */
-    .nav-links.active {
-        display: flex;
+    .icon-btn i {
+        font-size: 1.1rem;
+    }
+
+    /* Header Right Actions */
+    .header-right {
+        width: auto;
+        gap: 10px;
+    }
+
+    /* Navbar / Search Bar */
+    .main-navbar {
+        background: #055BF5;
+        /* Blue background */
+        height: auto;
+        padding: 15px 0;
+    }
+
+    .main-navbar .container {
         flex-direction: column;
+        align-items: stretch;
+        padding: 0 15px;
+    }
+
+    .nav-left,
+    .nav-right {
+        display: none !important;
+    }
+
+    /* Search Box styling */
+    .nav-center {
+        margin: 0 !important;
+        flex: none;
         width: 100%;
-        gap: 0;
     }
 
-    .nav-links a {
-        display: block;
-        padding: 12px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    .search-box {
+        width: 100% !important;
+        height: 48px !important;
+        /* Taller 48px */
+        background: #fff;
+        border-radius: 50px;
+        /* Pill shape */
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        margin: 0;
+        border: none;
     }
 
-    /* Grids */
+    .search-select {
+        display: block !important;
+        background: transparent;
+        border: none;
+        height: 100% !important;
+        padding: 0 10px;
+        color: #666;
+        font-size: 0.9rem;
+        border-right: 1px solid #eee;
+        margin-right: 5px;
+        max-width: 130px;
+    }
+
+    .search-input {
+        height: 100% !important;
+        border: none;
+        padding: 0 10px;
+        font-size: 1rem;
+    }
+
+    .search-btn {
+        width: 40px;
+        height: 40px !important;
+        background: #FACC15;
+        /* Yellow */
+        border-radius: 50%;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        /* Push to right */
+    }
+
+    .search-btn i {
+        font-size: 1.1rem;
+    }
+
+    /* Reset grids for consistency */
     .grid-5,
-    .grid-4 {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-
-    .grid-2 {
+    .grid-4,
+    .news-cols-3,
+    .main-layout,
+    .detail-top-grid,
+    .detail-body-grid {
         grid-template-columns: 1fr !important;
+        gap: 20px;
     }
 
-    /* Featured Carousel Fix (Mobile) */
-    /* Show 2 items: (100% - 1 gap) / 2 */
-    .featured-list a.book-demo-card {
-        min-width: calc((100% - 24px) / 2) !important;
-    }
-
-    /* Book Collections */
+    /* Collections */
     .collections-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 
-    /* News List Items Responsive */
-    .news-item {
-        flex-direction: column;
-        align-items: flex-start;
+    /* Hide breadcrumb on mobile if needed, or style it */
+    .breadcrumb-section {
+        display: none;
+        /* Often hidden on mobile for space, or keep simpler */
     }
 
-    .news-thumb {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .news-thumb img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16/9;
-        object-fit: cover;
+    /* Adjust margins */
+    .section {
+        padding: 2rem 0;
     }
 }
 
