@@ -816,3 +816,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // It WAS NOT called in the standard view.
     // I'll just call the new one I know I need.
 });
+
+// Desktop Redesign: Change Image
+function changeImageDesktop(element, src) {
+    const mainImg = document.getElementById('desktop-main-img');
+    if (mainImg) {
+        mainImg.src = src;
+        // Update active state
+        document.querySelectorAll('.v-thumb').forEach(thumb => thumb.classList.remove('active'));
+        window.setTimeout(() => element.classList.add('active'), 10); // Slight delay for safety
+    }
+}
+
