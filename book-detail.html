@@ -280,20 +280,94 @@
             <!-- Left: Content & Comments -->
             <div class="detail-body-left">
                 <!-- Tabs -->
-                <div class="content-tabs-detail">
-                    <div class="tab-detail-link active">Giới thiệu</div>
-                    <div class="tab-detail-link">Mục lục</div>
+                <div class="content-tabs-detail" style="background: #000; padding: 10px 0;">
+                    <div class="tab-detail-link active"
+                        style="background: #fff; color: #000; padding: 10px 20px; font-weight: bold; border-radius: 4px 4px 0 0;">
+                        Giới thiệu</div>
+                    <div class="tab-detail-link" style="color: #46648D; padding: 10px 20px; cursor: pointer;">Mục lục
+                    </div>
                 </div>
 
                 <!-- Description -->
-                <div class="detail-desc mt-6">
-                    <p>Tất cả những trải nghiệm trong chuyến phiêu du theo đuổi vận mệnh của mình đã giúp Santiago
+                <div class="detail-desc"
+                    style="background: #000; color: #fff; padding: 30px; border-radius: 0 0 4px 4px;">
+                    <p style="margin-bottom: 20px; color: #ccc;">Tất cả những trải nghiệm trong chuyến phiêu du theo
+                        đuổi vận mệnh của mình đã giúp Santiago
                         thấu hiểu được ý nghĩa sâu xa nhất của hạnh phúc, hòa hợp với vũ trụ và con người.</p>
-                    <p class="mt-4">Tiểu thuyết <strong>Nhà giả kim</strong> của Paulo Coelho như một câu chuyện cổ
+                    <p>Tiểu thuyết <strong style="color: #fff;">Nhà giả kim</strong> của Paulo Coelho như một câu chuyện
+                        cổ
                         tích giản dị, nhân ái, giàu chất thơ, thấm đẫm những minh triết huyền bí của phương Đông.
                         Trong lần xuất bản đầu tiên tại Brazil vào năm 1988, sách chỉ bán được 900 bản. Nhưng, với
                         số phận đặc biệt của cuốn sách dành cho toàn nhân loại, vượt ra ngoài biên giới quốc gia,
-                        Nhà giả kim đã làm rung động hàng triệu tâm hồn.</p>
+                        Nhà giả kim đã làm rung động hàng triệu tâm hồn, trở thành một trong những cuốn sách bán chạy
+                        nhất mọi thời đại.</p>
+
+                    <div class="text-center mt-4">
+                        <a href="#" style="color: #4285f4; font-size: 0.9rem; text-decoration: none;"><i
+                                class="fa-solid fa-chevron-down"></i> Xem đầy đủ</a>
+                    </div>
+                </div>
+
+                <!-- Comments Module -->
+                <div class="comments-section mt-8">
+                    <!-- Tab Header for Comments -->
+                    <div class="comment-tab-header mb-6" style="border-bottom: 1px solid #eee;">
+                        <span class="inline-block py-2 px-4 font-bold border-b-2 border-primary text-primary">Bình
+                            luận</span>
+                    </div>
+
+                    <!-- Comment List -->
+                    <div class="comment-list space-y-6">
+                        <!-- Comment 1 -->
+                        <div class="comment-item flex gap-4">
+                            <div
+                                class="c-avatar w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center font-bold text-gray-600">
+                                T</div>
+                            <div class="c-content flex-1">
+                                <h4 class="c-name font-bold text-blue-900">Tiến</h4>
+                                <p class="c-text text-gray-700 mt-1">Mình không tải được tài liệu này Ad ơi?</p>
+                                <div class="c-meta text-sm text-gray-500 mt-2 flex gap-4">
+                                    <a href="#" class="text-blue-600 font-medium">Trả lời</a>
+                                    <span>23 giờ trước</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reply (Admin) -->
+                        <div class="comment-item reply ml-14 flex gap-4 bg-gray-50 p-4 rounded-lg">
+                            <div
+                                class="c-avatar w-10 h-10 rounded-full bg-white border flex items-center justify-center">
+                                <img src="assets/images/logo.png" class="w-6 h-6 object-contain">
+                            </div>
+                            <div class="c-content flex-1">
+                                <div class="flex items-center gap-2">
+                                    <h4 class="c-name font-bold text-gray-900">Thành Luân</h4>
+                                    <span
+                                        class="badge-admin bg-yellow-400 text-xs px-2 py-0.5 rounded text-white font-bold">Quản
+                                        Trị Viên</span>
+                                </div>
+                                <p class="c-text text-gray-700 mt-1">Chào bạn!</p>
+                                <p class="c-text text-gray-700">Mình đã nhắn tin hướng dẫn, bạn vui lòng kiểm tra email
+                                    nhé!</p>
+                                <p class="c-text text-gray-700">Xin cảm ơn bạn.</p>
+                                <div class="c-meta text-sm text-gray-500 mt-2">
+                                    <span>23 giờ trước</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment Form -->
+                    <div class="comment-form mt-8 p-6 bg-white border rounded-lg shadow-sm">
+                        <textarea placeholder="Mời Bạn để lại bình luận..."
+                            class="w-full border rounded p-4 h-32 focus:outline-none focus:border-blue-500 mb-4"
+                            style="resize: none;"></textarea>
+                        <div class="flex justify-end">
+                            <button
+                                class="btn-send bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 font-medium transition">Gửi
+                                bình luận</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Right: Sidebar Filters (Global Reuse) -->

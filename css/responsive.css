@@ -843,3 +843,27 @@
         width: 100%;
     }
 }
+/* Fix Homepage Grid for 993px - 1200px */
+@media (min-width: 993px) and (max-width: 1200px) {
+    .section-left-body .book-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+}
+
+
+/* Adjustments for Detail Tabs and Comments on Mobile */
+@media (max-width: 768px) {
+    .detail-desc {
+        padding: 20px !important;
+    }
+    
+    .comment-item.reply {
+        margin-left: 20px !important;
+        padding: 15px !important;
+    }
+    
+    .btn-send {
+        width: 100%;
+    }
+}
+
