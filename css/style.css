@@ -8,8 +8,9 @@
   --primary-blue-dark: #1e3a8a;
   --primary-cyan: #06b6d4;
   --accent-yellow: #eab308;
-  --text-dark: #1f2937;
-  --text-gray: #6b7280;
+  --text-dark: #2B3B51;
+  --text-gray: #2B3B51;
+  /* User requested all text/icon to be #2B3B51 */
   --bg-light: #f3f4f6;
   --white: #ffffff;
   --red: #dc2626;
@@ -2047,7 +2048,7 @@ img {
   width: 50%;
   /* 50/50 split */
   flex: 1;
-  color: #334155;
+  color: #2B3B51;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2718,7 +2719,7 @@ body.reader-mode {
 
 .reader-header {
   height: 60px;
-  background: #1f2937;
+  background: #2B3B51;
   color: var(--white);
   display: flex;
   align-items: center;
@@ -3561,7 +3562,7 @@ body.reader-mode {
 }
 
 .d-meta-table td.value {
-  color: #1f2937;
+  color: #2B3B51;
 }
 
 .d-actions-group {
@@ -4028,7 +4029,7 @@ body.reader-mode {
   border-radius: 50%;
   border: 1px solid #e5e7eb;
   background: #fff;
-  color: #334155;
+  color: #2B3B51;
   display: flex !important;
   /* Force flex to ensure visible */
   align-items: center;
