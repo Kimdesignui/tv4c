@@ -4189,4 +4189,56 @@ body.reader-mode {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 8px 0;
+}
+
+/* Sidebar & Widget Styles */
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-badge.success {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.cart-sidebar-col .widget-box {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.cart-sidebar-col .widget-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.cart-sidebar-col .widget-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-blue-dark);
+}
+
+.cart-sidebar-col .info-section {
+  padding: 20px;
+  background: #fff !important;
+}
+
+.cart-sidebar-col .info-section.bg-gray-50 {
+  background-color: #f9fafb !important;
+  border-top: 1px solid #e5e7eb;
+}
+
+.cart-sidebar-col .info-title {
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+  font-size: 1rem;
 }
