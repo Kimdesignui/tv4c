@@ -831,6 +831,23 @@ img {
   text-align: justify;
 }
 
+/* Intro Text Toggle */
+.intro-content {
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  max-height: 2000px;
+  /* Arbitrary large height for expanded state */
+}
+
+.intro-content.collapsed {
+  max-height: 260px;
+  /* Approx 10 lines * 1.6em line-height + spacing */
+  position: relative;
+  /* Optional: Add gradient fade at bottom for collapsed state */
+  mask-image: linear-gradient(180deg, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, black 60%, transparent 100%);
+}
+
 /* Comments */
 .comment-item {
   display: flex;
