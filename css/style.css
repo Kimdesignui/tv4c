@@ -4036,6 +4036,9 @@ body.reader-mode {
   cursor: pointer;
   transition: all 0.2s ease;
   font-size: 1rem;
+  /* Ensure clickable on mobile */
+  position: relative;
+  z-index: 50;
 }
 
 .nav-btn:hover {
