@@ -4185,11 +4185,17 @@ body.reader-mode {
   color: #ef4444;
 }
 
+/* Info Info Rows */
 .info-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 0;
+  padding: 12px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.info-section .info-row:last-child {
+  border-bottom: none;
 }
 
 /* Sidebar & Widget Styles */
@@ -4231,14 +4237,40 @@ body.reader-mode {
   background: #fff !important;
 }
 
+/* Fix Order Info Section Background to White as requested */
 .cart-sidebar-col .info-section.bg-gray-50 {
-  background-color: #f9fafb !important;
+  background-color: #fff !important;
   border-top: 1px solid #e5e7eb;
 }
 
 .cart-sidebar-col .info-title {
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 0;
+  padding-bottom: 12px;
   color: var(--text-dark);
   font-size: 1rem;
+  border-bottom: 1px solid #f3f4f6;
 }
+
+/* Button Styles Fix */
+.btn-primary-action {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border: none;
+}
+
+.btn-primary-action:hover {
+  background-color: var(--primary-blue-dark) !important;
+}
+
+.btn-secondary-action {
+  background-color: #fff !important;
+  color: #4b5563 !important;
+  border: 1px solid #d1d5db !important;
+}
+
+.btn-secondary-action:hover {
+  background-color: #f9fafb !important;
+}
+
+```
