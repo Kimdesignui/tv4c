@@ -10,10 +10,12 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 
 <body>
+    <!-- Top Header -->
     <header class="top-header">
         <div class="container flex justify-between items-center">
             <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="TV4C Logo"></a>
@@ -21,11 +23,18 @@
                 <div class="hotline flex items-center gap-2 text-primary font-bold"><i
                         class="fa-solid fa-phone-volume"></i> <span>024.37627819</span></div>
                 <div class="user-actions flex gap-3">
-                    <a href="profile.html?tab=saved" class="icon-btn"><i class="fa-regular fa-bookmark"></i></a>
-                    <a href="profile.html?tab=favorites" class="icon-btn"><i class="fa-regular fa-heart"></i></a>
+                    <a href="profile.html?tab=saved" class="icon-btn" title="Đã lưu"><i
+                            class="fa-regular fa-bookmark"></i></a>
+                    <a href="cart.html" class="icon-btn" title="Giỏ mượn sách"><i
+                            class="fa-solid fa-cart-shopping"></i></a>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button class="icon-btn mobile-menu-btn hidden md:hidden">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
                     <div class="user-dropdown-container">
                         <a href="login.html" class="icon-btn user-btn"><i class="fa-regular fa-user"></i></a>
-                        <!-- Dropdown Menu (Hover) -->
                         <div class="user-menu-dropdown">
                             <a href="profile.html"><i class="fa-solid fa-circle-info"></i> Thông tin tài khoản</a>
                             <a href="profile.html?tab=password"><i class="fa-solid fa-key"></i> Thay đổi mật khẩu</a>
@@ -40,6 +49,8 @@
             </div>
         </div>
     </header>
+
+    <!-- Navbar -->
     <nav class="main-navbar">
         <div class="container flex items-center justify-between h-full">
             <div class="nav-left">
@@ -47,7 +58,6 @@
                     <i class="fa-solid fa-bars"></i>
                     <span>DANH MỤC THƯ VIỆN</span>
                 </button>
-                <!-- Dropdown Menu for Inner Pages -->
                 <div class="cat-dropdown">
                     <ul class="cat-list">
                         <li><a href="books.html?cat=vh">Văn học Việt Nam</a></li>
@@ -77,99 +87,225 @@
             </div>
             <div class="nav-right">
                 <ul class="nav-links flex gap-6">
-                    <li><a href="about.html">Thông tin chung</a></li>
+                    <li><a href="about.html">Thông tin chung <i class="fa-solid fa-caret-down"></i></a></li>
                     <li><a href="news.html">Tin tức</a></li>
-                    <li><a href="guide.html">Hướng dẫn</a></li>
+                    <li><a href="guide.html">Hướng dẫn <i class="fa-solid fa-caret-down"></i></a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Breadcrumb -->
     <nav class="breadcrumb-section bg-white">
         <div class="container">
             <div class="text-sm">
-                <a href="index.html" class="text-gray-500 hover:text-primary">Trang chủ</a>
+                <a href="index.html" class="text-gray-500 hover:text-primary"><i class="fa-solid fa-house"></i> Home</a>
                 <span class="mx-2 text-gray-300">/</span>
-                <span class="text-primary font-medium">Giỏ mượn sách</span>
+                <span class="text-gray-500">Item 1</span>
+                <span class="mx-2 text-gray-300">/</span>
+                <span class="text-primary font-medium">Page now</span>
             </div>
         </div>
     </nav>
 
-    <main class="section bg-gray-50">
+    <!-- Main Content -->
+    <main class="section bg-white py-8">
         <div class="container">
-            <h2 class="page-title">Giỏ sách của bạn</h2>
+            <h2 class="text-2xl font-bold text-primary mb-6">Giỏ mượn sách</h2>
 
-            <div class="bg-white p-6 rounded shadow-sm mb-6">
-                <div class="table-container">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th style="width: 50px;">#</th>
-                                <th>Thông tin sách</th>
-                                <th>Tác giả</th>
-                                <th>Năm XB</th>
-                                <th>Trạng thái</th>
-                                <th class="text-right">Hành động</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>
-                                    <div class="flex items-center gap-3">
-                                        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=100"
-                                            class="w-12 h-16 object-cover rounded">
-                                        <span class="font-bold">Đắc Nhân Tâm</span>
-                                    </div>
-                                </td>
-                                <td>Dale Carnegie</td>
-                                <td>2024</td>
-                                <td class="text-green-600 font-medium">Có sẵn</td>
-                                <td class="text-right">
-                                    <button class="text-red hover:bg-red-50 p-2 rounded"><i
-                                            class="fa-solid fa-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>
-                                    <div class="flex items-center gap-3">
-                                        <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=100"
-                                            class="w-12 h-16 object-cover rounded">
-                                        <span class="font-bold">Nhà Giả Kim</span>
-                                    </div>
-                                </td>
-                                <td>Paulo Coelho</td>
-                                <td>2023</td>
-                                <td class="text-green-600 font-medium">Có sẵn</td>
-                                <td class="text-right">
-                                    <button class="text-red hover:bg-red-50 p-2 rounded"><i
-                                            class="fa-solid fa-trash"></i></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="cart-layout grid gap-8">
+                <!-- Left Column: Cart Items -->
+                <div class="cart-listen-col">
+                    <!-- Header -->
+                    <div class="flex justify-between items-center mb-6 pb-4 border-b">
+                        <label class="flex items-center gap-3 cursor-pointer font-semibold text-gray-700 text-lg">
+                            <input type="checkbox" class="form-checkbox" checked>
+                            Tất cả (3 sách)
+                        </label>
+                        <button
+                            class="text-gray-400 hover:text-red-500 p-2 rounded border border-gray-200 hover:border-red-200 transition-colors w-10 h-10 flex items-center justify-center">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </button>
+                    </div>
+
+                    <!-- Item 1 -->
+                    <div class="cart-item flex gap-4 py-6 border-b border-gray-100 last:border-0 items-start">
+                        <div class="cart-check flex items-center h-full pt-10">
+                            <input type="checkbox" class="form-checkbox">
+                        </div>
+                        <div class="cart-thumb">
+                            <img src="assets/images/new-book-1.png" alt="Book"
+                                onerror="this.src='https://via.placeholder.com/90x120'">
+                        </div>
+                        <div class="cart-info flex-1">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-lg text-primary mb-2 line-clamp-2"><a href="#">Gửi thương
+                                            vào nhớ</a></h3>
+                                    <p class="text-sm text-gray-500 mb-3">Tác giả: <span class="text-gray-700">Nguyễn
+                                            Phong Việt</span></p>
+                                </div>
+                                <button
+                                    class="text-gray-400 hover:text-red-500 p-2 w-10 h-10 flex items-center justify-center border rounded hover:bg-red-50 transition"><i
+                                        class="fa-regular fa-trash-can"></i></button>
+                            </div>
+                            <div class="cart-actions flex items-center gap-3 mt-2">
+                                <span class="text-sm text-gray-500">Số lượng:</span>
+                                <div class="quantity-control">
+                                    <button>-</button>
+                                    <input type="text" value="3">
+                                    <button>+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="cart-item flex gap-4 py-6 border-b border-gray-100 last:border-0 items-start">
+                        <div class="cart-check flex items-center h-full pt-10">
+                            <input type="checkbox" class="form-checkbox">
+                        </div>
+                        <div class="cart-thumb">
+                            <img src="assets/images/new-book-2.png" alt="Book"
+                                onerror="this.src='https://via.placeholder.com/90x120'">
+                        </div>
+                        <div class="cart-info flex-1">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-lg text-primary mb-2 line-clamp-2"><a href="#">An ninh phi
+                                            truyền thống ở biển Đông</a>
+                                    </h3>
+                                    <p class="text-sm text-gray-500 mb-3">Tác giả: <span class="text-gray-700">TS.
+                                            Nguyễn Mạnh Thế</span></p>
+                                </div>
+                                <button
+                                    class="text-gray-400 hover:text-red-500 p-2 w-10 h-10 flex items-center justify-center border rounded hover:bg-red-50 transition"><i
+                                        class="fa-regular fa-trash-can"></i></button>
+                            </div>
+                            <div class="cart-actions flex items-center gap-3 mt-2">
+                                <span class="text-sm text-gray-500">Số lượng:</span>
+                                <div class="quantity-control">
+                                    <button>-</button>
+                                    <input type="text" value="1">
+                                    <button>+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="cart-item flex gap-4 py-6 border-b border-gray-100 last:border-0 items-start">
+                        <div class="cart-check flex items-center h-full pt-10">
+                            <input type="checkbox" class="form-checkbox">
+                        </div>
+                        <div class="cart-thumb">
+                            <img src="assets/images/new-book-3.png" alt="Book"
+                                onerror="this.src='https://via.placeholder.com/90x120'">
+                        </div>
+                        <div class="cart-info flex-1">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-lg text-primary mb-2 line-clamp-2"><a href="#">Cột mốc kể
+                                            chuyện</a></h3>
+                                    <p class="text-sm text-gray-500 mb-3">Tác giả: <span class="text-gray-700">Nhiều tác
+                                            giả</span></p>
+                                </div>
+                                <button
+                                    class="text-gray-400 hover:text-red-500 p-2 w-10 h-10 flex items-center justify-center border rounded hover:bg-red-50 transition"><i
+                                        class="fa-regular fa-trash-can"></i></button>
+                            </div>
+                            <div class="cart-actions flex items-center gap-3 mt-2">
+                                <span class="text-sm text-gray-500">Số lượng:</span>
+                                <div class="quantity-control">
+                                    <button>-</button>
+                                    <input type="text" value="2">
+                                    <button>+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
 
-            <div class="flex justify-end gap-4">
-                <a href="books.html" class="btn border border-gray-300 bg-white" style="color: var(--text-dark);">Tiếp
-                    tục chọn sách</a>
-                <button class="btn btn-primary">Đăng ký mượn (2 cuốn)</button>
+                <!-- Right Column: Info Widget -->
+                <div class="cart-sidebar-col">
+                    <div class="cart-info-widget shadow-sm">
+                        <div class="widget-header">
+                            <h3>Thông tin mượn sách</h3>
+                        </div>
+
+                        <!-- User Info -->
+                        <div class="info-section">
+                            <h4 class="info-title">Thông tin cá nhân</h4>
+                            <div class="info-row">
+                                <span class="info-label">Họ tên</span>
+                                <span class="info-value">Huỳnh Thanh Bình</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Mã SV</span>
+                                <span class="info-value">ID8023873</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Lớp</span>
+                                <span class="info-value">DDHM1-K2</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Số điện thoại</span>
+                                <span class="info-value">0896457482</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Email</span>
+                                <span class="info-value text-primary">thanhbinh23@gmail.com</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Địa chỉ</span>
+                                <span class="info-value">236 Hoang Quoc Viet</span>
+                            </div>
+                        </div>
+
+                        <!-- Order Info -->
+                        <div class="info-section bg-gray-50">
+                            <h4 class="info-title">Thông tin đơn mượn</h4>
+                            <div class="info-row">
+                                <span class="info-label">Mã đơn mượn</span>
+                                <span class="info-value text-gray-600">#220520061752159</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Ngày tạo đơn</span>
+                                <span class="info-value text-gray-600">23/05/2022 14:55</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Ngày trả</span>
+                                <span class="info-value text-gray-600">23/06/2022 14:55</span>
+                            </div>
+                            <div class="info-row items-center">
+                                <span class="info-label">Trạng thái</span>
+                                <span class="status-badge">Hoàn thành</span>
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="p-5 border-t flex gap-3">
+                            <button
+                                class="flex-1 bg-primary hover:bg-blue-700 text-white font-semibold py-2.5 rounded transition-colors shadow-sm">Tạo
+                                phiếu mượn</button>
+                            <button
+                                class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-600 font-semibold py-2.5 rounded transition-colors border border-gray-200">Hủy</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
 
-    <!-- Unified Footer -->
+    <!-- Footer -->
     <footer class="main-footer">
         <div class="footer-content container">
             <h3 class="footer-title">THƯ VIỆN ĐIỆN TỬ CỘNG ĐỒNG</h3>
             <p class="footer-text">Cơ quan chủ quản: Công ty Cổ phần Công nghệ VHMT Việt Nam</p>
             <p class="footer-text">Địa chỉ: 28D2, Khu giãn dân Yên Phúc, Phúc La, Hà Đông, Hà Nội</p>
             <p class="footer-text">Điện thoại: 069.232.0381 | Email: info@tc4v.vn</p>
-
             <div class="footer-divider"></div>
-
             <div class="footer-socials">
                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#"><i class="fa-brands fa-facebook-messenger"></i></a>

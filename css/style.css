@@ -4048,6 +4048,7 @@ body.reader-mode {
   border-color: var(--primary-blue);
 }
 
+
 /* Unified View All Links (User Request) */
 .cat-view-all,
 .view-all-link,
@@ -4055,4 +4056,44 @@ body.reader-mode {
 .section-header a[class*="view-all"] {
   color: #dc2626 !important;
   font-weight: 600;
+}
+
+/* =========================================
+   14. CART PAGE REDESIGN
+   ========================================= */
+.cart-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+@media (max-width: 991px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cart-item {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.cart-item:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.cart-info-widget {
+  border: 1px solid #e2e8f0;
+  background: #fff;
+}
+
+.widget-header h3 {
+  color: var(--primary-color);
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
