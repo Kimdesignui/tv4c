@@ -193,21 +193,23 @@
                     <div class="thumb-sidebar-vertical">
                         <button class="thumb-nav-btn up"><i class="fa-solid fa-chevron-up"></i></button>
                         <div class="thumb-list-vertical">
-                            <div class="v-thumb active"
-                                onclick="changeImageDesktop(this, 'assets/images/nha-gia-kim-cover.jpg')">
+                            <div class="v-thumb active" onclick="updateMainImage(0)">
                                 <img src="assets/images/nha-gia-kim-cover.jpg" alt="Cover">
                             </div>
-                            <div class="v-thumb" onclick="changeImageDesktop(this, 'assets/images/nha-gia-kim-1.png')">
-                                <img src="assets/images/nha-gia-kim-1.png" alt="Thumb 1">
+                            <div class="v-thumb" onclick="updateMainImage(1)">
+                                <img src="assets/images/book-page-1.png" alt="Page 1">
                             </div>
-                            <div class="v-thumb" onclick="changeImageDesktop(this, 'assets/images/nha-gia-kim-2.jpg')">
-                                <img src="assets/images/nha-gia-kim-2.jpg" alt="Thumb 2">
+                            <div class="v-thumb" onclick="updateMainImage(2)">
+                                <img src="assets/images/book-page-2.png" alt="Page 2">
                             </div>
-                            <div class="v-thumb" onclick="changeImageDesktop(this, 'assets/images/nha-gia-kim-3.png')">
-                                <img src="assets/images/nha-gia-kim-3.png" alt="Thumb 3">
+                            <div class="v-thumb" onclick="updateMainImage(3)">
+                                <img src="assets/images/book-page-3.png" alt="Page 3">
                             </div>
-                            <div class="v-thumb" onclick="changeImageDesktop(this, 'assets/images/nha-gia-kim-4.png')">
-                                <img src="assets/images/nha-gia-kim-4.png" alt="Thumb 4">
+                            <div class="v-thumb" onclick="updateMainImage(4)">
+                                <img src="assets/images/book-page-4.png" alt="Page 4">
+                            </div>
+                            <div class="v-thumb" onclick="updateMainImage(5)">
+                                <img src="assets/images/book-page-5.png" alt="Page 5">
                             </div>
                         </div>
                         <button class="thumb-nav-btn down"><i class="fa-solid fa-chevron-down"></i></button>
@@ -215,7 +217,8 @@
 
                     <!-- Main Cover -->
                     <div class="main-cover-large">
-                        <img src="assets/images/nha-gia-kim-cover.jpg" alt="Nhà Giả Kim" id="desktop-main-img">
+                        <img src="assets/images/nha-gia-kim-cover.jpg" alt="Nhà Giả Kim" id="desktop-main-img"
+                            onclick="openLightbox(currentIndex)">
                     </div>
                 </div>
 
@@ -271,210 +274,214 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- BODY CONTENT (Tabs & Related) -->
-        <!-- ... Keeping existing content/structure logic for tabs below ... -->
+            <!-- BODY CONTENT (Tabs & Related) -->
+            <!-- ... Keeping existing content/structure logic for tabs below ... -->
 
-        <div class="detail-body-grid">
-            <!-- Left: Content & Comments -->
-            <div class="detail-body-left">
-                <!-- Tabs -->
-                <div class="content-tabs-detail flex items-center border-b border-gray-200 mb-6"
-                    style="background: transparent; padding: 0;">
-                    <div
-                        class="tab-detail-link active px-6 py-3 font-bold text-primary border-b-2 border-primary cursor-pointer transition-colors bg-white">
-                        Giới thiệu</div>
-                    <div
-                        class="tab-detail-link px-6 py-3 text-gray-500 hover:text-primary cursor-pointer transition-colors">
-                        Mục lục</div>
-                </div>
-
-                <!-- Description -->
-                <div class="detail-desc text-gray-700 leading-relaxed text-justify px-4 md:px-0"
-                    style="background: transparent; color: #333; padding: 0;">
-                    <p class="mb-4">Tất cả những trải nghiệm trong chuyến phiêu du theo đuổi vận mệnh của mình đã giúp
-                        Santiago
-                        thấu hiểu được ý nghĩa sâu xa nhất của hạnh phúc, hòa hợp với vũ trụ và con người.</p>
-                    <p>Tiểu thuyết <strong>Nhà giả kim</strong> của Paulo Coelho như một câu chuyện cổ
-                        tích giản dị, nhân ái, giàu chất thơ, thấm đẫm những minh triết huyền bí của phương Đông.
-                        Trong lần xuất bản đầu tiên tại Brazil vào năm 1988, sách chỉ bán được 900 bản. Nhưng, với
-                        số phận đặc biệt của cuốn sách dành cho toàn nhân loại, vượt ra ngoài biên giới quốc gia,
-                        Nhà giả kim đã làm rung động hàng triệu tâm hồn, trở thành một trong những cuốn sách bán chạy
-                        nhất mọi thời đại.</p>
-
-                    <div class="text-center mt-6">
-                        <a href="#" class="inline-flex items-center gap-1 text-primary hover:underline font-medium"><i
-                                class="fa-solid fa-chevron-down"></i> Xem đầy đủ</a>
-                    </div>
-                </div>
-
-                <!-- Comments Module -->
-                <div class="comments-section mt-10 pt-8 border-t border-gray-100">
-                    <!-- Tab Header for Comments -->
-                    <div class="comment-tab-header mb-8" style="border: none;">
-                        <h3 class="text-xl font-bold text-blue-900 border-l-4 border-primary pl-3">Bình luận</h3>
+            <div class="detail-body-grid">
+                <!-- Left: Content & Comments -->
+                <div class="detail-body-left">
+                    <!-- Tabs -->
+                    <div class="content-tabs-detail flex items-center border-b border-gray-200 mb-6"
+                        style="background: transparent; padding: 0;">
+                        <div
+                            class="tab-detail-link active px-6 py-3 font-bold text-primary border-b-2 border-primary cursor-pointer transition-colors bg-white">
+                            Giới thiệu</div>
+                        <div
+                            class="tab-detail-link px-6 py-3 text-gray-500 hover:text-primary cursor-pointer transition-colors">
+                            Mục lục</div>
                     </div>
 
-                    <!-- Comment List -->
-                    <div class="comment-list space-y-8">
-                        <!-- Comment 1 -->
-                        <div class="comment-item flex gap-4">
-                            <div
-                                class="c-avatar w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center font-bold text-gray-500 text-lg">
-                                T</div>
-                            <div class="c-content flex-1 bg-gray-50 p-4 rounded-lg rounded-tl-none">
-                                <h4 class="c-name font-bold text-blue-900 mb-1">Tiến</h4>
-                                <p class="c-text text-gray-700 mb-2">Mình không tải được tài liệu này Ad ơi?</p>
-                                <div class="c-meta text-sm text-gray-500 flex gap-4 items-center">
-                                    <button class="text-blue-600 font-medium hover:underline">Trả lời</button>
-                                    <span>23 giờ trước</span>
+                    <!-- Description -->
+                    <div class="detail-desc text-gray-700 leading-relaxed text-justify px-4 md:px-0"
+                        style="background: transparent; color: #333; padding: 0;">
+                        <p class="mb-4">Tất cả những trải nghiệm trong chuyến phiêu du theo đuổi vận mệnh của mình đã
+                            giúp
+                            Santiago
+                            thấu hiểu được ý nghĩa sâu xa nhất của hạnh phúc, hòa hợp với vũ trụ và con người.</p>
+                        <p>Tiểu thuyết <strong>Nhà giả kim</strong> của Paulo Coelho như một câu chuyện cổ
+                            tích giản dị, nhân ái, giàu chất thơ, thấm đẫm những minh triết huyền bí của phương Đông.
+                            Trong lần xuất bản đầu tiên tại Brazil vào năm 1988, sách chỉ bán được 900 bản. Nhưng, với
+                            số phận đặc biệt của cuốn sách dành cho toàn nhân loại, vượt ra ngoài biên giới quốc gia,
+                            Nhà giả kim đã làm rung động hàng triệu tâm hồn, trở thành một trong những cuốn sách bán
+                            chạy
+                            nhất mọi thời đại.</p>
+
+                        <div class="text-center mt-6">
+                            <a href="#"
+                                class="inline-flex items-center gap-1 text-primary hover:underline font-medium"><i
+                                    class="fa-solid fa-chevron-down"></i> Xem đầy đủ</a>
+                        </div>
+                    </div>
+
+                    <!-- Comments Module -->
+                    <div class="comments-section mt-10 pt-8 border-t border-gray-100">
+                        <!-- Tab Header for Comments -->
+                        <div class="comment-tab-header mb-8" style="border: none;">
+                            <h3 class="text-xl font-bold text-blue-900 border-l-4 border-primary pl-3">Bình luận</h3>
+                        </div>
+
+                        <!-- Comment List -->
+                        <div class="comment-list space-y-8">
+                            <!-- Comment 1 -->
+                            <div class="comment-item flex gap-4">
+                                <div
+                                    class="c-avatar w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center font-bold text-gray-500 text-lg">
+                                    T</div>
+                                <div class="c-content flex-1 bg-gray-50 p-4 rounded-lg rounded-tl-none">
+                                    <h4 class="c-name font-bold text-blue-900 mb-1">Tiến</h4>
+                                    <p class="c-text text-gray-700 mb-2">Mình không tải được tài liệu này Ad ơi?</p>
+                                    <div class="c-meta text-sm text-gray-500 flex gap-4 items-center">
+                                        <button class="text-blue-600 font-medium hover:underline">Trả lời</button>
+                                        <span>23 giờ trước</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Reply (Admin) -->
+                            <div class="comment-item reply ml-16 flex gap-4">
+                                <div
+                                    class="c-avatar w-12 h-12 rounded-full bg-white border border-gray-100 flex items-center justify-center shrink-0 p-2">
+                                    <img src="assets/images/logo.png" class="w-full h-full object-contain">
+                                </div>
+                                <div
+                                    class="c-content flex-1 bg-blue-50 p-4 rounded-lg rounded-tl-none border border-blue-100">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <h4 class="c-name font-bold text-gray-900">Thành Luân</h4>
+                                        <span
+                                            class="badge-admin bg-yellow-500 text-white text-[10px] uppercase font-bold px-2 py-0.5 rounded">Quản
+                                            Trị Viên</span>
+                                    </div>
+                                    <div class="c-text text-gray-800 space-y-1">
+                                        <p>Chào bạn!</p>
+                                        <p>Mình đã nhắn tin hướng dẫn, bạn vui lòng kiểm tra email nhé!</p>
+                                        <p>Xin cảm ơn bạn.</p>
+                                    </div>
+                                    <div class="c-meta text-sm text-gray-500 mt-2">
+                                        <span>23 giờ trước</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Reply (Admin) -->
-                        <div class="comment-item reply ml-16 flex gap-4">
-                            <div
-                                class="c-avatar w-12 h-12 rounded-full bg-white border border-gray-100 flex items-center justify-center shrink-0 p-2">
-                                <img src="assets/images/logo.png" class="w-full h-full object-contain">
+                        <!-- Comment Form -->
+                        <div class="comment-form mt-8 p-0 bg-transparent border-none shadow-none">
+                            <div class="relative">
+                                <textarea placeholder="Mời Bạn để lại bình luận..."
+                                    class="w-full border border-gray-300 rounded-lg p-4 h-32 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-shadow resize-none bg-white text-gray-700 placeholder-gray-400"></textarea>
+                                <button
+                                    class="btn-send absolute bottom-3 right-3 bg-blue-600 text-white px-5 py-1.5 rounded-md hover:bg-blue-700 font-medium transition-colors text-sm shadow-sm"
+                                    style="width: auto;">Gửi bình luận</button>
                             </div>
-                            <div
-                                class="c-content flex-1 bg-blue-50 p-4 rounded-lg rounded-tl-none border border-blue-100">
-                                <div class="flex items-center gap-2 mb-1">
-                                    <h4 class="c-name font-bold text-gray-900">Thành Luân</h4>
-                                    <span
-                                        class="badge-admin bg-yellow-500 text-white text-[10px] uppercase font-bold px-2 py-0.5 rounded">Quản
-                                        Trị Viên</span>
-                                </div>
-                                <div class="c-text text-gray-800 space-y-1">
-                                    <p>Chào bạn!</p>
-                                    <p>Mình đã nhắn tin hướng dẫn, bạn vui lòng kiểm tra email nhé!</p>
-                                    <p>Xin cảm ơn bạn.</p>
-                                </div>
-                                <div class="c-meta text-sm text-gray-500 mt-2">
-                                    <span>23 giờ trước</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Comment Form -->
-                    <div class="comment-form mt-8 p-0 bg-transparent border-none shadow-none">
-                        <div class="relative">
-                            <textarea placeholder="Mời Bạn để lại bình luận..."
-                                class="w-full border border-gray-300 rounded-lg p-4 h-32 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-shadow resize-none bg-white text-gray-700 placeholder-gray-400"></textarea>
-                            <button
-                                class="btn-send absolute bottom-3 right-3 bg-blue-600 text-white px-5 py-1.5 rounded-md hover:bg-blue-700 font-medium transition-colors text-sm shadow-sm"
-                                style="width: auto;">Gửi bình luận</button>
                         </div>
                     </div>
                 </div>
+                <!-- Right: Sidebar Filters (Global Reuse) -->
+                <aside class="sidebar-filter">
+                    <!-- Most Read Books Widget -->
+                    <div class="sidebar-widget most-read-widget mb-4">
+                        <h3 class="widget-title mb-4 font-bold" style="color: #46648D; font-size: 16px;">Sách đọc nhiều
+                        </h3>
+                        <div class="most-read-list">
+                            <!-- Item 1 -->
+                            <article class="most-read-item">
+                                <a href="book-detail.html" class="most-read-thumb">
+                                    <img src="assets/images/most-read-cover.png" alt="Book">
+                                </a>
+                                <h4 class="most-read-title">
+                                    <a href="book-detail.html">CuBa Việt Nam hai dân tộc một lịch sử</a>
+                                </h4>
+                            </article>
+                            <!-- Item 2 -->
+                            <article class="most-read-item">
+                                <a href="book-detail.html" class="most-read-thumb">
+                                    <img src="assets/images/most-read-cover.png" alt="Book">
+                                </a>
+                                <h4 class="most-read-title">
+                                    <a href="book-detail.html">CuBa Việt Nam hai dân tộc một lịch sử</a>
+                                </h4>
+                            </article>
+                            <!-- Item 3 -->
+                            <article class="most-read-item">
+                                <a href="book-detail.html" class="most-read-thumb">
+                                    <img src="assets/images/most-read-cover.png" alt="Book">
+                                </a>
+                                <h4 class="most-read-title">
+                                    <a href="book-detail.html">CuBa Việt Nam hai dân tộc một lịch sử</a>
+                                </h4>
+                            </article>
+                            <!-- Item 4 -->
+                            <article class="most-read-item">
+                                <a href="book-detail.html" class="most-read-thumb">
+                                    <img src="assets/images/most-read-cover.png" alt="Book">
+                                </a>
+                                <h4 class="most-read-title">
+                                    <a href="book-detail.html">CuBa Việt Nam hai dân tộc một lịch sử</a>
+                                </h4>
+                            </article>
+                            <!-- Item 5 -->
+                            <article class="most-read-item">
+                                <a href="book-detail.html" class="most-read-thumb">
+                                    <img src="assets/images/most-read-cover.png" alt="Book">
+                                </a>
+                                <h4 class="most-read-title">
+                                    <a href="book-detail.html">CuBa Việt Nam hai dân tộc một lịch sử</a>
+                                </h4>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Linked Library Widget -->
+                    <div class="sidebar-widget library-link-widget mb-4">
+                        <h3 class="widget-title mb-3 font-bold" style="font-size: 1rem; color: #46648D;">Thư viện liên
+                            kết
+                        </h3>
+                        <div class="library-select-wrapper">
+                            <select class="library-select">
+                                <option value="">-- Chọn thư viện --</option>
+                                <option value="tv1">Thư viện Quốc gia</option>
+                                <option value="tv2">Thư viện Hà Nội</option>
+                                <option value="tv3">Thư viện Quân đội</option>
+                                <option value="tv4">Thư viện KHTH TP.HCM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Library Statistics Widget -->
+                    <div class="sidebar-widget statistics-widget">
+                        <h3 class="widget-title mb-3 font-bold text-primary"
+                            style="color: #46648D; text-transform: none; font-size: 1rem;">Thống kê thư viện</h3>
+                        <div class="stats-content">
+                            <div class="stat-group">
+                                <div class="stat-row">
+                                    <span class="label">Lượt truy cập</span>
+                                    <span class="value">28.872</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="label">Đang online</span>
+                                    <span class="value">23</span>
+                                </div>
+                            </div>
+                            <div class="stat-group">
+                                <div class="stat-row">
+                                    <span class="label">Lượt đọc</span>
+                                    <span class="value">13.134</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="label">Lượt nghe</span>
+                                    <span class="value">3.872</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="label">Lượt tải về</span>
+                                    <span class="value">28.872</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                </aside>
             </div>
-            <!-- Right: Sidebar Filters (Global Reuse) -->
-            <aside class="sidebar-filter">
-                <!-- Most Read Books Widget -->
-                <div class="sidebar-widget most-read-widget mb-4">
-                    <h3 class="widget-title mb-4 font-bold" style="color: #46648D; font-size: 16px;">Sách đọc nhiều
-                    </h3>
-                    <div class="most-read-list">
-                        <!-- Item 1 -->
-                        <article class="most-read-item">
-                            <a href="book-detail.html" class="most-read-thumb">
-                                <img src="assets/images/most-read-cover.png" alt="Book">
-                            </a>
-                            <h4 class="most-read-title">
-                                <a href="book-detail.html">CuBa Việt Nam hai dân tộc một lịch sử</a>
-                            </h4>
-                        </article>
-                        <!-- Item 2 -->
-                        <article class="most-read-item">
-                            <a href="book-detail.html" class="most-read-thumb">
-                                <img src="assets/images/most-read-cover.png" alt="Book">
-                            </a>
-                            <h4 class="most-read-title">
-                                <a href="book-detail.html">CuBa Việt Nam hai dân tộc một lịch sử</a>
-                            </h4>
-                        </article>
-                        <!-- Item 3 -->
-                        <article class="most-read-item">
-                            <a href="book-detail.html" class="most-read-thumb">
-                                <img src="assets/images/most-read-cover.png" alt="Book">
-                            </a>
-                            <h4 class="most-read-title">
-                                <a href="book-detail.html">CuBa Việt Nam hai dân tộc một lịch sử</a>
-                            </h4>
-                        </article>
-                        <!-- Item 4 -->
-                        <article class="most-read-item">
-                            <a href="book-detail.html" class="most-read-thumb">
-                                <img src="assets/images/most-read-cover.png" alt="Book">
-                            </a>
-                            <h4 class="most-read-title">
-                                <a href="book-detail.html">CuBa Việt Nam hai dân tộc một lịch sử</a>
-                            </h4>
-                        </article>
-                        <!-- Item 5 -->
-                        <article class="most-read-item">
-                            <a href="book-detail.html" class="most-read-thumb">
-                                <img src="assets/images/most-read-cover.png" alt="Book">
-                            </a>
-                            <h4 class="most-read-title">
-                                <a href="book-detail.html">CuBa Việt Nam hai dân tộc một lịch sử</a>
-                            </h4>
-                        </article>
-                    </div>
-                </div>
-
-                <!-- Linked Library Widget -->
-                <div class="sidebar-widget library-link-widget mb-4">
-                    <h3 class="widget-title mb-3 font-bold" style="font-size: 1rem; color: #46648D;">Thư viện liên
-                        kết
-                    </h3>
-                    <div class="library-select-wrapper">
-                        <select class="library-select">
-                            <option value="">-- Chọn thư viện --</option>
-                            <option value="tv1">Thư viện Quốc gia</option>
-                            <option value="tv2">Thư viện Hà Nội</option>
-                            <option value="tv3">Thư viện Quân đội</option>
-                            <option value="tv4">Thư viện KHTH TP.HCM</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Library Statistics Widget -->
-                <div class="sidebar-widget statistics-widget">
-                    <h3 class="widget-title mb-3 font-bold text-primary"
-                        style="color: #46648D; text-transform: none; font-size: 1rem;">Thống kê thư viện</h3>
-                    <div class="stats-content">
-                        <div class="stat-group">
-                            <div class="stat-row">
-                                <span class="label">Lượt truy cập</span>
-                                <span class="value">28.872</span>
-                            </div>
-                            <div class="stat-row">
-                                <span class="label">Đang online</span>
-                                <span class="value">23</span>
-                            </div>
-                        </div>
-                        <div class="stat-group">
-                            <div class="stat-row">
-                                <span class="label">Lượt đọc</span>
-                                <span class="value">13.134</span>
-                            </div>
-                            <div class="stat-row">
-                                <span class="label">Lượt nghe</span>
-                                <span class="value">3.872</span>
-                            </div>
-                            <div class="stat-row">
-                                <span class="label">Lượt tải về</span>
-                                <span class="value">28.872</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-        </div>
+        </div> <!-- End Container -->
 
 
         <!-- Carousel (Keeping existing) -->
@@ -699,43 +706,83 @@
         <button class="lightbox-nav-btn lightbox-next"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
 
+    <div id="lightbox-modal">
+        <button class="lightbox-close" onclick="closeLightbox()"><i class="fa-solid fa-xmark"></i></button>
+        <button class="lightbox-nav-btn lightbox-prev" onclick="changeLightboxImage(-1)"><i
+                class="fa-solid fa-chevron-left"></i></button>
+        <div class="lightbox-img-wrapper">
+            <img src="" alt="Full Image" class="lightbox-img" id="lightbox-img">
+        </div>
+        <button class="lightbox-nav-btn lightbox-next" onclick="changeLightboxImage(1)"><i
+                class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
     <script>
-        // Gallery Functions
-        function changeImage(element, src) {
-            // Update main image (using placeholder logic for demo if src is dummy)
-            // Ideally src would be real. Here we just swap the src of mainImage
+        // Image Data
+        const bookImages = [
+            'assets/images/nha-gia-kim-cover.jpg',
+            'assets/images/book-page-1.png',
+            'assets/images/book-page-2.png',
+            'assets/images/book-page-3.png',
+            'assets/images/book-page-4.png',
+            'assets/images/book-page-5.png'
+        ];
+        let currentIndex = 0;
 
-            // For demo: if src contains 'book-cover', use that.
-            // But let's just assume the src passed is valid or use the element's inner IMG src for simplicity
-            const newSrc = element.querySelector('img').src;
-            document.getElementById('mainImage').src = newSrc;
+        // Desktop Functions
+        function updateMainImage(index) {
+            currentIndex = index;
+            document.getElementById('desktop-main-img').src = bookImages[index];
 
-            // Active state
-            document.querySelectorAll('.thumb-item').forEach(el => el.classList.remove('active'));
-            element.classList.add('active');
+            // Update Active State
+            document.querySelectorAll('.v-thumb').forEach((thumb, i) => {
+                if (i === index) thumb.classList.add('active');
+                else thumb.classList.remove('active');
+            });
         }
 
-        function openLightbox() {
-            const lightbox = document.getElementById('lightbox');
+        // Lightbox Functions
+        function openLightbox(startIdx) {
+            if (typeof startIdx !== 'undefined') currentIndex = startIdx;
+            const lightbox = document.getElementById('lightbox-modal');
             const lightboxImg = document.getElementById('lightbox-img');
-            const mainImgSrc = document.getElementById('mainImage').src;
 
-            lightbox.style.display = 'flex';
-            lightboxImg.src = mainImgSrc;
+            lightboxImg.src = bookImages[currentIndex];
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
         }
 
         function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
+            document.getElementById('lightbox-modal').classList.remove('active');
+            document.body.style.overflow = '';
         }
 
-        // Close on outside click
-        document.getElementById('lightbox').addEventListener('click', function (e) {
-            if (e.target === this) {
-                closeLightbox();
-            }
+        function changeLightboxImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = bookImages.length - 1;
+            if (currentIndex >= bookImages.length) currentIndex = 0;
+
+            // Update Lightbox Image
+            document.getElementById('lightbox-img').src = bookImages[currentIndex];
+
+            // Sync with Main Page
+            updateMainImage(currentIndex);
+        }
+
+        // Close on Outside Click
+        document.getElementById('lightbox-modal').addEventListener('click', function (e) {
+            if (e.target === this) closeLightbox();
         });
 
-        // Mobile Sidebar Logic (Same as index)
+        // Keyboard Navigation
+        document.addEventListener('keydown', function (e) {
+            if (!document.getElementById('lightbox-modal').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') changeLightboxImage(-1);
+            if (e.key === 'ArrowRight') changeLightboxImage(1);
+        });
+
+        // Mobile Sidebar Logic (Existing)
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const mobileSidebar = document.getElementById('mobile-sidebar');
         const mobileBackdrop = document.getElementById('mobile-backdrop');

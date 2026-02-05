@@ -3307,75 +3307,66 @@ body.reader-mode {
   line-height: 40px;
 }
 
-/ *   = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =           C a r o u s e l   &   G r i d   C l a s s e s   ( E n s u r i n g   p r e s e n c e )           = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =   * /     . c a r o u s e l - v i e w    {
-               o v e r f l o w :    h i d d e n ;
-               w i d t h :    1 0 0 % ;
-               p o s i t i o n :    r e l a t i v e ;
-       
+/* ============================================
+   Carousel & Grid Classes (Restored)
+   ============================================ */
+.carousel-view {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
-         . c a r o u s e l - t r a c k    {
-               d i s p l a y :    f l e x ;
-               t r a n s i t i o n :    t r a n s f o r m   0 . 5 s   e a s e - i n - o u t ;
-               g a p :    2 4 p x ;
-       
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 24px;
 }
 
-         . c a r o u s e l - i t e m    {
-               f l e x :    0   0   a u t o ;
-       
+.carousel-item {
+  flex: 0 0 auto;
 }
 
-         / *   S p e c i f i c   c o l u m n s   f o r   c a r o u s e l   i t e m s   * /     . c o l - 6    {
-               w i d t h :    c a l c ( ( 1 0 0 %   -   ( 5   *   2 4 p x ) )   /   6 ) ;
-       
+/* Specific columns for carousel items */
+.col-6 {
+  width: calc((100% - (5 * 24px)) / 6);
 }
 
-         @ m e d i a   ( m a x - w i d t h :   1 2 0 0 p x )    {
-               . c o l - 6    {
-                         w i d t h :    c a l c ( ( 1 0 0 %   -   ( 3   *   2 4 p x ) )   /   4 ) ;
-                         / *   S h o w   4   * /             
+@media (max-width: 1200px) {
+  .col-6 {
+    width: calc((100% - (3 * 24px)) / 4);
+    /* Show 4 */
   }
-
-       
 }
 
-         @ m e d i a   ( m a x - w i d t h :   9 9 2 p x )    {
-               . c o l - 6    {
-                         w i d t h :    c a l c ( ( 1 0 0 %   -   ( 2   *   2 4 p x ) )   /   3 ) ;
-                         / *   S h o w   3   * /             
+@media (max-width: 992px) {
+  .col-6 {
+    width: calc((100% - (2 * 24px)) / 3);
+    /* Show 3 */
   }
-
-       
 }
 
-         @ m e d i a   ( m a x - w i d t h :   7 6 8 p x )    {
-               . c o l - 6    {
-                         w i d t h :    c a l c ( ( 1 0 0 %   -   ( 1   *   2 4 p x ) )   /   2 ) ;
-                         / *   S h o w   2   * /             
+@media (max-width: 768px) {
+  .col-6 {
+    width: calc((100% - (1 * 24px)) / 2);
+    /* Show 2 */
   }
-
-       
 }
 
-         @ m e d i a   ( m a x - w i d t h :   5 7 6 p x )    {
-               . c o l - 6    {
-                         w i d t h :    1 0 0 % ;
-                         / *   S h o w   1   * /             
+@media (max-width: 576px) {
+  .col-6 {
+    width: 100%;
+    /* Show 1 */
   }
-
-       
 }
 
-     
 /* ============================================
    GLOBAL: LINKED BOOK COVERS
    ============================================ */
 .book-cover a,
 .book-review-cover-img a {
-    display: block;
-    height: 100%;
-    width: 100%;
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 
@@ -3383,169 +3374,287 @@ body.reader-mode {
    DESKTOP REDESIGN (Book Detail)
    ============================================ */
 .book-detail-grid.desktop-redesign {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    padding-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 40px;
 }
 
 /* --- Left Col: Visuals --- */
 .book-visuals-col {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
 }
 
 .thumb-sidebar-vertical {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 80px;
 }
 
 .thumb-nav-btn {
-    border: none;
-    background: transparent;
-    color: #666;
-    font-size: 1.2rem;
-    cursor: pointer;
-    padding: 5px;
+  border: none;
+  background: transparent;
+  color: #666;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px;
 }
 
-.thumb-nav-btn:hover { color: var(--primary-blue); }
+.thumb-nav-btn:hover {
+  color: var(--primary-blue);
+}
 
 .thumb-list-vertical {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-height: 400px; /* Limit height if many thumbs */
-    overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 400px;
+  /* Limit height if many thumbs */
+  overflow-y: auto;
 }
 
 /* Hide scrollbar for thumbs */
-.thumb-list-vertical::-webkit-scrollbar { display: none; }
+.thumb-list-vertical::-webkit-scrollbar {
+  display: none;
+}
 
 .v-thumb {
-    width: 70px;
-    height: 100px;
-    border: 2px solid transparent;
-    border-radius: 4px;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.2s;
+  width: 70px;
+  height: 100px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s;
 }
 
 .v-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .v-thumb.active {
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 1px var(--primary-blue);
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 1px var(--primary-blue);
 }
 
 .v-thumb:hover {
-    opacity: 0.9;
+  opacity: 0.9;
 }
 
 .main-cover-large {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    background: #f8f9fa;
-    padding: 10px;
-    border-radius: 8px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .main-cover-large img {
-    max-width: 100%;
-    height: auto;
-    max-height: 600px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    cursor: pointer; /* Lightbox trigger */
+  max-width: 100%;
+  height: auto;
+  max-height: 600px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  /* Lightbox trigger */
 }
 
 /* --- Right Col: Info --- */
 .d-book-title {
-    font-size: 1.8rem;
-    color: var(--primary-blue-dark);
-    font-weight: 700;
-    margin-bottom: 8px;
+  font-size: 1.8rem;
+  color: var(--primary-blue-dark);
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
 .d-collection {
-    color: #555;
-    margin-bottom: 15px;
-    font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
 }
 
 .d-collection a {
-    color: var(--red);
-    font-weight: 500;
+  color: var(--red);
+  font-weight: 500;
 }
 
 .d-stats-row {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 25px;
-    color: #444;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  color: #444;
 }
 
 .d-stat.divider-l {
-    border-left: 1px solid #ddd;
-    padding-left: 15px;
+  border-left: 1px solid #ddd;
+  padding-left: 15px;
 }
 
 /* Desktop Meta Table */
 .d-meta-table-wrapper {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .d-meta-table {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
 
 .d-meta-table td {
-    padding: 12px 10px;
-    border: 1px solid #e5e7eb;
-    font-size: 0.95rem;
+  padding: 12px 10px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.95rem;
 }
 
 .d-meta-table td.label {
-    width: 30%;
-    background: #f9fafb;
-    font-weight: 600;
-    color: #4b5563;
+  width: 30%;
+  background: #f9fafb;
+  font-weight: 600;
+  color: #4b5563;
 }
 
 .d-meta-table td.value {
-    color: #1f2937;
+  color: #1f2937;
 }
 
 .d-actions-group {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .btn-d-action {
-    padding: 12px 25px;
-    border-radius: 6px;
-    border: none;
-    color: white;
-    font-weight: 600;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    transition: all 0.2s;
+  padding: 12px 25px;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-.btn-d-action:hover { transform: translateY(-2px); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.btn-d-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
+
+/* ============================================
+   Lightbox Styles
+   ============================================ */
+#lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  /* Darker backdrop */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+#lightbox-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-img-wrapper {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.2s;
+}
+
+.lightbox-close:hover {
+  transform: scale(1.1);
+  color: var(--accent-yellow);
+}
+
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  backdrop-filter: blur(5px);
+}
+
+.lightbox-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-prev {
+  left: 30px;
+}
+
+.lightbox-next {
+  right: 30px;
+}
+
+/* Mobile Lightbox Adjustments */
+@media (max-width: 768px) {
+  .lightbox-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .lightbox-prev {
+    left: 10px;
+  }
+
+  .lightbox-next {
+    right: 10px;
+  }
+}
