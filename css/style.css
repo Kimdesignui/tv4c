@@ -4047,3 +4047,12 @@ body.reader-mode {
   color: var(--primary-blue);
   border-color: var(--primary-blue);
 }
+
+/* Unified View All Links (User Request) */
+.cat-view-all,
+.view-all-link,
+.view-all-btn,
+.section-header a[class*="view-all"] {
+  color: #dc2626 !important;
+  font-weight: 600;
+}
