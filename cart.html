@@ -322,6 +322,25 @@
             </div>
         </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const createBtn = document.querySelector('.btn-primary-action');
+            if (createBtn) {
+                createBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    // Assuming showToast is defined in main.js
+                    if (typeof showToast === 'function') {
+                        showToast('Đã tạo đơn mượn thành công!', 'success');
+                    } else {
+                        alert('Đã tạo đơn mượn thành công!');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
