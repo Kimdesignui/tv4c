@@ -290,26 +290,48 @@
                         <div class="tab-detail-link px-6 py-3 text-gray-500 hover:text-primary cursor-pointer transition-colors"
                             onclick="switchTab(event, 'tab-mucluc')">
                             Mục lục</div>
-                        <div class="tab-detail-link px-6 py-3 text-gray-500 hover:text-primary cursor-pointer transition-colors"
-                            onclick="switchTab(event, 'tab-binhluan')">
-                            Bình luận</div>
                     </div>
 
                     <!-- Tab 1: Giới Thiệu -->
                     <div id="tab-gioithieu"
                         class="tab-content detail-desc text-gray-700 leading-relaxed text-justify px-4 md:px-0"
                         style="background: transparent; color: #333; padding: 0;">
-                        <p class="mb-4">Tất cả những trải nghiệm trong chuyến phiêu du theo đuổi vận mệnh của mình đã
-                            giúp
-                            Santiago
-                            thấu hiểu được ý nghĩa sâu xa nhất của hạnh phúc, hòa hợp với vũ trụ và con người.</p>
-                        <p>Tiểu thuyết <strong>Nhà giả kim</strong> của Paulo Coelho như một câu chuyện cổ
-                            tích giản dị, nhân ái, giàu chất thơ, thấm đẫm những minh triết huyền bí của phương Đông.
-                            Trong lần xuất bản đầu tiên tại Brazil vào năm 1988, sách chỉ bán được 900 bản. Nhưng, với
-                            số phận đặc biệt của cuốn sách dành cho toàn nhân loại, vượt ra ngoài biên giới quốc gia,
-                            Nhà giả kim đã làm rung động hàng triệu tâm hồn, trở thành một trong những cuốn sách bán
-                            chạy
-                            nhất mọi thời đại.</p>
+                        <h2 class="font-bold text-xl mb-4 uppercase" style="color: #333;">NHÀ GIẢ KIM - HÀNH TRÌNH ĐI
+                            TÌM KHO BÁU HAY CUỘC HÀNH TRÌNH TÌM KIẾM CHÍNH MÌNH</h2>
+                        <hr class="mb-4">
+                        <p class="mb-4">"Nhà Giả Kim" không đơn thuần là một cuốn tiểu thuyết, mà là bản đồ dẫn lối đến
+                            giấc mơ, khao khát và định mệnh của mỗi con người. Câu chuyện về chàng trai chăn cừu
+                            Santiago không chỉ mang đến những cuộc phiêu lưu hấp dẫn, mà còn mở ra nhiều tầng triết lý
+                            sâu sắc về cuộc sống.</p>
+
+                        <h3 class="font-bold text-lg mb-2 uppercase" style="color: #333;">VỀ TÁC GIẢ: Paulo Coelho</h3>
+                        <hr class="mb-4">
+                        <p class="mb-4">Là nhà văn người Brazil, bậc thầy kể chuyện với lối viết đậm chất triết lý.</p>
+                        <p class="mb-4">Ông là tác giả của nhiều tác phẩm truyền cảm hứng, trong đó "Nhà Giả Kim" là
+                            cuốn sách nổi tiếng nhất, được dịch ra hơn 80 ngôn ngữ và bán hàng triệu bản trên toàn thế
+                            giới.</p>
+                        <p class="mb-4">Các tác phẩm khác của ông như "Veronika quyết chết", "Nhà tiên tri" hay "Phù
+                            thủy thành phố Portobello" cũng để lại dấu ấn sâu sắc trong lòng độc giả.</p>
+
+                        <h3 class="font-bold text-lg mb-2 uppercase" style="color: #333;">VỀ DỊCH GIẢ: Lê Chu Cầu</h3>
+                        <hr class="mb-4">
+                        <p class="mb-4">Là dịch giả có nhiều đóng góp trong việc đưa văn học nước ngoài đến với độc giả
+                            Việt Nam.</p>
+                        <p class="mb-4">Ông đã chuyển ngữ nhiều tác phẩm kinh điển, trong đó bản dịch "Nhà Giả Kim" của
+                            ông được đánh giá cao bởi sự mượt mà, giàu cảm xúc và giữ trọn vẹn tinh thần triết lý của
+                            Paulo Coelho.</p>
+
+                        <h3 class="font-bold text-lg mb-2 uppercase" style="color: #333;">TÓM TẮT NỘI DUNG SÁCH</h3>
+                        <hr class="mb-4">
+                        <p class="mb-4">Santiago – một chàng trai chăn cừu trẻ tuổi, rời quê hương để theo đuổi giấc mơ
+                            tìm kho báu ở Kim Tự Tháp Ai Cập. Trên hành trình ấy, anh gặp gỡ nhiều người, từ ông vua
+                            thông thái, người buôn pha lê đến Nhà Giả Kim huyền bí. Tất cả những trải nghiệm trong
+                            chuyến phiêu du theo đuổi vận mệnh của mình đã giúp Santiago thấu hiểu được ý nghĩa sâu xa
+                            nhất của hạnh phúc, hòa hợp với vũ trụ và con người.</p>
+                        <p class="mb-4">Mỗi cuộc gặp gỡ không chỉ giúp anh tiến gần hơn đến kho báu mà còn giúp anh hiểu
+                            được mục đích thật sự của đời mình:</p>
+                        <p class="mb-4 italic text-center">Trích Nhà giả Kim: "Kho báu không nằm ở nơi ta đến, mà nằm
+                            trong chính hành trình ta đi."</p>
 
                         <div class="text-center mt-6">
                             <a href="#"
@@ -342,8 +364,9 @@
                         </div>
                     </div>
 
-                    <!-- Tab 3: Bình Luận -->
-                    <div id="tab-binhluan" class="tab-content" style="display: none;">
+                    <!-- Separate Comments Section (Moved out of tabs) -->
+                    <div class="comments-section mt-10 pt-10 border-t border-gray-200">
+                        <h3 class="font-bold text-xl mb-6 text-gray-800">Bình luận</h3>
                         <div class="comments-wrapper">
                             <!-- Rating Summary -->
                             <div class="rating-summary">

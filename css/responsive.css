@@ -509,7 +509,24 @@
         grid-template-columns: repeat(2, 1fr) !important;
     }
 
-    /* 5th still hidden */
+    /* Fix for "You Might Like" Carousel (2.5 items) */
+    .featured-carousel .carousel-track {
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+        padding-bottom: 10px;
+        scrollbar-width: none;
+    }
+
+    .featured-carousel .carousel-track::-webkit-scrollbar {
+        display: none;
+    }
+
+    .featured-carousel .carousel-item {
+        flex: 0 0 40% !important;
+        max-width: 40% !important;
+        margin-right: 0 !important;
+    }
 }
 
 /* =========================================
@@ -843,6 +860,7 @@
         width: 100%;
     }
 }
+
 /* Fix Homepage Grid for 993px - 1200px */
 @media (min-width: 993px) and (max-width: 1200px) {
     .section-left-body .book-grid {
@@ -856,14 +874,13 @@
     .detail-desc {
         padding: 20px !important;
     }
-    
+
     .comment-item.reply {
         margin-left: 20px !important;
         padding: 15px !important;
     }
-    
+
     .btn-send {
         width: 100%;
     }
 }
-
