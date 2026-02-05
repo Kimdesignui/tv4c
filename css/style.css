@@ -3658,3 +3658,319 @@ body.reader-mode {
     right: 10px;
   }
 }
+/* ============================================
+   TABLE OF CONTENTS (New)
+   ============================================ */
+.toc-container {
+    padding: 10px 0;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+}
+
+.toc-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px dashed #e5e7eb;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.toc-list li:last-child {
+    border-bottom: none;
+}
+
+.toc-list .chapter-num {
+    font-weight: 600;
+    color: var(--primary-blue);
+    min-width: 80px;
+}
+
+.toc-list .chapter-name {
+    flex: 1;
+    padding: 0 15px;
+    font-weight: 500;
+}
+
+.toc-list .page-num {
+    color: var(--text-gray);
+    font-family: monospace;
+}
+
+/* ============================================
+   COMMENTS & REVIEWS (New UI)
+   ============================================ */
+.comments-wrapper {
+    margin-top: 10px;
+}
+
+/* Rating Summary */
+.rating-summary {
+    display: flex;
+    gap: 40px;
+    padding: 24px;
+    background: #f9fafb;
+    border-radius: var(--radius-sm);
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.rating-score {
+    text-align: center;
+    min-width: 120px;
+}
+
+.score-large {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1;
+    display: block;
+}
+
+.score-stars {
+    color: var(--accent-yellow);
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+.total-reviews {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+.rating-bars {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bar-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
+.bar-track {
+    flex: 1;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: var(--accent-yellow);
+    border-radius: 4px;
+}
+
+/* Input Box */
+.comment-input-box {
+    margin-bottom: 30px;
+}
+
+.input-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.input-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.user-avatar-small {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.input-area {
+    flex: 1;
+}
+
+.star-rating-select {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.stars-select {
+    color: #ccc;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.stars-select i:hover,
+.stars-select i.active {
+    color: var(--accent-yellow);
+}
+
+.input-area textarea {
+    width: 100%;
+    height: 100px;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: var(--radius-sm);
+    margin-bottom: 15px;
+    resize: vertical;
+    font-family: 'Inter', sans-serif;
+}
+
+.input-actions {
+    text-align: right;
+}
+
+/* Review List */
+.review-item {
+    border-bottom: 1px solid #f3f4f6;
+    padding: 24px 0;
+}
+
+.review-item:first-child {
+    padding-top: 0;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-meta {
+    flex: 1;
+}
+
+.user-name {
+    display: block;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 2px;
+}
+
+.item-rating {
+    font-size: 0.8rem;
+    color: var(--accent-yellow);
+}
+
+.review-date {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+
+.review-content {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.review-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+}
+
+.action-btn:hover {
+    color: var(--primary-blue);
+}
+
+/* Responsive Comments */
+@media (max-width: 768px) {
+    .rating-summary {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    
+    .rating-score {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        text-align: left;
+    }
+
+    .rating-bars {
+        width: 100%;
+    }
+
+    .input-wrapper {
+        flex-direction: column;
+    }
+
+    .user-avatar-small {
+        display: none;
+    }
+}
+
+/* ============================================
+   FIX: RESPONSIVE CAROUSEL (2.5 items)
+   ============================================ */
+@media (max-width: 480px) {
+    /* Enable horizontal scrolling */
+    .featured-carousel .carousel-track {
+        display: flex;
+        gap: 16px; /* slightly smaller gap for mobile */
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 10px; /* Space for scrollbar if visible */
+        width: 100%;
+        /* Remove transform transition if using native scroll */
+        transform: none !important; 
+    }
+    
+    .featured-carousel .carousel-item {
+        /* Calculation for 2.5 items: 
+           Viewport width = 100%
+           Gap = 16px
+           Want to see 2 full items + 0.5 item = 2.5 items
+           Width approx = (100% - (gaps)) / 2.5
+        */
+        min-width: calc((100% - 16px) / 2.2); /* Adjust 2.2-2.5 for best fit */
+        scroll-snap-align: start;
+        flex: 0 0 auto; /* Stop shrinking */
+        width: auto !important; /* Override col-6 styles */
+    }
+
+    /* Hide desktop nav buttons on mobile if native scroll is used */
+    .featured-section .carousel-nav {
+        display: none;
+    }
+    
+    /* Ensure images fill height */
+    .featured-carousel .collection-thumb {
+        height: auto;
+        aspect-ratio: 2/3;
+    }
+}
+
