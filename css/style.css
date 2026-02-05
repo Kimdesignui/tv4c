@@ -4264,6 +4264,8 @@ body.reader-mode {
   cursor: pointer;
   display: block;
   width: 100%;
+  font-family: 'Inter', sans-serif;
+  /* Fix font to match system */
 }
 
 .btn-primary-action:hover {
@@ -4280,6 +4282,8 @@ body.reader-mode {
   cursor: pointer;
   display: block;
   width: 100%;
+  font-family: 'Inter', sans-serif;
+  /* Fix font to match system */
 }
 
 .btn-secondary-action:hover {
