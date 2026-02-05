@@ -20,17 +20,24 @@
         <div class="container flex justify-between items-center">
             <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="TV4C Logo"></a>
             <div class="header-right flex items-center gap-6">
+                <!-- Mobile Menu Button (Left on Mobile) -->
+                <button class="icon-btn mobile-menu-btn hidden md:hidden">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
                 <div class="hotline flex items-center gap-2 text-primary font-bold">
                     <i class="fa-solid fa-phone-volume"></i> <span>024.37627819</span>
                 </div>
-                <!-- ... existing user actions ... -->
+
                 <div class="user-actions flex gap-3">
                     <a href="profile.html?tab=saved" class="icon-btn"><i class="fa-regular fa-bookmark"></i></a>
                     <a href="profile.html?tab=favorites" class="icon-btn"><i class="fa-regular fa-heart"></i></a>
-                    <!-- Mobile Menu Toggle -->
-                    <button class="icon-btn mobile-menu-btn hidden md:hidden">
-                        <i class="fa-solid fa-bars"></i>
+
+                    <!-- Mobile User Button (Right on Mobile) -->
+                    <button class="icon-btn mobile-user-btn hidden md:hidden">
+                        <i class="fa-regular fa-user"></i>
                     </button>
+
                     <div class="user-dropdown-container">
                         <a href="login.html" class="icon-btn user-btn"><i class="fa-regular fa-user"></i></a>
                         <!-- Dropdown Menu (Hover) -->

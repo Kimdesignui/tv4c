@@ -66,48 +66,85 @@
 /* Tablet (max-width: 768px) */
 @media (max-width: 992px) {
 
-    /* Header Layout */
+    /* Header Layout Redesign */
     .top-header .container {
-        flex-direction: row;
-        /* Keep row */
-        flex-wrap: wrap;
-        /* Allow wrapping if needed, but mainly we want row */
-        justify-content: space-between;
-        gap: 10px;
+        display: grid;
+        grid-template-columns: 48px 1fr 48px;
+        align-items: center;
         padding: 10px 15px;
+        gap: 0;
+        justify-content: center;
+        /* Override space-between */
+    }
+
+    /* 1. Mobile Menu (Left) */
+    .mobile-menu-btn {
+        display: flex !important;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1.5px solid #1f2937;
+        /* Dark border */
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem;
+        color: #1f2937;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    /* 2. Logo (Center) */
+    .logo {
+        grid-column: 2;
+        grid-row: 1;
+        text-align: center;
+        justify-self: center;
+        margin: 0;
     }
 
     .logo img {
         height: 40px;
-        /* Smaller logo on mobile */
         width: auto;
     }
 
-    /* Hide specific desktop elements */
+    /* 3. Mobile User (Right) */
+    .header-right {
+        display: contents;
+        /* Allow children to participate in grid */
+    }
+
+    .mobile-user-btn {
+        display: flex !important;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1.5px solid #1f2937;
+        /* Dark border */
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem;
+        color: #1f2937;
+        grid-column: 3;
+        grid-row: 1;
+        background: transparent;
+    }
+
+    /* Hide other desktop elements */
     .hotline,
     .user-btn,
-    .user-dropdown-container {
+    .user-dropdown-container,
+    .user-actions .icon-btn:not(.mobile-menu-btn):not(.mobile-user-btn) {
         display: none !important;
     }
 
-    /* Mobile Menu Button - Visible here */
-    .mobile-menu-btn {
-        display: flex !important;
-        font-size: 1.2rem;
+    /* Icon Buttons Style Override for Mobile Header */
+    .icon-btn.mobile-menu-btn,
+    .icon-btn.mobile-user-btn {
+        width: 44px;
+        height: 44px;
     }
 
-    /* Icon Buttons Style for Mobile */
-    .icon-btn {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: 1px solid #1e293b;
-        /* Border matches design */
-        color: #1e293b;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+
 
     .icon-btn i {
         font-size: 1.1rem;
