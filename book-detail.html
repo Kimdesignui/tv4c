@@ -233,7 +233,7 @@
                         <div class="d-stat divider-l">3639 Đã bán</div>
                     </div>
 
-                    <div class="d-meta-table-wrapper">
+                    <div class="d-meta-table-wrapper collapsed" id="info-table-wrapper">
                         <table class="d-meta-table">
                             <tr>
                                 <td class="label">Tác giả</td>
@@ -262,8 +262,13 @@
                         </table>
                     </div>
 
-                    <a href="#" class="d-view-more text-primary text-sm font-semibold mb-6 inline-block"><i
-                            class="fa-solid fa-chevron-down"></i> Xem đầy đủ</a>
+                    <div class="text-center mb-6">
+                        <button id="toggle-info-btn" onclick="toggleInfoTable()"
+                            class="d-view-more text-primary text-sm font-semibold inline-block"
+                            style="background: none; border: none; cursor: pointer;">
+                            <i class="fa-solid fa-chevron-down"></i> Xem đầy đủ
+                        </button>
+                    </div>
 
                     <div class="d-actions-group">
                         <button class="btn-d-action btn-green"><i class="fa-solid fa-cart-shopping"></i> Mượn
@@ -955,8 +960,22 @@
             } else {
                 content.classList.add('collapsed');
                 btn.innerHTML = '<i class="fa-solid fa-chevron-down"></i> Xem đầy đủ';
-                // Scroll back to top of intro if needed, or leave as is
                 // content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Info Table Toggle (Desktop)
+        function toggleInfoTable() {
+            const wrapper = document.getElementById('info-table-wrapper');
+            const btn = document.getElementById('toggle-info-btn');
+            const isCollapsed = wrapper.classList.contains('collapsed');
+
+            if (isCollapsed) {
+                wrapper.classList.remove('collapsed');
+                btn.innerHTML = '<i class="fa-solid fa-chevron-up"></i> Thu gọn';
+            } else {
+                wrapper.classList.add('collapsed');
+                btn.innerHTML = '<i class="fa-solid fa-chevron-down"></i> Xem đầy đủ';
             }
         }
     </script>

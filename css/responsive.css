@@ -527,6 +527,11 @@
         max-width: 40% !important;
         margin-right: 0 !important;
     }
+
+    /* Force show nav buttons on mobile */
+    .section-header .carousel-nav {
+        display: flex !important;
+    }
 }
 
 /* =========================================

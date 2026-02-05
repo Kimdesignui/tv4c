@@ -848,6 +848,21 @@ img {
   -webkit-mask-image: linear-gradient(180deg, black 60%, transparent 100%);
 }
 
+/* Info Table Wrapper for Toggle (Desktop) */
+.d-meta-table-wrapper {
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+  max-height: 1000px;
+  /* Expanded state */
+}
+
+.d-meta-table-wrapper.collapsed {
+  max-height: 160px;
+  /* Approx 4 rows */
+  mask-image: linear-gradient(180deg, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, black 60%, transparent 100%);
+}
+
 /* Comments */
 .comment-item {
   display: flex;
