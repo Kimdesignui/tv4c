@@ -4009,14 +4009,37 @@ body.reader-mode {
     /* Override col-6 styles */
   }
 
-  /* Hide desktop nav buttons on mobile if native scroll is used */
+  /* Hide desktop nav buttons on mobile if native scroll is used - DISABLED
   .featured-section .carousel-nav {
     display: none;
-  }
+  } */
 
   /* Ensure images fill height */
   .featured-carousel .collection-thumb {
     height: auto;
     aspect-ratio: 2/3;
   }
+}
+
+/* Carousel Nav Buttons (Global) */
+.nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #334155;
+  display: flex !important;
+  /* Force flex to ensure visible */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.nav-btn:hover {
+  background: #eff6ff;
+  color: var(--primary-blue);
+  border-color: var(--primary-blue);
 }
