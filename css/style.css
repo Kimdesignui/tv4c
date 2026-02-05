@@ -4254,7 +4254,7 @@ body.reader-mode {
 
 /* Button Styles Fix */
 .btn-primary-action {
-  background-color: var(--primary-color) !important;
+  background-color: var(--primary-blue) !important;
   color: white !important;
   border: none;
 }
