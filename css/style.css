@@ -159,6 +159,31 @@ img {
   gap: 2rem;
 }
 
+/* Padding Utilities */
+.p-5 {
+  padding: 1.25rem;
+  /* 20px */
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+/* Border Utilities */
+.border-t {
+  border-top: 1px solid #e5e7eb;
+}
+
+.border-gray-200 {
+  border-color: #e5e7eb;
+}
+
+/* Radius Utilities */
+.rounded-b-lg {
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+}
+
 /* Grid Utilities */
 .grid {
   display: grid;
@@ -4290,4 +4315,7 @@ body.reader-mode {
   background-color: #f9fafb !important;
 }
 
-```
+/* Background Utilities */
+.bg-white {
+  background-color: var(--white);
+}
