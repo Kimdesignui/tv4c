@@ -4087,15 +4087,17 @@ body.reader-mode {
 }
 
 /* Book Cover - 2/3 Aspect Ratio Enforced */
+/* Book Cover - Square Frame with Padding */
 .cart-thumb {
-  width: 100px;
-  /* Fixed width */
-  aspect-ratio: 2/3;
-  /* Enforce 2/3 ratio */
+  width: 120px;
+  /* Fixed width, slightly larger for frame */
+  aspect-ratio: 1/1;
+  /* Square frame */
   border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 6px;
-  /* White space frame */
+  border-radius: 12px;
+  /* Softer corners for frame */
+  padding: 12px;
+  /* Comfortable padding */
   background: #fff;
   flex-shrink: 0;
   display: flex;
@@ -4104,12 +4106,24 @@ body.reader-mode {
 }
 
 .cart-thumb img {
-  width: 100%;
+  width: auto;
+  /* Let height dictate width */
   height: 100%;
-  object-fit: cover;
-  border-radius: 4px;
-  /* Slight radius for the image itself */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  /* Fill height of padding area */
+  object-fit: contain;
+  /* Ensure image shows fully */
+  border-radius: 2px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Checkbox specific to Cart */
+.cart-check .form-checkbox {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: 1.5px solid #d1d5db;
+  cursor: pointer;
+  accent-color: var(--primary-color);
 }
 
 /* Quantity Spinner - Design Specific */
