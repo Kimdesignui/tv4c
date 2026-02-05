@@ -4194,8 +4194,9 @@ body.reader-mode {
   border-bottom: 1px solid #f3f4f6;
 }
 
+/* User requested border on last child to separate sections visually */
 .info-section .info-row:last-child {
-  border-bottom: none;
+  border-bottom: 1px solid #f3f4f6;
 }
 
 /* Sidebar & Widget Styles */
@@ -4252,11 +4253,17 @@ body.reader-mode {
   border-bottom: 1px solid #f3f4f6;
 }
 
-/* Button Styles Fix */
+/* Button Styles Fix: Added padding/margin to ensure visibility */
 .btn-primary-action {
   background-color: var(--primary-blue) !important;
   color: white !important;
   border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  width: 100%;
 }
 
 .btn-primary-action:hover {
@@ -4267,6 +4274,12 @@ body.reader-mode {
   background-color: #fff !important;
   color: #4b5563 !important;
   border: 1px solid #d1d5db !important;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  width: 100%;
 }
 
 .btn-secondary-action:hover {
