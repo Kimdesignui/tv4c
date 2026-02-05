@@ -117,109 +117,115 @@
                 <!-- Left Column: Cart Items -->
                 <div class="cart-listen-col">
                     <!-- Header -->
-                    <div class="flex justify-between items-center mb-6 pb-4 border-b">
-                        <label class="flex items-center gap-3 cursor-pointer font-semibold text-gray-700 text-lg">
-                            <input type="checkbox" class="form-checkbox" checked>
-                            Tất cả (3 sách)
+                    <div class="flex justify-between items-center mb-0 pb-4 border-b border-gray-100">
+                        <label class="flex items-center gap-3 cursor-pointer font-bold text-gray-700 text-lg">
+                            <input type="checkbox" class="form-checkbox h-5 w-5" checked>
+                            Giỏ sách
                         </label>
-                        <button
-                            class="text-gray-400 hover:text-red-500 p-2 rounded border border-gray-200 hover:border-red-200 transition-colors w-10 h-10 flex items-center justify-center">
-                            <i class="fa-regular fa-trash-can"></i>
-                        </button>
+                        <div class="flex items-center gap-2">
+                            <span class="text-sm text-gray-500">Tất cả (3 sách)</span>
+                            <button
+                                class="btn-delete-item w-8 h-8 rounded-md border-gray-200 text-gray-400 hover:text-red-500 hover:bg-red-50">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Item 1 -->
-                    <div class="cart-item flex gap-4 py-6 border-b border-gray-100 last:border-0 items-start">
-                        <div class="cart-check flex items-center h-full pt-10">
-                            <input type="checkbox" class="form-checkbox">
+                    <div class="cart-item flex gap-5 items-center">
+                        <!-- Checkbox Centered Vertical -->
+                        <div class="cart-check h-full flex items-center">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 rounded border-gray-300">
                         </div>
+
+                        <!-- Thumb 2/3 Aspect Ratio -->
                         <div class="cart-thumb">
                             <img src="assets/images/new-book-1.png" alt="Book"
-                                onerror="this.src='https://via.placeholder.com/90x120'">
+                                onerror="this.src='https://via.placeholder.com/100x150'">
                         </div>
-                        <div class="cart-info flex-1">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <h3 class="font-bold text-lg text-primary mb-2 line-clamp-2"><a href="#">Gửi thương
-                                            vào nhớ</a></h3>
-                                    <p class="text-sm text-gray-500 mb-3">Tác giả: <span class="text-gray-700">Nguyễn
+
+                        <!-- Content -->
+                        <div class="cart-info flex-1 self-start pt-2">
+                            <div class="flex justify-between items-start mb-2">
+                                <div class="pr-4">
+                                    <h3 class="font-bold text-lg text-primary mb-1 line-clamp-2"
+                                        style="color: #46648D;"><a href="#">Gửi thương vào nhớ</a></h3>
+                                    <p class="text-sm text-gray-500 mb-2">Tác giả: <span class="text-gray-700">Nguyễn
                                             Phong Việt</span></p>
                                 </div>
-                                <button
-                                    class="text-gray-400 hover:text-red-500 p-2 w-10 h-10 flex items-center justify-center border rounded hover:bg-red-50 transition"><i
+                                <button class="btn-delete-item flex-shrink-0"><i
                                         class="fa-regular fa-trash-can"></i></button>
                             </div>
-                            <div class="cart-actions flex items-center gap-3 mt-2">
-                                <span class="text-sm text-gray-500">Số lượng:</span>
+
+                            <div class="cart-actions flex items-center gap-3">
+                                <span class="text-sm text-gray-500 font-medium">Số lượng:</span>
                                 <div class="quantity-control">
-                                    <button>-</button>
+                                    <button><i class="fa-solid fa-plus text-xs"></i></button>
                                     <input type="text" value="3">
-                                    <button>+</button>
+                                    <button><i class="fa-solid fa-minus text-xs"></i></button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Item 2 -->
-                    <div class="cart-item flex gap-4 py-6 border-b border-gray-100 last:border-0 items-start">
-                        <div class="cart-check flex items-center h-full pt-10">
-                            <input type="checkbox" class="form-checkbox">
+                    <div class="cart-item flex gap-5 items-center">
+                        <div class="cart-check h-full flex items-center">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 rounded border-gray-300">
                         </div>
                         <div class="cart-thumb">
                             <img src="assets/images/new-book-2.png" alt="Book"
-                                onerror="this.src='https://via.placeholder.com/90x120'">
+                                onerror="this.src='https://via.placeholder.com/100x150'">
                         </div>
-                        <div class="cart-info flex-1">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <h3 class="font-bold text-lg text-primary mb-2 line-clamp-2"><a href="#">An ninh phi
-                                            truyền thống ở biển Đông</a>
+                        <div class="cart-info flex-1 self-start pt-2">
+                            <div class="flex justify-between items-start mb-2">
+                                <div class="pr-4">
+                                    <h3 class="font-bold text-lg text-primary mb-1 line-clamp-2"
+                                        style="color: #46648D;"><a href="#">An ninh phi truyền thống ở biển Đông</a>
                                     </h3>
-                                    <p class="text-sm text-gray-500 mb-3">Tác giả: <span class="text-gray-700">TS.
+                                    <p class="text-sm text-gray-500 mb-2">Tác giả: <span class="text-gray-700">TS.
                                             Nguyễn Mạnh Thế</span></p>
                                 </div>
-                                <button
-                                    class="text-gray-400 hover:text-red-500 p-2 w-10 h-10 flex items-center justify-center border rounded hover:bg-red-50 transition"><i
+                                <button class="btn-delete-item flex-shrink-0"><i
                                         class="fa-regular fa-trash-can"></i></button>
                             </div>
-                            <div class="cart-actions flex items-center gap-3 mt-2">
-                                <span class="text-sm text-gray-500">Số lượng:</span>
+                            <div class="cart-actions flex items-center gap-3">
+                                <span class="text-sm text-gray-500 font-medium">Số lượng:</span>
                                 <div class="quantity-control">
-                                    <button>-</button>
+                                    <button><i class="fa-solid fa-plus text-xs"></i></button>
                                     <input type="text" value="1">
-                                    <button>+</button>
+                                    <button><i class="fa-solid fa-minus text-xs"></i></button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Item 3 -->
-                    <div class="cart-item flex gap-4 py-6 border-b border-gray-100 last:border-0 items-start">
-                        <div class="cart-check flex items-center h-full pt-10">
-                            <input type="checkbox" class="form-checkbox">
+                    <div class="cart-item flex gap-5 items-center">
+                        <div class="cart-check h-full flex items-center">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 rounded border-gray-300">
                         </div>
                         <div class="cart-thumb">
                             <img src="assets/images/new-book-3.png" alt="Book"
-                                onerror="this.src='https://via.placeholder.com/90x120'">
+                                onerror="this.src='https://via.placeholder.com/100x150'">
                         </div>
-                        <div class="cart-info flex-1">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <h3 class="font-bold text-lg text-primary mb-2 line-clamp-2"><a href="#">Cột mốc kể
-                                            chuyện</a></h3>
-                                    <p class="text-sm text-gray-500 mb-3">Tác giả: <span class="text-gray-700">Nhiều tác
+                        <div class="cart-info flex-1 self-start pt-2">
+                            <div class="flex justify-between items-start mb-2">
+                                <div class="pr-4">
+                                    <h3 class="font-bold text-lg text-primary mb-1 line-clamp-2"
+                                        style="color: #46648D;"><a href="#">Cột mốc kể chuyện</a></h3>
+                                    <p class="text-sm text-gray-500 mb-2">Tác giả: <span class="text-gray-700">Nhiều tác
                                             giả</span></p>
                                 </div>
-                                <button
-                                    class="text-gray-400 hover:text-red-500 p-2 w-10 h-10 flex items-center justify-center border rounded hover:bg-red-50 transition"><i
+                                <button class="btn-delete-item flex-shrink-0"><i
                                         class="fa-regular fa-trash-can"></i></button>
                             </div>
-                            <div class="cart-actions flex items-center gap-3 mt-2">
-                                <span class="text-sm text-gray-500">Số lượng:</span>
+                            <div class="cart-actions flex items-center gap-3">
+                                <span class="text-sm text-gray-500 font-medium">Số lượng:</span>
                                 <div class="quantity-control">
-                                    <button>-</button>
+                                    <button><i class="fa-solid fa-plus text-xs"></i></button>
                                     <input type="text" value="2">
-                                    <button>+</button>
+                                    <button><i class="fa-solid fa-minus text-xs"></i></button>
                                 </div>
                             </div>
                         </div>

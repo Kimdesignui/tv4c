@@ -4073,23 +4073,102 @@ body.reader-mode {
   }
 }
 
+/* Cart Item */
+.cart-header,
 .cart-item {
+  position: relative;
+  background: white;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 24px 0 !important;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+/* Book Cover - 2/3 Aspect Ratio Enforced */
+.cart-thumb {
+  width: 100px;
+  /* Fixed width */
+  aspect-ratio: 2/3;
+  /* Enforce 2/3 ratio */
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 6px;
+  /* White space frame */
   background: #fff;
-  border: 1px solid #e2e8f0;
-  transition: all 0.2s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.cart-item:hover {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+.cart-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  /* Slight radius for the image itself */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.cart-info-widget {
-  border: 1px solid #e2e8f0;
-  background: #fff;
+/* Quantity Spinner - Design Specific */
+.quantity-control {
+  display: flex;
+  background: #f3f4f6;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 32px;
+  border: 1px solid #e5e7eb;
 }
 
-.widget-header h3 {
-  color: var(--primary-color);
+.quantity-control button {
+  width: 32px;
+  background: #e5e7eb;
+  /* Darker gray for buttons */
+  border: none;
+  cursor: pointer;
+  color: #374151;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.quantity-control button:hover {
+  background: #d1d5db;
+}
+
+.quantity-control input {
+  width: 44px;
+  text-align: center;
+  border: none;
+  background: white;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+/* Delete Button */
+.btn-delete-item {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  color: #6b7280;
+  transition: all 0.2s;
+  background: white;
+}
+
+.btn-delete-item:hover {
+  background: #fee2e2;
+  border-color: #fecaca;
+  color: #ef4444;
 }
 
 .info-row {
