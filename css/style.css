@@ -3793,6 +3793,8 @@ body.reader-mode {
 #lightbox-modal.active {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
+  /* Enable interaction */
 }
 
 .lightbox-img-wrapper {
