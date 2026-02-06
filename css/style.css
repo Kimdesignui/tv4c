@@ -3691,15 +3691,107 @@ body.reader-mode {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  /* Darker backdrop */
+  background: rgba(0, 0, 0, 0.95);
+  /* Darker */
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  flex-direction: column;
+  /* Stack image and thumbs */
+}
+
+.lightbox-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.lightbox-img-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80vh;
+  object-fit: contain;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Lightbox Thumbs */
+.lightbox-thumbs-container {
+  width: 100%;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.lightbox-thumbs-list {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  max-width: 80%;
+  padding-bottom: 5px;
+  scrollbar-width: thin;
+  scrollbar-color: #666 transparent;
+}
+
+.lightbox-thumbs-list::-webkit-scrollbar {
+  height: 6px;
+}
+
+.lightbox-thumbs-list::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 3px;
+}
+
+.lb-thumb {
+  width: 60px;
+  height: 80px;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.2s;
+  border: 2px solid transparent;
+  flex-shrink: 0;
+}
+
+.lb-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px;
+}
+
+.lb-thumb:hover {
+  opacity: 0.8;
+}
+
+.lb-thumb.active {
+  opacity: 1;
+  border-color: var(--primary-blue);
+  transform: scale(1.05);
+}
+
+visibility: hidden;
+transition: all 0.3s ease;
 }
 
 #lightbox-modal.active {
