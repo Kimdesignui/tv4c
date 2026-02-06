@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
     initSlider();
     initNewsSlider(); // Added News Slider
     initBookCarousels(); // Standardized Book Carousels
-    initMobileMenu();
+    // initMobileMenu(); // Called below explicitly if not defined here
+    if (typeof initMobileMenu === 'function') initMobileMenu();
     initTabs();
     initDropdown();
     initScrollEffects();
