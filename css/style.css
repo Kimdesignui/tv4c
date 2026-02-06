@@ -2509,10 +2509,10 @@ img {
      If we want the sidebar to look "connected" to navbar, gap should be handled carefully. 
      Let's keep a small gap for content but ensure sidebar aligns. */
   .hero-content {
-    padding-left: 30px;
-    /* Space between sidebar and slider */
-    padding-top: 30px;
-    /* Top spacing for slider */
+    padding-left: 15px;
+    /* Reduced from 30px */
+    padding-top: 15px;
+    /* Reduced from 30px */
   }
 
   .hero-sidebar {
