@@ -3496,6 +3496,11 @@ body.reader-mode {
   display: flex;
   gap: 20px;
   align-items: flex-start;
+  /* Sticky Visuals */
+  position: sticky;
+  top: 90px;
+  /* Header offset */
+  align-self: start;
 }
 
 .thumb-sidebar-vertical {
@@ -3562,16 +3567,22 @@ body.reader-mode {
   flex: 1;
   display: flex;
   justify-content: center;
-  background: #f8f9fa;
+  align-items: center;
+  background: #fff;
   padding: 10px;
   border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  aspect-ratio: 1 / 1;
+  /* Force square */
+  position: relative;
 }
 
 .main-cover-large img {
-  max-width: 100%;
-  height: auto;
-  max-height: 600px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Ensure full image visible */
+  box-shadow: none;
   cursor: pointer;
   /* Lightbox trigger */
 }
