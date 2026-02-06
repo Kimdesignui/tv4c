@@ -1147,11 +1147,11 @@
         position: absolute;
         top: 100%;
         /* Push below the container */
-        left: auto;
-        right: 0;
-        /* Align right side */
-        width: 700px;
-        max-width: 90vw;
+        left: 0;
+        right: auto;
+        /* Match container width */
+        width: 100%;
+        max-width: none;
         max-height: 0;
         overflow: hidden;
         /* Reset flex */
