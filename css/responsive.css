@@ -2,8 +2,8 @@
    RESPONSIVE STYLES (Mobile & Tablet)
    ============================================ */
 
-/* Tablet and Smaller (max-width: 1024px) */
-@media (max-width: 1024px) {
+/* Tablet and Smaller (max-width: 991px) */
+@media (max-width: 991px) {
     :root {
         --container-width: 100%;
     }
@@ -416,7 +416,7 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
 
     /* Tablet: 3 items? or 2? Let's say 3 items -> (100% - 48px)/3 */
     .collections-list .collection-card {
@@ -1080,4 +1080,136 @@
     .btn-send {
         width: 100%;
     }
+}
+
+/* =========================================
+   MOBILE FILTER SIDEBAR (Left - Slide In)
+   ========================================= */
+.mobile-filter-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.mobile-filter-backdrop.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Base Mobile Filter Styles (Shared) */
+.mobile-filter-sidebar {
+    position: fixed;
+    z-index: 9999;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+/* MOBILE Behavior (<= 480px): Slide from LEFT "bật ra" */
+@media (max-width: 480px) {
+    .mobile-filter-sidebar {
+        top: 0;
+        left: -320px;
+        /* Hidden LEFT */
+        width: 300px;
+        max-width: 85%;
+        height: 100%;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-filter-sidebar.active {
+        left: 0;
+        /* Slide in */
+    }
+
+    .close-filter-btn {
+        display: block;
+    }
+}
+
+/* TABLET Behavior (481px - 991px): Dropdown "sổ xuống" */
+@media (min-width: 481px) and (max-width: 991px) {
+
+    /* Ensure parent is relative for absolute positioning */
+    .book-list-container .flex.items-center.gap-4 {
+        position: relative;
+    }
+
+    .mobile-filter-sidebar {
+        position: absolute;
+        top: 100%;
+        /* Push below the container */
+        left: auto;
+        right: 0;
+        /* Align right side */
+        width: 300px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border: 1px solid #eee;
+        border-radius: 8px;
+        margin-top: 10px;
+        height: auto;
+    }
+
+    .mobile-filter-sidebar.active {
+        opacity: 1;
+        max-height: 600px;
+        overflow-y: auto;
+    }
+
+    .mobile-filter-backdrop.active {
+        opacity: 0;
+        /* Invisible backdrop but clickable */
+    }
+
+    .filter-sidebar-header {
+        padding: 10px 15px;
+    }
+
+    .close-filter-btn {
+        display: none;
+    }
+}
+
+/* Adjust Sidebar Header */
+.filter-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-sidebar-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #1e3a8a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.close-filter-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #999;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.filter-sidebar-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
 }
