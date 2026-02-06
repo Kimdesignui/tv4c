@@ -731,11 +731,19 @@ img {
   flex: 1;
   border: 1px solid #e5e7eb;
   padding: 5px;
+  /* Square container */
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
 }
 
 .detail-main-img img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
+  /* Ensure full image is visible */
   display: block;
 }
 
@@ -3597,17 +3605,27 @@ body.reader-mode {
 }
 
 .btn-d-action {
-  padding: 12px 25px;
+  padding: 12px 10px;
+  /* Reduced side padding */
   border-radius: 6px;
   border: none;
   color: white;
-  font-weight: 600;
+  font-weight: 400;
+  /* Lighter weight */
   font-size: 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
+  /* Center content */
   gap: 10px;
   cursor: pointer;
   transition: all 0.2s;
+  flex: 1;
+  /* Equal width */
+  white-space: nowrap;
+  /* Prevent breaking inside button text if possible */
+  min-width: 180px;
+  /* Min width before wrapping */
 }
 
 .btn-d-action:hover {
