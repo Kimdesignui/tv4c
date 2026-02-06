@@ -1019,17 +1019,23 @@
 
             if (!list || !upBtn || !downBtn) return;
 
-            upBtn.addEventListener('click', () => {
+            upBtn.addEventListener('click', (e) => {
+                e.preventDefault();
                 list.scrollBy({ top: -100, behavior: 'smooth' });
             });
 
-            downBtn.addEventListener('click', () => {
+            downBtn.addEventListener('click', (e) => {
+                e.preventDefault();
                 list.scrollBy({ top: 100, behavior: 'smooth' });
             });
         }
 
         // Init Scroll on Load
-        document.addEventListener('DOMContentLoaded', initVerticalThumbScroll);
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initVerticalThumbScroll);
+        } else {
+            initVerticalThumbScroll();
+        }
 
         // Mobile Sidebar Logic (Existing)
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
