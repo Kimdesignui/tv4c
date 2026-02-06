@@ -4319,3 +4319,8 @@ body.reader-mode {
 .bg-white {
   background-color: var(--white);
 }
+
+/* Mobile Filter Button (Hidden on Desktop) */
+.btn-mobile-filter {
+  display: none;
+}
