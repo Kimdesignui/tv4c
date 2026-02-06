@@ -309,7 +309,6 @@
 @media (max-width: 768px) {
 
     /* Grids */
-    .grid-5,
     .grid-4,
     .news-cols-3,
     .main-layout,
@@ -317,6 +316,12 @@
     .detail-body-grid {
         grid-template-columns: 1fr !important;
         gap: 20px;
+    }
+
+    /* User Request: 480 -> 767px = 3 items */
+    .grid-5,
+    .book-grid-5 {
+        grid-template-columns: repeat(3, 1fr) !important;
     }
 
     /* Collections */
@@ -351,9 +356,16 @@
         display: none;
     }
 
-    .grid-5,
     .grid-4 {
         grid-template-columns: 1fr !important;
+    }
+
+    /* User Request: <=480px = 2 items */
+    .grid-5,
+    .book-grid-5 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px;
+        /* Smaller gap for mobile */
     }
 
     /* Featured Carousel Fix (Small Mobile) */
