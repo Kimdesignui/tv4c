@@ -4491,3 +4491,15 @@ body.reader-mode {
   align-items: start;
   margin-top: 40px;
 }
+
+/* Books Page Layout (Match Nav Category Width) */
+.main-layout-books {
+  grid-template-columns: 270px 1fr !important;
+  /* Force 270px sidebar */
+}
+
+@media (max-width: 991px) {
+  .main-layout-books {
+    grid-template-columns: 1fr !important;
+  }
+}
