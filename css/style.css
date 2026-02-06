@@ -3790,10 +3790,6 @@ body.reader-mode {
   transform: scale(1.05);
 }
 
-visibility: hidden;
-transition: all 0.3s ease;
-}
-
 #lightbox-modal.active {
   opacity: 1;
   visibility: visible;

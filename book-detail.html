@@ -927,10 +927,17 @@
         // Lightbox Functions
         function openLightbox(startIdx) {
             if (typeof startIdx !== 'undefined') currentIndex = startIdx;
+
             const lightbox = document.getElementById('lightbox-modal');
             const lightboxImg = document.getElementById('lightbox-img');
 
+            // Set Initial Image
             lightboxImg.src = bookImages[currentIndex];
+
+            // Render Thumbs if not exists
+            renderLightboxThumbs();
+            updateLightboxActiveThumb();
+
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent scrolling
         }
@@ -948,8 +955,47 @@
             // Update Lightbox Image
             document.getElementById('lightbox-img').src = bookImages[currentIndex];
 
+            // Update Active Thumb
+            updateLightboxActiveThumb();
+
             // Sync with Main Page
             updateMainImage(currentIndex);
+        }
+
+        // Render Lightbox Thumbs
+        function renderLightboxThumbs() {
+            const container = document.getElementById('lightbox-thumbs-list');
+            if (container.children.length > 0) return; // Already rendered
+
+            bookImages.forEach((src, index) => {
+                const thumb = document.createElement('div');
+                thumb.className = 'lb-thumb';
+                thumb.onclick = (e) => {
+                    e.stopPropagation();
+                    currentIndex = index;
+                    document.getElementById('lightbox-img').src = bookImages[currentIndex];
+                    updateLightboxActiveThumb();
+                    updateMainImage(currentIndex);
+                };
+
+                const img = document.createElement('img');
+                img.src = src;
+                thumb.appendChild(img);
+                container.appendChild(thumb);
+            });
+        }
+
+        // Update Active Thumb State & Scroll
+        function updateLightboxActiveThumb() {
+            const thumbs = document.querySelectorAll('.lb-thumb');
+            thumbs.forEach((t, i) => {
+                if (i === currentIndex) {
+                    t.classList.add('active');
+                    t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                } else {
+                    t.classList.remove('active');
+                }
+            });
         }
 
         // Close on Outside Click
@@ -964,6 +1010,26 @@
             if (e.key === 'ArrowLeft') changeLightboxImage(-1);
             if (e.key === 'ArrowRight') changeLightboxImage(1);
         });
+
+        // Vertical Thumb Scroll Logic
+        function initVerticalThumbScroll() {
+            const list = document.querySelector('.thumb-list-vertical');
+            const upBtn = document.querySelector('.thumb-nav-btn.up');
+            const downBtn = document.querySelector('.thumb-nav-btn.down');
+
+            if (!list || !upBtn || !downBtn) return;
+
+            upBtn.addEventListener('click', () => {
+                list.scrollBy({ top: -100, behavior: 'smooth' });
+            });
+
+            downBtn.addEventListener('click', () => {
+                list.scrollBy({ top: 100, behavior: 'smooth' });
+            });
+        }
+
+        // Init Scroll on Load
+        document.addEventListener('DOMContentLoaded', initVerticalThumbScroll);
 
         // Mobile Sidebar Logic (Existing)
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
