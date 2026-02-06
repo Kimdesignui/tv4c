@@ -97,7 +97,20 @@
         overflow-x: auto;
         white-space: nowrap;
         padding-bottom: 5px;
-        /* Scrollbar space */
+        display: flex;
+        gap: 10px;
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .content-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .content-tabs .tab-btn {
+        flex-shrink: 0;
     }
 
     /* Row 2: Sort + Filter */
