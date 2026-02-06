@@ -618,7 +618,16 @@
     border: none;
     font-size: 1.2rem;
     box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+    /* Fix visibility issue when closed */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
     cursor: pointer;
+}
+
+.mobile-sidebar.active .close-sidebar-btn {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .sidebar-content {
