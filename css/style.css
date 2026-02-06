@@ -4379,3 +4379,14 @@ body.reader-mode {
 .btn-mobile-filter {
   display: none;
 }
+
+/* Detail Page Body Grid - Increasing Gap */
+.detail-body-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  /* Content + Sidebar */
+  gap: 80px;
+  /* Increased breathing room as requested */
+  align-items: start;
+  margin-top: 40px;
+}
