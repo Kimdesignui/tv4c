@@ -1259,3 +1259,11 @@
         margin-top: 15px;
     }
 }
+
+/* Detail Page Responsive Adjustments */
+@media (max-width: 991px) {
+    .detail-body-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
