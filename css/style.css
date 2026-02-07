@@ -4787,16 +4787,7 @@ body.reader-mode {
   background-color: var(--bg-light);
 }
 
-/* Floating Actions */
-.floating-actions .action-btn {
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
 
-.floating-actions .action-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
 
 /* Responsive */
 @media (max-width: 768px) {

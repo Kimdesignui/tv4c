@@ -117,77 +117,51 @@
     <!-- MAIN CONTENT -->
     <main class="section bg-white py-8">
         <div class="container">
-
-            <div class="news-detail-layout flex flex-col md:flex-row gap-8 relative">
-                <!-- 1. Floating Actions (Sticky on Desktop) -->
-                <aside class="floating-actions hidden md:flex flex-col gap-4 sticky top-24 h-fit z-10"
-                    style="min-width: 48px;">
-                    <a href="#"
-                        class="action-btn w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-colors"
-                        title="Facebook">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-                    <a href="#"
-                        class="action-btn w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-black hover:text-white transition-colors"
-                        title="X (Twitter)">
-                        <i class="fa-brands fa-x-twitter"></i>
-                    </a>
-                    <a href="#"
-                        class="action-btn w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-blue-700 hover:text-white transition-colors"
-                        title="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                    <a href="#"
-                        class="action-btn w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-blue-500 hover:text-white transition-colors font-bold text-xs"
-                        title="Zalo">
-                        Zalo
-                    </a>
-                    <div class="h-px bg-gray-200 my-2"></div>
-                    <a href="#"
-                        class="action-btn w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors"
-                        title="Sao chép liên kết">
-                        <i class="fa-solid fa-link"></i>
-                    </a>
-                    <a href="#"
-                        class="action-btn w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors"
-                        title="Bình luận">
-                        <i class="fa-regular fa-comment"></i>
-                    </a>
-                    <a href="#"
-                        class="action-btn w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors"
-                        title="Lưu tin">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </a>
-                    <a href="#"
-                        class="action-btn w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors"
-                        title="In">
-                        <i class="fa-solid fa-print"></i>
-                    </a>
-                    <a href="javascript:history.back()"
-                        class="action-btn w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-gray-200 transition-colors mt-4"
-                        title="Quay lại">
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </a>
-                </aside>
-
-                <!-- 2. Main Content Wrapper -->
-                <div class="main-content-wrapper flex-1 grid md:grid-cols-[1fr_300px] gap-8">
-                    <!-- Main Article -->
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- LEFT COLUMN (Content - 75%) -->
+                <div class="body-left w-full lg:w-3/4">
                     <article class="news-detail-content">
                         <!-- Title -->
                         <h1 class="text-3xl md:text-4xl font-bold font-outfit text-text-dark mb-4 leading-tight">Nhà
                             Clinton đề nghị điều trần công khai về quan hệ với tỷ phú Epstein</h1>
 
-                        <!-- Author Meta -->
-                        <div class="author-meta flex items-center gap-3 mb-6 text-sm text-gray-500">
-                            <div class="author-avatar w-10 h-10 rounded-full overflow-hidden">
-                                <img src="assets/images/author-avatar.png" alt="Author"
-                                    class="w-full h-full object-cover">
+                        <!-- Author Meta & Actions -->
+                        <div
+                            class="meta-wrapper flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 border-b pb-4">
+                            <div class="author-meta flex items-center gap-3 text-sm text-gray-500">
+                                <div class="author-avatar w-10 h-10 rounded-full overflow-hidden">
+                                    <img src="assets/images/author-avatar.png" alt="Author"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <div class="meta-info">
+                                    <span class="font-bold text-text-dark">Minh Phương</span>
+                                    <span class="mx-1">•</span>
+                                    <span>Thứ bảy, 07/02/2026 - 16:22</span>
+                                </div>
                             </div>
-                            <div class="meta-info">
-                                <span class="font-bold text-text-dark">Minh Phương</span>
-                                <span class="mx-1">•</span>
-                                <span>Thứ bảy, 07/02/2026 - 16:22</span>
+
+                            <!-- Inline Actions -->
+                            <div class="inline-actions flex items-center gap-2">
+                                <a href="#"
+                                    class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors"
+                                    title="Lưu tin">
+                                    <i class="fa-regular fa-bookmark"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors"
+                                    title="Chia sẻ">
+                                    <i class="fa-solid fa-share-nodes"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors"
+                                    title="Bình luận">
+                                    <i class="fa-regular fa-comment"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors"
+                                    title="In bài viết">
+                                    <i class="fa-solid fa-print"></i>
+                                </a>
                             </div>
                         </div>
 
@@ -226,6 +200,8 @@
                             <div class="my-6">
                                 <img src="assets/images/news-content-1.png" alt="Bill and Hillary Clinton"
                                     class="w-full rounded-lg">
+                                <p class="text-center text-sm text-gray mt-2 italic">Vợ chồng cựu Tổng thống Bill
+                                    Clinton. Ảnh: Reuters</p>
                             </div>
 
                             <p class="mb-4">Theo nguồn tin thân cận, quyết định này được đưa ra sau nhiều tuần thảo luận
@@ -247,6 +223,8 @@
                                 ro nhưng có thể mang lại hiệu quả cao. Nếu họ vượt qua được cuộc điều trần này mà không
                                 có bê bối mới nào bị phanh phui, họ sẽ vô hiệu hóa được một trong những vũ khí tấn công
                                 mạnh nhất của đối thủ."</p>
+
+                            <p class="mb-4 text-right font-bold text-gray-600">Theo VnExpress</p>
                         </div>
 
                         <!-- Related Tags -->
@@ -262,121 +240,145 @@
                                 trị Mỹ</a>
                         </div>
                     </article>
-
-                    <!-- Sidebar (Standardized) -->
-                    <aside class="body-right flex flex-col gap-4">
-
-                        <!-- Widget 1: Latest News -->
-                        <div class="sidebar-widget bg-white rounded shadow-sm border p-0 overflow-hidden">
-                            <div class="widget-header p-3 border-b bg-gray-50 flex items-center gap-2">
-                                <i class="fa-solid fa-newspaper text-primary"></i>
-                                <h3 class="widget-title font-bold text-primary text-base m-0 text-[#46648D]">
-                                    Tin mới nhất</h3>
-                            </div>
-                            <div class="latest-news-list p-3 flex flex-col gap-3">
-                                <!-- Item 1 -->
-                                <article
-                                    class="latest-news-item flex gap-3 align-start border-b border-gray-100 pb-3 last:border-0 last:pb-0">
-                                    <div class="latest-news-thumb">
-                                        <img src="assets/images/news-demo.png" alt="Tin mới">
-                                    </div>
-                                    <div class="latest-news-content">
-                                        <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
-                                            <a href="#" class="hover:text-primary transition-colors">Thông báo tuyển
-                                                sinh
-                                                lớp bồi dưỡng nghiệp vụ thư viện năm 2026</a>
-                                        </h4>
-                                        <span class="news-category-tag">Tin hoạt động</span>
-                                    </div>
-                                </article>
-                                <!-- Item 2 -->
-                                <article
-                                    class="latest-news-item flex gap-3 align-start border-b border-gray-100 pb-3 last:border-0 last:pb-0">
-                                    <div class="latest-news-thumb">
-                                        <img src="assets/images/news-demo.png" alt="Tin mới">
-                                    </div>
-                                    <div class="latest-news-content">
-                                        <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
-                                            <a href="#" class="hover:text-primary transition-colors">Hội thảo khoa học
-                                                về
-                                                Văn hóa đọc trong kỷ nguyên số</a>
-                                        </h4>
-                                        <span class="news-category-tag">Sự kiện</span>
-                                    </div>
-                                </article>
-                                <!-- Item 3 -->
-                                <article
-                                    class="latest-news-item flex gap-3 align-start border-b border-gray-100 pb-3 last:border-0 last:pb-0">
-                                    <div class="latest-news-thumb">
-                                        <img src="assets/images/news-demo.png" alt="Tin mới">
-                                    </div>
-                                    <div class="latest-news-content">
-                                        <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
-                                            <a href="#" class="hover:text-primary transition-colors">Triển khai dự án số
-                                                hóa
-                                                tài liệu Hán Nôm</a>
-                                        </h4>
-                                        <span class="news-category-tag">Dự án</span>
-                                    </div>
-                                </article>
-                                <!-- Item 4 -->
-                                <article
-                                    class="latest-news-item flex gap-3 align-start border-b border-gray-100 pb-3 last:border-0 last:pb-0">
-                                    <div class="latest-news-thumb">
-                                        <img src="assets/images/news-demo.png" alt="Tin mới">
-                                    </div>
-                                    <div class="latest-news-content">
-                                        <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
-                                            <a href="#" class="hover:text-primary transition-colors">Ra mắt bộ sưu tập
-                                                sách
-                                                thiếu nhi mới</a>
-                                        </h4>
-                                        <span class="news-category-tag">Giới thiệu sách</span>
-                                    </div>
-                                </article>
-                                <!-- Item 5 -->
-                                <article class="latest-news-item flex gap-3 align-start">
-                                    <div class="latest-news-thumb">
-                                        <img src="assets/images/news-demo.png" alt="Tin mới">
-                                    </div>
-                                    <div class="latest-news-content">
-                                        <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
-                                            <a href="#" class="hover:text-primary transition-colors">Hoạt động ngoại
-                                                khóa:
-                                                Em yêu thư viện</a>
-                                        </h4>
-                                        <span class="news-category-tag">Hoạt động</span>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-
-                        <!-- Widget 2: Banner -->
-                        <div class="sidebar-banner rounded overflow-hidden shadow-sm mt-0">
-                            <img src="assets/images/sidebar-qc-banner.png"
-                                onerror="this.src='https://via.placeholder.com/300x200?text=Banner'"
-                                class="w-full h-auto">
-                        </div>
-
-                        <!-- Widget 3: Categories (Reusing standardized styles if available or kept clean) -->
-                        <div class="sidebar-widget bg-white rounded shadow-sm border p-0 overflow-hidden">
-                            <div class="widget-header p-3 border-b bg-gray-50 flex items-center gap-2">
-                                <h3 class="widget-title font-bold text-primary text-base m-0 text-[#46648D]">Danh mục
-                                </h3>
-                            </div>
-                            <ul class="text-sm text-gray-700 p-3">
-                                <li class="mb-2 pb-2 border-b border-dashed"><a href="#" class="hover:text-primary"><i
-                                            class="fa-solid fa-angle-right text-xs mr-2"></i> Tin hoạt động</a></li>
-                                <li class="mb-2 pb-2 border-b border-dashed"><a href="#" class="hover:text-primary"><i
-                                            class="fa-solid fa-angle-right text-xs mr-2"></i> Sự kiện sắp tới</a></li>
-                                <li class="mb-2 pb-2 border-b border-dashed"><a href="#" class="hover:text-primary"><i
-                                            class="fa-solid fa-angle-right text-xs mr-2"></i> Thông báo</a></li>
-                                <li class="mb-2 pb-2 border-b border-dashed"><a href="#" class="hover:text-primary"><i
-                                            class="fa-solid fa-angle-right text-xs mr-2"></i> Góc bạn đọc</a></li>
-                            </ul>
-                        </div>
-                    </aside>
                 </div>
+
+                <!-- RIGHT COLUMN (Sidebar - 25%) -->
+                <aside class="body-right w-full lg:w-1/4 flex flex-col gap-6">
+                    <!-- Widget 1: Latest News -->
+                    <div class="sidebar-widget bg-white rounded shadow-sm border p-0 overflow-hidden">
+                        <div class="widget-header p-3 border-b bg-gray-50 flex items-center gap-2">
+                            <i class="fa-solid fa-newspaper text-primary"></i>
+                            <h3 class="widget-title font-bold text-primary text-base m-0 text-[#46648D]">
+                                Tin mới nhất</h3>
+                        </div>
+                        <div class="latest-news-list p-3 flex flex-col gap-3">
+                            <!-- Item 1 -->
+                            <article
+                                class="latest-news-item flex gap-3 align-start border-b border-gray-100 pb-3 last:border-0 last:pb-0">
+                                <div class="latest-news-thumb w-20 h-14 flex-shrink-0">
+                                    <img src="assets/images/news-demo.png" alt="Tin mới"
+                                        class="w-full h-full object-cover rounded">
+                                </div>
+                                <div class="latest-news-content">
+                                    <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
+                                        <a href="#" class="hover:text-primary transition-colors">Thông báo tuyển sinh
+                                            lớp bồi dưỡng nghiệp vụ thư viện năm 2026</a>
+                                    </h4>
+                                </div>
+                            </article>
+                            <!-- Item 2 -->
+                            <article
+                                class="latest-news-item flex gap-3 align-start border-b border-gray-100 pb-3 last:border-0 last:pb-0">
+                                <div class="latest-news-thumb w-20 h-14 flex-shrink-0">
+                                    <img src="assets/images/news-demo.png" alt="Tin mới"
+                                        class="w-full h-full object-cover rounded">
+                                </div>
+                                <div class="latest-news-content">
+                                    <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
+                                        <a href="#" class="hover:text-primary transition-colors">Hội thảo khoa học về
+                                            Văn hóa đọc trong kỷ nguyên số</a>
+                                    </h4>
+                                </div>
+                            </article>
+                            <!-- Item 3 -->
+                            <article
+                                class="latest-news-item flex gap-3 align-start border-b border-gray-100 pb-3 last:border-0 last:pb-0">
+                                <div class="latest-news-thumb w-20 h-14 flex-shrink-0">
+                                    <img src="assets/images/news-demo.png" alt="Tin mới"
+                                        class="w-full h-full object-cover rounded">
+                                </div>
+                                <div class="latest-news-content">
+                                    <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
+                                        <a href="#" class="hover:text-primary transition-colors">Triển khai dự án số hóa
+                                            tài liệu Hán Nôm</a>
+                                    </h4>
+                                </div>
+                            </article>
+                            <!-- Item 4 -->
+                            <article
+                                class="latest-news-item flex gap-3 align-start border-b border-gray-100 pb-3 last:border-0 last:pb-0">
+                                <div class="latest-news-thumb w-20 h-14 flex-shrink-0">
+                                    <img src="assets/images/news-demo.png" alt="Tin mới"
+                                        class="w-full h-full object-cover rounded">
+                                </div>
+                                <div class="latest-news-content">
+                                    <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
+                                        <a href="#" class="hover:text-primary transition-colors">Ra mắt bộ sưu tập sách
+                                            thiếu nhi mới</a>
+                                    </h4>
+                                </div>
+                            </article>
+                            <!-- Item 5 -->
+                            <article
+                                class="latest-news-item flex gap-3 align-start border-b border-gray-100 pb-3 last:border-0 last:pb-0">
+                                <div class="latest-news-thumb w-20 h-14 flex-shrink-0">
+                                    <img src="assets/images/news-demo.png" alt="Tin mới"
+                                        class="w-full h-full object-cover rounded">
+                                </div>
+                                <div class="latest-news-content">
+                                    <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
+                                        <a href="#" class="hover:text-primary transition-colors">Hoạt động ngoại khóa:
+                                            Em yêu thư viện</a>
+                                    </h4>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Widget 2: Banner -->
+                    <div class="sidebar-banner rounded overflow-hidden shadow-sm mt-0">
+                        <img src="assets/images/sidebar-qc-banner.png"
+                            onerror="this.src='https://via.placeholder.com/300x400?text=Banner'" class="w-full h-auto">
+                    </div>
+
+                    <!-- Widget 3: Linked Library -->
+                    <div class="sidebar-widget library-link-widget bg-white border rounded shadow-sm p-4">
+                        <h3 class="widget-title mb-3 font-bold" style="font-size: 1rem; color: #46648D;">Thư viện liên
+                            kết</h3>
+                        <div class="library-select-wrapper">
+                            <select
+                                class="library-select w-full p-2 border rounded text-sm text-gray-700 focus:outline-none focus:border-primary">
+                                <option value="">-- Chọn thư viện --</option>
+                                <option value="tv1">Thư viện Quốc gia</option>
+                                <option value="tv2">Thư viện Hà Nội</option>
+                                <option value="tv3">Thư viện Quân đội</option>
+                                <option value="tv4">Thư viện KHTH TP.HCM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Widget 4: Library Statistics -->
+                    <div class="sidebar-widget statistics-widget bg-white border rounded shadow-sm p-4">
+                        <h3 class="widget-title mb-3 font-bold" style="color: #46648D; font-size: 1rem;">Thống kê thư
+                            viện</h3>
+                        <div class="stats-content text-sm">
+                            <div class="stat-group mb-4 border-b pb-2 last:border-0 last:mb-0 last:pb-0">
+                                <div class="stat-row flex justify-between py-1">
+                                    <span class="label text-gray-600">Lượt truy cập</span>
+                                    <span class="value font-bold text-text-dark">28.872</span>
+                                </div>
+                                <div class="stat-row flex justify-between py-1">
+                                    <span class="label text-gray-600">Đang online</span>
+                                    <span class="value font-bold text-text-dark">23</span>
+                                </div>
+                            </div>
+                            <div class="stat-group">
+                                <div class="stat-row flex justify-between py-1">
+                                    <span class="label text-gray-600">Lượt đọc</span>
+                                    <span class="value font-bold text-text-dark">13.134</span>
+                                </div>
+                                <div class="stat-row flex justify-between py-1">
+                                    <span class="label text-gray-600">Lượt nghe</span>
+                                    <span class="value font-bold text-text-dark">3.872</span>
+                                </div>
+                                <div class="stat-row flex justify-between py-1">
+                                    <span class="label text-gray-600">Lượt tải về</span>
+                                    <span class="value font-bold text-text-dark">28.872</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
             </div>
         </div>
     </main>
