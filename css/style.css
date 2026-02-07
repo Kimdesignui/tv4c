@@ -5156,19 +5156,7 @@ body.reader-mode {
   border-radius: var(--radius-md);
 }
 
-/* User Request Fix: News Detail Button Color */
-.btn-news-detail {
-  color: #DC2626;
-  /* Red color */
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 0.9rem;
-  display: inline-block;
-  /* Ensure it respects margins/padding if needed */
-  margin-left: 10px;
-  /* Spacing from date */
-}
-
-.btn-news-detail:hover {
-  text-decoration: underline;
+/* Utility: Text Red (Requested for consistency) */
+.text-red {
+  color: var(--red) !important;
 }
