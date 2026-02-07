@@ -459,6 +459,10 @@
     .section {
         padding: 2rem 0;
     }
+
+    .news-section {
+        margin-top: 0;
+    }
 }
 
 /* Mobile (max-width: 480px) */
@@ -1370,5 +1374,12 @@
     .detail-body-grid {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+}
+
+/* User Request: <1000px Remove padding left from news-list-col */
+@media (max-width: 1000px) {
+    .news-list-col {
+        padding-left: 0;
     }
 }
