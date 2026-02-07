@@ -1026,6 +1026,15 @@ function initBookReviewCarousel() {
 }
 
 // Initialize on DOM Ready
+// Initialize on DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
     initBookCarousels();
+    initFeaturedNewsCarousel();
+    initMobileMenu();
+    initBookReviewCarousel();
+    initLazyLoading();
+    initPagination();
+    initGallery();
+    initFilters();
+    initCommentForm();
 });
