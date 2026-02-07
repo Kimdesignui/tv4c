@@ -3521,6 +3521,27 @@ body.reader-mode {
   }
 }
 
+@media (max-width: 576px) {
+  .all-book-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* User Request: Left Body Book Module Responsive (993px - 1200px) */
+/* Show 4 items instead of 5 */
+@media (min-width: 993px) and (max-width: 1200px) {
+
+  .body-left .grid-5,
+  .body-left .book-grid-5 {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  .body-left .grid-5>*:nth-child(5),
+  .body-left .book-grid-5>*:nth-child(5) {
+    display: none !important;
+  }
+}
+
 @media (max-width: 768px) {
   .grid-5 {
     grid-template-columns: repeat(2, 1fr);
