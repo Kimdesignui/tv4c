@@ -1416,8 +1416,8 @@ img {
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: var(--space-6);
-  align-items: start;
-  /* User Request: Align Menu & Banner top, let them grow independently */
+  align-items: stretch;
+  /* User Request: Equal height for Sidebar and Slider */
 }
 
 /* Sidebar Categories */
@@ -1432,10 +1432,9 @@ img {
   border-radius: var(--radius-sm);
   display: flex;
   flex-direction: column;
-  min-height: 100%;
-  /* Force it to at least fill the parent */
-  height: auto;
-  /* Allow growth */
+  height: 100%;
+  /* Match grid cell height */
+
 }
 
 .cat-list ul {
@@ -1454,7 +1453,7 @@ img {
 
 .cat-list a {
   display: block;
-  padding: 12px 20px;
+  padding: 9px 20px;
   font-size: 0.95rem;
   transition: 0.1s;
 }
@@ -1468,7 +1467,7 @@ img {
 
 .cat-view-all {
   display: block;
-  padding: 12px 20px;
+  padding: 9px 20px;
   font-size: 0.95rem;
   color: var(--primary-blue-dark);
   font-weight: 600;
@@ -1488,10 +1487,10 @@ img {
 
 /* Slider */
 .hero-slider {
-  min-height: 400px;
-  /* Ensure minimum height */
-  height: auto;
-  /* Allow height to be determined by content or min-height */
+  /* min-height: 400px; - Removed to adhere to aspect ratio */
+  width: 100%;
+  aspect-ratio: 940 / 400;
+  /* Standardize ratio based on design (approx 2.35:1) */
   border-radius: var(--radius-md);
   position: relative;
   overflow: hidden;
