@@ -1416,8 +1416,8 @@ img {
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: var(--space-6);
-  align-items: stretch;
-  /* User Request: Align Menu & Banner bottom */
+  align-items: start;
+  /* User Request: Align Menu & Banner top, let them grow independently */
 }
 
 /* Sidebar Categories */
@@ -1490,12 +1490,14 @@ img {
 .hero-slider {
   min-height: 400px;
   /* Ensure minimum height */
-  height: 100%;
-  /* Stretch to match sidebar if sidebar is taller */
+  height: auto;
+  /* Allow height to be determined by content or min-height */
   border-radius: var(--radius-md);
   position: relative;
   overflow: hidden;
   background: #f3f4f6;
+  min-width: 0;
+  /* Fix grid blowout */
 }
 
 .slide {
