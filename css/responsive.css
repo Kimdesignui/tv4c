@@ -70,7 +70,12 @@
     .hero-slider,
     .hero-slider .slide,
     .hero-slider .slider-img {
-        height: 300px;
+        height: auto !important;
+        /* Allow scaling */
+        min-height: unset;
+        aspect-ratio: 16/9;
+        /* Mobile/Tablet ratio */
+        width: 100%;
         position: relative;
     }
 
@@ -462,10 +467,7 @@
         display: none;
     }
 
-    .hero-slider {
-        height: 200px;
-        min-height: 200px;
-    }
+
 
     .search-select {
         display: none;
