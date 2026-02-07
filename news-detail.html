@@ -130,25 +130,32 @@
                             <span class="news-date">Thứ Ba, 13/3/2024 14:48</span>
 
                             <div class="news-actions">
-                                <a href="#" class="action-btn-circle" title="Facebook">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=window.location.href"
+                                    target="_blank" class="action-btn-circle" title="Facebook"
+                                    onclick="this.href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href);return true;">
                                     <i class="fa-brands fa-facebook-f font-bold"></i>
                                 </a>
-                                <a href="#" class="action-btn-circle center-img-icon" title="X (Twitter)">
+                                <a href="https://twitter.com/intent/tweet?text=Check%20this%20out&url=window.location.href"
+                                    target="_blank" class="action-btn-circle center-img-icon" title="X (Twitter)"
+                                    onclick="this.href='https://twitter.com/intent/tweet?text='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(window.location.href);return true;">
                                     <img src="assets/images/x-logo-2023.svg" alt="X" style="width: 14px; height: 14px;">
                                 </a>
-                                <a href="#" class="action-btn-circle" title="Lưu tin">
+                                <a href="#" class="action-btn-circle" title="Lưu tin"
+                                    onclick="alert('Đã lưu tin vào bộ sưu tập!'); return false;">
                                     <i class="fa-solid fa-floppy-disk"></i>
                                 </a>
-                                <a href="#" class="action-btn-circle font-bold text-xs" title="Zalo">
+                                <a href="#" class="action-btn-circle font-bold text-xs" title="Zalo"
+                                    onclick="alert('Chức năng chia sẻ Zalo đang phát triển'); return false;">
                                     Zalo
                                 </a>
-                                <a href="#" class="action-btn-circle" title="Sao chép liên kết">
+                                <a href="#" class="action-btn-circle" title="Sao chép liên kết"
+                                    onclick="navigator.clipboard.writeText(window.location.href); alert('Đã sao chép liên kết!'); return false;">
                                     <i class="fa-solid fa-link"></i>
                                 </a>
                                 <div class="w-px h-6 bg-gray-300 mx-1 self-center"></div>
-                                <a href="#" class="action-btn-circle" title="In bài viết">
+                                <button class="action-btn-circle" title="In bài viết" onclick="window.print()">
                                     <i class="fa-solid fa-print"></i>
-                                </a>
+                                </button>
                             </div>
                         </div>
 
@@ -433,6 +440,65 @@
     </footer>
 
     <script src="js/main.js"></script>
+
+    <!-- Audio Player Logic -->
+    <audio id="news-audio"
+        src="https://dn721809.ca.archive.org/0/items/fairy_tales_2311_librivox/fairytales_01_andersen_128kb.mp3"></audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const audio = document.getElementById('news-audio');
+            const playBtn = document.querySelector('.play-button');
+            const playIcon = playBtn.querySelector('i');
+            const timeDisplay = document.querySelector('.audio-time');
+            const progressBar = document.querySelector('.audio-progress-bar');
+            const progressContainer = document.querySelector('.audio-progress');
+
+            // Toggle Play/Pause
+            if (playBtn && audio) {
+                playBtn.addEventListener('click', function () {
+                    if (audio.paused) {
+                        audio.play();
+                        playIcon.classList.remove('fa-play');
+                        playIcon.classList.add('fa-pause');
+                    } else {
+                        audio.pause();
+                        playIcon.classList.remove('fa-pause');
+                        playIcon.classList.add('fa-play');
+                    }
+                });
+
+                // Update Time and Progress
+                audio.addEventListener('timeupdate', function () {
+                    const percent = (audio.currentTime / audio.duration) * 100;
+                    if (progressBar) progressBar.style.width = percent + '%';
+
+                    const currentMinutes = Math.floor(audio.currentTime / 60);
+                    const currentSeconds = Math.floor(audio.currentTime % 60);
+                    const durationMinutes = Math.floor(audio.duration / 60) || 0;
+                    const durationSeconds = Math.floor(audio.duration % 60) || 0;
+
+                    if (timeDisplay) timeDisplay.textContent = `${currentMinutes.toString().padStart(2, '0')}:${currentSeconds.toString().padStart(2, '0')}/${durationMinutes.toString().padStart(2, '0')}:${durationSeconds.toString().padStart(2, '0')}`;
+                });
+
+                // Seek
+                if (progressContainer) {
+                    progressContainer.addEventListener('click', function (e) {
+                        const width = this.clientWidth;
+                        const clickX = e.offsetX;
+                        const duration = audio.duration;
+                        audio.currentTime = (clickX / width) * duration;
+                    });
+                }
+
+                // Initial Duration Load
+                audio.addEventListener('loadedmetadata', function () {
+                    const durationMinutes = Math.floor(audio.duration / 60);
+                    const durationSeconds = Math.floor(audio.duration % 60);
+                    if (timeDisplay) timeDisplay.textContent = `00:00/${durationMinutes.toString().padStart(2, '0')}:${durationSeconds.toString().padStart(2, '0')}`;
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
