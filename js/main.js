@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize all components
     initSlider();
     initNewsSlider(); // Added News Slider
+    initBookReviewCarousel(); // Added Book Review Carousel
     initBookCarousels(); // Standardized Book Carousels
     // initMobileMenu(); // Called below explicitly if not defined here
     if (typeof initMobileMenu === 'function') initMobileMenu();
@@ -918,4 +919,42 @@ function initMobileMenu() {
         overlay.querySelector('.mobile-menu-backdrop').addEventListener('click', toggleMobileMenu);
         overlay.querySelector('.close-menu-btn').addEventListener('click', toggleMobileMenu);
     }
+}
+
+/**
+ * Book Review Carousel (Điểm sách)
+ */
+function initBookReviewCarousel() {
+    const prevBtn = document.querySelector('.book-review-prev');
+    const nextBtn = document.querySelector('.book-review-next');
+    const slides = document.querySelectorAll('.book-review-card');
+
+    if (!prevBtn || !nextBtn || slides.length === 0) return;
+
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        // Wrap around
+        if (index >= slides.length) index = 0;
+        if (index < 0) index = slides.length - 1;
+
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.classList.add('active');
+                slide.style.display = 'flex'; // Restore flex display
+            } else {
+                slide.classList.remove('active');
+                slide.style.display = 'none';
+            }
+        });
+        currentIndex = index;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        showSlide(currentIndex + 1);
+    });
+
+    prevBtn.addEventListener('click', () => {
+        showSlide(currentIndex - 1);
+    });
 }
