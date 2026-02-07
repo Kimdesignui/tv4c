@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết tin tức - TV4C</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+
+<body>
+    <!-- 1. Top Header -->
+    <header class="top-header">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="TV4C Logo">
+            </a>
+            <div class="header-right flex items-center gap-6">
+                <div class="hotline flex items-center gap-2 text-red" style="font-weight: 400;">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <div>
+                        <span class="block text-xs text-red">Hỗ trợ độc giả:</span>
+                        <span class="text-lg">024.37627819</span>
+                    </div>
+                </div>
+                <!-- User Actions -->
+                <div class="user-actions flex gap-3">
+                    <a href="profile.html?tab=saved" class="icon-btn" title="Tủ sách đã lưu"><i
+                            class="fa-regular fa-bookmark"></i></a>
+                    <a href="cart.html" class="icon-btn" title="Giỏ mượn sách"><i
+                            class="fa-solid fa-cart-shopping"></i></a>
+                    <!-- Mobile Menu Toggle -->
+                    <button class="icon-btn mobile-menu-btn hidden md:hidden">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="user-dropdown-container">
+                        <a href="login.html" class="icon-btn user-btn"><i class="fa-regular fa-user"></i></a>
+                        <div class="user-menu-dropdown">
+                            <a href="profile.html"><i class="fa-solid fa-circle-info"></i> Thông tin tài khoản</a>
+                            <a href="profile.html?tab=password"><i class="fa-solid fa-key"></i> Thay đổi mật khẩu</a>
+                            <a href="profile.html?tab=reading"><i class="fa-solid fa-book-open"></i> Sách đang đọc</a>
+                            <a href="profile.html?tab=favorites"><i class="fa-solid fa-heart"></i> Tủ sách yêu thích</a>
+                            <div class="divider"></div>
+                            <a href="login.html" class="text-red"><i class="fa-solid fa-right-from-bracket"></i> Đăng
+                                xuất</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Navbar -->
+    <nav class="main-navbar">
+        <div class="container flex items-center justify-between h-full">
+            <div class="nav-left">
+                <button class="cat-trigger-btn">
+                    <i class="fa-solid fa-bars"></i>
+                    <span>DANH MỤC THƯ VIỆN</span>
+                </button>
+                <!-- Dropdown Menu for Inner Pages -->
+                <div class="cat-dropdown">
+                    <ul class="cat-list">
+                        <li><a href="books.html?cat=vh">Văn học Việt Nam</a></li>
+                        <li><a href="books.html?cat=nn">Văn học Nước ngoài</a></li>
+                        <li><a href="books.html?cat=kt">Kinh tế & Quản trị</a></li>
+                        <li><a href="books.html?cat=kn">Tâm lý & Kỹ năng</a></li>
+                        <li><a href="books.html?cat=tn">Thiếu nhi</a></li>
+                        <li><a href="books.html?cat=ls">Lịch sử & Chính trị</a></li>
+                        <li><a href="books.html?cat=vhnt">Văn hóa & Nghệ thuật</a></li>
+                        <li><a href="books.html?cat=kh">Khoa học & Kỹ thuật</a></li>
+                        <li><a href="books.html?cat=gk">Sách Giáo khoa</a></li>
+                    </ul>
+                    <a href="books.html" class="cat-view-all">
+                        <i class="fa-solid fa-bars"></i> Xem tất cả
+                    </a>
+                </div>
+            </div>
+            <div class="nav-center flex-1 mx-8">
+                <div class="search-box" style="width: 70%; margin: 0 auto;">
+                    <select class="search-select">
+                        <option>Sách bản quyền</option>
+                        <option>Tài liệu thư viện</option>
+                    </select>
+                    <input type="text" placeholder="Nhập từ khoá để tìm kiếm..." class="search-input">
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-links flex gap-6">
+                    <li><a href="#">Thông tin chung <i class="fa-solid fa-caret-down"></i></a></li>
+                    <li><a href="news.html">Tin tức</a></li>
+                    <li><a href="#">Hướng dẫn <i class="fa-solid fa-caret-down"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Section -->
+    <nav class="breadcrumb-section bg-white">
+        <div class="container">
+            <div class="text-sm">
+                <a href="index.html" class="text-gray-500 hover:text-primary">Trang chủ</a>
+                <span class="mx-2 text-gray-300">/</span>
+                <a href="news.html" class="text-gray-500 hover:text-primary">Tin tức</a>
+                <span class="mx-2 text-gray-300">/</span>
+                <span class="text-primary font-medium">Chi tiết tin</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="section bg-white">
+        <div class="container">
+            <div class="main-layout grid gap-8">
+                <!-- LEFT COLUMN (Main Content - 75% -> Modified for Video Page) -->
+                <div class="body-left video-page-content">
+                    <div class="video-grid grid grid-cols-1 lg:grid-cols-12 gap-8">
+                        <!-- Video Player (Col 8/12 - approx 66%) -->
+                        <div class="col-span-1 lg:col-span-8">
+                            <div
+                                class="video-player-container bg-black rounded-lg overflow-hidden shadow-md aspect-video relative flex items-center justify-center">
+                                <!-- Video Element -->
+                                <video controls class="w-full h-full object-cover">
+                                    <!-- Using a placeholder video or just controls -->
+                                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+
+                        <!-- Video Info (Col 4/12 - approx 33%) -->
+                        <div class="col-span-1 lg:col-span-4 flex flex-col gap-3">
+                            <a href="#" class="text-blue-500 font-medium text-sm hover:underline">Danh mục tin</a>
+
+                            <h1 class="text-2xl font-bold text-[#46648D] leading-tight">
+                                Chuyển đổi số quốc gia là gì? Vai trò của người lao động trong việc chuyển đổi số quốc
+                                gia?
+                            </h1>
+
+                            <div class="text-gray-400 text-xs">Chủ nhật, 15/9/2024, 20:14</div>
+
+                            <div class="video-desc text-justify text-gray-600 leading-relaxed text-sm">
+                                <p>Chuyển đổi số quốc gia là một khái niệm chỉ quá trình thay đổi tổng thể và toàn diện
+                                    của một quốc gia về cách sống, cách làm việc và phương thức sản xuất dựa trên các
+                                    công nghệ số.</p>
+                                <p class="mt-2">Chuyển đổi số quốc gia bao gồm ba lĩnh vực chính là chính phủ số, kinh
+                                    tế số và xã hội số.</p>
+                            </div>
+
+                            <div class="text-right font-bold text-[#46648D] mt-4">
+                                Tác giả
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN (Sidebar - 25%) -->
+                <aside class="body-right flex flex-col gap-6">
+                    <!-- Widget 1: Latest News -->
+                    <div class="sidebar-widget bg-white rounded shadow-sm border p-0 overflow-hidden">
+                        <div class="widget-header p-3 border-b bg-gray-50 flex items-center gap-2">
+                            <i class="fa-solid fa-newspaper text-primary"></i>
+                            <h3 class="widget-title font-bold text-primary text-base m-0 text-[#46648D]">
+                                Tin mới nhất</h3>
+                        </div>
+                        <div class="latest-news-list p-3">
+                            <!-- Item 1 -->
+                            <article
+                                class="latest-news-item flex gap-3 align-start border-b border-gray-100 py-3 last:border-0">
+                                <div class="latest-news-thumb w-20 h-14 flex-shrink-0">
+                                    <img src="assets/images/news-demo.png" alt="Tin mới"
+                                        class="w-full h-full object-cover rounded">
+                                </div>
+                                <div class="latest-news-content">
+                                    <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
+                                        <a href="#" class="hover:text-primary transition-colors">Thông báo tuyển sinh
+                                            lớp bồi dưỡng nghiệp vụ thư viện năm 2026</a>
+                                    </h4>
+                                </div>
+                            </article>
+                            <!-- Item 2 -->
+                            <article
+                                class="latest-news-item flex gap-3 align-start border-b border-gray-100 py-3 last:border-0">
+                                <div class="latest-news-thumb w-20 h-14 flex-shrink-0">
+                                    <img src="assets/images/news-demo.png" alt="Tin mới"
+                                        class="w-full h-full object-cover rounded">
+                                </div>
+                                <div class="latest-news-content">
+                                    <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
+                                        <a href="#" class="hover:text-primary transition-colors">Hội thảo khoa học về
+                                            Văn hóa đọc trong kỷ nguyên số</a>
+                                    </h4>
+                                </div>
+                            </article>
+                            <!-- Item 3 -->
+                            <article
+                                class="latest-news-item flex gap-3 align-start border-b border-gray-100 py-3 last:border-0">
+                                <div class="latest-news-thumb w-20 h-14 flex-shrink-0">
+                                    <img src="assets/images/news-demo.png" alt="Tin mới"
+                                        class="w-full h-full object-cover rounded">
+                                </div>
+                                <div class="latest-news-content">
+                                    <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
+                                        <a href="#" class="hover:text-primary transition-colors">Triển khai dự án số hóa
+                                            tài liệu Hán Nôm</a>
+                                    </h4>
+                                </div>
+                            </article>
+                            <!-- Item 4 -->
+                            <article
+                                class="latest-news-item flex gap-3 align-start border-b border-gray-100 py-3 last:border-0">
+                                <div class="latest-news-thumb w-20 h-14 flex-shrink-0">
+                                    <img src="assets/images/news-demo.png" alt="Tin mới"
+                                        class="w-full h-full object-cover rounded">
+                                </div>
+                                <div class="latest-news-content">
+                                    <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
+                                        <a href="#" class="hover:text-primary transition-colors">Ra mắt bộ sưu tập sách
+                                            thiếu nhi mới</a>
+                                    </h4>
+                                </div>
+                            </article>
+                            <!-- Item 5 -->
+                            <article
+                                class="latest-news-item flex gap-3 align-start border-b border-gray-100 py-3 last:border-0">
+                                <div class="latest-news-thumb w-20 h-14 flex-shrink-0">
+                                    <img src="assets/images/news-demo.png" alt="Tin mới"
+                                        class="w-full h-full object-cover rounded">
+                                </div>
+                                <div class="latest-news-content">
+                                    <h4 class="text-sm font-bold text-[#46648D] text-clamp-3 leading-snug">
+                                        <a href="#" class="hover:text-primary transition-colors">Hoạt động ngoại khóa:
+                                            Em yêu thư viện</a>
+                                    </h4>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Widget 2: Banner -->
+                    <div class="sidebar-banner rounded overflow-hidden shadow-sm mt-0">
+                        <img src="assets/images/sidebar-qc-banner.png"
+                            onerror="this.src='https://via.placeholder.com/300x400?text=Banner'" class="w-full h-auto">
+                    </div>
+
+                    <!-- Widget 3: Linked Library -->
+                    <div class="sidebar-widget library-link-widget bg-white border rounded shadow-sm p-4">
+                        <h3 class="widget-title mb-3 font-bold" style="font-size: 1rem; color: #46648D;">Thư viện liên
+                            kết</h3>
+                        <div class="library-select-wrapper">
+                            <select
+                                class="library-select w-full p-2 border rounded text-sm text-gray-700 focus:outline-none focus:border-primary">
+                                <option value="">-- Chọn thư viện --</option>
+                                <option value="tv1">Thư viện Quốc gia</option>
+                                <option value="tv2">Thư viện Hà Nội</option>
+                                <option value="tv3">Thư viện Quân đội</option>
+                                <option value="tv4">Thư viện KHTH TP.HCM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Widget 4: Library Statistics -->
+                    <div class="sidebar-widget statistics-widget bg-white border rounded shadow-sm p-4">
+                        <h3 class="widget-title mb-3 font-bold" style="color: #46648D; font-size: 1rem;">Thống kê thư
+                            viện</h3>
+                        <div class="stats-content text-sm">
+                            <div class="stat-group mb-4 border-b pb-2 last:border-0 last:mb-0 last:pb-0">
+                                <div class="stat-row flex justify-between py-1">
+                                    <span class="label text-gray-600">Lượt truy cập</span>
+                                    <span class="value font-bold text-text-dark">28.872</span>
+                                </div>
+                                <div class="stat-row flex justify-between py-1">
+                                    <span class="label text-gray-600">Đang online</span>
+                                    <span class="value font-bold text-text-dark">23</span>
+                                </div>
+                            </div>
+                            <div class="stat-group">
+                                <div class="stat-row flex justify-between py-1">
+                                    <span class="label text-gray-600">Lượt đọc</span>
+                                    <span class="value font-bold text-text-dark">13.134</span>
+                                </div>
+                                <div class="stat-row flex justify-between py-1">
+                                    <span class="label text-gray-600">Lượt nghe</span>
+                                    <span class="value font-bold text-text-dark">3.872</span>
+                                </div>
+                                <div class="stat-row flex justify-between py-1">
+                                    <span class="label text-gray-600">Lượt tải về</span>
+                                    <span class="value font-bold text-text-dark">28.872</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Unified Footer -->
+    <footer class="main-footer">
+        <div class="footer-content container">
+            <h3 class="footer-title">THƯ VIỆN ĐIỆN TỬ CỘNG ĐỒNG</h3>
+            <p class="footer-text">Cơ quan chủ quản: Công ty Cổ phần Công nghệ VHMT Việt Nam</p>
+            <p class="footer-text">Địa chỉ: 28D2, Khu giãn dân Yên Phúc, Phúc La, Hà Đông, Hà Nội</p>
+            <p class="footer-text">Điện thoại: 069.232.0381 | Email: info@tc4v.vn</p>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-socials">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-messenger"></i></a>
+                <a href="#" class="font-bold text-sm">Zalo</a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>Copyright © 2024 - Thư viện điện tử Cộng đồng. All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+    <!-- Audio Player Logic -->
+    <audio id="news-audio"
+        src="https://dn721809.ca.archive.org/0/items/fairy_tales_2311_librivox/fairytales_01_andersen_128kb.mp3"></audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const audio = document.getElementById('news-audio');
+            const playBtn = document.querySelector('.play-button');
+            const playIcon = playBtn.querySelector('i');
+            const timeDisplay = document.querySelector('.audio-time');
+            const progressBar = document.querySelector('.audio-progress-bar');
+            const progressContainer = document.querySelector('.audio-progress');
+
+            // Toggle Play/Pause
+            if (playBtn && audio) {
+                playBtn.addEventListener('click', function () {
+                    if (audio.paused) {
+                        audio.play();
+                        playIcon.classList.remove('fa-play');
+                        playIcon.classList.add('fa-pause');
+                    } else {
+                        audio.pause();
+                        playIcon.classList.remove('fa-pause');
+                        playIcon.classList.add('fa-play');
+                    }
+                });
+
+                // Update Time and Progress
+                audio.addEventListener('timeupdate', function () {
+                    const percent = (audio.currentTime / audio.duration) * 100;
+                    if (progressBar) progressBar.style.width = percent + '%';
+
+                    const currentMinutes = Math.floor(audio.currentTime / 60);
+                    const currentSeconds = Math.floor(audio.currentTime % 60);
+                    const durationMinutes = Math.floor(audio.duration / 60) || 0;
+                    const durationSeconds = Math.floor(audio.duration % 60) || 0;
+
+                    if (timeDisplay) timeDisplay.textContent = `${currentMinutes.toString().padStart(2, '0')}:${currentSeconds.toString().padStart(2, '0')}/${durationMinutes.toString().padStart(2, '0')}:${durationSeconds.toString().padStart(2, '0')}`;
+                });
+
+                // Seek
+                if (progressContainer) {
+                    progressContainer.addEventListener('click', function (e) {
+                        const width = this.clientWidth;
+                        const clickX = e.offsetX;
+                        const duration = audio.duration;
+                        audio.currentTime = (clickX / width) * duration;
+                    });
+                }
+
+                // Initial Duration Load
+                audio.addEventListener('loadedmetadata', function () {
+                    const durationMinutes = Math.floor(audio.duration / 60);
+                    const durationSeconds = Math.floor(audio.duration % 60);
+                    if (timeDisplay) timeDisplay.textContent = `00:00/${durationMinutes.toString().padStart(2, '0')}:${durationSeconds.toString().padStart(2, '0')}`;
+                });
+
+
+                // Voice Selector Logic
+                const voiceBtn = document.getElementById('voiceSelectBtn');
+                const voiceDropdown = document.querySelector('.voice-dropdown');
+                const voiceOptions = document.querySelectorAll('.voice-option');
+                const currentVoiceSpan = document.querySelector('.current-voice');
+                const chevronIcon = voiceBtn ? voiceBtn.querySelector('.fa-chevron-down') : null;
+
+                if (voiceBtn && voiceDropdown) {
+                    // Toggle Dropdown
+                    voiceBtn.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        voiceDropdown.classList.toggle('show');
+                        if (chevronIcon) chevronIcon.style.transform = voiceDropdown.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
+                    });
+
+                    // Handle Selection
+                    voiceOptions.forEach(option => {
+                        option.addEventListener('click', function (e) {
+                            e.stopPropagation();
+                            // Update UI
+                            const selectedVoice = this.getAttribute('data-voice');
+                            if (currentVoiceSpan) currentVoiceSpan.textContent = selectedVoice;
+
+                            // Update Active State
+                            voiceOptions.forEach(opt => opt.classList.remove('active'));
+                            this.classList.add('active');
+
+                            // Close Dropdown
+                            voiceDropdown.classList.remove('show');
+                            if (chevronIcon) chevronIcon.style.transform = 'rotate(0deg)';
+                        });
+                    });
+
+                    // Close when clicking outside
+                    document.addEventListener('click', function (e) {
+                        if (!voiceBtn.contains(e.target) && !voiceDropdown.contains(e.target)) {
+                            voiceDropdown.classList.remove('show');
+                            if (chevronIcon) chevronIcon.style.transform = 'rotate(0deg)';
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
