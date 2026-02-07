@@ -133,11 +133,30 @@
         flex: 1;
         display: flex;
         align-items: center;
+        min-width: 0;
+        /* Allow shrinking */
+    }
+
+    .sort-box span {
+        white-space: nowrap;
+        font-size: 0.85rem;
     }
 
     .sort-box select {
         flex: 1;
-        /* Expand select */
+        width: 100%;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        padding-right: 20px;
+        /* Space for arrow */
+    }
+
+    /* Small Mobile adjustments for Sort */
+    @media (max-width: 400px) {
+        .sort-box span {
+            display: none;
+            /* Hide "Sắp xếp:" label on very small screens */
+        }
     }
 
     /* Featured Carousel Fix (User Request: 6 items visible on desktop, fewer here) */
