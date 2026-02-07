@@ -4707,7 +4707,8 @@ body.reader-mode {
 }
 
 /* User Request: Object-fit for Featured Books images */
-.featured-section .book-cover img {
+.featured-section .book-cover img,
+.featured-section .collection-thumb img {
   object-fit: cover !important;
 }
 
