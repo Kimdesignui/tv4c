@@ -278,7 +278,8 @@ img {
   border-color: var(--primary-blue);
 }
 
-.mobile-menu-btn {
+.mobile-menu-btn,
+.mobile-user-btn {
   display: none;
 }
 
