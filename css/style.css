@@ -4797,15 +4797,19 @@ body.reader-mode {
 
 .detail-caption {
   font-size: 0.875rem;
-  color: #4b5563;
+  color: #6b7280;
   text-align: center;
-  padding-top: 8px;
+  margin-top: 8px;
   font-style: italic;
-  width: 100%;
-  /* Ensure full width */
-  display: block;
-  /* Ensure block level */
 }
+
+/* Utility Classes */
+.py-3 {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+
 
 /* Audio Player */
 .audio-player .progress-bar .thumb {
