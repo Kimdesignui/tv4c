@@ -4705,3 +4705,27 @@ body.reader-mode {
     /* 1 item */
   }
 }
+
+/* User Request: Object-fit for Featured Books images */
+.featured-section .book-cover img {
+  object-fit: cover !important;
+}
+
+/* User Request: All Books Grid Margin */
+.all-book-list {
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .all-book-list {
+    margin-bottom: 16px;
+    /* Responsive adjustment (typically 2/3 of desktop) */
+  }
+}
+
+@media (max-width: 576px) {
+  .featured-section .carousel-item {
+    flex: 0 0 100%;
+    /* 1 item */
+  }
+}

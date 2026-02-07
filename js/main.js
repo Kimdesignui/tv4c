@@ -951,3 +951,8 @@ function initBookReviewCarousel() {
     // Initial Start
     startAutoScroll();
 }
+
+// Initialize on DOM Ready
+document.addEventListener('DOMContentLoaded', () => {
+    initBookCarousels();
+});
