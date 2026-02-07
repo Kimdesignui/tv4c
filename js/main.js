@@ -6,7 +6,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize all components
     initSlider();
-    initNewsSlider(); // Added News Slider
+    initFeaturedNewsCarousel(); // Corrected Featured News Carousel
     initBookReviewCarousel(); // Added Book Review Carousel
     initBookCarousels(); // Standardized Book Carousels
     // initMobileMenu(); // Called below explicitly if not defined here
@@ -476,23 +476,48 @@ function initCommentForm() {
 }
 
 /**
- * News Slider (Hot News)
+ * News Slider (Hot News) - Renaming to specific Featured News Carousel
  */
-function initNewsSlider() {
-    const slides = document.querySelectorAll('.news-slide');
-    if (!slides.length) return;
+function initFeaturedNewsCarousel() {
+    const carousel = document.querySelector('.news-featured-carousel');
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll('.news-featured-card');
+    const dots = carousel.querySelectorAll('.news-dot');
+    const prevBtn = carousel.querySelector('.news-nav-btn.prev');
+    const nextBtn = carousel.querySelector('.news-nav-btn.next');
+
+    if (slides.length === 0) return;
 
     let currentIndex = 0;
-    const intervalTime = 4000; // 4 seconds
+    let autoPlayInterval;
+    const intervalTime = 5000; // 5 seconds
 
     function showSlide(index) {
-        // Wrap around
+        // Wrap around logic
         if (index >= slides.length) index = 0;
         if (index < 0) index = slides.length - 1;
 
+        // Update Slides
         slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
+            if (i === index) {
+                slide.classList.add('active');
+                slide.style.display = 'flex'; // Use flex as per inline style or CSS prefer ence
+            } else {
+                slide.classList.remove('active');
+                slide.style.display = 'none';
+            }
         });
+
+        // Update Dots
+        dots.forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+
         currentIndex = index;
     }
 
@@ -500,8 +525,56 @@ function initNewsSlider() {
         showSlide(currentIndex + 1);
     }
 
-    // Auto Play
-    setInterval(nextSlide, intervalTime);
+    function prevSlide() {
+        showSlide(currentIndex - 1);
+    }
+
+    function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayInterval = setInterval(nextSlide, intervalTime);
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = null;
+        }
+    }
+
+    // Event Listeners
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            stopAutoPlay();
+            nextSlide();
+            startAutoPlay();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            stopAutoPlay();
+            prevSlide();
+            startAutoPlay();
+        });
+    }
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            stopAutoPlay();
+            showSlide(index);
+            startAutoPlay();
+        });
+    });
+
+    // Pause on hover
+    carousel.addEventListener('mouseenter', stopAutoPlay);
+    carousel.addEventListener('mouseleave', startAutoPlay);
+
+    // Initial Start
+    showSlide(0); // Ensure first slide is shown correctly with 'flex'
+    startAutoPlay();
 }
 
 /**
