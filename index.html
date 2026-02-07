@@ -227,15 +227,25 @@
                 <!-- COL 1: Featured Carousel -->
                 <div class="news-featured-col">
                     <div class="news-featured-carousel" style="height: 100%; position: relative;">
-                        <!-- Navigation Buttons (Centered on Image) -->
-                        <button class="news-nav-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
-                        <button class="news-nav-btn next"><i class="fa-solid fa-chevron-right"></i></button>
-
                         <!-- Slide Item 1 -->
-                        <article class="news-featured-card active" style="display: flex;">
-                            <img src="assets/images/featured-slide-new.png" alt="Featured News"
-                                class="news-featured-img">
-                            <a href="news-detail.html">
+                        <article class="news-featured-card active" style="display: flex; flex-direction: column;">
+                            <div class="news-featured-img-wrapper" style="position: relative;">
+                                <img src="assets/images/featured-slide-new.png" alt="Featured News"
+                                    class="news-featured-img">
+
+                                <!-- Navigation Buttons (Centered on Image) -->
+                                <button class="news-nav-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
+                                <button class="news-nav-btn next"><i class="fa-solid fa-chevron-right"></i></button>
+
+                                <!-- Carousel Dots (On Image Bottom) -->
+                                <div class="news-carousel-dots">
+                                    <span class="news-dot active"></span>
+                                    <span class="news-dot"></span>
+                                    <span class="news-dot"></span>
+                                </div>
+                            </div>
+
+                            <a href="news-detail.html" style="margin-top: 15px;">
                                 <h3 class="news-featured-title"
                                     title="Ra mắt cuốn sách của Tổng Bí thư Nguyễn Phú Trọng về phát triển văn hóa">Ra
                                     mắt cuốn sách của Tổng Bí thư Nguyễn Phú Trọng về

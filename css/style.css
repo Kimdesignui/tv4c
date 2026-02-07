@@ -1430,15 +1430,18 @@ img {
   background: var(--white);
   border: 1px solid #e5e7eb;
   border-radius: var(--radius-sm);
-  flex: 1;
-  /* Expand to fill space */
   display: flex;
   flex-direction: column;
+  min-height: 100%;
+  /* Force it to at least fill the parent */
+  height: auto;
+  /* Allow growth */
 }
 
 .cat-list ul {
   flex: 1;
-  /* Push view-all to bottom if needed, though list items usually fill it */
+  display: flex;
+  flex-direction: column;
 }
 
 .cat-list li {
@@ -1617,6 +1620,12 @@ img {
 }
 
 /* Start News Section Refactor */
+/* News Section Spacing Fix */
+.news-section {
+  margin-top: 40px;
+  /* Fix overlap with sub-banners */
+}
+
 .news-container-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -1627,6 +1636,21 @@ img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+}
+
+/* Featured News Image Wrapper */
+.news-featured-img-wrapper {
+  position: relative;
+  width: 100%;
+  /* Ensure image fits */
+  display: flex;
+}
+
+.news-featured-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
 }
 
 /* Featured News Carousel Navigation */
@@ -1658,6 +1682,32 @@ img {
 
 .news-nav-btn.next {
   right: 10px;
+}
+
+/* Featured News Dots */
+.news-carousel-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 20;
+}
+
+.news-dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.news-dot.active,
+.news-dot:hover {
+  background: var(--primary-blue);
+  transform: scale(1.2);
 }
 
 /* End News Section Refactor */
@@ -1979,9 +2029,7 @@ img {
   display: flex;
   flex-direction: column;
   height: 100%;
-  border-right: 1px solid #e5e7eb;
-  padding-right: 1.25rem;
-  /* Equal spacing setup */
+  /* Border removed per user request */
 }
 
 .news-featured-img {
@@ -4564,7 +4612,10 @@ body.reader-mode {
   /* Force 270px sidebar */
 }
 
-}
+@media (max-width: 991px) {
+  .main-layout-books {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* User Request: Make "View All" links normal weight */

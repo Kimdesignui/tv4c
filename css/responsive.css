@@ -51,10 +51,15 @@
     .detail-body-grid,
     .detail-top-grid,
     .guide-layout,
-    .news-cols-3 {
+    .news-container-grid {
         grid-template-columns: 1fr !important;
         gap: 20px;
     }
+
+    /* News Sub Grid (List) - Tablets might still want 2 cols, but if narrow, 1. 
+       Let's keep 2 cols for tablet for now, or check user request. 
+       User said: <576px = 1 col.
+    */
 
     /* Hero Sidebar */
     .hero-sidebar {
@@ -466,7 +471,8 @@
         display: none;
     }
 
-    .grid-4 {
+    .grid-4,
+    .news-sub-grid {
         grid-template-columns: 1fr !important;
     }
 
