@@ -4651,3 +4651,57 @@ body.reader-mode {
     flex: auto;
   }
 }
+
+/* User Request: Remove Pagination padding/margin */
+.pagination {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Featured Books Carousel Styles */
+.featured-section .carousel-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.featured-section .carousel-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.featured-section .carousel-item {
+  flex: 0 0 calc((100% - 24px * 5) / 6);
+  /* 6 items */
+  min-width: 0;
+}
+
+/* Responsive Item Widths (Must match JS getItemsToShow) */
+@media (max-width: 1200px) {
+  .featured-section .carousel-item {
+    flex: 0 0 calc((100% - 24px * 3) / 4);
+    /* 4 items */
+  }
+}
+
+@media (max-width: 992px) {
+  .featured-section .carousel-item {
+    flex: 0 0 calc((100% - 24px * 2) / 3);
+    /* 3 items */
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-section .carousel-item {
+    flex: 0 0 calc((100% - 24px * 1) / 2);
+    /* 2 items */
+  }
+}
+
+@media (max-width: 576px) {
+  .featured-section .carousel-item {
+    flex: 0 0 100%;
+    /* 1 item */
+  }
+}

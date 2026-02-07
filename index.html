@@ -645,52 +645,78 @@
                         </div>
                     </div>
 
-                    <!-- Module 4: Sách được tìm kiếm nhiều (Renamed) -->
-                    <div class="book-module mb-4">
+                    <!-- Module 4: Sách nổi bật (Carousel) -->
+                    <div class="book-module featured-section mb-4" style="position: relative;">
                         <div class="module-header flex justify-between items-center mb-4 border-b pb-2">
-                            <h2 class="module-title" style="color: #46648D; font-size: 18px;">Sách được tìm kiếm nhiều
-                            </h2>
-                            <a href="books.html" class="view-all-btn text-sm text-red-500">Xem tất cả <i
-                                    class="fa-solid fa-angle-right"></i></a>
+                            <h2 class="module-title" style="color: #46648D; font-size: 18px;">Sách nổi bật</h2>
+                            <!-- Navigation Buttons -->
+                            <div class="module-nav flex gap-2 text-gray-500 text-sm">
+                                <i class="nav-btn prev fa-solid fa-chevron-left cursor-pointer hover:text-blue-600"></i>
+                                <span class="text-gray-400">|</span>
+                                <i
+                                    class="nav-btn next fa-solid fa-chevron-right cursor-pointer hover:text-blue-600"></i>
+                            </div>
                         </div>
-                        <div class="book-grid-5 grid grid-5 gap-4">
-                            <!-- Book 1 -->
-                            <article class="book-card compact">
-                                <div class="book-cover"><a href="book-detail.html"><img
-                                            src="assets/images/featured-book-1.png" alt="Book"></a></div>
-                                <h3 class="book-title" style="color: #46648D;"><a href="book-detail.html">Mái trường
-                                        nâng cánh ước mơ bay</a></h3>
-                            </article>
-                            <!-- Book 2 -->
-                            <article class="book-card compact">
-                                <div class="book-cover"><a href="book-detail.html"><img
-                                            src="assets/images/featured-book-2.png" alt="Book"></a></div>
-                                <h3 class="book-title" style="color: #46648D;"><a href="book-detail.html">Xây dựng hệ
-                                        thống chính trị cơ sở vùng dân tộc thiểu số trên địa bàn các tỉnh biên
-                                        giới...</a></h3>
-                            </article>
-                            <!-- Book 3 -->
-                            <article class="book-card compact">
-                                <div class="book-cover"><a href="book-detail.html"><img
-                                            src="assets/images/featured-book-3.png" alt="Book"></a></div>
-                                <h3 class="book-title" style="color: #46648D;"><a href="book-detail.html">Chiến dịch
-                                        quân sự đặc biệt Nga - Ucraina - những tác động, ảnh hưởng đến xây dựng...</a>
-                                </h3>
-                            </article>
-                            <!-- Book 4 -->
-                            <article class="book-card compact">
-                                <div class="book-cover"><a href="book-detail.html"><img
-                                            src="assets/images/featured-book-4.png" alt="Book"></a></div>
-                                <h3 class="book-title" style="color: #46648D;"><a href="book-detail.html">Khơi dậy khát
-                                        vọng cống hiến bảo vệ Tổ quốc của thanh niẻn Quân đội hiện nay</a></h3>
-                            </article>
-                            <!-- Book 5 -->
-                            <article class="book-card compact">
-                                <div class="book-cover"><a href="book-detail.html"><img
-                                            src="assets/images/featured-book-5.png" alt="Book"></a></div>
-                                <h3 class="book-title" style="color: #46648D;"><a href="book-detail.html">Chiến dịch
-                                        Điện Biên Phủ thắng lợi của bản lĩnh và trí tuệ Việt Nam</a></h3>
-                            </article>
+
+                        <!-- Carousel Track Wrapper -->
+                        <div class="carousel-container" style="overflow: hidden;">
+                            <div class="carousel-track flex transition-transform duration-500" style="gap: 24px;">
+                                <!-- Book 1 -->
+                                <article class="carousel-item book-card compact">
+                                    <div class="book-cover"><a href="book-detail.html"><img
+                                                src="assets/images/featured-book-1.png" alt="Book"></a></div>
+                                    <h3 class="book-title" style="color: #46648D;"><a href="book-detail.html">Mái trường
+                                            nâng cánh ước mơ bay</a></h3>
+                                </article>
+                                <!-- Book 2 -->
+                                <article class="carousel-item book-card compact">
+                                    <div class="book-cover"><a href="book-detail.html"><img
+                                                src="assets/images/featured-book-2.png" alt="Book"></a></div>
+                                    <h3 class="book-title" style="color: #46648D;"><a href="book-detail.html">Xây dựng
+                                            hệ
+                                            thống chính trị cơ sở vùng dân tộc thiểu số trên địa bàn các tỉnh biên
+                                            giới...</a></h3>
+                                </article>
+                                <!-- Book 3 -->
+                                <article class="carousel-item book-card compact">
+                                    <div class="book-cover"><a href="book-detail.html"><img
+                                                src="assets/images/featured-book-3.png" alt="Book"></a></div>
+                                    <h3 class="book-title" style="color: #46648D;"><a href="book-detail.html">Chiến dịch
+                                            quân sự đặc biệt Nga - Ucraina - những tác động, ảnh hưởng đến xây
+                                            dựng...</a>
+                                    </h3>
+                                </article>
+                                <!-- Book 4 -->
+                                <article class="carousel-item book-card compact">
+                                    <div class="book-cover"><a href="book-detail.html"><img
+                                                src="assets/images/featured-book-4.png" alt="Book"></a></div>
+                                    <h3 class="book-title" style="color: #46648D;"><a href="book-detail.html">Khơi dậy
+                                            khát
+                                            vọng cống hiến bảo vệ Tổ quốc của thanh niẻn Quân đội hiện nay</a></h3>
+                                </article>
+                                <!-- Book 5 -->
+                                <article class="carousel-item book-card compact">
+                                    <div class="book-cover"><a href="book-detail.html"><img
+                                                src="assets/images/featured-book-5.png" alt="Book"></a></div>
+                                    <h3 class="book-title" style="color: #46648D;"><a href="book-detail.html">Chiến dịch
+                                            Điện Biên Phủ thắng lợi của bản lĩnh và trí tuệ Việt Nam</a></h3>
+                                </article>
+                                <!-- Book 6 (Duplicate for scroll demo) -->
+                                <article class="carousel-item book-card compact">
+                                    <div class="book-cover"><a href="book-detail.html"><img
+                                                src="assets/images/featured-book-1.png" alt="Book"></a></div>
+                                    <h3 class="book-title" style="color: #46648D;"><a href="book-detail.html">Mái trường
+                                            nâng cánh ước mơ bay</a></h3>
+                                </article>
+                                <!-- Book 7 (Duplicate for scroll demo) -->
+                                <article class="carousel-item book-card compact">
+                                    <div class="book-cover"><a href="book-detail.html"><img
+                                                src="assets/images/featured-book-2.png" alt="Book"></a></div>
+                                    <h3 class="book-title" style="color: #46648D;"><a href="book-detail.html">Xây dựng
+                                            hệ
+                                            thống chính trị cơ sở vùng dân tộc thiểu số...</a></h3>
+                                </article>
+                            </div>
                         </div>
                     </div>
 
