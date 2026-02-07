@@ -5146,3 +5146,12 @@ body.reader-mode {
   color: var(--primary-color);
   font-weight: 500;
 }
+
+/* Featured News Image Aspect Ratio Fix */
+.news-featured-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+  border-radius: var(--radius-md);
+}
