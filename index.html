@@ -223,10 +223,14 @@
                         class="fa-solid fa-chevron-right ml-1"></i></a>
             </div>
 
-            <div class="news-cols-3">
-                <!-- COL 1: Featured Carousel (Placeholder for carousel logic, showing 1 static active slide for now) -->
+            <div class="news-container-grid">
+                <!-- COL 1: Featured Carousel -->
                 <div class="news-featured-col">
                     <div class="news-featured-carousel" style="height: 100%; position: relative;">
+                        <!-- Navigation Buttons (Centered on Image) -->
+                        <button class="news-nav-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="news-nav-btn next"><i class="fa-solid fa-chevron-right"></i></button>
+
                         <!-- Slide Item 1 -->
                         <article class="news-featured-card active" style="display: flex;">
                             <img src="assets/images/featured-slide-new.png" alt="Featured News"
@@ -253,7 +257,7 @@
                             <img src="assets/images/featured-slide-new.png" alt="Demo News 2" class="news-featured-img">
                             <a href="news-detail.html">
                                 <h3 class="news-featured-title"
-                                    title="Ra mắt cuốn sách của Tổng Bí thư Nguyễn Phú Trọng về phát triển văn hóa">Hội
+                                    title="Hội nghị văn hóa toàn quốc triển khai nghị quyết Đại hội XIII">Hội
                                     nghị văn hóa toàn quốc triển khai nghị quyết Đại hội
                                     XIII</h3>
                             </a>
@@ -271,7 +275,7 @@
                             <img src="assets/images/featured-slide-new.png" alt="Demo News 3" class="news-featured-img">
                             <a href="news-detail.html">
                                 <h3 class="news-featured-title"
-                                    title="Ra mắt cuốn sách của Tổng Bí thư Nguyễn Phú Trọng về phát triển văn hóa">Phát
+                                    title="Phát huy giá trị văn hóa, sức mạnh con người Việt Nam">Phát
                                     huy giá trị văn hóa, sức mạnh con người Việt Nam
                                 </h3>
                             </a>
@@ -283,155 +287,151 @@
                                 <a href="news-detail.html" class="btn-news-detail">Chi tiết</a>
                             </div>
                         </article>
-
-                        <!-- Slide Item 2 (Hidden by default or stacked if JS was active) -->
-                        <!-- For static demo, we just keep one visible, but structure implies carousel -->
-                        <div class="carousel-dots"
-                            style="margin-top: 10px; display: flex; gap: 5px; justify-content: center;">
-                            <span class="dot active"
-                                style="width: 8px; height: 8px; background: #2563eb; border-radius: 50%;"></span>
-                            <span class="dot"
-                                style="width: 8px; height: 8px; background: #ddd; border-radius: 50%;"></span>
-                            <span class="dot"
-                                style="width: 8px; height: 8px; background: #ddd; border-radius: 50%;"></span>
-                        </div>
                     </div>
                 </div>
 
-                <!-- COL 2: News List 1 -->
+                <!-- COL 2: News List Grid (2 Columns) -->
                 <div class="news-list-col">
-                    <!-- Item 1 -->
-                    <article class="news-list-item">
-                        <div class="news-list-thumb">
-                            <a href="news-detail.html">
-                                <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400"
-                                    alt="News Image">
-                            </a>
-                        </div>
-                        <div class="news-list-content">
-                            <a href="news-detail.html">
-                                <h4 class="news-list-title">Hội nghị văn hóa toàn quốc triển khai nghị quyết</h4>
-                            </a>
-                            <p class="news-list-desc">Quán triệt sâu sắc các quan điểm, chủ trương của Đảng về xây dựng
-                                và phát triển văn hóa...</p>
-                            <div class="news-list-bottom">
-                                <!-- <span class="news-time">20/06/2024</span> -->
-                                <a href="news-detail.html" class="text-red text-sm">Chi tiết</a>
+                    <div class="news-sub-grid">
+                        <!-- Item 1 -->
+                        <article class="news-list-item">
+                            <div class="news-list-thumb">
+                                <a href="news-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400"
+                                        alt="News Image">
+                                </a>
                             </div>
-                        </div>
-                    </article>
+                            <div class="news-list-content">
+                                <a href="news-detail.html">
+                                    <h4 class="news-list-title">Hội nghị văn hóa toàn quốc triển khai nghị quyết</h4>
+                                </a>
+                                <p class="news-list-desc">Quán triệt sâu sắc các quan điểm, chủ trương của Đảng về xây
+                                    dựng
+                                    và phát triển văn hóa...</p>
+                                <div class="news-list-bottom">
+                                    <span class="news-time">20/06/2024</span>
+                                    <a href="news-detail.html" class="text-red text-sm font-normal">Chi tiết</a>
+                                </div>
+                            </div>
+                        </article>
 
-                    <!-- Item 2 -->
-                    <article class="news-list-item">
-                        <div class="news-list-thumb">
-                            <a href="news-detail.html">
-                                <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=400"
-                                    alt="News Image">
-                            </a>
-                        </div>
-                        <div class="news-list-content">
-                            <a href="news-detail.html">
-                                <h4 class="news-list-title" title="Hành trình nhân loại qua các trang sách">Hành trình
-                                    nhân loại qua các trang sách</h4>
-                            </a>
-                            <p class="news-list-desc">Tóm tắt ngắn gọn về hành trình phát triển của con người qua các
-                                thời kỳ lịch sử...</p>
-                            <div class="news-list-bottom">
-                                <span class="news-time">19/06/2024</span>
-                                <a href="news-detail.html" class="text-red text-sm">Chi tiết</a>
+                        <!-- Item 2 -->
+                        <article class="news-list-item">
+                            <div class="news-list-thumb">
+                                <a href="news-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=400"
+                                        alt="News Image">
+                                </a>
                             </div>
-                        </div>
-                    </article>
+                            <div class="news-list-content">
+                                <a href="news-detail.html">
+                                    <h4 class="news-list-title" title="Hành trình nhân loại qua các trang sách">Hành
+                                        trình
+                                        nhân loại qua các trang sách</h4>
+                                </a>
+                                <p class="news-list-desc">Tóm tắt ngắn gọn về hành trình phát triển của con người qua
+                                    các
+                                    thời kỳ lịch sử...</p>
+                                <div class="news-list-bottom">
+                                    <span class="news-time">19/06/2024</span>
+                                    <a href="news-detail.html" class="text-red text-sm font-normal">Chi tiết</a>
+                                </div>
+                            </div>
+                        </article>
 
-                    <!-- Item 3 -->
-                    <article class="news-list-item">
-                        <div class="news-list-thumb">
-                            <a href="news-detail.html">
-                                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=400"
-                                    alt="News Image">
-                            </a>
-                        </div>
-                        <div class="news-list-content">
-                            <a href="news-detail.html">
-                                <h4 class="news-list-title" title="Các đế chế ngôn từ và sức mạnh vô hình">Các đế chế
-                                    ngôn từ và sức mạnh vô hình</h4>
-                            </a>
-                            <p class="news-list-desc">Lịch sử thế giới từ góc nhìn của các ngôn ngữ lớn và sự ảnh hưởng
-                                của chúng đến văn minh...</p>
-                            <div class="news-list-bottom">
-                                <span class="news-time">18/06/2024</span>
-                                <a href="news-detail.html" class="text-red text-sm">Chi tiết</a>
+                        <!-- Item 3 -->
+                        <article class="news-list-item">
+                            <div class="news-list-thumb">
+                                <a href="news-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=400"
+                                        alt="News Image">
+                                </a>
                             </div>
-                        </div>
-                    </article>
-                </div>
+                            <div class="news-list-content">
+                                <a href="news-detail.html">
+                                    <h4 class="news-list-title" title="Các đế chế ngôn từ và sức mạnh vô hình">Các đế
+                                        chế
+                                        ngôn từ và sức mạnh vô hình</h4>
+                                </a>
+                                <p class="news-list-desc">Lịch sử thế giới từ góc nhìn của các ngôn ngữ lớn và sự ảnh
+                                    hưởng
+                                    của chúng đến văn minh...</p>
+                                <div class="news-list-bottom">
+                                    <span class="news-time">18/06/2024</span>
+                                    <a href="news-detail.html" class="text-red text-sm font-normal">Chi tiết</a>
+                                </div>
+                            </div>
+                        </article>
 
-                <!-- COL 3: News List 2 -->
-                <div class="news-list-col">
-                    <!-- Item 4 -->
-                    <article class="news-list-item">
-                        <div class="news-list-thumb">
-                            <a href="news-detail.html">
-                                <img src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?w=400"
-                                    alt="News Image">
-                            </a>
-                        </div>
-                        <div class="news-list-content">
-                            <a href="news-detail.html">
-                                <h4 class="news-list-title" title="Nơi rìa thế giới - Những vùng đất kỳ bí">Nơi rìa thế
-                                    giới - Những vùng đất kỳ bí</h4>
-                            </a>
-                            <p class="news-list-desc">Cuốn sách đưa bạn đến những vùng đất xa xôi nhất trên hành tinh
-                                của chúng ta mà ít người biết...</p>
-                            <div class="news-list-bottom">
-                                <!-- <span class="news-time">17/06/2024</span> -->
-                                <a href="news-detail.html" class="text-red text-sm">Chi tiết</a>
+                        <!-- Item 4 -->
+                        <article class="news-list-item">
+                            <div class="news-list-thumb">
+                                <a href="news-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?w=400"
+                                        alt="News Image">
+                                </a>
                             </div>
-                        </div>
-                    </article>
+                            <div class="news-list-content">
+                                <a href="news-detail.html">
+                                    <h4 class="news-list-title" title="Nơi rìa thế giới - Những vùng đất kỳ bí">Nơi rìa
+                                        thế
+                                        giới - Những vùng đất kỳ bí</h4>
+                                </a>
+                                <p class="news-list-desc">Cuốn sách đưa bạn đến những vùng đất xa xôi nhất trên hành
+                                    tinh
+                                    của chúng ta mà ít người biết...</p>
+                                <div class="news-list-bottom">
+                                    <span class="news-time">17/06/2024</span>
+                                    <a href="news-detail.html" class="text-red text-sm font-normal">Chi tiết</a>
+                                </div>
+                            </div>
+                        </article>
 
-                    <!-- Item 5 -->
-                    <article class="news-list-item">
-                        <div class="news-list-thumb">
-                            <a href="news-detail.html">
-                                <img src="https://images.unsplash.com/photo-1535905557558-afc4877a26fc?w=400"
-                                    alt="News Image">
-                            </a>
-                        </div>
-                        <div class="news-list-content">
-                            <a href="news-detail.html">
-                                <h4 class="news-list-title" title="Những tù nhân của địa lý - Tim Marshall">Những tù
-                                    nhân của địa lý - Tim Marshall</h4>
-                            </a>
-                            <p class="news-list-desc">Giải thích mọi thứ về thế giới hiện nay qua lăng kính của bản đồ
-                                và địa lý chính trị...</p>
-                            <div class="news-list-bottom">
-                                <!-- <span class="news-time">16/06/2024</span> -->
-                                <a href="news-detail.html" class="text-red text-sm">Chi tiết</a>
+                        <!-- Item 5 -->
+                        <article class="news-list-item">
+                            <div class="news-list-thumb">
+                                <a href="news-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1535905557558-afc4877a26fc?w=400"
+                                        alt="News Image">
+                                </a>
                             </div>
-                        </div>
-                    </article>
+                            <div class="news-list-content">
+                                <a href="news-detail.html">
+                                    <h4 class="news-list-title" title="Những tù nhân của địa lý - Tim Marshall">Những tù
+                                        nhân của địa lý - Tim Marshall</h4>
+                                </a>
+                                <p class="news-list-desc">Giải thích mọi thứ về thế giới hiện nay qua lăng kính của bản
+                                    đồ
+                                    và địa lý chính trị...</p>
+                                <div class="news-list-bottom">
+                                    <span class="news-time">16/06/2024</span>
+                                    <a href="news-detail.html" class="text-red text-sm font-normal">Chi tiết</a>
+                                </div>
+                            </div>
+                        </article>
 
-                    <!-- Item 6 -->
-                    <article class="news-list-item">
-                        <div class="news-list-thumb">
-                            <a href="news-detail.html">
-                                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400"
-                                    alt="News Image">
-                            </a>
-                        </div>
-                        <div class="news-list-content">
-                            <a href="news-detail.html">
-                                <h4 class="news-list-title">Sapiens - Lược sử loài người</h4>
-                            </a>
-                            <p class="news-list-desc">Một cái nhìn bao quát về lịch sử và quá trình tiến hóa của loài
-                                Homo Sapiens từ thời tiền sử...</p>
-                            <div class="news-list-bottom">
-                                <!-- <span class="news-time">15/06/2024</span> -->
-                                <a href="news-detail.html" class="text-red text-sm">Chi tiết</a>
+                        <!-- Item 6 -->
+                        <article class="news-list-item">
+                            <div class="news-list-thumb">
+                                <a href="news-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400"
+                                        alt="News Image">
+                                </a>
                             </div>
-                        </div>
-                    </article>
+                            <div class="news-list-content">
+                                <a href="news-detail.html">
+                                    <h4 class="news-list-title">Sapiens - Lược sử loài người</h4>
+                                </a>
+                                <p class="news-list-desc">Một cái nhìn bao quát về lịch sử và quá trình tiến hóa của
+                                    loài
+                                    Homo Sapiens từ thời tiền sử...</p>
+                                <div class="news-list-bottom">
+                                    <span class="news-time">15/06/2024</span>
+                                    <a href="news-detail.html" class="text-red text-sm font-normal">Chi tiết</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
         </div>
@@ -986,7 +986,7 @@
     </section>
 
     <!-- 7. Book Collections (Digital Collections) -->
-    <section class="section collections-section bg-gray-50 py-8 border-t">
+    <section class="section collections-section bg-gray-50 py-8">
         <div class="container">
             <div class="module-header flex justify-between items-center mb-6">
                 <h2 class="module-title text-primary uppercase font-bold text-2xl">Bộ sưu tập số</h2>

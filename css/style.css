@@ -252,6 +252,8 @@ img {
   background: var(--white);
   padding: var(--space-4) 0;
   border-bottom: 1px solid #e5e7eb;
+  position: relative;
+  z-index: 100;
 }
 
 .logo img {
@@ -1414,14 +1416,29 @@ img {
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: var(--space-6);
-  align-items: flex-start;
+  align-items: stretch;
+  /* User Request: Align Menu & Banner bottom */
 }
 
 /* Sidebar Categories */
+.hero-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
 .cat-list {
   background: var(--white);
   border: 1px solid #e5e7eb;
   border-radius: var(--radius-sm);
+  flex: 1;
+  /* Expand to fill space */
+  display: flex;
+  flex-direction: column;
+}
+
+.cat-list ul {
+  flex: 1;
+  /* Push view-all to bottom if needed, though list items usually fill it */
 }
 
 .cat-list li {
@@ -1451,12 +1468,13 @@ img {
   padding: 12px 20px;
   font-size: 0.95rem;
   color: var(--primary-blue-dark);
-  /* User requested Blue (Navbar bg) */
   font-weight: 600;
+  /* Keeping bold for Menu as requested */
   text-align: center;
-  /* User requested Center */
   border-top: 1px solid #e5e7eb;
   transition: 0.2s;
+  background: var(--white);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
 }
 
 .cat-view-all:hover {
@@ -1466,10 +1484,11 @@ img {
 
 
 /* Slider */
-/* Slider */
 .hero-slider {
-  height: 400px;
-  /* Or auto if you want aspect ratio based, but fixed height is safer for layout */
+  min-height: 400px;
+  /* Ensure minimum height */
+  height: 100%;
+  /* Stretch to match sidebar if sidebar is taller */
   border-radius: var(--radius-md);
   position: relative;
   overflow: hidden;
@@ -1504,7 +1523,7 @@ img {
   object-position: center;
 }
 
-/* Slide Content Overlay (if used) */
+/* Slide Content Overlay */
 .slide-content {
   position: absolute;
   left: 60px;
@@ -1517,7 +1536,6 @@ img {
 }
 
 .slide-content h2 {
-  /* Inherit font-family */
   font-size: 2.5rem;
   margin-bottom: 15px;
   line-height: 1.2;
@@ -1542,7 +1560,6 @@ img {
   width: 40px;
   height: 40px;
   background: rgba(255, 255, 255, 0.5);
-  /* Semi-transparent white */
   border: none;
   border-radius: 50%;
   display: flex;
@@ -1597,6 +1614,55 @@ img {
 /* Sub Banners */
 .banner-item {
   color: var(--white);
+}
+
+/* Start News Section Refactor */
+.news-container-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+}
+
+.news-sub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Featured News Carousel Navigation */
+.news-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  z-index: 20;
+  transition: background 0.2s;
+}
+
+.news-nav-btn:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.news-nav-btn.prev {
+  left: 10px;
+}
+
+.news-nav-btn.next {
+  right: 10px;
+}
+
+/* End News Section Refactor */
+
+.banner-card {
   padding: 15px;
   border-radius: var(--radius-sm);
   display: flex;
@@ -4498,8 +4564,11 @@ body.reader-mode {
   /* Force 270px sidebar */
 }
 
-@media (max-width: 991px) {
-  .main-layout-books {
-    grid-template-columns: 1fr !important;
-  }
+}
+}
+
+/* User Request: Make "View All" links normal weight */
+.view-all-link,
+.view-all-btn {
+  font-weight: 400 !important;
 }

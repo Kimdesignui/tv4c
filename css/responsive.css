@@ -282,8 +282,9 @@
     }
 
     /* 3. Mobile User (Right) */
-    .header-right {
-        display: contents;
+    .header-right,
+    .user-actions {
+        display: contents !important;
         /* Allow children to participate in grid */
     }
 
