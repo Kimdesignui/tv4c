@@ -4751,3 +4751,61 @@ body.reader-mode {
     /* 1 item */
   }
 }
+
+/* ============================================
+   News Detail Page Styles
+   ============================================ */
+
+.font-outfit {
+  font-family: 'Outfit', sans-serif;
+}
+
+.text-news-title-color {
+  color: var(--news-title-color);
+}
+
+/* Sapo Text */
+.news-detail-content .article-sapo {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--text-dark);
+  font-style: italic;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+/* Audio Player */
+.audio-player .progress-bar .thumb {
+  transition: transform 0.1s;
+}
+
+.audio-player .progress-bar:hover .thumb {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.voice-selector:hover .text-xs {
+  background-color: var(--bg-light);
+}
+
+/* Floating Actions */
+.floating-actions .action-btn {
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.floating-actions .action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .news-detail-layout {
+    flex-direction: column;
+  }
+
+  .floating-actions {
+    display: none;
+    /* Hide on mobile or move to bottom if requested */
+  }
+}
