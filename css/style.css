@@ -4961,3 +4961,46 @@ body.reader-mode {
 .news-slide .absolute.inset-0.bg-gradient-to-t {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
 }
+
+/* Voice Selector Dropdown */
+.voice-selector {
+  position: relative;
+}
+
+.voice-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  z-index: 50;
+  min-width: 150px;
+  margin-top: 4px;
+  overflow: hidden;
+}
+
+.voice-dropdown.show {
+  display: block;
+}
+
+.voice-option {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #374151;
+  transition: background-color 0.2s;
+}
+
+.voice-option:hover {
+  background-color: #f3f4f6;
+  color: var(--primary-color);
+}
+
+.voice-option.active {
+  background-color: #eff6ff;
+  color: var(--primary-color);
+  font-weight: 500;
+}
