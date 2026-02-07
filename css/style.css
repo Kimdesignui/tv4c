@@ -4774,6 +4774,39 @@ body.reader-mode {
   margin-bottom: 1.5rem;
 }
 
+/* Detail Image Figure */
+.detail-figure {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  padding: 8px;
+  background: white;
+  width: 100%;
+  /* Ensure full width */
+  display: block;
+  /* Ensure block level */
+}
+
+.detail-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.detail-caption {
+  font-size: 0.875rem;
+  color: #4b5563;
+  text-align: center;
+  padding-top: 8px;
+  font-style: italic;
+  width: 100%;
+  /* Ensure full width */
+  display: block;
+  /* Ensure block level */
+}
+
 /* Audio Player */
 .audio-player .progress-bar .thumb {
   transition: transform 0.1s;
@@ -4784,147 +4817,147 @@ body.reader-mode {
 }
 
 .voice-selector:hover .text-xs {
-    background-color: var(--bg-light);
+  background-color: var(--bg-light);
 }
 
 /* ============================================
    News Header Redesign
    ============================================ */
 .news-header-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .news-date {
-    color: #6b7280;
-    font-size: 0.95rem;
-    font-weight: 400;
+  color: #6b7280;
+  font-size: 0.95rem;
+  font-weight: 400;
 }
 
 .news-actions {
-    display: flex;
-    gap: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .action-btn-circle {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #374151;
-    transition: all 0.2s;
-    font-size: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #374151;
+  transition: all 0.2s;
+  font-size: 14px;
 }
 
 .action-btn-circle:hover {
-    background-color: #f9fafb;
-    border-color: #d1d5db;
-    color: var(--primary-blue);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+  color: var(--primary-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* Audio Player Customization */
 .audio-player-wrapper {
-    background-color: #f0f9ff;
-    border-radius: 50px;
-    padding: 8px 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 2rem;
+  background-color: #f0f9ff;
+  border-radius: 50px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2rem;
 }
 
 .play-button {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background-color: #0f766e;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #0f766e;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .play-button:hover {
-    background-color: #115e59;
+  background-color: #115e59;
 }
 
 .audio-time {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #4b5563;
-    min-width: 70px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4b5563;
+  min-width: 70px;
 }
 
 .audio-progress {
-    flex: 1;
-    height: 4px;
-    background-color: #d1d5db;
-    border-radius: 2px;
-    position: relative;
-    cursor: pointer;
+  flex: 1;
+  height: 4px;
+  background-color: #d1d5db;
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
 }
 
 .audio-progress-bar {
-    height: 100%;
-    background-color: #9ca3af;
-    width: 0%;
-    border-radius: 2px;
+  height: 100%;
+  background-color: #9ca3af;
+  width: 0%;
+  border-radius: 2px;
 }
 
 .voice-select-btn {
-    background: transparent;
-    border: none;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #374151;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    cursor: pointer;
+  background: transparent;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
 }
 
 /* ============================================
    Featured News Carousel (Home)
    ============================================ */
 .news-slider {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: 400px;
-    overflow: hidden;
-    border-radius: 0.5rem;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  overflow: hidden;
+  border-radius: 0.5rem;
 }
 
 .news-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 1;
 }
 
 .news-slide.active {
-    opacity: 1;
-    z-index: 10;
+  opacity: 1;
+  z-index: 10;
 }
 
 .news-slide .absolute.inset-0.bg-gradient-to-t {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
 }
