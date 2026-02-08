@@ -5160,3 +5160,47 @@ body.reader-mode {
 .text-red {
   color: var(--red) !important;
 }
+
+/* ============================================
+   Updated Reading Progress & Buttons
+   ============================================ */
+.w-full {
+  width: 100%;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+/* Reading Progress Bar */
+.reading-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.reading-progress .progress-track {
+  flex: 1;
+  height: 6px;
+  background-color: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.reading-progress .progress-fill {
+  height: 100%;
+  background-color: var(--primary-blue);
+  border-radius: 10px;
+}
+
+.reading-progress .progress-percent {
+  font-size: 0.75rem;
+  color: var(--text-gray);
+  font-weight: 500;
+  width: 35px;
+  /* Fixed width for alignment */
+  text-align: right;
+  flex-shrink: 0;
+}
