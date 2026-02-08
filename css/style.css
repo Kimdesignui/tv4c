@@ -4735,7 +4735,13 @@ body.reader-mode {
 
 /* User Request: All Books Grid Margin */
 .all-book-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  /* Sync with profile page spacing */
+  padding-bottom: 24px;
   margin-bottom: 24px;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 @media (max-width: 768px) {
@@ -5254,8 +5260,313 @@ body.reader-mode {
   font-size: 16px;
 }
 
+/* User Request: Password Toggle */
+.password-wrapper {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.password-toggle:hover {
+  color: var(--primary-color, #0ea5e9);
+}
+
+/* User Request: Success Alert Toast */
+.alert-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #f0fdf4;
+  /* green-50 */
+  border: 1px solid #22c55e;
+  /* green-500 */
+  color: #15803d;
+  /* green-700 */
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 9999;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.alert-toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.alert-toast.hidden {
+  display: flex;
+  /* Override display:none to allow transition, controlled by opacity/transform */
+  visibility: hidden;
+}
+
+.alert-toast.show {
+  visibility: visible;
+}
+
+.alert-toast i {
+  font-size: 1.25rem;
+}
+
 .book-title-clamped a {
   display: inline;
   /* allows line clamping to work on text */
   color: inherit;
+}
+
+/* ============================================
+   Refactored Mobile Header & Profile Layout
+   ============================================ */
+/* Profile Sidebar (Desktop Defaults) */
+.profile-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+  height: fit-content;
+}
+
+.profile-tab-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: #4b5563;
+  margin-bottom: 4px;
+  border-radius: 6px;
+  transition: all 0.2s;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.profile-tab-item i {
+  width: 24px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.profile-tab-item:hover,
+.profile-tab-item.active {
+  background-color: #eff6ff;
+  color: var(--primary-blue);
+  font-weight: 500;
+}
+
+/* Global Typography Overrides */
+.sidebar-user-header .user-details h3 {
+  font-size: 16px !important;
+  line-height: 1.4;
+}
+
+/* 1. Custom Mobile Header (Visible < 992px) */
+.mobile-header-custom {
+  display: none;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.mobile-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  padding: 0 16px;
+}
+
+.mobile-menu-btn,
+.mobile-user-btn {
+  font-size: 1.5rem;
+  color: #4b5563;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.logo-mobile img {
+  height: 40px;
+  width: auto;
+}
+
+/* Sub-header / Search Area */
+.mobile-header-bottom {
+  background-color: var(--primary-blue);
+  padding: 8px 16px;
+}
+
+.mobile-search-wrapper {
+  position: relative;
+}
+
+.mobile-search-box {
+  display: flex;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 36px;
+  align-items: center;
+}
+
+.search-select-mobile {
+  font-size: 0.75rem;
+  background: transparent;
+  padding-left: 12px;
+  padding-right: 4px;
+  border: none;
+  border-right: 1px solid #e5e7eb;
+  outline: none;
+  color: #4b5563;
+  height: 100%;
+  width: 110px;
+  cursor: pointer;
+}
+
+.search-input-mobile {
+  flex: 1;
+  padding: 0 12px;
+  font-size: 0.75rem;
+  border: none;
+  outline: none;
+  height: 100%;
+}
+
+.search-btn-mobile {
+  background-color: var(--accent-yellow);
+  color: white;
+  width: 36px;
+  height: 100%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.mobile-only-icon {
+  display: none;
+}
+
+/* 2. Responsive Layout Fixes (< 1024px) */
+@media (max-width: 1023px) {
+
+  /* Show custom header */
+  .mobile-header-custom {
+    display: block !important;
+  }
+
+  /* Hide default header elems */
+  .top-header,
+  .main-navbar,
+  .breadcrumb-section {
+    display: none !important;
+  }
+
+  /* Profile Layout Container */
+  .profile-layout {
+    flex-direction: column !important;
+    gap: 16px !important;
+    margin-top: 16px !important;
+  }
+
+  /* Re-assert Sidebar styling from previous step */
+  .profile-sidebar {
+    width: 100%;
+    order: -1;
+    cursor: pointer;
+    position: relative;
+    z-index: 20;
+    /* Mobile specific style overrides */
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    height: auto !important;
+    /* Force auto height */
+  }
+
+  .sidebar-user-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0;
+    margin-bottom: 24px;
+    /* Explicit margin below header */
+    width: 100%;
+  }
+
+  /* Fix User Name Font Size - Moved to Global */
+  .sidebar-user-header .user-avatar {
+    flex-shrink: 0;
+    margin-right: 12px;
+  }
+
+  /* Menu Container */
+  .sidebar-menu {
+    display: none;
+    margin-top: 0;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 16px;
+    width: 100%;
+    position: relative;
+    /* Ensure it takes up space */
+  }
+
+  .profile-sidebar.active .sidebar-menu {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .profile-sidebar.active .mobile-only-icon {
+    transform: rotate(180deg);
+  }
+
+  .mobile-only-icon {
+    display: block;
+  }
+}
+
+/* 3. Force Desktop Header Visibility (Safety Net) */
+@media (min-width: 1024px) {
+
+  .top-header,
+  .main-navbar,
+  .breadcrumb-section {
+    display: block !important;
+  }
+
+  .mobile-header-custom {
+    display: none !important;
+  }
+
+  /* Reset Sidebar Spacing for Desktop if needed */
+  .sidebar-user-header {
+    margin-bottom: 0;
+  }
+
+  .profile-sidebar {
+    height: auto;
+  }
 }

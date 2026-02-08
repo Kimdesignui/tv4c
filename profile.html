@@ -15,8 +15,38 @@
 </head>
 
 <body>
+    <!-- Mobile Header (Visible < 992px) -->
+    <!-- Mobile Header (Visible < 992px) -->
+    <header class="mobile-header-custom">
+        <div class="mobile-header-top">
+            <button class="mobile-menu-btn" onclick="alert('Open Menu')">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <a href="index.html" class="logo-mobile">
+                <img src="assets/images/logo.png" alt="TV4C">
+            </a>
+            <a href="profile.html" class="mobile-user-btn">
+                <i class="fa-regular fa-user"></i>
+            </a>
+        </div>
+        <!-- Mobile Search Bar (Sub-header) -->
+        <div class="mobile-header-bottom">
+            <div class="mobile-search-wrapper">
+                <div class="mobile-search-box">
+                    <select class="search-select-mobile">
+                        <option>Sách bản quyền</option>
+                    </select>
+                    <input type="text" placeholder="Nhập từ khoá tìm kiếm" class="search-input-mobile">
+                    <button class="search-btn-mobile">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <!-- Top Header & Navbar (Reused) -->
-    <header class="top-header">
+    <header class="top-header hidden lg:block">
         <div class="container flex justify-between items-center">
             <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="TV4C Logo"></a>
             <div class="header-right flex items-center gap-6">
@@ -112,23 +142,49 @@
     <main class="section bg-gray-50">
         <div class="container">
 
-            <div class="flex gap-8 mt-6">
+            <div class="flex gap-8 mt-6 profile-layout">
                 <!-- Sidebar Tabs -->
-                <div class="profile-tabs">
-                    <a href="#info" class="profile-tab-item active" data-tab="info"><i
-                            class="fa-solid fa-circle-info"></i> Thông tin tài khoản</a>
-                    <a href="#reading" class="profile-tab-item" data-tab="reading"><i class="fa-solid fa-book-open"></i>
-                        Sách đang đọc</a>
-                    <a href="#favorites" class="profile-tab-item" data-tab="favorites"><i class="fa-solid fa-heart"></i>
-                        Tủ sách yêu thích</a>
-                    <a href="#saved" class="profile-tab-item" data-tab="saved"><i class="fa-solid fa-bookmark"></i> Sách
-                        đã lưu</a>
-                    <a href="#password" class="profile-tab-item" data-tab="password"><i class="fa-solid fa-key"></i> Đổi
-                        mật khẩu</a>
-                    <div class="divider my-2 border-t"></div>
-                    <a href="login.html" class="profile-tab-item text-red"><i
-                            class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a>
-                </div>
+                <!-- Sidebar Tabs (Refactored) -->
+                <aside class="profile-sidebar">
+                    <!-- User Info Header (Mobile Toggle) -->
+                    <div class="sidebar-user-header" onclick="toggleProfileSidebar()">
+                        <div class="flex items-center gap-3">
+                            <div class="user-avatar relative">
+                                <div class="w-12 h-12 rounded-full text-white flex items-center justify-center text-xl font-bold"
+                                    style="background-color: var(--primary-blue); color: #ffffff; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
+                                    T</div>
+                            </div>
+                            <div class="user-details text-left">
+                                <span class="block text-xs text-gray-500">Tài khoản của</span>
+                                <h3 class="font-bold text-gray-800">Tên người dùng</h3>
+                            </div>
+                        </div>
+                        <i
+                            class="fa-solid fa-chevron-down transition-transform duration-300 mobile-only-icon ml-auto"></i>
+                    </div>
+
+                    <div class="sidebar-divider my-2 border-t hidden md:block"></div>
+
+                    <!-- Menu items -->
+                    <nav class="sidebar-menu" id="profile-sidebar-menu">
+                        <a href="#info" class="profile-tab-item active" data-tab="info">
+                            <i class="fa-regular fa-user"></i> Thông tin tài khoản
+                        </a>
+                        <a href="#password" class="profile-tab-item" data-tab="password">
+                            <i class="fa-solid fa-lock"></i> Thay đổi mật khẩu
+                        </a>
+                        <a href="#reading" class="profile-tab-item" data-tab="reading">
+                            <i class="fa-solid fa-book-open"></i> Sách đang đọc/nghe
+                        </a>
+                        <a href="#favorites" class="profile-tab-item" data-tab="favorites">
+                            <i class="fa-regular fa-bookmark"></i> Tủ sách đã lưu
+                        </a>
+                        <div class="divider my-1 border-t"></div>
+                        <a href="login.html" class="profile-tab-item text-red">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i> Đăng xuất
+                        </a>
+                    </nav>
+                </aside>
 
                 <!-- Content Area -->
                 <div class="flex-1 bg-white p-8 rounded shadow-sm">
@@ -165,6 +221,24 @@
                     <!-- Tab: Reading History -->
                     <div id="tab-reading" class="tab-content hidden">
                         <h2 class="text-xl font-bold mb-6 pb-2 border-b">Sách đang đọc</h2>
+
+                        <!-- Filter & Sort Bar -->
+                        <div class="flex flex-wrap justify-between items-center mb-6 border-b pb-2 gap-4">
+                            <div class="content-tabs">
+                                <button class="tab-btn active">Tất cả</button>
+                                <button class="tab-btn">Sách Book</button>
+                                <button class="tab-btn">Tài liệu điện tử</button>
+                            </div>
+                            <div class="sort-box">
+                                <span class="text-sm text-gray mr-2">Sắp xếp:</span>
+                                <select>
+                                    <option>Mới nhất</option>
+                                    <option>Đọc nhiều nhất</option>
+                                    <option>Tên A-Z</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="grid grid-5 gap-4 account-book-grid">
                             <!-- Item 1 -->
                             <div class="book-card compact">
@@ -517,8 +591,27 @@
                     </div>
 
                     <!-- Tab: Favorites -->
+                    <!-- Tab: Favorites -->
                     <div id="tab-favorites" class="tab-content hidden">
                         <h2 class="text-xl font-bold mb-6 pb-2 border-b">Tủ sách yêu thích</h2>
+
+                        <!-- Filter & Sort Bar -->
+                        <div class="flex flex-wrap justify-between items-center mb-6 border-b pb-2 gap-4">
+                            <div class="content-tabs">
+                                <button class="tab-btn active">Tất cả</button>
+                                <button class="tab-btn">Sách Book</button>
+                                <button class="tab-btn">Tài liệu điện tử</button>
+                            </div>
+                            <div class="sort-box">
+                                <span class="text-sm text-gray mr-2">Sắp xếp:</span>
+                                <select>
+                                    <option>Mới nhất</option>
+                                    <option>Đọc nhiều nhất</option>
+                                    <option>Tên A-Z</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="grid grid-5 gap-4">
                             <!-- Item 1 -->
                             <div class="book-card compact">
@@ -695,18 +788,41 @@
                     <!-- Tab: Password -->
                     <div id="tab-password" class="tab-content hidden">
                         <h2 class="text-xl font-bold mb-6 pb-2 border-b">Thay đổi mật khẩu</h2>
-                        <form class="max-w-md">
+
+                        <!-- Success Alert -->
+                        <div id="password-success-alert"
+                            class="hidden mb-4 p-4 rounded-lg bg-green-50 border border-green-200 text-green-700 flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-xl"></i>
+                            <div>
+                                <h4 class="font-bold text-sm">Thành công!</h4>
+                                <p class="text-sm">Password updated successfully.</p>
+                            </div>
+                        </div>
+
+                        <form class="max-w-md" id="password-update-form">
                             <div class="mb-4">
                                 <label class="form-label">Mật khẩu hiện tại</label>
-                                <input type="password" class="form-input">
+                                <div class="password-wrapper">
+                                    <input type="password" class="form-input" value="12345678">
+                                    <button type="button" class="password-toggle"><i
+                                            class="fa-regular fa-eye"></i></button>
+                                </div>
                             </div>
                             <div class="mb-4">
                                 <label class="form-label">Mật khẩu mới</label>
-                                <input type="password" class="form-input">
+                                <div class="password-wrapper">
+                                    <input type="password" class="form-input" value="12345678">
+                                    <button type="button" class="password-toggle"><i
+                                            class="fa-regular fa-eye"></i></button>
+                                </div>
                             </div>
                             <div class="mb-6">
                                 <label class="form-label">Nhập lại mật khẩu mới</label>
-                                <input type="password" class="form-input">
+                                <div class="password-wrapper">
+                                    <input type="password" class="form-input" value="12345678">
+                                    <button type="button" class="password-toggle"><i
+                                            class="fa-regular fa-eye"></i></button>
+                                </div>
                             </div>
                             <button class="btn btn-primary px-6 py-2">Cập nhật mật khẩu</button>
                         </form>
@@ -749,6 +865,68 @@
                     const urlParams = new URLSearchParams(window.location.search);
                     const currentTab = urlParams.get('tab') || 'info';
                     switchTab(currentTab);
+
+                    // Password Toggle Logic
+                    document.querySelectorAll('.password-toggle').forEach(btn => {
+                        btn.addEventListener('click', () => {
+                            const input = btn.parentElement.querySelector('input');
+                            const icon = btn.querySelector('i');
+                            if (input.type === 'password') {
+                                input.type = 'text';
+                                icon.classList.remove('fa-eye');
+                                icon.classList.add('fa-eye-slash');
+                            } else {
+                                input.type = 'password';
+                                icon.classList.remove('fa-eye-slash');
+                                icon.classList.add('fa-eye');
+                            }
+                        });
+                    });
+
+                    if (contentTabBtns.length > 0) {
+                        contentTabBtns.forEach(btn => {
+                            btn.addEventListener('click', function (e) {
+                                e.preventDefault();
+                                // siblings
+                                const siblings = this.parentElement.querySelectorAll('.tab-btn');
+                                siblings.forEach(s => s.classList.remove('active'));
+                                this.classList.add('active');
+                            });
+                        });
+                    }
+
+                    // Password Update Logic
+                    const passwordForm = document.getElementById('password-update-form');
+                    if (passwordForm) {
+                        passwordForm.addEventListener('submit', (e) => {
+                            e.preventDefault();
+                            const alertBox = document.getElementById('password-success-alert');
+                            alertBox.classList.remove('hidden');
+
+                            // Hide after 3 seconds
+                            setTimeout(() => {
+                                alertBox.classList.add('hidden');
+                            }, 3000);
+                        });
+                    }
+                });
+            </script>
+            <script>
+                // Sidebar Toggle Logic for Mobile
+                function toggleProfileSidebar() {
+                    const sidebar = document.querySelector('.profile-sidebar');
+                    if (window.innerWidth < 1024) {
+                        sidebar.classList.toggle('active');
+                    }
+                }
+
+                // Auto-collapse sidebar when a link is clicked (Mobile)
+                document.querySelectorAll('.profile-tab-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        if (window.innerWidth < 1024) {
+                            document.querySelector('.profile-sidebar').classList.remove('active');
+                        }
+                    });
                 });
             </script>
         </div>
