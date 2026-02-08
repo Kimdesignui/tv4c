@@ -5204,3 +5204,58 @@ body.reader-mode {
   text-align: right;
   flex-shrink: 0;
 }
+
+/* ============================================
+   Refined Button & Title Styles (tinted-blue)
+   ============================================ */
+
+/* Tinted Blue Button */
+.btn-tinted-blue {
+  background-color: rgba(70, 100, 141, 0.1);
+  color: #46648d !important;
+  /* Force color override */
+  transition: all 0.2s ease;
+}
+
+.btn-tinted-blue:hover {
+  background-color: rgba(70, 100, 141, 0.2);
+  color: #2c4260 !important;
+}
+
+/* Book Title Formatting */
+.book-title-clamped {
+  display: block;
+  /* Fallback */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Fixed height logic: line-height * 2 lines. */
+  line-height: 1.4;
+  height: calc(1.4em * 2);
+  margin-bottom: 5px;
+}
+
+.book-title-clamped a {
+  display: inline;
+  /* allows line clamping to work on text */
+  color: inherit;
+}
+
+/* User Request: Account Management Specifics */
+.account-book-grid {
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.account-book-grid .book-title-clamped {
+  font-size: 16px;
+}
+
+.book-title-clamped a {
+  display: inline;
+  /* allows line clamping to work on text */
+  color: inherit;
+}
