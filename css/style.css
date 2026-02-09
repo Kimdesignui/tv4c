@@ -3430,7 +3430,7 @@ body.reader-mode {
 /* News Item Fixes */
 .news-thumb {
   width: 240px;
-  aspect-ratio: 4/3;
+  aspect-ratio: 4/3 !important;
   flex-shrink: 0;
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -3442,7 +3442,8 @@ body.reader-mode {
 .news-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover !important;
+  object-position: center;
   transition: transform 0.5s;
 }
 
