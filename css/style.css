@@ -5525,8 +5525,7 @@ body.reader-mode {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 0;
-    margin-bottom: 24px;
-    /* Explicit margin below header */
+    margin-bottom: 12px;
     width: 100%;
   }
 
@@ -5580,6 +5579,7 @@ body.reader-mode {
   }
 
   .profile-sidebar {
-    height: auto;
+    height: fit-content;
+    align-self: flex-start;
   }
 }
