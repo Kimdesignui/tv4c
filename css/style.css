@@ -5375,6 +5375,18 @@ body.reader-mode {
 }
 
 /* Global Typography Overrides */
+.sidebar-user-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  min-height: 72px;
+  overflow: visible;
+}
+
+.sidebar-user-header .user-avatar {
+  flex-shrink: 0;
+}
+
 .sidebar-user-header .user-details h3 {
   font-size: 16px !important;
   line-height: 1.4;
