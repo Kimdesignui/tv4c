@@ -18,7 +18,7 @@
     <!-- Mobile Header (Visible < 1024px) -->
     <header class="mobile-header-custom">
         <div class="mobile-header-top">
-            <button class="mobile-menu-btn" onclick="alert('Open Menu')">
+            <button class="mobile-menu-btn">
                 <i class="fa-solid fa-bars"></i>
             </button>
             <a href="index.html" class="logo-mobile">
@@ -135,6 +135,31 @@
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Sidebar Menu -->
+    <div id="mobile-backdrop" class="mobile-backdrop"></div>
+    <div id="mobile-sidebar" class="mobile-sidebar">
+        <div class="sidebar-header">
+            <button class="close-sidebar-btn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="sidebar-title"><i class="fa-solid fa-bars"></i> DANH MỤC THƯ VIỆN</div>
+        </div>
+        <div class="sidebar-content">
+            <ul class="mobile-cat-list">
+                <li><a href="books.html?cat=vh">Văn học Việt Nam</a></li>
+                <li><a href="books.html?cat=nn">Văn học Nước ngoài</a></li>
+                <li><a href="books.html?cat=kt">Kinh tế & Quản trị</a></li>
+                <li><a href="books.html?cat=kn">Tâm lý & Kỹ năng</a></li>
+                <li><a href="books.html?cat=tn">Thiếu nhi</a></li>
+                <li><a href="books.html?cat=ls">Lịch sử & Chính trị</a></li>
+                <li><a href="books.html?cat=vhnt">Văn hóa & Nghệ thuật</a></li>
+                <li><a href="books.html?cat=kh">Khoa học & Kỹ thuật</a></li>
+                <li><a href="books.html?cat=gk">Sách Giáo khoa</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="books.html" class="view-all-btn"><i class="fa-solid fa-bars"></i> Xem tất cả</a>
+            </div>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
 </body>
