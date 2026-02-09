@@ -14,6 +14,35 @@
 </head>
 
 <body>
+    <!-- Mobile Header (Visible < 1024px) -->
+    <header class="mobile-header-custom">
+        <div class="mobile-header-top">
+            <button class="mobile-menu-btn" onclick="alert('Open Menu')">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <a href="index.html" class="logo-mobile">
+                <img src="assets/images/logo.png" alt="TV4C">
+            </a>
+            <a href="profile.html" class="mobile-user-btn">
+                <i class="fa-regular fa-user"></i>
+            </a>
+        </div>
+        <!-- Mobile Search Bar (Sub-header) -->
+        <div class="mobile-header-bottom">
+            <div class="mobile-search-wrapper">
+                <div class="mobile-search-box">
+                    <select class="search-select-mobile">
+                        <option>Sách bản quyền</option>
+                    </select>
+                    <input type="text" placeholder="Nhập từ khoá tìm kiếm" class="search-input-mobile">
+                    <button class="search-btn-mobile">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <!-- 1. Top Header -->
     <header class="top-header">
         <div class="container flex justify-between items-center">
