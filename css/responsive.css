@@ -482,11 +482,6 @@
     .news-section {
         margin-top: 0;
     }
-
-    /* Hide sidebar on mobile for news detail pages */
-    .body-right {
-        display: none !important;
-    }
 }
 
 /* Mobile (max-width: 480px) */
