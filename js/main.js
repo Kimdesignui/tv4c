@@ -3,24 +3,6 @@
  * Main JavaScript File
  */
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Initialize all components
-    initSlider();
-    initFeaturedNewsCarousel(); // Corrected Featured News Carousel
-    initBookReviewCarousel(); // Added Book Review Carousel
-    initBookCarousels(); // Standardized Book Carousels
-    // initMobileMenu(); // Called below explicitly if not defined here
-    if (typeof initMobileMenu === 'function') initMobileMenu();
-    initTabs();
-    initDropdown();
-    initScrollEffects();
-});
-
-// ... existing code ...
-
-/**
- * Hero Slider
- */
 /**
  * Hero Slider
  */
@@ -115,58 +97,8 @@ function initSlider() {
 }
 
 /**
- * Mobile Menu Toggle
- */
-/**
  * Mobile Menu Toggle (Sidebar Overlay)
  */
-function initMobileMenu() {
-    // New Selectors
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn'); // Hamburger in header
-    const mobileSidebar = document.getElementById('mobile-sidebar');
-    const mobileBackdrop = document.getElementById('mobile-backdrop');
-    const closeSidebarBtn = document.querySelector('.close-sidebar-btn');
-
-    if (!mobileMenuBtn || !mobileSidebar || !mobileBackdrop) return;
-
-    function openMenu() {
-        mobileSidebar.classList.add('active');
-        mobileBackdrop.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
-    }
-
-    function closeMenu() {
-        mobileSidebar.classList.remove('active');
-        mobileBackdrop.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    // Toggle Button
-    mobileMenuBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        openMenu();
-    });
-
-    // Close Button
-    if (closeSidebarBtn) {
-        closeSidebarBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            closeMenu();
-        });
-    }
-
-    // Backdrop Click
-    mobileBackdrop.addEventListener('click', closeMenu);
-
-    // Close on window resize if larger than breakpoint
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 992) {
-            closeMenu();
-        }
-    });
-
-    console.log("Mobile Menu Initialized");
-}
 
 /**
  * Tabs functionality
@@ -425,7 +357,6 @@ function initFilters() {
                 }
             });
 
-            console.log('Active filters:', activeFilters);
             // Apply filters to book list
         });
     });
@@ -870,27 +801,7 @@ function initBookGallery() {
     }
 }
 
-// Global Init
-document.addEventListener('DOMContentLoaded', () => {
-    if (typeof initBookGallery === 'function') initBookGallery();
-    // Re-call others if needed or rely on existing calls? 
-    // Usually existing calls are inside their own closures or script blocks? 
-    // No, main.js has functions defined but WHERE are they called?
-    // I see functions like initSlider(), setupCarousel().
-    // I need to make sure they are called.
-    // The previous view_file showed they are function definitions. 
-    // I will call them safely here.
-    if (typeof initSlider === 'function') initSlider();
-    if (typeof initMobileMenu === 'function') initMobileMenu();
 
-    // Feature & News Carousels
-    // setupCarousel might need args. 
-    // Assuming they are called in index.html inline?
-    // If inline scripts were removed, they might not be called!
-    // I'll check if initSlider() was called inside main.js previously. 
-    // It WAS NOT called in the standard view.
-    // I'll just call the new one I know I need.
-});
 
 // Desktop Redesign: Change Image
 function changeImageDesktop(element, src) {
@@ -904,9 +815,6 @@ function changeImageDesktop(element, src) {
 }
 
 
-/**
- * Mobile Menu Logic
- */
 /**
  * Mobile Menu Logic
  */
@@ -1025,7 +933,6 @@ function initBookReviewCarousel() {
     startAutoScroll();
 }
 
-// Initialize on DOM Ready
 // Initialize on DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
     initBookCarousels();

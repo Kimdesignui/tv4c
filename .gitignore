@@ -1,0 +1,17 @@
+# Data files - không deploy lên GitHub Pages
+*.csv
+*.xlsx
+*.xls
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+*.swp
+*.swo
+
+# Temp CSS files
+css/*.css_append
+css/style_fix.css

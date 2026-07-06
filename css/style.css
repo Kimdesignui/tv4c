@@ -5583,3 +5583,84 @@ body.reader-mode {
     align-self: flex-start;
   }
 }
+
+/* ============================================
+   Utility Classes (replacing inline styles)
+   ============================================ */
+
+/* Search box in navbar */
+.nav-center .search-box {
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* Hotline font weight */
+.hotline {
+  font-weight: 400;
+}
+
+/* Module title variants */
+.module-title--blue {
+  color: #46648D;
+  font-size: 18px;
+}
+
+.module-title--dark {
+  color: #1e293b;
+  font-size: 18px;
+}
+
+/* Featured section book title */
+.collection-title--sm {
+  font-size: 1rem;
+}
+
+/* Widget title */
+.widget-title--blue {
+  font-size: 1rem;
+  color: #46648D;
+}
+
+.statistics-widget .widget-title {
+  color: #46648D;
+  text-transform: none;
+  font-size: 1rem;
+}
+
+/* Book title color */
+.book-title--blue {
+  color: #46648D;
+}
+
+/* Book grid gap */
+.book-grid-5 {
+  gap: 24px;
+}
+
+/* News featured carousel height */
+.news-featured-carousel {
+  height: 100%;
+  position: relative;
+}
+
+/* Section no padding top */
+.section--no-pt {
+  padding-top: 0;
+}
+
+/* Book module no margin/padding bottom */
+.book-module--flush {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Link full height */
+.link-full-height {
+  height: 100%;
+}
+
+/* News link margin top */
+.news-link-mt {
+  margin-top: 15px;
+  display: block;
+}
